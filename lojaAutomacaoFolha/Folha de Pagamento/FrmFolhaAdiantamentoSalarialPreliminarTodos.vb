@@ -16,6 +16,7 @@ Public Class FrmFolhaAdiantamentoSalarialPreliminarTodos
         'Comnetario feito 2
         'Comnetario feito 3
         'Comnetario feito 4 
+        'Comnetario feito 5
         Dim booGravado As Boolean = False
         Dim query As String = ""
         query += "select "
