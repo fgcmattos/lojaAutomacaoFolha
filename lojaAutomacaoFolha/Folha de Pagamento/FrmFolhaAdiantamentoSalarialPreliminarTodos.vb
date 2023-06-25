@@ -12,11 +12,7 @@ Public Class FrmFolhaAdiantamentoSalarialPreliminarTodos
 
         ListView1.Items.Clear()
         StrReferencia = StrReferencia.Substring(3, 4) + StrReferencia.Substring(0, 2)
-        'Comnetario feito 
-        'Comnetario feito 2
-        'Comnetario feito 3
-        'Comnetario feito 4 
-        'Comnetario feito 5
+
         Dim booGravado As Boolean = False
         Dim query As String = ""
         query += "select "
