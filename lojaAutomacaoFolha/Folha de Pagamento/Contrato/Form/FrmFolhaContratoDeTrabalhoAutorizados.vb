@@ -17,7 +17,7 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
         Query += ",colaboradorNome"
         Query += " From colaborador "
         Query += " Where "
-        Query += "colaboradorStatus = 0 "
+        Query += "colaboradorContratoAtivo "
         Query += " Order By colaboradornome "
 
         Dim StrLinha As String = ""

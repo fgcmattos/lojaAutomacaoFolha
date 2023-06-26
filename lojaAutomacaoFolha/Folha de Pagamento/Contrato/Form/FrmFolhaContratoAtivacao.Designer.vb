@@ -34,11 +34,12 @@ Partial Class FrmFolhaContratoAtivacao
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.BtnLiberacao = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -54,14 +55,14 @@ Partial Class FrmFolhaContratoAtivacao
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(19, 24)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(751, 173)
+        Me.GroupBox1.Size = New System.Drawing.Size(648, 144)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Painel de Pesquisa"
         '
         'BtnPesquisa
         '
-        Me.BtnPesquisa.Location = New System.Drawing.Point(554, 137)
+        Me.BtnPesquisa.Location = New System.Drawing.Point(447, 63)
         Me.BtnPesquisa.Name = "BtnPesquisa"
         Me.BtnPesquisa.Size = New System.Drawing.Size(191, 30)
         Me.BtnPesquisa.TabIndex = 5
@@ -122,9 +123,9 @@ Partial Class FrmFolhaContratoAtivacao
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.ListView1)
-        Me.GroupBox2.Location = New System.Drawing.Point(19, 245)
+        Me.GroupBox2.Location = New System.Drawing.Point(19, 174)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(890, 327)
+        Me.GroupBox2.Size = New System.Drawing.Size(938, 327)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Colaboradores com Inatividade Para Contrato de Trabalho"
@@ -132,14 +133,15 @@ Partial Class FrmFolhaContratoAtivacao
         'ListView1
         '
         Me.ListView1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.ListView1.CheckBoxes = True
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader7, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
         Me.ListView1.ForeColor = System.Drawing.SystemColors.HighlightText
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(18, 35)
+        Me.ListView1.Location = New System.Drawing.Point(6, 29)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(866, 292)
+        Me.ListView1.Size = New System.Drawing.Size(923, 292)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -152,6 +154,11 @@ Partial Class FrmFolhaContratoAtivacao
         '
         Me.ColumnHeader2.Text = "Colaborador"
         Me.ColumnHeader2.Width = 250
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "CPF"
+        Me.ColumnHeader7.Width = 100
         '
         'ColumnHeader3
         '
@@ -172,16 +179,21 @@ Partial Class FrmFolhaContratoAtivacao
         Me.ColumnHeader6.Text = "OBS "
         Me.ColumnHeader6.Width = 250
         '
-        'ColumnHeader7
+        'BtnLiberacao
         '
-        Me.ColumnHeader7.Text = "CPF"
-        Me.ColumnHeader7.Width = 100
+        Me.BtnLiberacao.Location = New System.Drawing.Point(25, 507)
+        Me.BtnLiberacao.Name = "BtnLiberacao"
+        Me.BtnLiberacao.Size = New System.Drawing.Size(191, 30)
+        Me.BtnLiberacao.TabIndex = 6
+        Me.BtnLiberacao.Text = "Libera para contrato"
+        Me.BtnLiberacao.UseVisualStyleBackColor = True
         '
         'FrmFolhaContratoAtivacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(921, 587)
+        Me.ClientSize = New System.Drawing.Size(960, 542)
+        Me.Controls.Add(Me.BtnLiberacao)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
@@ -212,4 +224,5 @@ Partial Class FrmFolhaContratoAtivacao
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents ColumnHeader6 As ColumnHeader
     Friend WithEvents ColumnHeader7 As ColumnHeader
+    Friend WithEvents BtnLiberacao As Button
 End Class

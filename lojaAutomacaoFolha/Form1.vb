@@ -692,9 +692,9 @@ Public Class Form1
         frmLogPesquisa.Show
     End Sub
 
-    Private Sub GravaçãoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GravaçãoToolStripMenuItem1.Click
+    Private Sub RegistroToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles RegistroToolStripMenuItem1.Click
 
-        FrmFolhaContratoAtivacao.show()
+        FrmFolhaContratoAtivacao.Show()
 
     End Sub
 End Class

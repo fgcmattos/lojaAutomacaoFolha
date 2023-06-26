@@ -160,6 +160,8 @@ Partial Class Form1
         Me.ManutençãoToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PesquisaToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImpresãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AtivaçãoDeContratoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastramentoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManutençãoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManutençãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -255,10 +257,6 @@ Partial Class Form1
         Me.form1DataHora = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.AtivaçãoDeCadastroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GravaçãoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PesquisaToolStripMenuItem16 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ManutençãoToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -1126,7 +1124,7 @@ Partial Class Form1
         'UsuárioToolStripMenuItem
         '
         Me.UsuárioToolStripMenuItem.AccessibleName = "4"
-        Me.UsuárioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContratoDeTrabalhoToolStripMenuItem, Me.CadastramentoToolStripMenuItem1, Me.ManutençãoToolStripMenuItem, Me.ExclusãoToolStripMenuItem, Me.HoleriteToolStripMenuItem, Me.FériasToolStripMenuItem, Me.ValeTransporteVTToolStripMenuItem, Me.ToolStripComboBox1, Me.HistóricosToolStripMenuItem, Me.RescisõesToolStripMenuItem, Me.SaláriosToolStripMenuItem, Me.AtivaçãoDeCadastroToolStripMenuItem})
+        Me.UsuárioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContratoDeTrabalhoToolStripMenuItem, Me.CadastramentoToolStripMenuItem1, Me.ManutençãoToolStripMenuItem, Me.ExclusãoToolStripMenuItem, Me.HoleriteToolStripMenuItem, Me.FériasToolStripMenuItem, Me.ValeTransporteVTToolStripMenuItem, Me.ToolStripComboBox1, Me.HistóricosToolStripMenuItem, Me.RescisõesToolStripMenuItem, Me.SaláriosToolStripMenuItem})
         Me.UsuárioToolStripMenuItem.Enabled = False
         Me.UsuárioToolStripMenuItem.Name = "UsuárioToolStripMenuItem"
         Me.UsuárioToolStripMenuItem.Size = New System.Drawing.Size(128, 20)
@@ -1134,7 +1132,7 @@ Partial Class Form1
         '
         'ContratoDeTrabalhoToolStripMenuItem
         '
-        Me.ContratoDeTrabalhoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastramentoToolStripMenuItem2, Me.ManutençãoToolStripMenuItem3, Me.PesquisaToolStripMenuItem11, Me.ImpresãoToolStripMenuItem})
+        Me.ContratoDeTrabalhoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastramentoToolStripMenuItem2, Me.ManutençãoToolStripMenuItem3, Me.PesquisaToolStripMenuItem11, Me.ImpresãoToolStripMenuItem, Me.AtivaçãoDeContratoToolStripMenuItem})
         Me.ContratoDeTrabalhoToolStripMenuItem.Name = "ContratoDeTrabalhoToolStripMenuItem"
         Me.ContratoDeTrabalhoToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.ContratoDeTrabalhoToolStripMenuItem.Text = "Contrato De Trabalho"
@@ -1142,26 +1140,39 @@ Partial Class Form1
         'CadastramentoToolStripMenuItem2
         '
         Me.CadastramentoToolStripMenuItem2.Name = "CadastramentoToolStripMenuItem2"
-        Me.CadastramentoToolStripMenuItem2.Size = New System.Drawing.Size(155, 22)
+        Me.CadastramentoToolStripMenuItem2.Size = New System.Drawing.Size(186, 22)
         Me.CadastramentoToolStripMenuItem2.Text = "Cadastramento"
         '
         'ManutençãoToolStripMenuItem3
         '
         Me.ManutençãoToolStripMenuItem3.Name = "ManutençãoToolStripMenuItem3"
-        Me.ManutençãoToolStripMenuItem3.Size = New System.Drawing.Size(155, 22)
+        Me.ManutençãoToolStripMenuItem3.Size = New System.Drawing.Size(186, 22)
         Me.ManutençãoToolStripMenuItem3.Text = "Manutenção"
         '
         'PesquisaToolStripMenuItem11
         '
         Me.PesquisaToolStripMenuItem11.Name = "PesquisaToolStripMenuItem11"
-        Me.PesquisaToolStripMenuItem11.Size = New System.Drawing.Size(155, 22)
+        Me.PesquisaToolStripMenuItem11.Size = New System.Drawing.Size(186, 22)
         Me.PesquisaToolStripMenuItem11.Text = "Pesquisa"
         '
         'ImpresãoToolStripMenuItem
         '
         Me.ImpresãoToolStripMenuItem.Name = "ImpresãoToolStripMenuItem"
-        Me.ImpresãoToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.ImpresãoToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.ImpresãoToolStripMenuItem.Text = "Impressão"
+        '
+        'AtivaçãoDeContratoToolStripMenuItem
+        '
+        Me.AtivaçãoDeContratoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroToolStripMenuItem1})
+        Me.AtivaçãoDeContratoToolStripMenuItem.Name = "AtivaçãoDeContratoToolStripMenuItem"
+        Me.AtivaçãoDeContratoToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.AtivaçãoDeContratoToolStripMenuItem.Text = "Ativação de Contrato"
+        '
+        'RegistroToolStripMenuItem1
+        '
+        Me.RegistroToolStripMenuItem1.Name = "RegistroToolStripMenuItem1"
+        Me.RegistroToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.RegistroToolStripMenuItem1.Text = "Registro"
         '
         'CadastramentoToolStripMenuItem1
         '
@@ -1452,25 +1463,25 @@ Partial Class Form1
         'CadastramentoToolStripMenuItem3
         '
         Me.CadastramentoToolStripMenuItem3.Name = "CadastramentoToolStripMenuItem3"
-        Me.CadastramentoToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
+        Me.CadastramentoToolStripMenuItem3.Size = New System.Drawing.Size(155, 22)
         Me.CadastramentoToolStripMenuItem3.Text = "Cadastramento"
         '
         'PesquisaToolStripMenuItem13
         '
         Me.PesquisaToolStripMenuItem13.Name = "PesquisaToolStripMenuItem13"
-        Me.PesquisaToolStripMenuItem13.Size = New System.Drawing.Size(180, 22)
+        Me.PesquisaToolStripMenuItem13.Size = New System.Drawing.Size(155, 22)
         Me.PesquisaToolStripMenuItem13.Text = "Pesquisa"
         '
         'ManutençãoToolStripMenuItem6
         '
         Me.ManutençãoToolStripMenuItem6.Name = "ManutençãoToolStripMenuItem6"
-        Me.ManutençãoToolStripMenuItem6.Size = New System.Drawing.Size(180, 22)
+        Me.ManutençãoToolStripMenuItem6.Size = New System.Drawing.Size(155, 22)
         Me.ManutençãoToolStripMenuItem6.Text = "Manutenção"
         '
         'AtualizaçõesToolStripMenuItem
         '
         Me.AtualizaçõesToolStripMenuItem.Name = "AtualizaçõesToolStripMenuItem"
-        Me.AtualizaçõesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AtualizaçõesToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.AtualizaçõesToolStripMenuItem.Text = "Atualizações"
         '
         'FinanceiroToolStripMenuItem
@@ -1786,31 +1797,6 @@ Partial Class Form1
         Me.ImageList1.Images.SetKeyName(0, "login1.jpeg")
         Me.ImageList1.Images.SetKeyName(1, "loginAutorizado.jpeg")
         '
-        'AtivaçãoDeCadastroToolStripMenuItem
-        '
-        Me.AtivaçãoDeCadastroToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GravaçãoToolStripMenuItem1, Me.PesquisaToolStripMenuItem16, Me.ManutençãoToolStripMenuItem11})
-        Me.AtivaçãoDeCadastroToolStripMenuItem.Name = "AtivaçãoDeCadastroToolStripMenuItem"
-        Me.AtivaçãoDeCadastroToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
-        Me.AtivaçãoDeCadastroToolStripMenuItem.Text = "Ativação de Cadastro"
-        '
-        'GravaçãoToolStripMenuItem1
-        '
-        Me.GravaçãoToolStripMenuItem1.Name = "GravaçãoToolStripMenuItem1"
-        Me.GravaçãoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.GravaçãoToolStripMenuItem1.Text = "Gravação"
-        '
-        'PesquisaToolStripMenuItem16
-        '
-        Me.PesquisaToolStripMenuItem16.Name = "PesquisaToolStripMenuItem16"
-        Me.PesquisaToolStripMenuItem16.Size = New System.Drawing.Size(180, 22)
-        Me.PesquisaToolStripMenuItem16.Text = "Pesquisa"
-        '
-        'ManutençãoToolStripMenuItem11
-        '
-        Me.ManutençãoToolStripMenuItem11.Name = "ManutençãoToolStripMenuItem11"
-        Me.ManutençãoToolStripMenuItem11.Size = New System.Drawing.Size(180, 22)
-        Me.ManutençãoToolStripMenuItem11.Text = "Manutenção"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2068,8 +2054,6 @@ Partial Class Form1
     Friend WithEvents ManutençãoToolStripMenuItem10 As ToolStripMenuItem
     Friend WithEvents LogDeUsoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PesquisaToolStripMenuItem15 As ToolStripMenuItem
-    Friend WithEvents AtivaçãoDeCadastroToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GravaçãoToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents PesquisaToolStripMenuItem16 As ToolStripMenuItem
-    Friend WithEvents ManutençãoToolStripMenuItem11 As ToolStripMenuItem
+    Friend WithEvents AtivaçãoDeContratoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RegistroToolStripMenuItem1 As ToolStripMenuItem
 End Class

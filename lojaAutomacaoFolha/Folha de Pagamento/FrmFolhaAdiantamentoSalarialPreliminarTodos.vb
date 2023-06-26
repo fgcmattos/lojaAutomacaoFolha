@@ -18,7 +18,8 @@ Public Class FrmFolhaAdiantamentoSalarialPreliminarTodos
         query += "select "
         query += "FL_key_col"               '0
         query += ",colaboradorNome"         '1
-        query += ",colaboradorFuncao"       '2
+        'query += ",colaboradorFuncao"       '2
+        query += ",colaboradorCargo"       '2
         query += ",15"                      '3
         query += ",FL_valor_base"           '4
         query += ",FL_valor "               '5

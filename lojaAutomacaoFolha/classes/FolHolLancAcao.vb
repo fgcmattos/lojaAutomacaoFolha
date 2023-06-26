@@ -25,7 +25,7 @@ Public Class FolHolLancAcao
         Query += ",FL_historico"
         Query += ",FL_calculo"
         Query += ",FL_calculo_parametro"
-        Query += " FROM Folha_lancamento "
+        Query += " FROM folha_lancamento "
         Query += " Where "
         Query += "Fl_key_col = " + col_key.ToString
         Query += " and Fl_referencia = '" + referencia + "'"
