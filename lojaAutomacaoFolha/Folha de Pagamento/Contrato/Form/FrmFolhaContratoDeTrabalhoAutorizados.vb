@@ -6,7 +6,7 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
         ' O preenchimento da tela de colaboradores disponineis para gerar contrato
         ' vem de duas condições
         ' 1 - O cadastro de colaborador deve estar completo
-        ' 2 - O colaborador não poe ter contrato de trabalho ativo
+        ' 2 - O colaborador não pode ter contrato de trabalho ativo
 
         oi.Title = Me.Text
 

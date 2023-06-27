@@ -11,6 +11,24 @@ Public Class FrmFolhaEfetivacao
     End Sub
 
     Private Sub BtoCalcular_Click(sender As Object, e As EventArgs) Handles BtoCalcular.Click
+        '''linha de teste teste
+        Dim INSStabela As List(Of ClassINSStabela) = ClassINSStabelaAcao.GetINSS_DB()
+
+        Dim base As Decimal = InputBox("Entre com a Base INSS")
+
+        If base > INSStabela(0).Class_INSSfaixa4 Then
+            MsgBox(INSStabela(0).Class_INSSfaixa4Acumulado)
+        ElseIf base > INSStabela(0).Class_INSSfaixa3 Then
+            MsgBox((base - INSStabela(0).Class_INSSfaixa3) * (INSStabela(0).Class_INSSfaixa3Porcentagem / 100))
+        ElseIf base > INSStabela(0).Class_INSSfaixa2 Then
+            MsgBox((base - INSStabela(0).Class_INSSfaixa2) * (INSStabela(0).Class_INSSfaixa2Porcentagem / 100))
+        ElseIf base > INSStabela(0).Class_INSSfaixa1 Then
+            MsgBox((base - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa1Porcentagem / 100))
+        End If
+
+        Dim azasd As Integer = 0
+        ''''''''
+
         Dim query As String = ""
         Dim strReferencia As String
         Dim strCodKey As String = Trim(TextColaboradorKey.Text)
@@ -22,10 +40,10 @@ Public Class FrmFolhaEfetivacao
         If folhaFechada(strReferencia) Then
 
             With oi
-                .msg = "Referência já calculada, Quer novo cálculo?"
-                .style = vbYesNo
-                .resposta = MsgBox(.msg, .style, .title)
-                If .resposta <> 6 Then
+                .Msg = "Referência já calculada, Quer novo cálculo?"
+                .Style = vbYesNo
+                .Resposta = MsgBox(.Msg, .Style, .Title)
+                If .Resposta <> 6 Then
                     Exit Sub
                 Else
 

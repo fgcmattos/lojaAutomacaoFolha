@@ -266,6 +266,8 @@
     <Compile Include="classes\irTabelaAcao.vb" />
     <Compile Include="classes\MenuColaborador.vb" />
     <Compile Include="Folha de Pagamento\Contrato\Class\ClassContratoFolha.vb" />
+    <Compile Include="Folha de Pagamento\Contrato\Form\ClassINSStabela.vb" />
+    <Compile Include="Folha de Pagamento\Contrato\Form\ClassINSStabelaAcao.vb" />
     <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoManutencao.Designer.vb">
       <DependentUpon>FrmFolhaContratoManutencao.vb</DependentUpon>
     </Compile>
