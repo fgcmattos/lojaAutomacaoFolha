@@ -697,4 +697,10 @@ Public Class Form1
         FrmFolhaContratoAtivacao.Show()
 
     End Sub
+
+    Private Sub CadastroToolStripMenuItem10_Click(sender As Object, e As EventArgs) Handles CadastroToolStripMenuItem10.Click
+
+        FrmFolhaINSS_TabelaCadastro.Show()
+
+    End Sub
 End Class

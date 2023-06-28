@@ -11,23 +11,16 @@ Public Class FrmFolhaEfetivacao
     End Sub
 
     Private Sub BtoCalcular_Click(sender As Object, e As EventArgs) Handles BtoCalcular.Click
-        '''linha de teste teste
-        Dim INSStabela As List(Of ClassINSStabela) = ClassINSStabelaAcao.GetINSS_DB()
 
-        Dim base As Decimal = InputBox("Entre com a Base INSS")
+        '''area de teste teste ==========================================================================
 
-        If base > INSStabela(0).Class_INSSfaixa4 Then
-            MsgBox(INSStabela(0).Class_INSSfaixa4Acumulado)
-        ElseIf base > INSStabela(0).Class_INSSfaixa3 Then
-            MsgBox((base - INSStabela(0).Class_INSSfaixa3) * (INSStabela(0).Class_INSSfaixa3Porcentagem / 100))
-        ElseIf base > INSStabela(0).Class_INSSfaixa2 Then
-            MsgBox((base - INSStabela(0).Class_INSSfaixa2) * (INSStabela(0).Class_INSSfaixa2Porcentagem / 100))
-        ElseIf base > INSStabela(0).Class_INSSfaixa1 Then
-            MsgBox((base - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa1Porcentagem / 100))
-        End If
+        While True
+            Dim base As Decimal = InputBox("Entre com a Base INSS")
 
-        Dim azasd As Integer = 0
-        ''''''''
+            MsgBox(INSScalculo(base))
+
+        End While
+        '================================================================================================
 
         Dim query As String = ""
         Dim strReferencia As String
@@ -558,27 +551,27 @@ Public Class FrmFolhaEfetivacao
 
     End Function
 
-    Private Function INSScalculo(baseInss As Decimal)
+    '''Private Function INSScalculo(baseInss As Decimal)
 
-        Dim numSomaINISS As Decimal = 0
+    '''    Dim numSomaINISS As Decimal = 0
 
-        For i = 0 To INSS.Count - 1
-            If INSS(i).Limite < baseInss Then
+    '''    For i = 0 To INSS.Count - 1
+    '''        If INSS(i).Limite < baseInss Then
 
-                numSomaINISS += INSS(i).Valor
+    '''            numSomaINISS += INSS(i).Valor
 
-            Else
+    '''        Else
 
-                numSomaINISS += ((baseInss - INSS(i - 1).Limite)) * (INSS(i).Taxa / 100)
+    '''            numSomaINISS += ((baseInss - INSS(i - 1).Limite)) * (INSS(i).Taxa / 100)
 
-                Exit For
+    '''            Exit For
 
-            End If
+    '''        End If
 
-        Next
-        Return Int(numSomaINISS * 100) / 100
+    '''    Next
+    '''    Return Int(numSomaINISS * 100) / 100
 
-    End Function
+    '''End Function
 
     Private Function IRcalculo(baseIR As Decimal)
 

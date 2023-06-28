@@ -266,8 +266,14 @@
     <Compile Include="classes\irTabelaAcao.vb" />
     <Compile Include="classes\MenuColaborador.vb" />
     <Compile Include="Folha de Pagamento\Contrato\Class\ClassContratoFolha.vb" />
-    <Compile Include="Folha de Pagamento\Contrato\Form\ClassINSStabela.vb" />
-    <Compile Include="Folha de Pagamento\Contrato\Form\ClassINSStabelaAcao.vb" />
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastro.Designer.vb">
+      <DependentUpon>FrmFolhaINSS_TabelaCadastro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Class\ClassINSStabela.vb" />
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Class\ClassINSStabelaAcao.vb" />
     <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoManutencao.Designer.vb">
       <DependentUpon>FrmFolhaContratoManutencao.vb</DependentUpon>
     </Compile>
@@ -280,7 +286,7 @@
     <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoAtivacao.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulo\ModInicializacao.vb" />
+    <Compile Include="Modulo\Conexoes\ModInicializacao.vb" />
     <Compile Include="classes\MsgShow.vb" />
     <Compile Include="classes\ReciboAcoes.vb" />
     <Compile Include="classes\ReciboRP.vb" />
@@ -441,6 +447,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Log\Class\ClassLogAcao.vb" />
+    <Compile Include="Modulo\FolhaCalulos\ModuloCalculoFolha.vb" />
     <Compile Include="Recibos\fmrReciboPesquisa.Designer.vb">
       <DependentUpon>fmrReciboPesquisa.vb</DependentUpon>
     </Compile>
@@ -579,7 +586,7 @@
     <Compile Include="classes\folCaptDiario.vb" />
     <Compile Include="classes\captura.vb" />
     <Compile Include="classes\CapturaRepositorio.vb" />
-    <Compile Include="Modulo\conecaoDB.vb" />
+    <Compile Include="Modulo\Conexoes\conecaoDB.vb" />
     <Compile Include="classes\descanso.vb" />
     <Compile Include="Cadastros\Colaborador\Form\FcolAlt.Designer.vb">
       <DependentUpon>FcolAlt.vb</DependentUpon>
@@ -780,6 +787,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\FrmFolhaHoleriteClose_rel.resx">
       <DependentUpon>FrmFolhaHoleriteClose_rel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastro.resx">
+      <DependentUpon>FrmFolhaINSS_TabelaCadastro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\Relatorios\CR_folhaAdiantamentoDeposito.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1330,6 +1340,8 @@
     <Folder Include="Contas A Pagar\" />
     <Folder Include="Contas A Receber\" />
     <Folder Include="Financeiro\" />
+    <Folder Include="Folha de Pagamento\IR_Tabela\Class\" />
+    <Folder Include="Folha de Pagamento\IR_Tabela\Form\" />
     <Folder Include="Recebimento Fiscal\" />
     <Folder Include="relatorios\" />
     <Folder Include="Suprimentos\" />
