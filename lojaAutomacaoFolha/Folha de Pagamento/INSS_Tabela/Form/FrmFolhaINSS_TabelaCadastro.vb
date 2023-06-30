@@ -124,5 +124,257 @@
 
         End If
 
+        TxtValorFaixa.Focus()
+
+        EditarCampoTextBox(TxtValorFaixa)
+
     End Sub
+
+    Private Sub TxtValorFaixa_TextChanged(sender As Object, e As EventArgs) Handles TxtValorFaixa.TextChanged
+
+    End Sub
+
+    Private Sub TxtValorFaixa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtValorFaixa.KeyPress
+
+        With TxtValorFaixa
+
+            Dim strMascarado As String = ""
+
+
+            If .Text = "" Then
+
+                .Text = "0,00"
+
+            End If
+
+
+
+            If e.KeyChar = Convert.ToChar(27) Then
+
+                'LblreciboValor.Enabled = False
+                'LblReciboValorAponta.Visible = False
+                'LblreciboValor.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Regular)
+                'LblreciboValor.ForeColor = System.Drawing.Color.Black
+
+                'tbcFavorecido.Enabled = True
+                'GruFavorecido.Enabled = True
+                'GruCaracteristicas.Enabled = False
+                'btnFavOK.Focus()
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(13) Then
+
+
+
+                'lblExtenso.Text = Extenso(.Text)
+                'txtValor.Enabled = False
+                'LblReciboValorAponta.Visible = False
+                'LblreciboValor.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Regular)
+                'LblreciboValor.ForeColor = System.Drawing.Color.Black
+
+                'lblReciboData.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Bold)
+                'lblReciboData.ForeColor = System.Drawing.Color.Maroon
+                'LblReciboDataAponta.Visible = True
+                'mskReciboData.Enabled = True
+                'mskReciboData.Focus()
+
+                SendKeys.Send("{TAB}")
+
+                EditarCampoTextBox(TxtPorcentagemFaixa)
+
+                Exit Sub
+
+            End If
+
+            If Asc(e.KeyChar) = 8 Then       ' BACKSPACE
+
+                e.KeyChar = ""
+
+
+                If .Text = "0,00" Then Exit Sub
+                If .Text.Substring(0, 3) = "0,0" And .Text.Length = 4 Then .Text = "0,00" : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Substring(0, 2) = "0," And .Text.Length = 4 Then .Text = "0,0" + .Text.Substring(.Text.Length - 2, 1) : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Length = 4 Then .Text = "0," + .Text.Substring(0, 1) + .Text.Substring(2, 1) : SendKeys.Send("{END}") : Exit Sub
+
+                .Text = .Text.Substring(0, .Text.Length - 1)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+                Exit Sub
+
+            End If
+
+            If e.KeyChar >= "0" And e.KeyChar <= "9" Then
+
+                Dim strComMascara As String = Trim(.Text)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+                Dim strRetorno As String = ""
+                Dim strPressionada As String = e.KeyChar
+
+                e.KeyChar = ""
+
+                If intSemMascara > 13 Then
+
+                    Exit Sub
+
+                End If
+
+                If intSemMascara < 4 And strSemMascara.Substring(0, 1) = "0" Then
+
+                    strSemMascara += strPressionada
+                    strSemMascara = strSemMascara.Substring(1)
+
+                Else
+
+                    strSemMascara += strPressionada
+                    intSemMascara += 1
+
+                End If
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+
+
+
+                SendKeys.Send("{END}")
+
+            Else
+
+                e.KeyChar = ""
+
+                .Focus()
+
+
+                ' SendKeys.Send("{END}")
+
+
+            End If
+
+        End With
+    End Sub
+
+    Private Sub TxtPorcentagemFaixa_TextChanged(sender As Object, e As EventArgs) Handles TxtPorcentagemFaixa.TextChanged
+
+    End Sub
+
+    Private Sub TxtPorcentagemFaixa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPorcentagemFaixa.KeyPress
+
+        With TxtPorcentagemFaixa
+
+            Dim strMascarado As String = ""
+
+
+            If .Text = "" Then
+
+                .Text = "0,00"
+
+            End If
+
+
+
+            If e.KeyChar = Convert.ToChar(27) Then
+
+                'LblreciboValor.Enabled = False
+                'LblReciboValorAponta.Visible = False
+                'LblreciboValor.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Regular)
+                'LblreciboValor.ForeColor = System.Drawing.Color.Black
+
+                'tbcFavorecido.Enabled = True
+                'GruFavorecido.Enabled = True
+                'GruCaracteristicas.Enabled = False
+                'btnFavOK.Focus()
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(13) Then
+
+
+
+                'lblExtenso.Text = Extenso(.Text)
+                'txtValor.Enabled = False
+                'LblReciboValorAponta.Visible = False
+                'LblreciboValor.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Regular)
+                'LblreciboValor.ForeColor = System.Drawing.Color.Black
+
+                'lblReciboData.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Bold)
+                'lblReciboData.ForeColor = System.Drawing.Color.Maroon
+                'LblReciboDataAponta.Visible = True
+                'mskReciboData.Enabled = True
+                'mskReciboData.Focus()
+
+                SendKeys.Send("{TAB}")
+
+            End If
+
+            If Asc(e.KeyChar) = 8 Then       ' BACKSPACE
+
+                e.KeyChar = ""
+
+
+                If .Text = "0,00" Then Exit Sub
+                If .Text.Substring(0, 3) = "0,0" And .Text.Length = 4 Then .Text = "0,00" : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Substring(0, 2) = "0," And .Text.Length = 4 Then .Text = "0,0" + .Text.Substring(.Text.Length - 2, 1) : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Length = 4 Then .Text = "0," + .Text.Substring(0, 1) + .Text.Substring(2, 1) : SendKeys.Send("{END}") : Exit Sub
+
+                .Text = .Text.Substring(0, .Text.Length - 1)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+                Exit Sub
+
+            End If
+
+            If e.KeyChar >= "0" And e.KeyChar <= "9" Then
+
+                Dim strComMascara As String = Trim(.Text)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+                Dim strRetorno As String = ""
+                Dim strPressionada As String = e.KeyChar
+
+                e.KeyChar = ""
+
+                If intSemMascara > 13 Then
+
+                    Exit Sub
+
+                End If
+
+                If intSemMascara < 4 And strSemMascara.Substring(0, 1) = "0" Then
+
+                    strSemMascara += strPressionada
+                    strSemMascara = strSemMascara.Substring(1)
+
+                Else
+
+                    strSemMascara += strPressionada
+                    intSemMascara += 1
+
+                End If
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+
+            Else
+
+                e.KeyChar = ""
+
+                .Focus()
+
+
+                ' SendKeys.Send("{END}")
+
+
+            End If
+
+        End With
+    End Sub
+
 End Class

@@ -492,9 +492,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'MskCargaHorariaSemanalCab
         '
         Me.MskCargaHorariaSemanalCab.AutoSize = True
-        Me.MskCargaHorariaSemanalCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.MskCargaHorariaSemanalCab.BackColor = System.Drawing.Color.IndianRed
         Me.MskCargaHorariaSemanalCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.MskCargaHorariaSemanalCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MskCargaHorariaSemanalCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.MskCargaHorariaSemanalCab.Location = New System.Drawing.Point(67, 31)
         Me.MskCargaHorariaSemanalCab.Name = "MskCargaHorariaSemanalCab"
         Me.MskCargaHorariaSemanalCab.Size = New System.Drawing.Size(138, 15)
@@ -513,9 +513,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'MskInicioDaJornadaCab
         '
         Me.MskInicioDaJornadaCab.AutoSize = True
-        Me.MskInicioDaJornadaCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.MskInicioDaJornadaCab.BackColor = System.Drawing.Color.IndianRed
         Me.MskInicioDaJornadaCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.MskInicioDaJornadaCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MskInicioDaJornadaCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.MskInicioDaJornadaCab.Location = New System.Drawing.Point(45, 83)
         Me.MskInicioDaJornadaCab.Name = "MskInicioDaJornadaCab"
         Me.MskInicioDaJornadaCab.Size = New System.Drawing.Size(160, 15)
@@ -534,9 +534,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'MskNumeroDescansosNaSemanaCab
         '
         Me.MskNumeroDescansosNaSemanaCab.AutoSize = True
-        Me.MskNumeroDescansosNaSemanaCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.MskNumeroDescansosNaSemanaCab.BackColor = System.Drawing.Color.IndianRed
         Me.MskNumeroDescansosNaSemanaCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.MskNumeroDescansosNaSemanaCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MskNumeroDescansosNaSemanaCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.MskNumeroDescansosNaSemanaCab.Location = New System.Drawing.Point(31, 57)
         Me.MskNumeroDescansosNaSemanaCab.Name = "MskNumeroDescansosNaSemanaCab"
         Me.MskNumeroDescansosNaSemanaCab.Size = New System.Drawing.Size(174, 15)
@@ -555,9 +555,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'MskDescansoNaJornadaCab
         '
         Me.MskDescansoNaJornadaCab.AutoSize = True
-        Me.MskDescansoNaJornadaCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.MskDescansoNaJornadaCab.BackColor = System.Drawing.Color.IndianRed
         Me.MskDescansoNaJornadaCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.MskDescansoNaJornadaCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MskDescansoNaJornadaCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.MskDescansoNaJornadaCab.Location = New System.Drawing.Point(17, 109)
         Me.MskDescansoNaJornadaCab.Name = "MskDescansoNaJornadaCab"
         Me.MskDescansoNaJornadaCab.Size = New System.Drawing.Size(188, 15)
@@ -1467,9 +1467,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.SystemColors.Menu
+        Me.Label10.BackColor = System.Drawing.Color.IndianRed
         Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label10.Location = New System.Drawing.Point(29, 37)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(104, 15)
@@ -1479,9 +1479,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.SystemColors.Menu
+        Me.Label15.BackColor = System.Drawing.Color.IndianRed
         Me.Label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label15.Location = New System.Drawing.Point(22, 63)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(111, 15)
@@ -1491,9 +1491,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.Menu
+        Me.Label13.BackColor = System.Drawing.Color.IndianRed
         Me.Label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label13.Location = New System.Drawing.Point(50, 87)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(83, 15)
@@ -1583,9 +1583,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'TxtSindicatoCodigoCab
         '
         Me.TxtSindicatoCodigoCab.AutoSize = True
-        Me.TxtSindicatoCodigoCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.TxtSindicatoCodigoCab.BackColor = System.Drawing.Color.IndianRed
         Me.TxtSindicatoCodigoCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.TxtSindicatoCodigoCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TxtSindicatoCodigoCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.TxtSindicatoCodigoCab.Location = New System.Drawing.Point(499, 104)
         Me.TxtSindicatoCodigoCab.Name = "TxtSindicatoCodigoCab"
         Me.TxtSindicatoCodigoCab.Size = New System.Drawing.Size(89, 15)
@@ -1649,9 +1649,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'TxtSindicatoRazaoSocialCab
         '
         Me.TxtSindicatoRazaoSocialCab.AutoSize = True
-        Me.TxtSindicatoRazaoSocialCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.TxtSindicatoRazaoSocialCab.BackColor = System.Drawing.Color.IndianRed
         Me.TxtSindicatoRazaoSocialCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.TxtSindicatoRazaoSocialCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TxtSindicatoRazaoSocialCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.TxtSindicatoRazaoSocialCab.Location = New System.Drawing.Point(499, 146)
         Me.TxtSindicatoRazaoSocialCab.Name = "TxtSindicatoRazaoSocialCab"
         Me.TxtSindicatoRazaoSocialCab.Size = New System.Drawing.Size(119, 15)
@@ -1661,9 +1661,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'TxtLivroCab
         '
         Me.TxtLivroCab.AutoSize = True
-        Me.TxtLivroCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.TxtLivroCab.BackColor = System.Drawing.Color.IndianRed
         Me.TxtLivroCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.TxtLivroCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TxtLivroCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.TxtLivroCab.Location = New System.Drawing.Point(650, 62)
         Me.TxtLivroCab.Name = "TxtLivroCab"
         Me.TxtLivroCab.Size = New System.Drawing.Size(32, 15)
@@ -1673,9 +1673,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'MskCNPJsindicatoCab
         '
         Me.MskCNPJsindicatoCab.AutoSize = True
-        Me.MskCNPJsindicatoCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.MskCNPJsindicatoCab.BackColor = System.Drawing.Color.IndianRed
         Me.MskCNPJsindicatoCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.MskCNPJsindicatoCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MskCNPJsindicatoCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.MskCNPJsindicatoCab.Location = New System.Drawing.Point(649, 104)
         Me.MskCNPJsindicatoCab.Name = "MskCNPJsindicatoCab"
         Me.MskCNPJsindicatoCab.Size = New System.Drawing.Size(83, 15)
@@ -1685,9 +1685,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'TxtRegistroNumeroCab
         '
         Me.TxtRegistroNumeroCab.AutoSize = True
-        Me.TxtRegistroNumeroCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.TxtRegistroNumeroCab.BackColor = System.Drawing.Color.IndianRed
         Me.TxtRegistroNumeroCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.TxtRegistroNumeroCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TxtRegistroNumeroCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.TxtRegistroNumeroCab.Location = New System.Drawing.Point(824, 62)
         Me.TxtRegistroNumeroCab.Name = "TxtRegistroNumeroCab"
         Me.TxtRegistroNumeroCab.Size = New System.Drawing.Size(66, 15)
@@ -1697,9 +1697,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'TxtPaginaCab
         '
         Me.TxtPaginaCab.AutoSize = True
-        Me.TxtPaginaCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.TxtPaginaCab.BackColor = System.Drawing.Color.IndianRed
         Me.TxtPaginaCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.TxtPaginaCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TxtPaginaCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.TxtPaginaCab.Location = New System.Drawing.Point(726, 62)
         Me.TxtPaginaCab.Name = "TxtPaginaCab"
         Me.TxtPaginaCab.Size = New System.Drawing.Size(42, 15)
@@ -1720,9 +1720,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'CmbRegistroFisicoCab
         '
         Me.CmbRegistroFisicoCab.AutoSize = True
-        Me.CmbRegistroFisicoCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.CmbRegistroFisicoCab.BackColor = System.Drawing.Color.IndianRed
         Me.CmbRegistroFisicoCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CmbRegistroFisicoCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.CmbRegistroFisicoCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.CmbRegistroFisicoCab.Location = New System.Drawing.Point(499, 62)
         Me.CmbRegistroFisicoCab.Name = "CmbRegistroFisicoCab"
         Me.CmbRegistroFisicoCab.Size = New System.Drawing.Size(78, 15)
@@ -1732,9 +1732,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'MskReferenciaCab
         '
         Me.MskReferenciaCab.AutoSize = True
-        Me.MskReferenciaCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.MskReferenciaCab.BackColor = System.Drawing.Color.IndianRed
         Me.MskReferenciaCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.MskReferenciaCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.MskReferenciaCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.MskReferenciaCab.Location = New System.Drawing.Point(499, 20)
         Me.MskReferenciaCab.Name = "MskReferenciaCab"
         Me.MskReferenciaCab.Size = New System.Drawing.Size(61, 15)
@@ -1754,9 +1754,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'CmbSalarioCab
         '
         Me.CmbSalarioCab.AutoSize = True
-        Me.CmbSalarioCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.CmbSalarioCab.BackColor = System.Drawing.Color.IndianRed
         Me.CmbSalarioCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CmbSalarioCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.CmbSalarioCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.CmbSalarioCab.Location = New System.Drawing.Point(650, 20)
         Me.CmbSalarioCab.Name = "CmbSalarioCab"
         Me.CmbSalarioCab.Size = New System.Drawing.Size(41, 15)
@@ -1776,9 +1776,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'CmbCBOcab
         '
         Me.CmbCBOcab.AutoSize = True
-        Me.CmbCBOcab.BackColor = System.Drawing.SystemColors.Menu
+        Me.CmbCBOcab.BackColor = System.Drawing.Color.IndianRed
         Me.CmbCBOcab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CmbCBOcab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.CmbCBOcab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.CmbCBOcab.Location = New System.Drawing.Point(9, 146)
         Me.CmbCBOcab.Name = "CmbCBOcab"
         Me.CmbCBOcab.Size = New System.Drawing.Size(40, 15)
@@ -1798,9 +1798,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'CmbCargoCab
         '
         Me.CmbCargoCab.AutoSize = True
-        Me.CmbCargoCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.CmbCargoCab.BackColor = System.Drawing.Color.IndianRed
         Me.CmbCargoCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CmbCargoCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.CmbCargoCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.CmbCargoCab.Location = New System.Drawing.Point(182, 104)
         Me.CmbCargoCab.Name = "CmbCargoCab"
         Me.CmbCargoCab.Size = New System.Drawing.Size(37, 15)
@@ -1820,9 +1820,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'CmbSetorCab
         '
         Me.CmbSetorCab.AutoSize = True
-        Me.CmbSetorCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.CmbSetorCab.BackColor = System.Drawing.Color.IndianRed
         Me.CmbSetorCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CmbSetorCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.CmbSetorCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.CmbSetorCab.Location = New System.Drawing.Point(9, 104)
         Me.CmbSetorCab.Name = "CmbSetorCab"
         Me.CmbSetorCab.Size = New System.Drawing.Size(34, 15)
@@ -1842,9 +1842,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'CmbCategoriaCab
         '
         Me.CmbCategoriaCab.AutoSize = True
-        Me.CmbCategoriaCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.CmbCategoriaCab.BackColor = System.Drawing.Color.IndianRed
         Me.CmbCategoriaCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CmbCategoriaCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.CmbCategoriaCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.CmbCategoriaCab.Location = New System.Drawing.Point(7, 62)
         Me.CmbCategoriaCab.Name = "CmbCategoriaCab"
         Me.CmbCategoriaCab.Size = New System.Drawing.Size(129, 15)
@@ -1863,9 +1863,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         'CmbTipoCab
         '
         Me.CmbTipoCab.AutoSize = True
-        Me.CmbTipoCab.BackColor = System.Drawing.SystemColors.Menu
+        Me.CmbTipoCab.BackColor = System.Drawing.Color.IndianRed
         Me.CmbTipoCab.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.CmbTipoCab.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.CmbTipoCab.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.CmbTipoCab.Location = New System.Drawing.Point(7, 20)
         Me.CmbTipoCab.Name = "CmbTipoCab"
         Me.CmbTipoCab.Size = New System.Drawing.Size(90, 15)

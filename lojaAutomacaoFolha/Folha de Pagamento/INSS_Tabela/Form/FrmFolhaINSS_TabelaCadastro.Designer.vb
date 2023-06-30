@@ -23,6 +23,9 @@ Partial Class FrmFolhaINSS_TabelaCadastro
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.BtnLiberaEdicao = New System.Windows.Forms.Button()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.LblFaixa = New System.Windows.Forms.Label()
         Me.TxtImpostoFaixaAcumulado = New System.Windows.Forms.TextBox()
@@ -41,12 +44,9 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.BtnLiberaEdicao = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -60,6 +60,33 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         Me.GroupBox1.Size = New System.Drawing.Size(985, 343)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.BtnLiberaEdicao)
+        Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox3.Location = New System.Drawing.Point(63, 23)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(512, 45)
+        Me.GroupBox3.TabIndex = 2
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Data Inicio de Produção"
+        '
+        'BtnLiberaEdicao
+        '
+        Me.BtnLiberaEdicao.Location = New System.Drawing.Point(330, 16)
+        Me.BtnLiberaEdicao.Name = "BtnLiberaEdicao"
+        Me.BtnLiberaEdicao.Size = New System.Drawing.Size(163, 23)
+        Me.BtnLiberaEdicao.TabIndex = 2
+        Me.BtnLiberaEdicao.Text = "Libera Edição"
+        Me.BtnLiberaEdicao.UseVisualStyleBackColor = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(6, 19)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(271, 20)
+        Me.DateTimePicker1.TabIndex = 1
         '
         'GroupBox2
         '
@@ -93,30 +120,42 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         'TxtImpostoFaixaAcumulado
         '
         Me.TxtImpostoFaixaAcumulado.Location = New System.Drawing.Point(170, 148)
+        Me.TxtImpostoFaixaAcumulado.MaxLength = 10
         Me.TxtImpostoFaixaAcumulado.Name = "TxtImpostoFaixaAcumulado"
         Me.TxtImpostoFaixaAcumulado.Size = New System.Drawing.Size(100, 20)
-        Me.TxtImpostoFaixaAcumulado.TabIndex = 11
+        Me.TxtImpostoFaixaAcumulado.TabIndex = 6
+        Me.TxtImpostoFaixaAcumulado.Text = "0,00"
+        Me.TxtImpostoFaixaAcumulado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TxtImpostoFaixa
         '
         Me.TxtImpostoFaixa.Location = New System.Drawing.Point(170, 122)
+        Me.TxtImpostoFaixa.MaxLength = 10
         Me.TxtImpostoFaixa.Name = "TxtImpostoFaixa"
         Me.TxtImpostoFaixa.Size = New System.Drawing.Size(100, 20)
-        Me.TxtImpostoFaixa.TabIndex = 10
+        Me.TxtImpostoFaixa.TabIndex = 5
+        Me.TxtImpostoFaixa.Text = "0,00"
+        Me.TxtImpostoFaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TxtPorcentagemFaixa
         '
         Me.TxtPorcentagemFaixa.Location = New System.Drawing.Point(170, 91)
+        Me.TxtPorcentagemFaixa.MaxLength = 4
         Me.TxtPorcentagemFaixa.Name = "TxtPorcentagemFaixa"
         Me.TxtPorcentagemFaixa.Size = New System.Drawing.Size(100, 20)
-        Me.TxtPorcentagemFaixa.TabIndex = 9
+        Me.TxtPorcentagemFaixa.TabIndex = 4
+        Me.TxtPorcentagemFaixa.Text = "0,00"
+        Me.TxtPorcentagemFaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TxtValorFaixa
         '
         Me.TxtValorFaixa.Location = New System.Drawing.Point(170, 65)
+        Me.TxtValorFaixa.MaxLength = 10
         Me.TxtValorFaixa.Name = "TxtValorFaixa"
         Me.TxtValorFaixa.Size = New System.Drawing.Size(100, 20)
-        Me.TxtValorFaixa.TabIndex = 8
+        Me.TxtValorFaixa.TabIndex = 3
+        Me.TxtValorFaixa.Text = "0,00"
+        Me.TxtValorFaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BtnIncrementa
         '
@@ -214,33 +253,6 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.ColumnHeader5.Width = 160
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.BtnLiberaEdicao)
-        Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox3.Location = New System.Drawing.Point(63, 23)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(512, 45)
-        Me.GroupBox3.TabIndex = 2
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Data Inicio de Produção"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(6, 19)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(271, 20)
-        Me.DateTimePicker1.TabIndex = 1
-        '
-        'BtnLiberaEdicao
-        '
-        Me.BtnLiberaEdicao.Location = New System.Drawing.Point(330, 16)
-        Me.BtnLiberaEdicao.Name = "BtnLiberaEdicao"
-        Me.BtnLiberaEdicao.Size = New System.Drawing.Size(163, 23)
-        Me.BtnLiberaEdicao.TabIndex = 2
-        Me.BtnLiberaEdicao.Text = "Libera Edição"
-        Me.BtnLiberaEdicao.UseVisualStyleBackColor = True
-        '
         'FrmFolhaINSS_TabelaCadastro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -252,9 +264,9 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         Me.Name = "FrmFolhaINSS_TabelaCadastro"
         Me.Text = "FOLHA - Tabela INSS Cadastramento"
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

@@ -447,6 +447,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Log\Class\ClassLogAcao.vb" />
+    <Compile Include="Modulo\Edição\ModuloEdicao.vb" />
     <Compile Include="Modulo\FolhaCalulos\ModuloCalculoFolha.vb" />
     <Compile Include="Recibos\fmrReciboPesquisa.Designer.vb">
       <DependentUpon>fmrReciboPesquisa.vb</DependentUpon>

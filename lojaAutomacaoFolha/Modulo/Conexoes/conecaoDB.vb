@@ -6,8 +6,7 @@ Module conecaoDB
     Public Function OpenDB() As Boolean
         Try
             If Conn.State = ConnectionState.Closed Then
-                StrConn = "server=191.96.31.192;user=externo;password=96159237;port=3306;database=" & Reg.DB & ";sslmode=none"
-                'StrConn = "server=localhost;user=root;password=223584;port=3306;database=" & Reg.DB & ";sslmode=none"
+                StrConn = "server=191.96.31.192;user=user;password=UhWHnMb398UX;port=3306;database=" & Reg.DB & ";sslmode=none"
                 Conn.ConnectionString = StrConn
                 Conn.Open()
                 Result = True

@@ -255,6 +255,7 @@ Public Class frmFolha_salariosCadastro
 
             End If
         End With
+
     End Sub
 
     Private Sub TxtSB_GotFocus(sender As Object, e As EventArgs) Handles TxtSB.GotFocus
