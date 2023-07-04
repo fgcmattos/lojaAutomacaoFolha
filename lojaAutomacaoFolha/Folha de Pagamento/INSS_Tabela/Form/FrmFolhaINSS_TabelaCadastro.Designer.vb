@@ -23,6 +23,7 @@ Partial Class FrmFolhaINSS_TabelaCadastro
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnGravaTabela = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.BtnLiberaEdicao = New System.Windows.Forms.Button()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -51,15 +52,25 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.BtnGravaTabela)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.ListView1)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.Desktop
         Me.GroupBox1.Location = New System.Drawing.Point(2, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(985, 343)
+        Me.GroupBox1.Size = New System.Drawing.Size(985, 375)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'BtnGravaTabela
+        '
+        Me.BtnGravaTabela.Location = New System.Drawing.Point(410, 329)
+        Me.BtnGravaTabela.Name = "BtnGravaTabela"
+        Me.BtnGravaTabela.Size = New System.Drawing.Size(540, 25)
+        Me.BtnGravaTabela.TabIndex = 8
+        Me.BtnGravaTabela.Text = "Gravar Tabela"
+        Me.BtnGravaTabela.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -119,6 +130,7 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         '
         'TxtImpostoFaixaAcumulado
         '
+        Me.TxtImpostoFaixaAcumulado.Enabled = False
         Me.TxtImpostoFaixaAcumulado.Location = New System.Drawing.Point(170, 148)
         Me.TxtImpostoFaixaAcumulado.MaxLength = 10
         Me.TxtImpostoFaixaAcumulado.Name = "TxtImpostoFaixaAcumulado"
@@ -129,6 +141,7 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         '
         'TxtImpostoFaixa
         '
+        Me.TxtImpostoFaixa.Enabled = False
         Me.TxtImpostoFaixa.Location = New System.Drawing.Point(170, 122)
         Me.TxtImpostoFaixa.MaxLength = 10
         Me.TxtImpostoFaixa.Name = "TxtImpostoFaixa"
@@ -139,6 +152,7 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         '
         'TxtPorcentagemFaixa
         '
+        Me.TxtPorcentagemFaixa.Enabled = False
         Me.TxtPorcentagemFaixa.Location = New System.Drawing.Point(170, 91)
         Me.TxtPorcentagemFaixa.MaxLength = 4
         Me.TxtPorcentagemFaixa.Name = "TxtPorcentagemFaixa"
@@ -149,6 +163,7 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         '
         'TxtValorFaixa
         '
+        Me.TxtValorFaixa.Enabled = False
         Me.TxtValorFaixa.Location = New System.Drawing.Point(170, 65)
         Me.TxtValorFaixa.MaxLength = 10
         Me.TxtValorFaixa.Name = "TxtValorFaixa"
@@ -159,6 +174,7 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         '
         'BtnIncrementa
         '
+        Me.BtnIncrementa.Enabled = False
         Me.BtnIncrementa.Location = New System.Drawing.Point(21, 202)
         Me.BtnIncrementa.Name = "BtnIncrementa"
         Me.BtnIncrementa.Size = New System.Drawing.Size(104, 25)
@@ -257,7 +273,7 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(999, 382)
+        Me.ClientSize = New System.Drawing.Size(999, 461)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -293,4 +309,5 @@ Partial Class FrmFolhaINSS_TabelaCadastro
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents BtnLiberaEdicao As Button
+    Friend WithEvents BtnGravaTabela As Button
 End Class

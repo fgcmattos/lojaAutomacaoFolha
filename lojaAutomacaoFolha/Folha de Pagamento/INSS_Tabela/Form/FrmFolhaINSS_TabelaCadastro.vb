@@ -3,10 +3,10 @@
 
     Private Function LimpaEdicao()
 
-        TxtValorFaixa.Text = ""
-        TxtPorcentagemFaixa.Text = ""
-        TxtImpostoFaixa.Text = ""
-        TxtImpostoFaixaAcumulado.Text = ""
+        TxtValorFaixa.Text = "0,00"
+        TxtPorcentagemFaixa.Text = "0,00"
+        TxtImpostoFaixa.Text = "0,00"
+        TxtImpostoFaixaAcumulado.Text = "0,00"
 
     End Function
 
@@ -27,6 +27,13 @@
             TxtImpostoFaixaAcumulado.Text = itemSubItems(4)
 
         End If
+
+        TxtValorFaixa.Enabled = True
+
+        TxtValorFaixa.Focus()
+
+        EditarCampoTextBox(TxtValorFaixa)
+
 
     End Sub
 
@@ -61,6 +68,16 @@
         End With
 
         LimpaEdicao()
+
+        BtnIncrementa.Enabled = False
+
+        TxtValorFaixa.Enabled = True
+
+        TxtValorFaixa.Focus()
+
+        EditarCampoTextBox(TxtValorFaixa)
+
+
 
         LblFaixa.Text = intIndex + 1
 
@@ -124,9 +141,13 @@
 
         End If
 
+        TxtValorFaixa.Enabled = True
+
         TxtValorFaixa.Focus()
 
         EditarCampoTextBox(TxtValorFaixa)
+
+        GroupBox3.Enabled = False
 
     End Sub
 
@@ -145,12 +166,20 @@
 
                 .Text = "0,00"
 
+                Exit Sub
+
             End If
 
+            If .MaxLength < .Text.Length And Asc(e.KeyChar) <> 8 And Asc(e.KeyChar) <> 13 Then
 
+                e.KeyChar = ""
+
+                Exit Sub
+
+            End If
 
             If e.KeyChar = Convert.ToChar(27) Then
-
+                LimpaEdicao()
                 'LblreciboValor.Enabled = False
                 'LblReciboValorAponta.Visible = False
                 'LblreciboValor.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Regular)
@@ -179,9 +208,35 @@
                 'mskReciboData.Enabled = True
                 'mskReciboData.Focus()
 
-                SendKeys.Send("{TAB}")
+
+
+
+
+                If TxtValorFaixa.Text <= 0.00 Then
+
+                    With oi
+
+                        .Msg = "A Faixa deve ter um valor maior que 0.00"
+                        .Style = vbExclamation
+                        MsgBox(.Msg, .Style, .Title)
+                        Exit Sub
+
+                    End With
+
+                End If
+
+                TxtValorFaixa.Enabled = False
+
+                TxtPorcentagemFaixa.Enabled = True
+
+                TxtPorcentagemFaixa.Focus()
 
                 EditarCampoTextBox(TxtPorcentagemFaixa)
+
+
+
+                'SendKeys.Send("{TAB}")
+
 
                 Exit Sub
 
@@ -255,10 +310,6 @@
             End If
 
         End With
-    End Sub
-
-    Private Sub TxtPorcentagemFaixa_TextChanged(sender As Object, e As EventArgs) Handles TxtPorcentagemFaixa.TextChanged
-
     End Sub
 
     Private Sub TxtPorcentagemFaixa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPorcentagemFaixa.KeyPress
@@ -274,9 +325,27 @@
 
             End If
 
+            'MsgBox(.MaxLength & "     " & .Text)
+
+            If .MaxLength < .Text.Length And Asc(e.KeyChar) <> 8 And Asc(e.KeyChar) <> 13 Then
+
+                e.KeyChar = ""
+
+                Exit Sub
+
+            End If
+
 
 
             If e.KeyChar = Convert.ToChar(27) Then
+
+                TxtPorcentagemFaixa.Enabled = False
+
+                TxtValorFaixa.Enabled = True
+
+                TxtValorFaixa.Focus()
+
+                EditarCampoTextBox(TxtValorFaixa)
 
                 'LblreciboValor.Enabled = False
                 'LblReciboValorAponta.Visible = False
@@ -306,7 +375,15 @@
                 'mskReciboData.Enabled = True
                 'mskReciboData.Focus()
 
-                SendKeys.Send("{TAB}")
+
+                TxtPorcentagemFaixa.Enabled = False
+
+                TxtImpostoFaixa.Enabled = True
+
+                TxtImpostoFaixa.Focus()
+
+                EditarCampoTextBox(TxtImpostoFaixa)
+
 
             End If
 
@@ -377,4 +454,368 @@
         End With
     End Sub
 
+    Private Sub TxtImpostoFaixa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtImpostoFaixa.KeyPress
+
+        With TxtImpostoFaixa
+
+
+            Dim strMascarado As String = ""
+
+
+            If .Text = "" Then
+
+                .Text = "0,00"
+
+            End If
+
+            'MsgBox(.MaxLength & "     " & .Text)
+
+            If .MaxLength < .Text.Length And Asc(e.KeyChar) <> 8 And Asc(e.KeyChar) <> 13 Then
+
+                e.KeyChar = ""
+
+                Exit Sub
+
+            End If
+
+
+
+            If e.KeyChar = Convert.ToChar(27) Then
+
+                TxtImpostoFaixa.Enabled = False
+
+                TxtPorcentagemFaixa.Enabled = True
+
+                TxtPorcentagemFaixa.Focus()
+
+                EditarCampoTextBox(TxtPorcentagemFaixa)
+
+                'LblreciboValor.Enabled = False
+                'LblReciboValorAponta.Visible = False
+                'LblreciboValor.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Regular)
+                'LblreciboValor.ForeColor = System.Drawing.Color.Black
+
+                'tbcFavorecido.Enabled = True
+                'GruFavorecido.Enabled = True
+                'GruCaracteristicas.Enabled = False
+                'btnFavOK.Focus()
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(13) Then
+
+
+
+                'lblExtenso.Text = Extenso(.Text)
+                'txtValor.Enabled = False
+                'LblReciboValorAponta.Visible = False
+                'LblreciboValor.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Regular)
+                'LblreciboValor.ForeColor = System.Drawing.Color.Black
+
+                'lblReciboData.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Bold)
+                'lblReciboData.ForeColor = System.Drawing.Color.Maroon
+                'LblReciboDataAponta.Visible = True
+                'mskReciboData.Enabled = True
+                'mskReciboData.Focus()
+
+
+                TxtImpostoFaixa.Enabled = False
+
+                TxtImpostoFaixaAcumulado.Enabled = True
+
+                TxtImpostoFaixaAcumulado.Focus()
+
+                EditarCampoTextBox(TxtImpostoFaixaAcumulado)
+
+
+            End If
+
+            If Asc(e.KeyChar) = 8 Then       ' BACKSPACE
+
+                e.KeyChar = ""
+
+
+                If .Text = "0,00" Then Exit Sub
+                If .Text.Substring(0, 3) = "0,0" And .Text.Length = 4 Then .Text = "0,00" : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Substring(0, 2) = "0," And .Text.Length = 4 Then .Text = "0,0" + .Text.Substring(.Text.Length - 2, 1) : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Length = 4 Then .Text = "0," + .Text.Substring(0, 1) + .Text.Substring(2, 1) : SendKeys.Send("{END}") : Exit Sub
+
+                .Text = .Text.Substring(0, .Text.Length - 1)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+                Exit Sub
+
+            End If
+
+            If e.KeyChar >= "0" And e.KeyChar <= "9" Then
+
+                Dim strComMascara As String = Trim(.Text)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+                Dim strRetorno As String = ""
+                Dim strPressionada As String = e.KeyChar
+
+                e.KeyChar = ""
+
+                If intSemMascara > 13 Then
+
+                    Exit Sub
+
+                End If
+
+                If intSemMascara < 4 And strSemMascara.Substring(0, 1) = "0" Then
+
+                    strSemMascara += strPressionada
+                    strSemMascara = strSemMascara.Substring(1)
+
+                Else
+
+                    strSemMascara += strPressionada
+                    intSemMascara += 1
+
+                End If
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+
+            Else
+
+                e.KeyChar = ""
+
+                .Focus()
+
+
+                ' SendKeys.Send("{END}")
+
+
+            End If
+        End With
+
+
+        '''TxtImpostoFaixa.Enabled = False
+
+        '''TxtImpostoFaixaAcumulado.Enabled = True
+
+        '''SendKeys.Send("{TAB}")
+
+        '''EditarCampoTextBox(TxtImpostoFaixaAcumulado)
+
+    End Sub
+
+    Private Sub TxtImpostoFaixaAcumulado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtImpostoFaixaAcumulado.KeyPress
+
+        Dim strMascarado As String = ""
+
+        With TxtImpostoFaixaAcumulado
+
+            If .Text = "" Then
+
+                .Text = "0,00"
+
+            End If
+
+
+            If .MaxLength < .Text.Length And Asc(e.KeyChar) <> 8 And Asc(e.KeyChar) <> 13 Then
+
+                e.KeyChar = ""
+
+                Exit Sub
+
+            End If
+
+
+
+            If e.KeyChar = Convert.ToChar(27) Then
+
+                TxtImpostoFaixaAcumulado.Enabled = False
+
+                TxtImpostoFaixa.Enabled = True
+
+                TxtImpostoFaixa.Focus()
+
+                EditarCampoTextBox(TxtImpostoFaixa)
+
+                'LblreciboValor.Enabled = False
+                'LblReciboValorAponta.Visible = False
+                'LblreciboValor.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Regular)
+                'LblreciboValor.ForeColor = System.Drawing.Color.Black
+
+                'tbcFavorecido.Enabled = True
+                'GruFavorecido.Enabled = True
+                'GruCaracteristicas.Enabled = False
+                'btnFavOK.Focus()
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(13) Then
+
+
+
+                'lblExtenso.Text = Extenso(.Text)
+                'txtValor.Enabled = False
+                'LblReciboValorAponta.Visible = False
+                'LblreciboValor.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Regular)
+                'LblreciboValor.ForeColor = System.Drawing.Color.Black
+
+                'lblReciboData.Font = New Font(FontFamily.GenericSansSerif, 8.25F, FontStyle.Bold)
+                'lblReciboData.ForeColor = System.Drawing.Color.Maroon
+                'LblReciboDataAponta.Visible = True
+                'mskReciboData.Enabled = True
+                'mskReciboData.Focus()
+
+
+                TxtImpostoFaixaAcumulado.Enabled = False
+
+                BtnIncrementa.Enabled = True
+
+                BtnIncrementa.Focus()
+
+                'EditarCampoTextBox(TxtImpostoFaixaAcumulado)
+
+
+            End If
+
+            If Asc(e.KeyChar) = 8 Then       ' BACKSPACE
+
+                e.KeyChar = ""
+
+
+                If .Text = "0,00" Then Exit Sub
+                If .Text.Substring(0, 3) = "0,0" And .Text.Length = 4 Then .Text = "0,00" : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Substring(0, 2) = "0," And .Text.Length = 4 Then .Text = "0,0" + .Text.Substring(.Text.Length - 2, 1) : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Length = 4 Then .Text = "0," + .Text.Substring(0, 1) + .Text.Substring(2, 1) : SendKeys.Send("{END}") : Exit Sub
+
+                .Text = .Text.Substring(0, .Text.Length - 1)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+                Exit Sub
+
+            End If
+
+            If e.KeyChar >= "0" And e.KeyChar <= "9" Then
+
+                Dim strComMascara As String = Trim(.Text)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+                Dim strRetorno As String = ""
+                Dim strPressionada As String = e.KeyChar
+
+                e.KeyChar = ""
+
+                If intSemMascara > 13 Then
+
+                    Exit Sub
+
+                End If
+
+                If intSemMascara < 4 And strSemMascara.Substring(0, 1) = "0" Then
+
+                    strSemMascara += strPressionada
+                    strSemMascara = strSemMascara.Substring(1)
+
+                Else
+
+                    strSemMascara += strPressionada
+                    intSemMascara += 1
+
+                End If
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+
+            Else
+
+                e.KeyChar = ""
+
+                .Focus()
+
+
+                ' SendKeys.Send("{END}")
+
+
+            End If
+
+        End With
+
+    End Sub
+
+    Private Sub BtnIncrementa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles BtnIncrementa.KeyPress
+
+        If e.KeyChar = Convert.ToChar(27) Then
+
+            BtnIncrementa.Enabled = False
+
+            TxtImpostoFaixaAcumulado.Enabled = True
+
+            TxtImpostoFaixaAcumulado.Focus()
+
+            EditarCampoTextBox(TxtImpostoFaixaAcumulado)
+
+        End If
+
+    End Sub
+
+
+
+    Private Sub BtnGravaTabela_Click(sender As Object, e As EventArgs) Handles BtnGravaTabela.Click
+        TabeleINSSchecagem()
+    End Sub
+
+    Private Function TabeleINSSchecagem() As Boolean
+
+        Dim BooRetorno As Boolean = True
+
+        For Each item As ListViewItem In ListView1.Items
+
+        Next
+
+        Return (BooRetorno)
+
+    End Function
+    ' Manipulador do evento ColumnClick
+    Private Sub ListView1_ColumnClick(sender As Object, e As ColumnClickEventArgs) Handles ListView1.ColumnClick
+
+        ' Verificar se a coluna já está classificada
+        If ListView1.Sorting = SortOrder.Ascending OrElse ListView1.Sorting = SortOrder.None Then
+            ' Definir a ordem de classificação para Descending
+            ListView1.Sorting = SortOrder.Descending
+        Else
+            ' Definir a ordem de classificação para Ascending
+            ListView1.Sorting = SortOrder.Ascending
+        End If
+
+        ' Definir a coluna pela qual a ordenação será realizada
+        ListView1.ListViewItemSorter = New ListViewComparer(e.Column)
+
+        ' Executar a ordenação
+        ListView1.Sort()
+
+    End Sub
+
+    ' Classe para comparar os itens do ListView
+    Private Class ListViewComparer
+        Implements IComparer
+
+        Private columnIndex As Integer
+
+        Public Sub New(index As Integer)
+            columnIndex = index
+        End Sub
+
+        Public Function Compare(x As Object, y As Object) As Integer Implements IComparer.Compare
+            Dim itemX As ListViewItem = DirectCast(x, ListViewItem)
+            Dim itemY As ListViewItem = DirectCast(y, ListViewItem)
+
+            ' Comparar os valores da coluna especificada
+            Return Decimal.Compare(itemX.SubItems(columnIndex).Text, itemY.SubItems(columnIndex).Text)
+        End Function
+    End Class
 End Class
