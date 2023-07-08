@@ -703,4 +703,11 @@ Public Class Form1
         FrmFolhaINSS_TabelaCadastro.Show()
 
     End Sub
+
+    Private Sub ConferênciaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ConferênciaToolStripMenuItem1.Click
+
+        FrmFolhaINSS_TabelaCadastroTeste.Show()
+
+    End Sub
+
 End Class

@@ -10,4 +10,5 @@
     Public Property Usario_hora_log_saida As Timer
     Public Property Usario_senha As String
 
+
 End Class

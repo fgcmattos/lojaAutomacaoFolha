@@ -56,6 +56,14 @@ Partial Class Form1
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AjustePorGrupoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AjusteGeralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IRTabelaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CadastroToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConferênciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LiberaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.INSSTabelaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CadastroToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConferênciaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LiberaçãoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TurnoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BancosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -257,14 +265,6 @@ Partial Class Form1
         Me.form1DataHora = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.IRTabelaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CadastroToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConferênciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LiberaçãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.INSSTabelaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CadastroToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConferênciaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LiberaçãoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -291,21 +291,21 @@ Partial Class Form1
         '
         Me.LogarToolStripMenuItem.AccessibleName = "1.1"
         Me.LogarToolStripMenuItem.Name = "LogarToolStripMenuItem"
-        Me.LogarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LogarToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.LogarToolStripMenuItem.Text = "Identificação"
         '
         'LogoutToolStripMenuItem
         '
         Me.LogoutToolStripMenuItem.Enabled = False
         Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'DesligarToolStripMenuItem
         '
         Me.DesligarToolStripMenuItem.AccessibleName = "1.2"
         Me.DesligarToolStripMenuItem.Name = "DesligarToolStripMenuItem"
-        Me.DesligarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DesligarToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.DesligarToolStripMenuItem.Text = "Encerrar"
         '
         'CadastroToolStripMenuItem
@@ -489,6 +489,56 @@ Partial Class Form1
         Me.AjusteGeralToolStripMenuItem.Name = "AjusteGeralToolStripMenuItem"
         Me.AjusteGeralToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.AjusteGeralToolStripMenuItem.Text = "Ajuste Geral"
+        '
+        'IRTabelaToolStripMenuItem
+        '
+        Me.IRTabelaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroToolStripMenuItem9, Me.ConferênciaToolStripMenuItem, Me.LiberaçãoToolStripMenuItem})
+        Me.IRTabelaToolStripMenuItem.Name = "IRTabelaToolStripMenuItem"
+        Me.IRTabelaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.IRTabelaToolStripMenuItem.Text = "IR Tabela"
+        '
+        'CadastroToolStripMenuItem9
+        '
+        Me.CadastroToolStripMenuItem9.Name = "CadastroToolStripMenuItem9"
+        Me.CadastroToolStripMenuItem9.Size = New System.Drawing.Size(180, 22)
+        Me.CadastroToolStripMenuItem9.Text = "Cadastro"
+        '
+        'ConferênciaToolStripMenuItem
+        '
+        Me.ConferênciaToolStripMenuItem.Name = "ConferênciaToolStripMenuItem"
+        Me.ConferênciaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ConferênciaToolStripMenuItem.Text = "Conferência"
+        '
+        'LiberaçãoToolStripMenuItem
+        '
+        Me.LiberaçãoToolStripMenuItem.Name = "LiberaçãoToolStripMenuItem"
+        Me.LiberaçãoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.LiberaçãoToolStripMenuItem.Text = "Liberação"
+        '
+        'INSSTabelaToolStripMenuItem1
+        '
+        Me.INSSTabelaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroToolStripMenuItem10, Me.ConferênciaToolStripMenuItem1, Me.LiberaçãoToolStripMenuItem1})
+        Me.INSSTabelaToolStripMenuItem1.Name = "INSSTabelaToolStripMenuItem1"
+        Me.INSSTabelaToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.INSSTabelaToolStripMenuItem1.Text = "INSS Tabela"
+        '
+        'CadastroToolStripMenuItem10
+        '
+        Me.CadastroToolStripMenuItem10.Name = "CadastroToolStripMenuItem10"
+        Me.CadastroToolStripMenuItem10.Size = New System.Drawing.Size(180, 22)
+        Me.CadastroToolStripMenuItem10.Text = "Cadastro"
+        '
+        'ConferênciaToolStripMenuItem1
+        '
+        Me.ConferênciaToolStripMenuItem1.Name = "ConferênciaToolStripMenuItem1"
+        Me.ConferênciaToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ConferênciaToolStripMenuItem1.Text = "Conferência"
+        '
+        'LiberaçãoToolStripMenuItem1
+        '
+        Me.LiberaçãoToolStripMenuItem1.Name = "LiberaçãoToolStripMenuItem1"
+        Me.LiberaçãoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LiberaçãoToolStripMenuItem1.Text = "Liberação"
         '
         'TurnoToolStripMenuItem
         '
@@ -1804,56 +1854,6 @@ Partial Class Form1
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageList1.Images.SetKeyName(0, "login1.jpeg")
         Me.ImageList1.Images.SetKeyName(1, "loginAutorizado.jpeg")
-        '
-        'IRTabelaToolStripMenuItem
-        '
-        Me.IRTabelaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroToolStripMenuItem9, Me.ConferênciaToolStripMenuItem, Me.LiberaçãoToolStripMenuItem})
-        Me.IRTabelaToolStripMenuItem.Name = "IRTabelaToolStripMenuItem"
-        Me.IRTabelaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.IRTabelaToolStripMenuItem.Text = "IR Tabela"
-        '
-        'CadastroToolStripMenuItem9
-        '
-        Me.CadastroToolStripMenuItem9.Name = "CadastroToolStripMenuItem9"
-        Me.CadastroToolStripMenuItem9.Size = New System.Drawing.Size(180, 22)
-        Me.CadastroToolStripMenuItem9.Text = "Cadastro"
-        '
-        'ConferênciaToolStripMenuItem
-        '
-        Me.ConferênciaToolStripMenuItem.Name = "ConferênciaToolStripMenuItem"
-        Me.ConferênciaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ConferênciaToolStripMenuItem.Text = "Conferência"
-        '
-        'LiberaçãoToolStripMenuItem
-        '
-        Me.LiberaçãoToolStripMenuItem.Name = "LiberaçãoToolStripMenuItem"
-        Me.LiberaçãoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LiberaçãoToolStripMenuItem.Text = "Liberação"
-        '
-        'INSSTabelaToolStripMenuItem1
-        '
-        Me.INSSTabelaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroToolStripMenuItem10, Me.ConferênciaToolStripMenuItem1, Me.LiberaçãoToolStripMenuItem1})
-        Me.INSSTabelaToolStripMenuItem1.Name = "INSSTabelaToolStripMenuItem1"
-        Me.INSSTabelaToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.INSSTabelaToolStripMenuItem1.Text = "INSS Tabela"
-        '
-        'CadastroToolStripMenuItem10
-        '
-        Me.CadastroToolStripMenuItem10.Name = "CadastroToolStripMenuItem10"
-        Me.CadastroToolStripMenuItem10.Size = New System.Drawing.Size(180, 22)
-        Me.CadastroToolStripMenuItem10.Text = "Cadastro"
-        '
-        'ConferênciaToolStripMenuItem1
-        '
-        Me.ConferênciaToolStripMenuItem1.Name = "ConferênciaToolStripMenuItem1"
-        Me.ConferênciaToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.ConferênciaToolStripMenuItem1.Text = "Conferência"
-        '
-        'LiberaçãoToolStripMenuItem1
-        '
-        Me.LiberaçãoToolStripMenuItem1.Name = "LiberaçãoToolStripMenuItem1"
-        Me.LiberaçãoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.LiberaçãoToolStripMenuItem1.Text = "Liberação"
         '
         'Form1
         '

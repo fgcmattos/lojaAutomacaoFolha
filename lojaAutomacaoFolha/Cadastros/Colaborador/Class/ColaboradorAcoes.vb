@@ -122,7 +122,7 @@ Public Class ColaboradorAcoes
                 FcolShow.col_02_paiFone.Text = .PaiFone
                 FcolShow.col_03Sexo.Text = .Sexo
                 FcolShow.col_03EstadoCivil.Text = .EstadoCivil
-                FcolShow.col_03EstadoCivilDescricao.Text = gravaSQLretorno("Select ecDescricao from estadoCivil where ecCodigo = " & .EstadoCivil)
+                FcolShow.col_03EstadoCivilDescricao.Text = gravaSQLretorno("Select ecDescricao from estadocivil where ecCodigo = " & .EstadoCivil)
                 FcolShow.col_03UniaoEstavel.Checked = IIf(.UniaoEstavel = "1", True, False)
                 FcolShow.col_03Esposa.Text = .EsposoNome
                 FcolShow.col_03EsposaCPF.Text = CPFcolocaMascara(.EsposoCPF)

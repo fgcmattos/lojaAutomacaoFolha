@@ -96,7 +96,7 @@ Partial Class FColPesq
         Me.ListBox1.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.ListBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(14, 182)
+        Me.ListBox1.Location = New System.Drawing.Point(12, 182)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(741, 199)
         Me.ListBox1.TabIndex = 1

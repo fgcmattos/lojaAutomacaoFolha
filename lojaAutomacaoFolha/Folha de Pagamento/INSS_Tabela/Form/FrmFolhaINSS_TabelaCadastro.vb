@@ -115,31 +115,31 @@
 
         Dim data_tabela_em_vigor As String = gravaSQLretorno("select INSS_dataInicio from inss where INSS_ativa")
 
-        If data_tabela_em_vigor >= StrData1 Then
+        ''''If data_tabela_em_vigor >= StrData1 Then
 
-            With oi
-                .Msg = "Início data de válidade da tabela em vigor é " & data_tabela_em_vigor & Chr(13)
-                .Msg += "Portanto a data de validade da nova Tabela tem que ser superior a essa data"
-                .Style = vbExclamation
-                MsgBox(.Msg, .Style, .Title)
-                Exit Sub
-            End With
+        ''''    With oi
+        ''''        .Msg = "Início data de válidade da tabela em vigor é " & data_tabela_em_vigor & Chr(13)
+        ''''        .Msg += "Portanto a data de validade da nova Tabela tem que ser superior a essa data"
+        ''''        .Style = vbExclamation
+        ''''        MsgBox(.Msg, .Style, .Title)
+        ''''        Exit Sub
+        ''''    End With
 
-        End If
+        ''''End If
 
 
         Dim data_do_servidor As String = gravaSQLretorno("select concat(Year(Now()), lpad(Month(Now()), 2,'0'))")
 
-        If data_do_servidor > StrData1 Then
-            With oi
-                .Msg = "Início da data de válidade da nova tabela" & Chr(13)
-                .Msg += "não pode ser no passado, Ano e Mês atual " & data_do_servidor
-                .Style = vbExclamation
-                MsgBox(.Msg, .Style, .Title)
-                Exit Sub
-            End With
+        '''If data_do_servidor > StrData1 Then
+        '''    With oi
+        '''        .Msg = "Início da data de válidade da nova tabela" & Chr(13)
+        '''        .Msg += "não pode ser no passado, Ano e Mês atual " & data_do_servidor
+        '''        .Style = vbExclamation
+        '''        MsgBox(.Msg, .Style, .Title)
+        '''        Exit Sub
+        '''    End With
 
-        End If
+        '''End If
 
         TxtValorFaixa.Enabled = True
 
@@ -767,6 +767,78 @@
 
     Private Sub BtnGravaTabela_Click(sender As Object, e As EventArgs) Handles BtnGravaTabela.Click
         TabeleINSSchecagem()
+
+        Dim Query As String
+
+        Query = "Insert into inss "
+        Query += "("
+
+        Query += "INSSfaixa1"
+        Query += ",INSSfaixa1Porcentagem"
+        Query += ",INSSfaixa1Valor"
+        Query += ",INSSfaixa1Acumulado"
+
+        Query += ",INSSfaixa2"
+        Query += ",INSSfaixa2Porcentagem"
+        Query += ",INSSfaixa2Valor"
+        Query += ",INSSfaixa2Acumulado"
+
+        Query += ",INSSfaixa3"
+        Query += ",INSSfaixa3Porcentagem"
+        Query += ",INSSfaixa3Valor"
+        Query += ",INSSfaixa3Acumulado"
+
+        Query += ",INSSfaixa4"
+        Query += ",INSSfaixa4Porcentagem"
+        Query += ",INSSfaixa4Valor"
+        Query += ",INSSfaixa4Acumulado"
+
+        Query += ",INSS_dataInicio"
+        Query += ",INSS_dataFim"
+        Query += ",INSSnumeroDeFaixas"
+        Query += ",INSS_ativa"
+        Query += ",INSSref"
+
+        Query += ")"
+        Query += " values "
+        Query += "("
+        Dim StrVirgula As String = ""
+        For Each item As ListViewItem In ListView1.Items
+
+            'Query += StrVirgula & item.Text                                               ' faixa
+            Query += StrVirgula & Replace(Replace(item.SubItems(1).Text, ".", ""), ",", ".")     ' valor da faixa
+            Query += "," & Replace(Replace(item.SubItems(2).Text, ".", ""), ",", ".")     ' % da faixa
+            Query += "," & Replace(Replace(item.SubItems(3).Text, ".", ""), ",", ".")     ' imposto da faixa
+            Query += "," & Replace(Replace(item.SubItems(4).Text, ".", ""), ",", ".")     ' imposto acumulado da faixa
+            StrVirgula = ","
+
+        Next
+
+
+        Query += ",'" & DateTimePicker1.Value.ToString("yyyyMMdd") & "'"
+        Query += ",''"
+        Query += "," & ListView1.Items.Count()
+        Query += ",false"
+        Query += ",'" & DateTimePicker1.Value.ToString("yyyyMM") & "'"
+        Query += ")"
+
+        If gravaSQL(Query) Then
+            With oi
+                .Msg = "Gravação realizada com sucesso!"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+            End With
+            Me.Close()
+
+        Else
+            With oi
+                .Msg = "Gravação não realizada !" & Chr(13) & "Reveja os valores da tabela e tente de novo"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+            End With
+
+        End If
+
     End Sub
 
     Private Function TabeleINSSchecagem() As Boolean

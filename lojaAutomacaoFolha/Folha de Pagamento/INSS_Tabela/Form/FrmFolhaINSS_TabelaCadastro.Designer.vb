@@ -229,7 +229,7 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         '
         'ListView1
         '
-        Me.ListView1.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.ListView1.BackColor = System.Drawing.SystemColors.Highlight
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
         Me.ListView1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.ListView1.GridLines = True

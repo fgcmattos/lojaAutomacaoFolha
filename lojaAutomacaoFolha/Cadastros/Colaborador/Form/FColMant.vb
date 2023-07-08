@@ -46,7 +46,7 @@ Public Class FColMant
 
         If OpenDB() Then
 
-            Dim Query As String = "select * from UF order by UFsigla "
+            Dim Query As String = "select * from uf order by UFsigla "
             Dim CMD As New MySqlCommand(Query, Conn)
             Dim DTReader As MySqlDataReader
             cmbEndUF.Items.Clear()
@@ -308,7 +308,7 @@ Public Class FColMant
     Function CarregaGrauInstrucao()
         If OpenDB() Then
 
-            Dim Query As String = "select concat(lpad(id,2,'0'),' - ',descricao) as descricao from instrucaoGrau "
+            Dim Query As String = "select concat(lpad(id,2,'0'),' - ',descricao) as descricao from instrucaograu "
             Dim CMD As New MySqlCommand(Query, Conn)
             Dim DTReader As MySqlDataReader
             cmbInstrucao.Items.Clear()
