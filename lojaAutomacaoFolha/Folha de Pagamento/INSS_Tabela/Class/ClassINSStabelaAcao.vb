@@ -142,7 +142,7 @@ Public Class ClassINSStabelaAcao
         Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor + INSS_calc.INSSfaixa3valor + INSS_calc.INSSfaixa4valor as faixa4ValorAcumulado"
         Query += " From "
         Query += " (select "
-        Query += "	idINSS"
+        Query += "idINSS"
         Query += ",INSSREF"
         Query += ",INSSfaixa1"
         Query += ",INSSfaixa1Porcentagem"
@@ -194,10 +194,10 @@ Public Class ClassINSStabelaAcao
                         .Class_INSSfaixa2Valor = DTReader.GetValue(15),
                         .Class_INSSfaixa3Valor = DTReader.GetValue(16),
                         .Class_INSSfaixa4Valor = DTReader.GetValue(17),
-                        .Class_INSSfaixa1Acumulado = Math.Round(DTReader.GetValue(18)),
-                        .Class_INSSfaixa2Acumulado = Math.Round(DTReader.GetValue(19)),
-                        .Class_INSSfaixa3Acumulado = Math.Round(DTReader.GetValue(20)),
-                        .Class_INSSfaixa4Acumulado = Math.Round(DTReader.GetValue(21))
+                        .Class_INSSfaixa1Acumulado = DTReader.GetValue(18),
+                        .Class_INSSfaixa2Acumulado = DTReader.GetValue(19),
+                        .Class_INSSfaixa3Acumulado = DTReader.GetValue(20),
+                        .Class_INSSfaixa4Acumulado = DTReader.GetValue(21)
                         }
                         )
                 End While
