@@ -17,7 +17,7 @@ Public Class FrmFolhaEfetivacao
         While True
             Dim base As Decimal = InputBox("Entre com a Base INSS")
 
-            MsgBox(INSScalculo(base))
+            MsgBox(INSScalculo(base, " INSSativa"))
 
         End While
         '================================================================================================
@@ -176,7 +176,7 @@ Public Class FrmFolhaEfetivacao
                 ' Calculo do INSS
                 '-----------------------------------
                 .SBinss = baseINSS                                      '(.SB + .V1valor + .V2valor + .V3valor)
-                .INSSvalor = INSScalculo(.SBinss)
+                .INSSvalor = INSScalculo(.SBinss, " INSSativa ")
                 addVR(hol, "0002", "INSS", "R$", False, False, True, VR, "D", 0, .INSSvalor, 2, 0)
                 '------------------------------------
 

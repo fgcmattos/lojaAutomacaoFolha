@@ -2,7 +2,12 @@
 
 Public Class ClassINSStabelaAcao
 
-    Public Shared Function GetINSS_DB() As List(Of ClassINSStabela)
+    Public Shared Function GetINSS_DB(IsTabela As String) As List(Of ClassINSStabela)
+
+        'IsTabela pode ser
+        ' INSS_ativa       - Quando o cálculo é realizado em produção
+        ' REF              - YYYYAA - Quando utilizado para teste de uma nova tabela
+        '                    INSSREF = '202201'
 
         Dim Query As String
 
@@ -33,9 +38,11 @@ Public Class ClassINSStabelaAcao
         Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor as faixa2ValorAcumulado"
         Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor + INSS_calc.INSSfaixa3valor as faixa3ValorAcumulado"
         Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor + INSS_calc.INSSfaixa3valor + INSS_calc.INSSfaixa4valor as faixa4ValorAcumulado"
+        Query += ",INSSdataCriacao"
+        Query += ",INSSresponsavelDigitacao"
         Query += " From "
         Query += " (select "
-        Query += "	idINSS"
+        Query += "idINSS"
         Query += ",INSSREF"
         Query += ",INSSfaixa1"
         Query += ",INSSfaixa1Porcentagem"
@@ -49,13 +56,15 @@ Public Class ClassINSStabelaAcao
         Query += ",ifnull(INSS_dataFim,'') as INSS_dataFim"
         Query += ",INSSnumeroDeFaixas"
         Query += ",INSS_ativa"
-        Query += ",if(INSSfaixa1valor<>0,INSSfaixa1valor,INSSfaixa1*(INSSfaixa1Porcentagem/100)) as INSSfaixa1Valor"
-        Query += ",if(INSSfaixa2valor<>0,INSSfaixa2valor,(INSSfaixa2-INSSfaixa1)*(INSSfaixa2Porcentagem/100)) as INSSfaixa2Valor"
-        Query += ",if(INSSfaixa3valor<>0,INSSfaixa3valor,(INSSfaixa3-INSSfaixa2)*(INSSfaixa3Porcentagem/100)) as INSSfaixa3Valor"
-        Query += ",if(INSSfaixa4valor<>0,INSSfaixa4valor,(INSSfaixa4-INSSfaixa3)*(INSSfaixa4Porcentagem/100)) as INSSfaixa4Valor"
+        Query += ",if(INSSfaixa1valor<>0,INSSfaixa1valor,round(INSSfaixa1*(INSSfaixa1Porcentagem/100),2)) as INSSfaixa1Valor"
+        Query += ",if(INSSfaixa2valor<>0,INSSfaixa2valor,round((INSSfaixa2-INSSfaixa1)*(INSSfaixa2Porcentagem/100),2)) as INSSfaixa2Valor"
+        Query += ",if(INSSfaixa3valor<>0,INSSfaixa3valor,round((INSSfaixa3-INSSfaixa2)*(INSSfaixa3Porcentagem/100),2)) as INSSfaixa3Valor"
+        Query += ",if(INSSfaixa4valor<>0,INSSfaixa4valor,round((INSSfaixa4-INSSfaixa3)*(INSSfaixa4Porcentagem/100),2)) as INSSfaixa4Valor"
+        Query += ",INSSdataCriacao"
+        Query += ",INSSresponsavelDigitacao"
         Query += "	from inss "
-        Query += "	where INSS_ativa"
-        Query += "  )"
+        Query += "where " & IsTabela                                         'INSS_ativa"
+        Query += ")"
         Query += "  as INSS_calc"
 
         Dim CMD As New MySqlCommand(Query, Conn)
@@ -90,7 +99,9 @@ Public Class ClassINSStabelaAcao
                         .Class_INSSfaixa1Acumulado = DTReader.GetValue(18),
                         .Class_INSSfaixa2Acumulado = DTReader.GetValue(19),
                         .Class_INSSfaixa3Acumulado = DTReader.GetValue(20),
-                        .Class_INSSfaixa4Acumulado = DTReader.GetValue(21)
+                        .Class_INSSfaixa4Acumulado = DTReader.GetValue(21),
+                        .Class_INSSdataCriacao = DTReader.GetValue(22),
+                        .Class_INSSresponsavelDigitacao = DTReader.GetValue(23)
                         }
                         )
                 End While

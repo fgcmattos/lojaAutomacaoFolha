@@ -1,6 +1,10 @@
 ﻿Module ModuloCalculoFolha
 
-    Public Function INSScalculo(Base_INSS As Decimal) As Decimal
+    Public Function INSScalculo(Base_INSS As Decimal, IsTipoCalculo As String) As Decimal
+
+        '/ Tipode Calculo 
+        '/    1 - INSSativo cáculo de produção tabela ativa
+        '/    2 - INSSREF = 'yyyyMM' Tabela em conferência ou teste de cáculo
 
         '/      Rotina para o Caculo do INSS
         '/ Ojectos necessário
@@ -18,7 +22,7 @@
 
         INSScalculo = 0.00
 
-        Dim INSStabela As List(Of ClassINSStabela) = ClassINSStabelaAcao.GetINSS_DB()
+        Dim INSStabela As List(Of ClassINSStabela) = ClassINSStabelaAcao.GetINSS_DB(IsTipoCalculo)
 
         Select Case INSStabela(0).Class_INSSnumeroDeFaixas
             Case 4

@@ -22,5 +22,16 @@
     Public Property Class_INSSfaixa2Acumulado As Decimal
     Public Property Class_INSSfaixa3Acumulado As Decimal
     Public Property Class_INSSfaixa4Acumulado As Decimal
+    Public Property Class_INSSdataCriacao As DateTime
+    Public Property Class_INSSresponsavelDigitacao As Integer
+    Public Property Class_INSSdataConferencia As DateTime
+    Public Property Class_INSSresponsavelConferencia As Integer
+    Public Property Class_INSSdataPublicação As DateTime
+    Public Property Class_INSSresponsavelPublicacao As Integer
+
+    Public Property Class_INSSresponsavelDigitacaoNome As String
+    Public Property Class_INSSresponsavelConferenciaNome As String
+    Public Property Class_INSSresponsavelPublicacaoNome As String
+
 
 End Class
