@@ -31,9 +31,15 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MskReferencia = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LblReferencia = New System.Windows.Forms.Label()
+        Me.LblCriadoPor = New System.Windows.Forms.Label()
+        Me.LblDataCriacao = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CheckBoxOK3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBoxOK2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBoxOK1 = New System.Windows.Forms.CheckBox()
         Me.LblTotal_b5 = New System.Windows.Forms.Label()
         Me.LblTotal_b4 = New System.Windows.Forms.Label()
         Me.LblTotal_b3 = New System.Windows.Forms.Label()
@@ -61,9 +67,6 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.LblFaixa1_b1 = New System.Windows.Forms.Label()
         Me.CheckBoxOK5 = New System.Windows.Forms.CheckBox()
         Me.CheckBoxOK4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBoxOK3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBoxOK2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBoxOK1 = New System.Windows.Forms.CheckBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.LblBase5 = New System.Windows.Forms.Label()
         Me.LblBase4 = New System.Windows.Forms.Label()
@@ -75,11 +78,16 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.LblDataCriacao = New System.Windows.Forms.Label()
-        Me.LblCriadoPor = New System.Windows.Forms.Label()
-        Me.LblReferencia = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.CheckBoxOK6 = New System.Windows.Forms.CheckBox()
+        Me.LblINSSValorSimulado = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TxtValorBase = New System.Windows.Forms.TextBox()
+        Me.BtnConferencia = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'ListView1
@@ -127,11 +135,12 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(31, 330)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(113, 13)
+        Me.Label1.Size = New System.Drawing.Size(87, 16)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Referência AAAA/MM"
+        Me.Label1.Text = "Referência:"
         '
         'MskReferencia
         '
@@ -157,26 +166,61 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "I N S S  - T A B E L A   E M  C O N F E R Ê N C I A"
         '
+        'LblReferencia
+        '
+        Me.LblReferencia.AutoSize = True
+        Me.LblReferencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblReferencia.Location = New System.Drawing.Point(116, 330)
+        Me.LblReferencia.Name = "LblReferencia"
+        Me.LblReferencia.Size = New System.Drawing.Size(82, 16)
+        Me.LblReferencia.TabIndex = 7
+        Me.LblReferencia.Text = "Criada em:"
+        '
+        'LblCriadoPor
+        '
+        Me.LblCriadoPor.AutoSize = True
+        Me.LblCriadoPor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblCriadoPor.Location = New System.Drawing.Point(116, 308)
+        Me.LblCriadoPor.Name = "LblCriadoPor"
+        Me.LblCriadoPor.Size = New System.Drawing.Size(82, 16)
+        Me.LblCriadoPor.TabIndex = 6
+        Me.LblCriadoPor.Text = "Criada em:"
+        '
+        'LblDataCriacao
+        '
+        Me.LblDataCriacao.AutoSize = True
+        Me.LblDataCriacao.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblDataCriacao.Location = New System.Drawing.Point(116, 285)
+        Me.LblDataCriacao.Name = "LblDataCriacao"
+        Me.LblDataCriacao.Size = New System.Drawing.Size(82, 16)
+        Me.LblDataCriacao.TabIndex = 5
+        Me.LblDataCriacao.Text = "Criada em:"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(31, 308)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(26, 13)
+        Me.Label3.Size = New System.Drawing.Size(35, 16)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Por:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(31, 285)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(57, 13)
+        Me.Label2.Size = New System.Drawing.Size(82, 16)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Criada em:"
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.CheckBoxOK3)
+        Me.GroupBox2.Controls.Add(Me.CheckBoxOK2)
+        Me.GroupBox2.Controls.Add(Me.CheckBoxOK1)
         Me.GroupBox2.Controls.Add(Me.LblTotal_b5)
         Me.GroupBox2.Controls.Add(Me.LblTotal_b4)
         Me.GroupBox2.Controls.Add(Me.LblTotal_b3)
@@ -204,9 +248,6 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.GroupBox2.Controls.Add(Me.LblFaixa1_b1)
         Me.GroupBox2.Controls.Add(Me.CheckBoxOK5)
         Me.GroupBox2.Controls.Add(Me.CheckBoxOK4)
-        Me.GroupBox2.Controls.Add(Me.CheckBoxOK3)
-        Me.GroupBox2.Controls.Add(Me.CheckBoxOK2)
-        Me.GroupBox2.Controls.Add(Me.CheckBoxOK1)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.LblBase5)
         Me.GroupBox2.Controls.Add(Me.LblBase4)
@@ -226,6 +267,42 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "TESTES AUTOMATIZADOS"
+        '
+        'CheckBoxOK3
+        '
+        Me.CheckBoxOK3.AutoSize = True
+        Me.CheckBoxOK3.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.CheckBoxOK3.ForeColor = System.Drawing.Color.Red
+        Me.CheckBoxOK3.Location = New System.Drawing.Point(454, 139)
+        Me.CheckBoxOK3.Name = "CheckBoxOK3"
+        Me.CheckBoxOK3.Size = New System.Drawing.Size(70, 17)
+        Me.CheckBoxOK3.TabIndex = 3
+        Me.CheckBoxOK3.Text = "Não OK"
+        Me.CheckBoxOK3.UseVisualStyleBackColor = False
+        '
+        'CheckBoxOK2
+        '
+        Me.CheckBoxOK2.AutoSize = True
+        Me.CheckBoxOK2.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.CheckBoxOK2.ForeColor = System.Drawing.Color.Red
+        Me.CheckBoxOK2.Location = New System.Drawing.Point(454, 101)
+        Me.CheckBoxOK2.Name = "CheckBoxOK2"
+        Me.CheckBoxOK2.Size = New System.Drawing.Size(70, 17)
+        Me.CheckBoxOK2.TabIndex = 2
+        Me.CheckBoxOK2.Text = "Não OK"
+        Me.CheckBoxOK2.UseVisualStyleBackColor = False
+        '
+        'CheckBoxOK1
+        '
+        Me.CheckBoxOK1.AutoSize = True
+        Me.CheckBoxOK1.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.CheckBoxOK1.ForeColor = System.Drawing.Color.Red
+        Me.CheckBoxOK1.Location = New System.Drawing.Point(454, 65)
+        Me.CheckBoxOK1.Name = "CheckBoxOK1"
+        Me.CheckBoxOK1.Size = New System.Drawing.Size(70, 17)
+        Me.CheckBoxOK1.TabIndex = 1
+        Me.CheckBoxOK1.Text = "Não OK"
+        Me.CheckBoxOK1.UseVisualStyleBackColor = False
         '
         'LblTotal_b5
         '
@@ -465,52 +542,26 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         'CheckBoxOK5
         '
         Me.CheckBoxOK5.AutoSize = True
-        Me.CheckBoxOK5.Location = New System.Drawing.Point(462, 221)
+        Me.CheckBoxOK5.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.CheckBoxOK5.ForeColor = System.Drawing.Color.Red
+        Me.CheckBoxOK5.Location = New System.Drawing.Point(454, 221)
         Me.CheckBoxOK5.Name = "CheckBoxOK5"
-        Me.CheckBoxOK5.Size = New System.Drawing.Size(43, 17)
-        Me.CheckBoxOK5.TabIndex = 19
-        Me.CheckBoxOK5.Text = "OK"
-        Me.CheckBoxOK5.UseVisualStyleBackColor = True
+        Me.CheckBoxOK5.Size = New System.Drawing.Size(70, 17)
+        Me.CheckBoxOK5.TabIndex = 5
+        Me.CheckBoxOK5.Text = "Não OK"
+        Me.CheckBoxOK5.UseVisualStyleBackColor = False
         '
         'CheckBoxOK4
         '
         Me.CheckBoxOK4.AutoSize = True
-        Me.CheckBoxOK4.Location = New System.Drawing.Point(462, 177)
+        Me.CheckBoxOK4.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.CheckBoxOK4.ForeColor = System.Drawing.Color.Red
+        Me.CheckBoxOK4.Location = New System.Drawing.Point(454, 177)
         Me.CheckBoxOK4.Name = "CheckBoxOK4"
-        Me.CheckBoxOK4.Size = New System.Drawing.Size(43, 17)
-        Me.CheckBoxOK4.TabIndex = 18
-        Me.CheckBoxOK4.Text = "OK"
-        Me.CheckBoxOK4.UseVisualStyleBackColor = True
-        '
-        'CheckBoxOK3
-        '
-        Me.CheckBoxOK3.AutoSize = True
-        Me.CheckBoxOK3.Location = New System.Drawing.Point(462, 142)
-        Me.CheckBoxOK3.Name = "CheckBoxOK3"
-        Me.CheckBoxOK3.Size = New System.Drawing.Size(43, 17)
-        Me.CheckBoxOK3.TabIndex = 17
-        Me.CheckBoxOK3.Text = "OK"
-        Me.CheckBoxOK3.UseVisualStyleBackColor = True
-        '
-        'CheckBoxOK2
-        '
-        Me.CheckBoxOK2.AutoSize = True
-        Me.CheckBoxOK2.Location = New System.Drawing.Point(462, 103)
-        Me.CheckBoxOK2.Name = "CheckBoxOK2"
-        Me.CheckBoxOK2.Size = New System.Drawing.Size(43, 17)
-        Me.CheckBoxOK2.TabIndex = 16
-        Me.CheckBoxOK2.Text = "OK"
-        Me.CheckBoxOK2.UseVisualStyleBackColor = True
-        '
-        'CheckBoxOK1
-        '
-        Me.CheckBoxOK1.AutoSize = True
-        Me.CheckBoxOK1.Location = New System.Drawing.Point(462, 65)
-        Me.CheckBoxOK1.Name = "CheckBoxOK1"
-        Me.CheckBoxOK1.Size = New System.Drawing.Size(43, 17)
-        Me.CheckBoxOK1.TabIndex = 15
-        Me.CheckBoxOK1.Text = "OK"
-        Me.CheckBoxOK1.UseVisualStyleBackColor = True
+        Me.CheckBoxOK4.Size = New System.Drawing.Size(70, 17)
+        Me.CheckBoxOK4.TabIndex = 4
+        Me.CheckBoxOK4.Text = "Não OK"
+        Me.CheckBoxOK4.UseVisualStyleBackColor = False
         '
         'Label14
         '
@@ -623,38 +674,93 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "B A S E"
         '
-        'LblDataCriacao
+        'GroupBox3
         '
-        Me.LblDataCriacao.AutoSize = True
-        Me.LblDataCriacao.Location = New System.Drawing.Point(204, 285)
-        Me.LblDataCriacao.Name = "LblDataCriacao"
-        Me.LblDataCriacao.Size = New System.Drawing.Size(57, 13)
-        Me.LblDataCriacao.TabIndex = 5
-        Me.LblDataCriacao.Text = "Criada em:"
+        Me.GroupBox3.Controls.Add(Me.CheckBoxOK6)
+        Me.GroupBox3.Controls.Add(Me.LblINSSValorSimulado)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.TxtValorBase)
+        Me.GroupBox3.Location = New System.Drawing.Point(608, 333)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(524, 84)
+        Me.GroupBox3.TabIndex = 6
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "TESTE SIMULADOS PELO ANALISTA"
         '
-        'LblCriadoPor
+        'CheckBoxOK6
         '
-        Me.LblCriadoPor.AutoSize = True
-        Me.LblCriadoPor.Location = New System.Drawing.Point(204, 308)
-        Me.LblCriadoPor.Name = "LblCriadoPor"
-        Me.LblCriadoPor.Size = New System.Drawing.Size(57, 13)
-        Me.LblCriadoPor.TabIndex = 6
-        Me.LblCriadoPor.Text = "Criada em:"
+        Me.CheckBoxOK6.AutoSize = True
+        Me.CheckBoxOK6.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.CheckBoxOK6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBoxOK6.ForeColor = System.Drawing.Color.Red
+        Me.CheckBoxOK6.Location = New System.Drawing.Point(449, 37)
+        Me.CheckBoxOK6.Name = "CheckBoxOK6"
+        Me.CheckBoxOK6.Size = New System.Drawing.Size(70, 17)
+        Me.CheckBoxOK6.TabIndex = 7
+        Me.CheckBoxOK6.Text = "Não OK"
+        Me.CheckBoxOK6.UseVisualStyleBackColor = False
         '
-        'LblReferencia
+        'LblINSSValorSimulado
         '
-        Me.LblReferencia.AutoSize = True
-        Me.LblReferencia.Location = New System.Drawing.Point(204, 330)
-        Me.LblReferencia.Name = "LblReferencia"
-        Me.LblReferencia.Size = New System.Drawing.Size(57, 13)
-        Me.LblReferencia.TabIndex = 7
-        Me.LblReferencia.Text = "Criada em:"
+        Me.LblINSSValorSimulado.AutoSize = True
+        Me.LblINSSValorSimulado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblINSSValorSimulado.ForeColor = System.Drawing.Color.Red
+        Me.LblINSSValorSimulado.Location = New System.Drawing.Point(359, 34)
+        Me.LblINSSValorSimulado.Name = "LblINSSValorSimulado"
+        Me.LblINSSValorSimulado.Size = New System.Drawing.Size(44, 16)
+        Me.LblINSSValorSimulado.TabIndex = 45
+        Me.LblINSSValorSimulado.Text = "Valor"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(246, 37)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(96, 13)
+        Me.Label10.TabIndex = 15
+        Me.Label10.Text = "INSS Calculado"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(10, 39)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(51, 13)
+        Me.Label9.TabIndex = 14
+        Me.Label9.Text = "B A S E"
+        '
+        'TxtValorBase
+        '
+        Me.TxtValorBase.Location = New System.Drawing.Point(89, 33)
+        Me.TxtValorBase.MaxLength = 10
+        Me.TxtValorBase.Name = "TxtValorBase"
+        Me.TxtValorBase.Size = New System.Drawing.Size(100, 20)
+        Me.TxtValorBase.TabIndex = 6
+        Me.TxtValorBase.Text = "0,00"
+        Me.TxtValorBase.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'BtnConferencia
+        '
+        Me.BtnConferencia.Location = New System.Drawing.Point(12, 437)
+        Me.BtnConferencia.Name = "BtnConferencia"
+        Me.BtnConferencia.Size = New System.Drawing.Size(585, 35)
+        Me.BtnConferencia.TabIndex = 7
+        Me.BtnConferencia.Text = "TABELA CONFERIDA"
+        Me.BtnConferencia.UseVisualStyleBackColor = True
         '
         'FrmFolhaINSS_TabelaCadastroTeste
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(1142, 565)
+        Me.Controls.Add(Me.BtnConferencia)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MskReferencia)
@@ -667,6 +773,8 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -694,12 +802,9 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents CheckBoxOK1 As CheckBox
     Friend WithEvents Label14 As Label
     Friend WithEvents CheckBoxOK5 As CheckBox
     Friend WithEvents CheckBoxOK4 As CheckBox
-    Friend WithEvents CheckBoxOK3 As CheckBox
-    Friend WithEvents CheckBoxOK2 As CheckBox
     Friend WithEvents LblFaixa2_b5 As Label
     Friend WithEvents LblFaixa2_b4 As Label
     Friend WithEvents LblFaixa2_b3 As Label
@@ -728,4 +833,14 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
     Friend WithEvents LblReferencia As Label
     Friend WithEvents LblCriadoPor As Label
     Friend WithEvents LblDataCriacao As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents TxtValorBase As TextBox
+    Friend WithEvents CheckBoxOK6 As CheckBox
+    Friend WithEvents LblINSSValorSimulado As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents CheckBoxOK1 As CheckBox
+    Friend WithEvents CheckBoxOK3 As CheckBox
+    Friend WithEvents CheckBoxOK2 As CheckBox
+    Friend WithEvents BtnConferencia As Button
 End Class

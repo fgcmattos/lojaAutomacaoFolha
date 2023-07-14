@@ -1,6 +1,14 @@
 ﻿Imports Microsoft.Reporting
+Imports System.Drawing
+Imports System.Web.UI.WebControls
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Button
+Imports System.Linq
 
 Public Class FrmFolhaINSS_TabelaCadastroTeste
+
+    Dim oi As New MsgShow
+
 
 
     Private Sub MskReferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MskReferencia.KeyPress
@@ -71,8 +79,9 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
 
     End Function
 
-
     Private Sub FrmFolhaINSS_TabelaCadastroTeste_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        oi.Title = Me.Text
 
         Dim Query As String
 
@@ -84,12 +93,12 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
 
             Me.Close()
 
+            Exit Sub
+
         End If
 
 
-        'INSS_mostra_tabela(gravaSQLretorno("Select concat(substring(INSSREF,1,4) ,'/',substring(INSSREF,5)) from `00000000000000`.inss where INSStabelaStatus=0"))
-
-        INSS_mostra_tabela(gravaSQLretorno("Select INSSREF from `00000000000000`.inss where INSStabelaStatus=0"))
+        INSS_mostra_tabela(gravaSQLretorno("Select INSSREF from inss where INSStabelaStatus=0"))
 
 
 
@@ -255,7 +264,295 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
         If IsMatBaseInss(5, 0) >= INSStabela(0).Class_INSSfaixa2 Then LblFaixa2_b5.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Valor, 2), 8, True)
         If IsMatBaseInss(5, 0) >= INSStabela(0).Class_INSSfaixa3 Then LblFaixa3_b5.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3Valor, 2), 8, True)
         If IsMatBaseInss(5, 0) >= INSStabela(0).Class_INSSfaixa4 Then LblFaixa4_b5.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4Valor, 2), 8, True)
-
-
     End Function
+
+    Private Sub CheckBoxOK1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK1.CheckedChanged
+
+        With CheckBoxOK1
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+
+    End Sub
+
+
+
+    Private Sub CheckBoxOK2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK2.CheckedChanged
+        With CheckBoxOK2
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+
+    End Sub
+
+    Private Sub CheckBoxOK3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK3.CheckedChanged
+        With CheckBoxOK3
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+    End Sub
+
+    Private Sub CheckBoxOK4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK4.CheckedChanged
+        With CheckBoxOK4
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+    End Sub
+
+    Private Sub CheckBoxOK5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK5.CheckedChanged
+        With CheckBoxOK5
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+    End Sub
+
+    Private Sub CheckBoxOK6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK6.CheckedChanged
+        With CheckBoxOK6
+            If .Checked Then
+
+                If TxtValorBase.Text = "0,00" Then
+
+                    With oi
+
+                        .Msg = "Teste Simulado inválido !"
+                        .Style = vbCritical
+                        MsgBox(.Msg, .Style, .Title)
+                        CheckBoxOK6.Checked = False
+                        LblINSSValorSimulado.Text = "0,00"
+                        TxtValorBase.Focus()
+                        Exit Sub
+
+                    End With
+
+                End If
+                TxtValorBase.Enabled = False
+                LblINSSValorSimulado.Text = INSScalculo(TxtValorBase.Text, "INSStabelaStatus=0")
+                .Text = "OK"
+                .ForeColor = Color.Green
+                TxtValorBase.Enabled = False
+
+            Else
+
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+                TxtValorBase.Enabled = True
+                TxtValorBase.Enabled = True
+
+            End If
+        End With
+    End Sub
+
+
+    Private Sub TxtValorBase_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtValorBase.KeyPress
+        With TxtValorBase
+
+            Dim strMascarado As String = ""
+
+
+            If .Text = "" Then
+
+                .Text = "0,00"
+
+                Exit Sub
+
+            End If
+
+            If .MaxLength < .Text.Length And Asc(e.KeyChar) <> 8 And Asc(e.KeyChar) <> 13 Then
+
+                e.KeyChar = ""
+
+                Exit Sub
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(27) Then
+
+                TxtValorBase.Text = "0,00"
+
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(13) Then
+
+
+                If .Text <= 0.00 Then
+
+                    MsgBox("A Base deve ter um valor maior que 0.00", vbExclamation, Me.Text)
+                    Exit Sub
+
+
+                End If
+
+                LblINSSValorSimulado.Text = INSScalculo(TxtValorBase.Text, "INSStabelaStatus=0")
+
+
+                'SendKeys.Send("{TAB}")
+
+
+                Exit Sub
+
+            End If
+
+            If Asc(e.KeyChar) = 8 Then       ' BACKSPACE
+
+                e.KeyChar = ""
+
+
+                If .Text = "0,00" Then Exit Sub
+                If .Text.Substring(0, 3) = "0,0" And .Text.Length = 4 Then .Text = "0,00" : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Substring(0, 2) = "0," And .Text.Length = 4 Then .Text = "0,0" + .Text.Substring(.Text.Length - 2, 1) : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Length = 4 Then .Text = "0," + .Text.Substring(0, 1) + .Text.Substring(2, 1) : SendKeys.Send("{END}") : Exit Sub
+
+                .Text = .Text.Substring(0, .Text.Length - 1)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+                Exit Sub
+
+            End If
+
+            If e.KeyChar >= "0" And e.KeyChar <= "9" Then
+
+                Dim strComMascara As String = Trim(.Text)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+                Dim strRetorno As String = ""
+                Dim strPressionada As String = e.KeyChar
+
+                e.KeyChar = ""
+
+                If intSemMascara > 13 Then
+
+                    Exit Sub
+
+                End If
+
+                If intSemMascara < 4 And strSemMascara.Substring(0, 1) = "0" Then
+
+                    strSemMascara += strPressionada
+                    strSemMascara = strSemMascara.Substring(1)
+
+                Else
+
+                    strSemMascara += strPressionada
+                    intSemMascara += 1
+
+                End If
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+
+
+
+                SendKeys.Send("{END}")
+
+            Else
+
+                e.KeyChar = ""
+
+                .Focus()
+
+
+                ' SendKeys.Send("{END}")
+
+
+            End If
+
+        End With
+    End Sub
+
+    Private Sub BtnConferencia_Click(sender As Object, e As EventArgs) Handles BtnConferencia.Click
+
+        Dim IsSemCheck As Boolean = True
+
+        Dim IsTexto As String = ""
+
+        If Not CheckBoxOK1.Checked Then IsSemCheck = False : IsTexto = "1.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK2.Checked Then IsSemCheck = False : IsTexto += "2.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK3.Checked Then IsSemCheck = False : IsTexto += "3.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK4.Checked Then IsSemCheck = False : IsTexto += "4.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK6.Checked Then IsSemCheck = False : IsTexto += "5.º Teste não Confirmado " + Chr(13)
+
+        If Not IsSemCheck Then
+            With oi
+
+                .Msg = IsTexto & Chr(13) & "Confira todos os testes"
+                .Style = vbCritical
+                MsgBox(.Msg, .Style, .Title)
+
+                Exit Sub
+
+            End With
+        End If
+
+        With oi
+
+            .Msg = " Confirma Checagem para gravação ?"
+            .Style = vbYesNo
+            If MsgBox(.Msg, .Style, .Title) <> 6 Then
+
+
+
+            Else
+
+
+                Dim Query As String
+                Query = "UPDATE inss "
+                Query += "SET INSStabelaStatus = 1 "
+                Query += ",INSSresponsavelConferenciaTipo ='" & usuClass.Usuario_Tipo & "'"
+                Query += ",INSSresponsavelConferencia =" & usuClass.Usuario_Chave
+                Query += ",INSSresponsavelConferencia =" & usuClass.Usuario_Chave
+                Query += ",INSSdataConferencia = now()"
+                Query += " where "
+                Query += "INSSREF = '" & Replace(LblReferencia.Text, "/", "") & "'"
+                If gravaSQL(Query) Then
+                    With oi
+
+                        .Msg = "Conferência Gravada com sucesso !"
+                        .Style = vbExclamation
+                        MsgBox(.Msg, .Style, .Title)
+                        Me.Close()
+                        Exit Sub
+
+                    End With
+                End If
+
+            End If
+
+            Exit Sub
+
+        End With
+
+    End Sub
+
+    Private Sub TxtValorBase_TextChanged(sender As Object, e As EventArgs) Handles TxtValorBase.TextChanged
+
+    End Sub
 End Class
