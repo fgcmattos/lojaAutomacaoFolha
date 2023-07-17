@@ -292,6 +292,12 @@
     <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastroTeste.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaPublicacao.Designer.vb">
+      <DependentUpon>FrmFolhaINSS_TabelaPublicacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaPublicacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulo\Conexoes\ModInicializacao.vb" />
     <Compile Include="classes\MsgShow.vb" />
     <Compile Include="classes\ReciboAcoes.vb" />
@@ -800,6 +806,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastroTeste.resx">
       <DependentUpon>FrmFolhaINSS_TabelaCadastroTeste.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaPublicacao.resx">
+      <DependentUpon>FrmFolhaINSS_TabelaPublicacao.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\Relatorios\CR_folhaAdiantamentoDeposito.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

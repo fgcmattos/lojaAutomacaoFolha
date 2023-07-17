@@ -710,4 +710,9 @@ Public Class Form1
 
     End Sub
 
+    Private Sub LiberaçãoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LiberaçãoToolStripMenuItem1.Click
+
+        FrmFolhaINSS_TabelaPublicacao.Show()
+
+    End Sub
 End Class

@@ -798,6 +798,8 @@
         Query += ",INSSnumeroDeFaixas"
         Query += ",INSS_ativa"
         Query += ",INSSref"
+        Query += ",INSSresponsavelDigitacao"
+        Query += ",INSSresponsavelDigitacaoTip"
 
         Query += ")"
         Query += " values "
@@ -820,6 +822,8 @@
         Query += "," & ListView1.Items.Count()
         Query += ",false"
         Query += ",'" & DateTimePicker1.Value.ToString("yyyyMM") & "'"
+        Query += "," & usuClass.Usuario_Chave
+        Query += ",'" & usuClass.Usuario_Tipo & "'"
         Query += ")"
 
         If gravaSQL(Query) Then

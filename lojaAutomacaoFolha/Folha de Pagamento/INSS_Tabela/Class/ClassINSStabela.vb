@@ -33,5 +33,12 @@
     Public Property Class_INSSresponsavelConferenciaNome As String
     Public Property Class_INSSresponsavelPublicacaoNome As String
 
+    Public Property Class_INSSresponsavelDigitacaoUsuario As String
+    Public Property Class_INSSresponsavelConferenciaUsuario As String
+    Public Property Class_INSSresponsavelPublicacaoUsuario As String
+
+    Public Property Class_INSSresponsavelDigitacaoTipo As String
+    Public Property Class_INSSresponsavelConferenciaTipo As String
+    Public Property Class_INSSresponsavelPublicacaoTipo As String
 
 End Class

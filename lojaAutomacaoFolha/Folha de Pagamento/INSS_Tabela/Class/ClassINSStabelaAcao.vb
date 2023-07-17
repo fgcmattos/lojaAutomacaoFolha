@@ -16,30 +16,37 @@ Public Class ClassINSStabelaAcao
         Dim lista As New List(Of ClassINSStabela)
 
         Query = "select "
-        Query += "INSS_calc.idINSS"
-        Query += ",INSS_calc.INSSREF"
-        Query += ",INSS_calc.INSSfaixa1"
-        Query += ",INSS_calc.INSSfaixa1Porcentagem"
-        Query += ",INSS_calc.INSSfaixa2"
-        Query += ",INSS_calc.INSSfaixa2Porcentagem"
-        Query += ",INSS_calc.INSSfaixa3"
-        Query += ",INSS_calc.INSSfaixa3Porcentagem"
-        Query += ",INSS_calc.INSSfaixa4"
-        Query += ",INSS_calc.INSSfaixa4Porcentagem"
-        Query += ",INSS_calc.INSS_dataInicio"
-        Query += ",INSS_calc.INSS_dataFim"
-        Query += ",INSS_calc.INSSnumeroDeFaixas"
-        Query += ",INSS_calc.INSS_ativa"
-        Query += ",INSS_calc.INSSfaixa1Valor"
-        Query += ",INSS_calc.INSSfaixa2Valor"
-        Query += ",INSS_calc.INSSfaixa3Valor"
-        Query += ",INSS_calc.INSSfaixa4Valor"
-        Query += ",INSS_calc.INSSfaixa1valor as faixa1ValorAcumulado"
-        Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor as faixa2ValorAcumulado"
-        Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor + INSS_calc.INSSfaixa3valor as faixa3ValorAcumulado"
-        Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor + INSS_calc.INSSfaixa3valor + INSS_calc.INSSfaixa4valor as faixa4ValorAcumulado"
-        Query += ",INSSdataCriacao"
-        Query += ",INSSresponsavelDigitacao"
+        Query += "INSS_calc.idINSS"                                                                                                                          '    0
+        Query += ",INSS_calc.INSSREF"                                                                                                                        '    1
+        Query += ",INSS_calc.INSSfaixa1"                                                                                                                     '    2
+        Query += ",INSS_calc.INSSfaixa1Porcentagem"                                                                                                          '    3
+        Query += ",INSS_calc.INSSfaixa2"                                                                                                                     '    4
+        Query += ",INSS_calc.INSSfaixa2Porcentagem"                                                                                                          '    5
+        Query += ",INSS_calc.INSSfaixa3"                                                                                                                     '    6
+        Query += ",INSS_calc.INSSfaixa3Porcentagem"                                                                                                          '    7
+        Query += ",INSS_calc.INSSfaixa4"                                                                                                                     '    8
+        Query += ",INSS_calc.INSSfaixa4Porcentagem"                                                                                                          '    9
+        Query += ",INSS_calc.INSS_dataInicio"                                                                                                                '   10
+        Query += ",INSS_calc.INSS_dataFim"                                                                                                                   '   11
+        Query += ",INSS_calc.INSSnumeroDeFaixas"                                                                                                             '   12
+        Query += ",INSS_calc.INSS_ativa"                                                                                                                     '   13
+        Query += ",INSS_calc.INSSfaixa1Valor"                                                                                                                '   14
+        Query += ",INSS_calc.INSSfaixa2Valor"                                                                                                                '   15
+        Query += ",INSS_calc.INSSfaixa3Valor"                                                                                                                '   16
+        Query += ",INSS_calc.INSSfaixa4Valor"                                                                                                                '   17
+        Query += ",INSS_calc.INSSfaixa1valor as faixa1ValorAcumulado"                                                                                        '   18
+        Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor as faixa2ValorAcumulado"                                                            '   19
+        Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor + INSS_calc.INSSfaixa3valor as faixa3ValorAcumulado"                                '   20
+        Query += ",INSS_calc.INSSfaixa1valor + INSS_calc.INSSfaixa2valor + INSS_calc.INSSfaixa3valor + INSS_calc.INSSfaixa4valor as faixa4ValorAcumulado"    '   21
+        Query += ",INSSdataCriacao"                                                                                                                          '   22
+        Query += ",INSSresponsavelDigitacao"                                                                                                                 '   23
+        Query += ",INSSresponsavelDigitacaoTipo"                                                                                                             '   24
+        Query += ",INSSresponsavelConferencia"                                                                                                               '   25
+        Query += ",INSSresponsavelConferenciaTipo"                                                                                                           '   26
+        Query += ",INSSdataConferencia"                                                                                                                      '   27
+        Query += ",(select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelDigitacao and usuarioTipo=INSSresponsavelDigitacaoTipo)) as INSSdigitacaoUsuario "          '  28
+        Query += ",(select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelConferencia and usuarioTipo=INSSresponsavelConferenciaTipo)) as INSSconferenciaUsuario "    '  29
+
         Query += " From "
         Query += " (select "
         Query += "idINSS"
@@ -61,8 +68,14 @@ Public Class ClassINSStabelaAcao
         Query += ",if(INSSfaixa3valor<>0,INSSfaixa3valor,round((INSSfaixa3-INSSfaixa2)*(INSSfaixa3Porcentagem/100),2)) as INSSfaixa3Valor"
         Query += ",if(INSSfaixa4valor<>0,INSSfaixa4valor,round((INSSfaixa4-INSSfaixa3)*(INSSfaixa4Porcentagem/100),2)) as INSSfaixa4Valor"
         Query += ",INSSdataCriacao"
-        Query += ",INSSresponsavelDigitacao"
-        Query += "	from inss "
+        Query += ",ifnull(INSSresponsavelDigitacao,'') as INSSResponsavelDigitacao"
+        Query += ",ifnull(INSSresponsavelDigitacaoTipo,'') as INSSResponsavelDigitacaoTipo"
+        Query += ",ifnull(INSSresponsavelConferencia,'') as INSSresponsavelConferencia"
+        Query += ",ifnull(INSSresponsavelConferenciaTipo,'') as INSSresponsavelConferenciaTipo"
+        Query += ",INSSdataConferencia"
+
+
+        Query += " from inss "
         Query += "where " & IsTabela                                         'INSS_ativa"
         Query += ")"
         Query += "  as INSS_calc"
@@ -101,7 +114,13 @@ Public Class ClassINSStabelaAcao
                         .Class_INSSfaixa3Acumulado = DTReader.GetValue(20),
                         .Class_INSSfaixa4Acumulado = DTReader.GetValue(21),
                         .Class_INSSdataCriacao = DTReader.GetValue(22),
-                        .Class_INSSresponsavelDigitacao = DTReader.GetValue(23)
+                        .Class_INSSresponsavelDigitacao = DTReader.GetValue(23),
+                        .Class_INSSresponsavelDigitacaoTipo = DTReader.GetValue(24),
+                        .Class_INSSresponsavelConferencia = DTReader.GetValue(25),
+                        .Class_INSSresponsavelConferenciaTipo = DTReader.GetValue(26),
+                        .Class_INSSdataConferencia = DTReader.GetValue(27),
+                        .Class_INSSresponsavelDigitacaoUsuario = DTReader.GetValue(28),
+                        .Class_INSSresponsavelConferenciaUsuario = DTReader.GetValue(29)
                         }
                         )
                 End While
