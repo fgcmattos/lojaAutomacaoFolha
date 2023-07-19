@@ -35,12 +35,12 @@ Partial Class FrmFolhaINSS_TabelaPublicacao
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.LblUsuarioAutorizador = New System.Windows.Forms.Label()
+        Me.LblAutorizadorChave = New System.Windows.Forms.Label()
         Me.BtnAutoriza = New System.Windows.Forms.Button()
         Me.TxtPassWord = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.LblAutorizadorChave = New System.Windows.Forms.Label()
-        Me.LblUsuarioAutorizador = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -169,6 +169,26 @@ Partial Class FrmFolhaINSS_TabelaPublicacao
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "AUTORIZAÇÃO"
         '
+        'LblUsuarioAutorizador
+        '
+        Me.LblUsuarioAutorizador.AutoSize = True
+        Me.LblUsuarioAutorizador.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblUsuarioAutorizador.Location = New System.Drawing.Point(363, 55)
+        Me.LblUsuarioAutorizador.Name = "LblUsuarioAutorizador"
+        Me.LblUsuarioAutorizador.Size = New System.Drawing.Size(71, 20)
+        Me.LblUsuarioAutorizador.TabIndex = 8
+        Me.LblUsuarioAutorizador.Text = "Usuario"
+        '
+        'LblAutorizadorChave
+        '
+        Me.LblAutorizadorChave.AutoSize = True
+        Me.LblAutorizadorChave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblAutorizadorChave.Location = New System.Drawing.Point(240, 55)
+        Me.LblAutorizadorChave.Name = "LblAutorizadorChave"
+        Me.LblAutorizadorChave.Size = New System.Drawing.Size(59, 20)
+        Me.LblAutorizadorChave.TabIndex = 7
+        Me.LblAutorizadorChave.Text = "Chave"
+        '
         'BtnAutoriza
         '
         Me.BtnAutoriza.Location = New System.Drawing.Point(632, 92)
@@ -206,26 +226,6 @@ Partial Class FrmFolhaINSS_TabelaPublicacao
         Me.Label5.Size = New System.Drawing.Size(209, 20)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Autorizado por (Chave) : "
-        '
-        'LblAutorizadorChave
-        '
-        Me.LblAutorizadorChave.AutoSize = True
-        Me.LblAutorizadorChave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblAutorizadorChave.Location = New System.Drawing.Point(240, 55)
-        Me.LblAutorizadorChave.Name = "LblAutorizadorChave"
-        Me.LblAutorizadorChave.Size = New System.Drawing.Size(59, 20)
-        Me.LblAutorizadorChave.TabIndex = 7
-        Me.LblAutorizadorChave.Text = "Chave"
-        '
-        'LblUsuarioAutorizador
-        '
-        Me.LblUsuarioAutorizador.AutoSize = True
-        Me.LblUsuarioAutorizador.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblUsuarioAutorizador.Location = New System.Drawing.Point(363, 55)
-        Me.LblUsuarioAutorizador.Name = "LblUsuarioAutorizador"
-        Me.LblUsuarioAutorizador.Size = New System.Drawing.Size(71, 20)
-        Me.LblUsuarioAutorizador.TabIndex = 8
-        Me.LblUsuarioAutorizador.Text = "Usuario"
         '
         'FrmFolhaINSS_TabelaPublicacao
         '

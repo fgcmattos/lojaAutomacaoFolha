@@ -715,4 +715,8 @@ Public Class Form1
         FrmFolhaINSS_TabelaPublicacao.Show()
 
     End Sub
+
+    Private Sub PesquisaToolStripMenuItem16_Click(sender As Object, e As EventArgs) Handles PesquisaToolStripMenuItem16.Click
+        FrmFolhaINSS_TabelaPesquisa.Show()
+    End Sub
 End Class

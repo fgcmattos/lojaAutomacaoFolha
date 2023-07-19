@@ -298,6 +298,12 @@
     <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaPublicacao.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaPesquisa.Designer.vb">
+      <DependentUpon>FrmFolhaINSS_TabelaPesquisa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaPesquisa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulo\Conexoes\ModInicializacao.vb" />
     <Compile Include="classes\MsgShow.vb" />
     <Compile Include="classes\ReciboAcoes.vb" />
@@ -806,6 +812,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastroTeste.resx">
       <DependentUpon>FrmFolhaINSS_TabelaCadastroTeste.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaPesquisa.resx">
+      <DependentUpon>FrmFolhaINSS_TabelaPesquisa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaPublicacao.resx">
       <DependentUpon>FrmFolhaINSS_TabelaPublicacao.vb</DependentUpon>

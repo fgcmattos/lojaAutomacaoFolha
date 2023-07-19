@@ -12,14 +12,14 @@
 
         If isQto = 0 Then
 
-            MsgBox("Não existe tabela digitada para a conferência")
+            MsgBox("Não existe tabela conferida para agendar Publicação")
 
             Me.Close()
 
             Exit Sub
         ElseIf isQto > 1 Then
 
-            MsgBox("Mais de uma tabela con Status digitação")
+            MsgBox("Mais de uma tabela com Status de conferida")
 
             Me.Close()
 
@@ -87,6 +87,8 @@
 
     Private Sub BtnAutoriza_Click(sender As Object, e As EventArgs) Handles BtnAutoriza.Click
 
+        Dim isRef As String = LblRef.Text.Substring(5, 4)
+
         If Replace(TxtPassWord.Text, " ", "") <> usuClass.Usario_senha Then
             With oi
 
@@ -110,8 +112,52 @@
                 If MsgBox(.Msg, .Style, .Title) = 6 Then
 
                     ' Realizar o agendamento da publicação 
+                    Dim Query As String
 
-                    Me.Close()
+
+                    Dim inTabelaINSSNumero As String = gravaSQLretorno("select  concat('2023','.',lpad(convert((select count(*) + 1 from inss where substring(INSSREF,1,4) = '" & isRef & "'  and INSStabelaStatus = 3),char),2,'0'));")
+                    Query = "Update inss set "
+                    Query += "INSStabelaNumero = '" & inTabelaINSSNumero & "'"
+                    Query += ",INSStabelaStatus = 2"
+                    Query += ",INSSdataPublicacao = now()"
+                    Query += ",INSSresponsavelPublicacao = " & usuClass.Usuario_Chave
+                    Query += ",INSSresponsavelPublicacaoTipo = '" & usuClass.Usuario_Tipo & "'"
+                    Query += " where "
+                    Query += "INSStabelaStatus = 1;"
+
+                    '''
+
+                    'Query = "Call sp_Folha_tabela_INSS_agenda ('" & isRef & "'," & usuClass.Usuario_Chave & ",'" & usuClass.Usuario_Tipo & "')"
+
+                    If gravaSQL(Query) Then
+
+                        With oi
+
+                            .Msg = "Gravação realizada com sucesso!"
+                            .Msg += Chr(13) & Chr(13)
+                            .Msg += "Tabela aguardando data de publicação"
+                            .Style = vbInformation
+                            MsgBox(.Msg, .Style, .Title)
+
+                            Me.Close()
+
+                            Exit Sub
+
+                        End With
+
+                    Else
+                        With oi
+
+                            .Msg = "Gravação não realizada !"
+                            .Msg += Chr(13) & Chr(13)
+                            .Msg += "Aguarde alguns momento e tente de novo"
+                            .Style = vbInformation
+                            MsgBox(.Msg, .Style, .Title)
+
+                            Exit Sub
+
+                        End With
+                    End If
 
                 Else
 
@@ -126,6 +172,10 @@
             End With
 
         End If
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
 
     End Sub
 End Class
