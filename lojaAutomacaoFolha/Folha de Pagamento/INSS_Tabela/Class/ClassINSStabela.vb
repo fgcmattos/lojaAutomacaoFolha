@@ -1,6 +1,7 @@
 ﻿Public Class ClassINSStabela
 
     Public Property Class_idINSS As Integer
+    Public Property Class_INSS_numero As String
     Public Property Class_INSSREF As String
     Public Property Class_INSSfaixa1 As Decimal
     Public Property Class_INSSfaixa1Porcentagem As Decimal

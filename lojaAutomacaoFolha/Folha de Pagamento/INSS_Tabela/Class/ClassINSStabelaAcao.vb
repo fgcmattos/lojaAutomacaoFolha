@@ -6,7 +6,7 @@ Public Class ClassINSStabelaAcao
 
         'IsTabela pode ser
         ' INSS_ativa       - Quando o cálculo é realizado em produção
-        ' REF              - YYYYAA - Quando utilizado para teste de uma nova tabela
+        ' REF              - YYYYAA - Quando utilizado para teste de uma nova tabela ou para pesquisa
         '                    INSSREF = '202201'
 
         Dim Query As String
@@ -44,8 +44,9 @@ Public Class ClassINSStabelaAcao
         Query += ",INSSresponsavelConferencia"                                                                                                               '   25
         Query += ",INSSresponsavelConferenciaTipo"                                                                                                           '   26
         Query += ",INSSdataConferencia"                                                                                                                      '   27
-        Query += ",(select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelDigitacao and usuarioTipo=INSSresponsavelDigitacaoTipo)) as INSSdigitacaoUsuario "          '  28
-        Query += ",(select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelConferencia and usuarioTipo=INSSresponsavelConferenciaTipo)) as INSSconferenciaUsuario "    '  29
+        Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelDigitacao and usuarioTipo=INSSresponsavelDigitacaoTipo)),'') as INSSdigitacaoUsuario "          '  28
+        Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelConferencia and usuarioTipo=INSSresponsavelConferenciaTipo)),'') as INSSconferenciaUsuario "    '  29
+        Query += ",INSStabelaNumero"
 
         Query += " From "
         Query += " (select "
@@ -72,7 +73,8 @@ Public Class ClassINSStabelaAcao
         Query += ",ifnull(INSSresponsavelDigitacaoTipo,'') as INSSResponsavelDigitacaoTipo"
         Query += ",ifnull(INSSresponsavelConferencia,'') as INSSresponsavelConferencia"
         Query += ",ifnull(INSSresponsavelConferenciaTipo,'') as INSSresponsavelConferenciaTipo"
-        Query += ",INSSdataConferencia"
+        Query += ",ifnull(INSSdataConferencia,'') as INSSdataConferencia"
+        Query += ",INSStabelaNumero"
 
 
         Query += " from inss "
@@ -118,9 +120,10 @@ Public Class ClassINSStabelaAcao
                         .Class_INSSresponsavelDigitacaoTipo = DTReader.GetValue(24),
                         .Class_INSSresponsavelConferencia = DTReader.GetValue(25),
                         .Class_INSSresponsavelConferenciaTipo = DTReader.GetValue(26),
-                        .Class_INSSdataConferencia = DTReader.GetValue(27),
-                        .Class_INSSresponsavelDigitacaoUsuario = DTReader.GetValue(28),
-                        .Class_INSSresponsavelConferenciaUsuario = DTReader.GetValue(29)
+                        .Class_INSSdataConferencia = IIf(DTReader.GetValue(27) = "", #00:00#, DTReader.GetValue(27)),
+                        .Class_INSSresponsavelDigitacaoNome = DTReader.GetValue(28),
+                        .Class_INSSresponsavelConferenciaNome = DTReader.GetValue(29),
+                        .Class_INSS_numero = DTReader.GetValue(30)
                         }
                         )
                 End While
