@@ -10,10 +10,6 @@
 
     End Function
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-
-    End Sub
-
     Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
 
         If ListView1.SelectedItems.Count > 0 Then
@@ -111,9 +107,9 @@
 
     Private Sub BtnLiberaEdicao_Click(sender As Object, e As EventArgs) Handles BtnLiberaEdicao.Click
 
-        Dim StrData1 As String = dataAAAAMMDD(DateTimePicker1.Value.ToString.Substring(0, 10)).Substring(0, 6)
+        'Dim StrData1 As String = dataAAAAMMDD(DateTimePicker1.Value.ToString.Substring(0, 10)).Substring(0, 6)
 
-        Dim data_tabela_em_vigor As String = gravaSQLretorno("select INSS_dataInicio from inss where INSS_ativa")
+        'Dim data_tabela_em_vigor As String = gravaSQLretorno("select INSS_dataInicio from inss where INSS_ativa")
 
         ''''If data_tabela_em_vigor >= StrData1 Then
 
@@ -128,7 +124,7 @@
         ''''End If
 
 
-        Dim data_do_servidor As String = gravaSQLretorno("select concat(Year(Now()), lpad(Month(Now()), 2,'0'))")
+        'Dim data_do_servidor As String = gravaSQLretorno("select concat(Year(Now()), lpad(Month(Now()), 2,'0'))")
 
         '''If data_do_servidor > StrData1 Then
         '''    With oi
@@ -766,6 +762,7 @@
 
 
     Private Sub BtnGravaTabela_Click(sender As Object, e As EventArgs) Handles BtnGravaTabela.Click
+
         TabeleINSSchecagem()
 
         Dim Query As String
@@ -799,7 +796,7 @@
         Query += ",INSS_ativa"
         Query += ",INSSref"
         Query += ",INSSresponsavelDigitacao"
-        Query += ",INSSresponsavelDigitacaoTip"
+        Query += ",INSSresponsavelDigitacaoTipo"
 
         Query += ")"
         Query += " values "
@@ -895,7 +892,18 @@
         End Function
     End Class
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+    Private Sub FrmFolhaINSS_TabelaCadastro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        oi.Title = Me.Text
+        Dim Query As String = "Select count(*) from inss where INSStabelaStatus = 0"
+        If gravaSQLretorno(Query) > 0 Then
 
+            With oi
+                .Msg = "Existe Tabela já digitada aguardando Conferência" & Chr(13) & Chr(13)
+                .Msg += "Caso tenha que digitar nova tabela solicite o cancelamento da tabela que está aguardando conferência"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+                Me.Close()
+            End With
+        End If
     End Sub
 End Class

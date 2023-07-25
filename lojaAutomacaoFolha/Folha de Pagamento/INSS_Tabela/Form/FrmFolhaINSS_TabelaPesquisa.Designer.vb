@@ -496,7 +496,7 @@ Partial Class FrmFolhaINSS_TabelaPesquisa
         Me.GroupTabelaShow.Controls.Add(Me.ListView1)
         Me.GroupTabelaShow.Location = New System.Drawing.Point(12, 432)
         Me.GroupTabelaShow.Name = "GroupTabelaShow"
-        Me.GroupTabelaShow.Size = New System.Drawing.Size(852, 135)
+        Me.GroupTabelaShow.Size = New System.Drawing.Size(622, 190)
         Me.GroupTabelaShow.TabIndex = 2
         Me.GroupTabelaShow.TabStop = False
         Me.GroupTabelaShow.Text = "Tabela"
@@ -508,7 +508,7 @@ Partial Class FrmFolhaINSS_TabelaPesquisa
         Me.ListView1.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(155, 0)
+        Me.ListView1.Location = New System.Drawing.Point(42, 31)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(540, 127)
         Me.ListView1.TabIndex = 2
@@ -576,7 +576,7 @@ Partial Class FrmFolhaINSS_TabelaPesquisa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(905, 810)
+        Me.ClientSize = New System.Drawing.Size(905, 636)
         Me.Controls.Add(Me.GroupEscolhaTabela)
         Me.Controls.Add(Me.GroupTabelaShow)
         Me.Controls.Add(Me.GroupIdentificacaoDaTabela)

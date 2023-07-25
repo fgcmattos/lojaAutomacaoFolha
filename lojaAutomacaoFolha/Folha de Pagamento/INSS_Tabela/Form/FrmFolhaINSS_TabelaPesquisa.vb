@@ -35,11 +35,13 @@ Public Class FrmFolhaINSS_TabelaPesquisa
         ListSelecao.Items.Clear()
 
         If Replace(CmbTabelaStatus.Text, " ", "") = "" Then
+
             MsgBox("Por favor, defina um status de tabela ")
             CmbTabelaStatus.Focus()
             Exit Sub
 
         End If
+
         Dim IsTabelaStatus As String = CmbTabelaStatus.Text.Substring(0, 1)
         Dim IsReferencia As String
 
@@ -166,6 +168,7 @@ Public Class FrmFolhaINSS_TabelaPesquisa
         LblLiberacaoData.Text = INSStabela(0).Class_INSSdataPublicação
         LblLiberacaoResponsavelChave.Text = INSStabela(0).Class_INSSresponsavelPublicacao & " - " & INSStabela(0).Class_INSSresponsavelPublicacaoNome
         LblLiberacaoResponsavelTipo.Text = INSStabela(0).Class_INSSresponsavelPublicacaoTipo
+        LblLiberacaoData.Text = INSStabela(0).Class_INSSdataPublicação
 
     End Function
 

@@ -46,7 +46,11 @@ Public Class ClassINSStabelaAcao
         Query += ",INSSdataConferencia"                                                                                                                      '   27
         Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelDigitacao and usuarioTipo=INSSresponsavelDigitacaoTipo)),'') as INSSdigitacaoUsuario "          '  28
         Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelConferencia and usuarioTipo=INSSresponsavelConferenciaTipo)),'') as INSSconferenciaUsuario "    '  29
-        Query += ",INSStabelaNumero"
+        Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelPublicacao and usuarioTipo=INSSresponsavelPublicacaoTipo)),'') as INSSpublicacaoUsuario "       '  30
+        Query += ",INSSresponsavelPublicacao"                                                                                                                '   31
+        Query += ",INSSresponsavelPublicacaoTipo"                                                                                                             '   32
+        Query += ",INSSdataPublicacao"                                                                                                                       '   33
+        Query += ",INSStabelaNumero"                                                                                                                         '   34
 
         Query += " From "
         Query += " (select "
@@ -75,6 +79,9 @@ Public Class ClassINSStabelaAcao
         Query += ",ifnull(INSSresponsavelConferenciaTipo,'') as INSSresponsavelConferenciaTipo"
         Query += ",ifnull(INSSdataConferencia,'') as INSSdataConferencia"
         Query += ",INSStabelaNumero"
+        Query += ",INSSresponsavelPublicacao"
+        Query += ",INSSresponsavelPublicacaoTipo"
+        Query += ",INSSdataPublicacao"
 
 
         Query += " from inss "
@@ -120,10 +127,14 @@ Public Class ClassINSStabelaAcao
                         .Class_INSSresponsavelDigitacaoTipo = DTReader.GetValue(24),
                         .Class_INSSresponsavelConferencia = DTReader.GetValue(25),
                         .Class_INSSresponsavelConferenciaTipo = DTReader.GetValue(26),
-                        .Class_INSSdataConferencia = IIf(DTReader.GetValue(27) = "", #00:00#, DTReader.GetValue(27)),
+                        .Class_INSSdataConferencia = IIf(IsNothing(DTReader.GetValue(27)), #00:00#, DTReader.GetValue(27)),
                         .Class_INSSresponsavelDigitacaoNome = DTReader.GetValue(28),
                         .Class_INSSresponsavelConferenciaNome = DTReader.GetValue(29),
-                        .Class_INSS_numero = DTReader.GetValue(30)
+                        .Class_INSSresponsavelPublicacaoNome = DTReader.GetValue(30),
+                        .Class_INSSresponsavelPublicacao = DTReader.GetValue(31),
+                        .Class_INSSresponsavelPublicacaoTipo = DTReader.GetValue(32),
+                        .Class_INSSdataPublicação = IIf(IsNothing(DTReader.GetValue(33)), #00:00#, DTReader.GetValue(33)),
+                        .Class_INSS_numero = DTReader.GetValue(34)
                         }
                         )
                 End While

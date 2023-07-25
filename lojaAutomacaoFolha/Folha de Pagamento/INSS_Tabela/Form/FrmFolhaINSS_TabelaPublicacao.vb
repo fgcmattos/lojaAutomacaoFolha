@@ -12,19 +12,29 @@
 
         If isQto = 0 Then
 
-            MsgBox("Não existe tabela conferida para agendar Publicação")
+            With oi
 
-            Me.Close()
+                .Msg = "Não existe tabela conferida para agendar Publicação"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
 
-            Exit Sub
+                Me.Close()
+
+                Exit Sub
+            End With
+
         ElseIf isQto > 1 Then
 
-            MsgBox("Mais de uma tabela com Status de conferida")
+            With oi
 
-            Me.Close()
+                .Msg = "Mais de uma tabela com Status de conferida"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
 
-            Exit Sub
+                Me.Close()
 
+                Exit Sub
+            End With
         End If
 
 
@@ -87,7 +97,9 @@
 
     Private Sub BtnAutoriza_Click(sender As Object, e As EventArgs) Handles BtnAutoriza.Click
 
-        Dim isRef As String = LblRef.Text.Substring(5, 4)
+        Dim isAno As String = LblRef.Text.Substring(5, 4)
+        'Dim isRef As String = isAno & LblRef.Text.Substring(10)
+
 
         If Replace(TxtPassWord.Text, " ", "") <> usuClass.Usario_senha Then
             With oi
@@ -113,9 +125,9 @@
 
                     ' Realizar o agendamento da publicação 
                     Dim Query As String
+                    'Dim IsRef As String = LblRef.Text.Substring(4, 4) & LblRef.Text.Substring(9, 2)
 
-
-                    Dim inTabelaINSSNumero As String = gravaSQLretorno("select  concat('2023','.',lpad(convert((select count(*) + 1 from inss where substring(INSSREF,1,4) = '" & isRef & "'  and INSStabelaStatus = 3),char),2,'0'));")
+                    Dim inTabelaINSSNumero As String = gravaSQLretorno("select  concat('" & isAno & "','.',lpad(convert((select count(*) + 1 from inss where substring(INSSREF,1,4) = '" & isAno & "'  and INSStabelaStatus = 3),char),2,'0'));")
                     Query = "Update inss set "
                     Query += "INSStabelaNumero = '" & inTabelaINSSNumero & "'"
                     Query += ",INSStabelaStatus = 2"

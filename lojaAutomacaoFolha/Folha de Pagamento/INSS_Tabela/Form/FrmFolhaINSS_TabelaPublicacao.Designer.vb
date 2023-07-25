@@ -191,7 +191,7 @@ Partial Class FrmFolhaINSS_TabelaPublicacao
         '
         'BtnAutoriza
         '
-        Me.BtnAutoriza.Location = New System.Drawing.Point(632, 92)
+        Me.BtnAutoriza.Location = New System.Drawing.Point(642, 79)
         Me.BtnAutoriza.Name = "BtnAutoriza"
         Me.BtnAutoriza.Size = New System.Drawing.Size(165, 39)
         Me.BtnAutoriza.TabIndex = 6
