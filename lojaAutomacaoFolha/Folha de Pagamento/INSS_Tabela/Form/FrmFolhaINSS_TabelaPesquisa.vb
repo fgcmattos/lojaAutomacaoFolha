@@ -32,7 +32,8 @@ Public Class FrmFolhaINSS_TabelaPesquisa
 
     Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles BtnPesquisa.Click
 
-        ListSelecao.Items.Clear()
+        ListView1.Items.Clear()
+        LimpaLabel()
 
         If Replace(CmbTabelaStatus.Text, " ", "") = "" Then
 
@@ -82,6 +83,9 @@ Public Class FrmFolhaINSS_TabelaPesquisa
                     If OpenDB() Then
 
                         DTReader = CMD.ExecuteReader
+
+                        ListSelecao.Items.Clear()
+
                         While DTReader.Read()
                             ListSelecao.Items.Add(DTReader.GetValue(0))
                         End While
@@ -155,8 +159,8 @@ Public Class FrmFolhaINSS_TabelaPesquisa
         Next
 
         LblTabelaNumero.Text = INSStabela(0).Class_INSS_numero
-        LblDataAtivacao.Text = INSStabela(0).Class_INSS_dataFim
-        LblDataDesativacao.Text = INSStabela(0).Class_INSS_dataFim
+        LblDataAtivacao.Text = dataLatina(INSStabela(0).Class_INSS_dataInicio)
+        LblDataDesativacao.Text = IIf(DateTime.MinValue = INSStabela(0).Class_INSS_dataFim, DateTime.MinValue, dataLatina(INSStabela(0).Class_INSS_dataFim))
         LblTabelaAnterior.Text = ""
         LblTabelaPosterior.Text = ""
         LblDigitacaoData.Text = INSStabela(0).Class_INSSdataCriacao

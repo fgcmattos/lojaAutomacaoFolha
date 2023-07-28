@@ -270,9 +270,8 @@ Partial Class FrmFolhaINSS_TabelaPesquisa
         Me.LblTabelaNumero.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblTabelaNumero.Location = New System.Drawing.Point(213, 25)
         Me.LblTabelaNumero.Name = "LblTabelaNumero"
-        Me.LblTabelaNumero.Size = New System.Drawing.Size(97, 25)
+        Me.LblTabelaNumero.Size = New System.Drawing.Size(0, 17)
         Me.LblTabelaNumero.TabIndex = 8
-        Me.LblTabelaNumero.Text = "2023.02"
         '
         'Label12
         '

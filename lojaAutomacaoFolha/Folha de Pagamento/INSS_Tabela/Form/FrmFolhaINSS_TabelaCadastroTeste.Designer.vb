@@ -29,7 +29,6 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.MskReferencia = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LblReferencia = New System.Windows.Forms.Label()
         Me.LblCriadoPor = New System.Windows.Forms.Label()
@@ -85,6 +84,7 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtValorBase = New System.Windows.Forms.TextBox()
         Me.BtnConferencia = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -141,14 +141,6 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.Label1.Size = New System.Drawing.Size(87, 16)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Referência:"
-        '
-        'MskReferencia
-        '
-        Me.MskReferencia.Location = New System.Drawing.Point(131, 19)
-        Me.MskReferencia.Mask = "0000/00"
-        Me.MskReferencia.Name = "MskReferencia"
-        Me.MskReferencia.Size = New System.Drawing.Size(87, 20)
-        Me.MskReferencia.TabIndex = 3
         '
         'GroupBox1
         '
@@ -753,17 +745,26 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.BtnConferencia.Text = "TABELA CONFERIDA"
         Me.BtnConferencia.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 487)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(585, 35)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "RETIRAR TABELA "
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FrmFolhaINSS_TabelaCadastroTeste
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(1142, 565)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BtnConferencia)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.MskReferencia)
         Me.ForeColor = System.Drawing.Color.Red
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -776,7 +777,6 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -787,7 +787,6 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
     Friend WithEvents ColumnHeader4 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents Label1 As Label
-    Friend WithEvents MskReferencia As MaskedTextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -843,4 +842,5 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
     Friend WithEvents CheckBoxOK3 As CheckBox
     Friend WithEvents CheckBoxOK2 As CheckBox
     Friend WithEvents BtnConferencia As Button
+    Friend WithEvents Button1 As Button
 End Class

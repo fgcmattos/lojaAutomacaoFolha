@@ -48,7 +48,7 @@ Public Class ClassINSStabelaAcao
         Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelConferencia and usuarioTipo=INSSresponsavelConferenciaTipo)),'') as INSSconferenciaUsuario "    '  29
         Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = INSSresponsavelPublicacao and usuarioTipo=INSSresponsavelPublicacaoTipo)),'') as INSSpublicacaoUsuario "       '  30
         Query += ",INSSresponsavelPublicacao"                                                                                                                '   31
-        Query += ",INSSresponsavelPublicacaoTipo"                                                                                                             '   32
+        Query += ",INSSresponsavelPublicacaoTipo"                                                                                                            '   32
         Query += ",INSSdataPublicacao"                                                                                                                       '   33
         Query += ",INSStabelaNumero"                                                                                                                         '   34
 
@@ -62,8 +62,8 @@ Public Class ClassINSStabelaAcao
         Query += ",INSSfaixa2Porcentagem"
         Query += ",INSSfaixa3"
         Query += ",INSSfaixa3Porcentagem"
-        Query += ",INSSfaixa4"
-        Query += ",INSSfaixa4Porcentagem"
+        Query += ",ifnull(INSSfaixa4,0) as INSSfaixa4"
+        Query += ",ifnull(INSSfaixa4Porcentagem,0) as INSSfaixa4Porcentagem"
         Query += ",INSS_dataInicio"
         Query += ",ifnull(INSS_dataFim,'') as INSS_dataFim"
         Query += ",INSSnumeroDeFaixas"
@@ -71,7 +71,7 @@ Public Class ClassINSStabelaAcao
         Query += ",if(INSSfaixa1valor<>0,INSSfaixa1valor,round(INSSfaixa1*(INSSfaixa1Porcentagem/100),2)) as INSSfaixa1Valor"
         Query += ",if(INSSfaixa2valor<>0,INSSfaixa2valor,round((INSSfaixa2-INSSfaixa1)*(INSSfaixa2Porcentagem/100),2)) as INSSfaixa2Valor"
         Query += ",if(INSSfaixa3valor<>0,INSSfaixa3valor,round((INSSfaixa3-INSSfaixa2)*(INSSfaixa3Porcentagem/100),2)) as INSSfaixa3Valor"
-        Query += ",if(INSSfaixa4valor<>0,INSSfaixa4valor,round((INSSfaixa4-INSSfaixa3)*(INSSfaixa4Porcentagem/100),2)) as INSSfaixa4Valor"
+        Query += ",if(INSSnumeroDeFaixas>3,if(INSSfaixa4valor<>0,INSSfaixa4valor,round((INSSfaixa4-INSSfaixa3)*(INSSfaixa4Porcentagem/100),2)),0) as INSSfaixa4Valor"
         Query += ",INSSdataCriacao"
         Query += ",ifnull(INSSresponsavelDigitacao,'') as INSSResponsavelDigitacao"
         Query += ",ifnull(INSSresponsavelDigitacaoTipo,'') as INSSResponsavelDigitacaoTipo"
@@ -81,7 +81,8 @@ Public Class ClassINSStabelaAcao
         Query += ",INSStabelaNumero"
         Query += ",INSSresponsavelPublicacao"
         Query += ",INSSresponsavelPublicacaoTipo"
-        Query += ",INSSdataPublicacao"
+        Query += ",ifnull(INSSdataPublicacao,'') as INSSdataPublicacao"
+
 
 
         Query += " from inss "
@@ -90,6 +91,7 @@ Public Class ClassINSStabelaAcao
         Query += "  as INSS_calc"
 
         Dim CMD As New MySqlCommand(Query, Conn)
+
 
         If OpenDB() Then
 
@@ -110,8 +112,8 @@ Public Class ClassINSStabelaAcao
                         .Class_INSSfaixa3Porcentagem = DTReader.GetValue(7),
                         .Class_INSSfaixa4 = DTReader.GetValue(8),
                         .Class_INSSfaixa4Porcentagem = DTReader.GetValue(9),
-                        .Class_INSS_dataInicio = DTReader.GetValue(10),
-                        .Class_INSS_dataFim = DTReader.GetValue(11),
+                        .Class_INSS_dataInicio = IIf(DTReader.GetValue(10) = "", DateTime.MinValue, DTReader.GetValue(10)),
+                        .Class_INSS_dataFim = IIf(DTReader.GetValue(11) = "", DateTime.MinValue, DTReader.GetValue(11)),
                         .Class_INSSnumeroDeFaixas = DTReader.GetValue(12),
                         .Class_INSS_ativa = DTReader.GetValue(13),
                         .Class_INSSfaixa1Valor = DTReader.GetValue(14),
@@ -127,13 +129,13 @@ Public Class ClassINSStabelaAcao
                         .Class_INSSresponsavelDigitacaoTipo = DTReader.GetValue(24),
                         .Class_INSSresponsavelConferencia = DTReader.GetValue(25),
                         .Class_INSSresponsavelConferenciaTipo = DTReader.GetValue(26),
-                        .Class_INSSdataConferencia = IIf(IsNothing(DTReader.GetValue(27)), #00:00#, DTReader.GetValue(27)),
+                        .Class_INSSdataConferencia = IIf(DTReader.GetValue(27) = "", DateTime.MinValue, DTReader.GetValue(27)),
                         .Class_INSSresponsavelDigitacaoNome = DTReader.GetValue(28),
                         .Class_INSSresponsavelConferenciaNome = DTReader.GetValue(29),
                         .Class_INSSresponsavelPublicacaoNome = DTReader.GetValue(30),
                         .Class_INSSresponsavelPublicacao = DTReader.GetValue(31),
                         .Class_INSSresponsavelPublicacaoTipo = DTReader.GetValue(32),
-                        .Class_INSSdataPublicação = IIf(IsNothing(DTReader.GetValue(33)), #00:00#, DTReader.GetValue(33)),
+                        .Class_INSSdataPublicação = IIf(DTReader.GetValue(33) = "", DateTime.MinValue, DTReader.GetValue(33)),
                         .Class_INSS_numero = DTReader.GetValue(34)
                         }
                         )

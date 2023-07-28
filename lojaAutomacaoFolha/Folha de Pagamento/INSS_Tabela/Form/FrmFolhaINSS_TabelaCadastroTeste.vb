@@ -11,66 +11,66 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
 
 
 
-    Private Sub MskReferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MskReferencia.KeyPress
+    '''''Private Sub MskReferencia_KeyPress(sender As Object, e As KeyPressEventArgs)
 
-        If e.KeyChar = Convert.ToChar(13) Then
+    '''''    If e.KeyChar = Convert.ToChar(13) Then
 
-            Dim isValidFormat As Boolean = CheckDateFormat(MskReferencia.Text, "yyyy/MM")
+    '''''        Dim isValidFormat As Boolean = CheckDateFormat(MskReferencia.Text, "yyyy/MM")
 
-            If isValidFormat Then
-
-
-
-                Dim INSStabela As List(Of ClassINSStabela) = ClassINSStabelaAcao.GetINSS_Ref_DB(MskReferencia.Text)
-
-                ListView1.Items.Clear()
-
-                For i As Integer = 1 To INSStabela(0).Class_INSSnumeroDeFaixas
-
-                    ListView1.Items.Add(i)
-
-                    Select Case i
-
-                        Case 1
-                            ListView1.Items(0).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1, 2), 8, True))
-                            ListView1.Items(0).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1Porcentagem, 2), 8, True))
-                            ListView1.Items(0).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1Valor, 2), 8, True))
-                            ListView1.Items(0).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1Acumulado, 2), 8, True))
-
-                        Case 2
-                            ListView1.Items(1).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2, 2), 8, True))
-                            ListView1.Items(1).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Porcentagem, 2), 8, True))
-                            ListView1.Items(1).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Valor, 2), 8, True))
-                            ListView1.Items(1).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Acumulado, 2), 8, True))
-
-                        Case 3
-                            ListView1.Items(2).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3, 2), 8, True))
-                            ListView1.Items(2).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3Porcentagem, 2), 8, True))
-                            ListView1.Items(2).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3Valor, 2), 8, True))
-                            ListView1.Items(2).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3Acumulado, 2), 8, True))
-
-                        Case 4
-                            ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4, 2), 8, True))
-                            ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4Porcentagem, 2), 8, True))
-                            ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4Valor, 2), 8, True))
-                            ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4Acumulado, 2), 8, True))
-
-                    End Select
+    '''''        If isValidFormat Then
 
 
 
-                Next
+    '''''            Dim INSStabela As List(Of ClassINSStabela) = ClassINSStabelaAcao.GetINSS_Ref_DB(MskReferencia.Text)
+
+    '''''            ListView1.Items.Clear()
+
+    '''''            For i As Integer = 1 To INSStabela(0).Class_INSSnumeroDeFaixas
+
+    '''''                ListView1.Items.Add(i)
+
+    '''''                Select Case i
+
+    '''''                    Case 1
+    '''''                        ListView1.Items(0).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1, 2), 8, True))
+    '''''                        ListView1.Items(0).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1Porcentagem, 2), 8, True))
+    '''''                        ListView1.Items(0).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1Valor, 2), 8, True))
+    '''''                        ListView1.Items(0).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1Acumulado, 2), 8, True))
+
+    '''''                    Case 2
+    '''''                        ListView1.Items(1).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2, 2), 8, True))
+    '''''                        ListView1.Items(1).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Porcentagem, 2), 8, True))
+    '''''                        ListView1.Items(1).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Valor, 2), 8, True))
+    '''''                        ListView1.Items(1).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Acumulado, 2), 8, True))
+
+    '''''                    Case 3
+    '''''                        ListView1.Items(2).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3, 2), 8, True))
+    '''''                        ListView1.Items(2).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3Porcentagem, 2), 8, True))
+    '''''                        ListView1.Items(2).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3Valor, 2), 8, True))
+    '''''                        ListView1.Items(2).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3Acumulado, 2), 8, True))
+
+    '''''                    Case 4
+    '''''                        ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4, 2), 8, True))
+    '''''                        ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4Porcentagem, 2), 8, True))
+    '''''                        ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4Valor, 2), 8, True))
+    '''''                        ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4Acumulado, 2), 8, True))
+
+    '''''                End Select
 
 
-            Else
 
-                MsgBox("Referencia inValida")
+    '''''            Next
 
-            End If
 
-        End If
+    '''''        Else
 
-    End Sub
+    '''''            MsgBox("Referencia inValida")
+
+    '''''        End If
+
+    '''''    End If
+
+    '''''End Sub
 
     Function CheckDateFormat(input As String, format As String) As Boolean
 
@@ -554,5 +554,36 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
 
     Private Sub TxtValorBase_TextChanged(sender As Object, e As EventArgs) Handles TxtValorBase.TextChanged
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        With oi
+
+            .Msg = "Confirma a retirada da tabela?"
+            .Style = vbYesNo
+            If MsgBox(.Msg, .Style, .Title) <> 6 Then
+                .Msg = "Tabela Mantida"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+                Exit Sub
+            End If
+
+            Dim Query = "delete from inss where INSSREF= '" & LblReferencia.Text.Replace("/", "") & "'"
+
+            If gravaSQL(Query) Then
+                .Msg = "Tabela retirada do sistema com sucesso"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+                Me.Close()
+            Else
+                .Msg = "Problema na Retirada da Tabela" & Chr(13)
+                .Msg += "Tende de novo"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+                Exit Sub
+            End If
+
+
+        End With
     End Sub
 End Class

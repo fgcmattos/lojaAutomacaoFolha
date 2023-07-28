@@ -763,32 +763,53 @@
 
     Private Sub BtnGravaTabela_Click(sender As Object, e As EventArgs) Handles BtnGravaTabela.Click
 
+        ' Rotina preparada para até 4 faixas
+
         TabeleINSSchecagem()
+
+        Dim IsNumeroDeFaixas As Integer = ListView1.Items.Count()
+
+        If IsNumeroDeFaixas > 4 Then
+            With oi
+
+                .Msg = "Número de faixas maior do que 4 " & Chr(13) & "Sistema não está preparado, entre em contato com o administrador"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+                Exit Sub
+
+            End With
+
+        End If
 
         Dim Query As String
 
         Query = "Insert into inss "
         Query += "("
+        If IsNumeroDeFaixas >= 1 Then
+            Query += "INSSfaixa1"
+            Query += ",INSSfaixa1Porcentagem"
+            Query += ",INSSfaixa1Valor"
+            Query += ",INSSfaixa1Acumulado"
+        End If
 
-        Query += "INSSfaixa1"
-        Query += ",INSSfaixa1Porcentagem"
-        Query += ",INSSfaixa1Valor"
-        Query += ",INSSfaixa1Acumulado"
-
-        Query += ",INSSfaixa2"
-        Query += ",INSSfaixa2Porcentagem"
-        Query += ",INSSfaixa2Valor"
-        Query += ",INSSfaixa2Acumulado"
-
-        Query += ",INSSfaixa3"
-        Query += ",INSSfaixa3Porcentagem"
-        Query += ",INSSfaixa3Valor"
-        Query += ",INSSfaixa3Acumulado"
-
-        Query += ",INSSfaixa4"
-        Query += ",INSSfaixa4Porcentagem"
-        Query += ",INSSfaixa4Valor"
-        Query += ",INSSfaixa4Acumulado"
+        If IsNumeroDeFaixas >= 2 Then
+            Query += ",INSSfaixa2"
+            Query += ",INSSfaixa2Porcentagem"
+            Query += ",INSSfaixa2Valor"
+            Query += ",INSSfaixa2Acumulado"
+        End If
+        If IsNumeroDeFaixas >= 3 Then
+            Query += ",INSSfaixa3"
+            Query += ",INSSfaixa3Porcentagem"
+            Query += ",INSSfaixa3Valor"
+            Query += ",INSSfaixa3Acumulado"
+        End If
+        If IsNumeroDeFaixas >= 4 Then
+            Query += ",INSSfaixa4"
+            Query += ",INSSfaixa4Porcentagem"
+            Query += ",INSSfaixa4Valor"
+            Query += ",INSSfaixa4Acumulado"
+        End If
 
         Query += ",INSS_dataInicio"
         Query += ",INSS_dataFim"
@@ -805,10 +826,10 @@
         For Each item As ListViewItem In ListView1.Items
 
             'Query += StrVirgula & item.Text                                               ' faixa
-            Query += StrVirgula & Replace(Replace(item.SubItems(1).Text, ".", ""), ",", ".")     ' valor da faixa
-            Query += "," & Replace(Replace(item.SubItems(2).Text, ".", ""), ",", ".")     ' % da faixa
-            Query += "," & Replace(Replace(item.SubItems(3).Text, ".", ""), ",", ".")     ' imposto da faixa
-            Query += "," & Replace(Replace(item.SubItems(4).Text, ".", ""), ",", ".")     ' imposto acumulado da faixa
+            Query += StrVirgula & Replace(Replace(item.SubItems(1).Text, ".", ""), ",", ".")        ' valor da faixa
+            Query += "," & Replace(Replace(item.SubItems(2).Text, ".", ""), ",", ".")               ' % da faixa
+            Query += "," & Replace(Replace(item.SubItems(3).Text, ".", ""), ",", ".")               ' imposto da faixa
+            Query += "," & Replace(Replace(item.SubItems(4).Text, ".", ""), ",", ".")               ' imposto acumulado da faixa
             StrVirgula = ","
 
         Next
@@ -816,7 +837,7 @@
 
         Query += ",'" & DateTimePicker1.Value.ToString("yyyyMMdd") & "'"
         Query += ",''"
-        Query += "," & ListView1.Items.Count()
+        Query += "," & IsNumeroDeFaixas
         Query += ",false"
         Query += ",'" & DateTimePicker1.Value.ToString("yyyyMM") & "'"
         Query += "," & usuClass.Usuario_Chave
