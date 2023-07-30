@@ -160,21 +160,21 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
         IsMatBaseInss(4, 0) = Math.Round(Int(INSStabela(0).Class_INSSfaixa4 - INSStabela(0).Class_INSSfaixa3 + 1) * Rnd() + INSStabela(0).Class_INSSfaixa3, 2)
         IsMatBaseInss(5, 0) = Math.Round(Int(40000 - INSStabela(0).Class_INSSfaixa4 + 1) * Rnd() + INSStabela(0).Class_INSSfaixa4, 2)
 
-
+        ' Gerando os calculos por base - Gravação no item (base,5)
         IsMatBaseInss(1, 5) = INSScalculo(IsMatBaseInss(1, 0), IsComparacao)
         IsMatBaseInss(2, 5) = INSScalculo(IsMatBaseInss(2, 0), IsComparacao)
         IsMatBaseInss(3, 5) = INSScalculo(IsMatBaseInss(3, 0), IsComparacao)
         IsMatBaseInss(4, 5) = INSScalculo(IsMatBaseInss(4, 0), IsComparacao)
         IsMatBaseInss(5, 5) = INSScalculo(IsMatBaseInss(5, 0), IsComparacao)
 
-
+        ' Exibindo as base selecionadas
         LblBase1.Text = numeroLatino(IsMatBaseInss(1, 0), 10, True)
         LblBase2.Text = numeroLatino(IsMatBaseInss(2, 0), 10, True)
         LblBase3.Text = numeroLatino(IsMatBaseInss(3, 0), 10, True)
         LblBase4.Text = numeroLatino(IsMatBaseInss(4, 0), 10, True)
         LblBase5.Text = numeroLatino(IsMatBaseInss(5, 0), 10, True)
 
-
+        ' Exibindo os descontos apurados de cada base 
         LblTotal_b1.Text = numeroLatino(IsMatBaseInss(1, 5), 8, True)
         LblTotal_b2.Text = numeroLatino(IsMatBaseInss(2, 5), 8, True)
         LblTotal_b3.Text = numeroLatino(IsMatBaseInss(3, 5), 8, True)
@@ -218,7 +218,7 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
             End If
 
         Else
-            LblFaixa1_b1.Text = numeroLatino(0, 8, True)
+            LblFaixa1_b1.Text = numeroLatino(Math.Round((IsMatBaseInss(1, 0) * INSStabela(0).Class_INSSfaixa1Porcentagem) / 100, 2), 8, True)
             LblFaixa2_b1.Text = numeroLatino(0, 8, True)
             LblFaixa3_b1.Text = numeroLatino(0, 8, True)
             LblFaixa4_b1.Text = numeroLatino(0, 8, True)
@@ -235,10 +235,21 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
         LblFaixa3_b3.Text = numeroLatino(Math.Round(IsMatBaseInss(3, 5) - INSStabela(0).Class_INSSfaixa2Acumulado, 2), 8, True)
         LblFaixa4_b3.Text = numeroLatino(0, 8, True)
 
+
+
         If IsMatBaseInss(4, 0) >= INSStabela(0).Class_INSSfaixa1 Then LblFaixa1_b4.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1Valor, 2), 8, True)
         If IsMatBaseInss(4, 0) >= INSStabela(0).Class_INSSfaixa2 Then LblFaixa2_b4.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Valor, 2), 8, True)
         If IsMatBaseInss(4, 0) >= INSStabela(0).Class_INSSfaixa3 Then LblFaixa3_b4.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3Valor, 2), 8, True)
-        LblFaixa4_b4.Text = numeroLatino(Math.Round(IsMatBaseInss(4, 5) - INSStabela(0).Class_INSSfaixa3Acumulado, 2), 8, True)
+
+        If INSStabela(0).Class_INSSnumeroDeFaixas > 3 Then
+
+            LblFaixa4_b4.Text = numeroLatino(Math.Round(IsMatBaseInss(4, 5) - INSStabela(0).Class_INSSfaixa3Acumulado, 2), 8, True)
+
+        Else
+
+            LblFaixa3_b4.Text = numeroLatino(Math.Round(IsMatBaseInss(4, 5) - INSStabela(0).Class_INSSfaixa2Acumulado, 2), 8, True)
+
+        End If
 
         'If IsMatBaseInss(1, 0) >= INSStabela(0).Class_INSSfaixa1 Then LblFaixa1_b1.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa1Valor, 2), 8, True)
         'If IsMatBaseInss(1, 0) >= INSStabela(0).Class_INSSfaixa2 Then LblFaixa2_b1.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Valor, 2), 8, True)
@@ -498,7 +509,8 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
         If Not CheckBoxOK2.Checked Then IsSemCheck = False : IsTexto += "2.º Teste não Confirmado " + Chr(13)
         If Not CheckBoxOK3.Checked Then IsSemCheck = False : IsTexto += "3.º Teste não Confirmado " + Chr(13)
         If Not CheckBoxOK4.Checked Then IsSemCheck = False : IsTexto += "4.º Teste não Confirmado " + Chr(13)
-        If Not CheckBoxOK6.Checked Then IsSemCheck = False : IsTexto += "5.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK5.Checked Then IsSemCheck = False : IsTexto += "5.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK6.Checked Then IsSemCheck = False : IsTexto += "6.º Teste não Confirmado " + Chr(13)
 
         If Not IsSemCheck Then
             With oi

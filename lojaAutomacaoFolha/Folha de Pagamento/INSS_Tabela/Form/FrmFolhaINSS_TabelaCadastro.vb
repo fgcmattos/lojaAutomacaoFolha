@@ -147,10 +147,6 @@
 
     End Sub
 
-    Private Sub TxtValorFaixa_TextChanged(sender As Object, e As EventArgs) Handles TxtValorFaixa.TextChanged
-
-    End Sub
-
     Private Sub TxtValorFaixa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtValorFaixa.KeyPress
 
         With TxtValorFaixa
@@ -759,8 +755,6 @@
 
     End Sub
 
-
-
     Private Sub BtnGravaTabela_Click(sender As Object, e As EventArgs) Handles BtnGravaTabela.Click
 
         ' Rotina preparada para até 4 faixas
@@ -914,17 +908,53 @@
     End Class
 
     Private Sub FrmFolhaINSS_TabelaCadastro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         oi.Title = Me.Text
+
+
         Dim Query As String = "Select count(*) from inss where INSStabelaStatus = 0"
         If gravaSQLretorno(Query) > 0 Then
 
             With oi
                 .Msg = "Existe Tabela já digitada aguardando Conferência" & Chr(13) & Chr(13)
                 .Msg += "Caso tenha que digitar nova tabela solicite o cancelamento da tabela que está aguardando conferência"
-                .Style = vbExclamation
+                .Style = vbCritical
                 MsgBox(.Msg, .Style, .Title)
                 Me.Close()
+                Exit Sub
             End With
+
         End If
+
+        Query = "Select count(*) from inss where INSStabelaStatus = 1"
+
+        If gravaSQLretorno(Query) > 0 Then
+
+            With oi
+                .Msg = "Existe Tabela aguardando Liberação" & Chr(13) & Chr(13)
+                .Msg += "Caso tenha que digitar nova tabela solicite a liberação da tabela!"
+                .Style = vbCritical
+                MsgBox(.Msg, .Style, .Title)
+                Me.Close()
+                Exit Sub
+            End With
+
+        End If
+
+        Query = "Select count(*) from inss where INSStabelaStatus = 2"
+
+        If gravaSQLretorno(Query) > 0 Then
+
+            With oi
+                .Msg = "Existe Tabela aguardando Publicãção" & Chr(13) & Chr(13)
+                .Msg += "Caso tenha que digitar nova tabela solicite a Publicação da tabela!"
+                .Style = vbCritical
+                MsgBox(.Msg, .Style, .Title)
+                Me.Close()
+                Exit Sub
+            End With
+
+        End If
+
     End Sub
 End Class

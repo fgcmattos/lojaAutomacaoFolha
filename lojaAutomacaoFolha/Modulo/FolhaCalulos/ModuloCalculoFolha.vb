@@ -24,16 +24,20 @@
 
         Dim INSStabela As List(Of ClassINSStabela) = ClassINSStabelaAcao.GetINSS_DB(IsTipoCalculo)
 
+
         Select Case INSStabela(0).Class_INSSnumeroDeFaixas
+
             Case 4
 
                 If Base_INSS > INSStabela(0).Class_INSSfaixa4 Then
                     INSSretorno = INSStabela(0).Class_INSSfaixa4Acumulado
                 ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa3 Then
-                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa3) * (INSStabela(0).Class_INSSfaixa3Porcentagem / 100) + INSStabela(0).Class_INSSfaixa3Acumulado)
+                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa3) * (INSStabela(0).Class_INSSfaixa4Porcentagem / 100) + INSStabela(0).Class_INSSfaixa3Acumulado)
                 ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa2 Then
-                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa2) * (INSStabela(0).Class_INSSfaixa2Porcentagem / 100) + INSStabela(0).Class_INSSfaixa2Acumulado)
+                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa2) * (INSStabela(0).Class_INSSfaixa3Porcentagem / 100) + INSStabela(0).Class_INSSfaixa2Acumulado)
                 ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa1 Then
+                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa2Porcentagem / 100) + INSStabela(0).Class_INSSfaixa1Acumulado)
+                Else
                     INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa1Porcentagem / 100) + INSStabela(0).Class_INSSfaixa1Acumulado)
                 End If
 
@@ -42,9 +46,9 @@
                 If Base_INSS > INSStabela(0).Class_INSSfaixa3 Then
                     INSSretorno = (INSStabela(0).Class_INSSfaixa3Acumulado)
                 ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa2 Then
-                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa2) * (INSStabela(0).Class_INSSfaixa2Porcentagem / 100) + INSStabela(0).Class_INSSfaixa2Acumulado)
+                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa2) * (INSStabela(0).Class_INSSfaixa3Porcentagem / 100) + INSStabela(0).Class_INSSfaixa2Acumulado)
                 ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa1 Then
-                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa1Porcentagem / 100) + INSStabela(0).Class_INSSfaixa1Acumulado)
+                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa2Porcentagem / 100) + INSStabela(0).Class_INSSfaixa1Acumulado)
                 End If
 
             Case 2
@@ -52,6 +56,8 @@
                 If Base_INSS > INSStabela(0).Class_INSSfaixa2 Then
                     INSSretorno = (INSStabela(0).Class_INSSfaixa2Acumulado)
                 ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa1 Then
+                    INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa2Porcentagem / 100) + INSStabela(0).Class_INSSfaixa1Acumulado)
+                Else
                     INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa1Porcentagem / 100) + INSStabela(0).Class_INSSfaixa1Acumulado)
                 End If
 
@@ -62,6 +68,51 @@
                 End If
 
         End Select
+
+
+
+
+
+
+        '''Select Case INSStabela(0).Class_INSSnumeroDeFaixas
+
+        '''    Case 4
+
+        '''        If Base_INSS > INSStabela(0).Class_INSSfaixa4 Then
+        '''            INSSretorno = INSStabela(0).Class_INSSfaixa4Acumulado
+        '''        ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa3 Then
+        '''            INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa3) * (INSStabela(0).Class_INSSfaixa3Porcentagem / 100) + INSStabela(0).Class_INSSfaixa3Acumulado)
+        '''        ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa2 Then
+        '''            INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa2) * (INSStabela(0).Class_INSSfaixa2Porcentagem / 100) + INSStabela(0).Class_INSSfaixa2Acumulado)
+        '''        ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa1 Then
+        '''            INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa1Porcentagem / 100) + INSStabela(0).Class_INSSfaixa1Acumulado)
+        '''        End If
+
+        '''    Case 3
+
+        '''        If Base_INSS > INSStabela(0).Class_INSSfaixa3 Then
+        '''            INSSretorno = (INSStabela(0).Class_INSSfaixa3Acumulado)
+        '''        ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa2 Then
+        '''            INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa2) * (INSStabela(0).Class_INSSfaixa2Porcentagem / 100) + INSStabela(0).Class_INSSfaixa2Acumulado)
+        '''        ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa1 Then
+        '''            INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa1Porcentagem / 100) + INSStabela(0).Class_INSSfaixa1Acumulado)
+        '''        End If
+
+        '''    Case 2
+
+        '''        If Base_INSS > INSStabela(0).Class_INSSfaixa2 Then
+        '''            INSSretorno = (INSStabela(0).Class_INSSfaixa2Acumulado)
+        '''        ElseIf Base_INSS > INSStabela(0).Class_INSSfaixa1 Then
+        '''            INSSretorno = ((Base_INSS - INSStabela(0).Class_INSSfaixa1) * (INSStabela(0).Class_INSSfaixa1Porcentagem / 100) + INSStabela(0).Class_INSSfaixa1Acumulado)
+        '''        End If
+
+        '''    Case 1
+
+        '''        If Base_INSS > INSStabela(0).Class_INSSfaixa1 Then
+        '''            INSSretorno = (INSStabela(0).Class_INSSfaixa1Acumulado)
+        '''        End If
+
+        '''End Select
 
 
         Return (Math.Round(INSSretorno, 2))

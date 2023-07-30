@@ -356,45 +356,50 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.LblFaixa4_b5.AutoSize = True
         Me.LblFaixa4_b5.Location = New System.Drawing.Point(283, 223)
         Me.LblFaixa4_b5.Name = "LblFaixa4_b5"
-        Me.LblFaixa4_b5.Size = New System.Drawing.Size(48, 13)
+        Me.LblFaixa4_b5.Size = New System.Drawing.Size(32, 13)
         Me.LblFaixa4_b5.TabIndex = 39
-        Me.LblFaixa4_b5.Text = "Faixa 1"
+        Me.LblFaixa4_b5.Text = "0,00"
+        Me.LblFaixa4_b5.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'LblFaixa4_b4
         '
         Me.LblFaixa4_b4.AutoSize = True
         Me.LblFaixa4_b4.Location = New System.Drawing.Point(283, 181)
         Me.LblFaixa4_b4.Name = "LblFaixa4_b4"
-        Me.LblFaixa4_b4.Size = New System.Drawing.Size(48, 13)
+        Me.LblFaixa4_b4.Size = New System.Drawing.Size(32, 13)
         Me.LblFaixa4_b4.TabIndex = 38
-        Me.LblFaixa4_b4.Text = "Faixa 1"
+        Me.LblFaixa4_b4.Text = "0,00"
+        Me.LblFaixa4_b4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'LblFaixa4_b3
         '
         Me.LblFaixa4_b3.AutoSize = True
         Me.LblFaixa4_b3.Location = New System.Drawing.Point(283, 146)
         Me.LblFaixa4_b3.Name = "LblFaixa4_b3"
-        Me.LblFaixa4_b3.Size = New System.Drawing.Size(48, 13)
+        Me.LblFaixa4_b3.Size = New System.Drawing.Size(32, 13)
         Me.LblFaixa4_b3.TabIndex = 37
-        Me.LblFaixa4_b3.Text = "Faixa 1"
+        Me.LblFaixa4_b3.Text = "0,00"
+        Me.LblFaixa4_b3.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'LblFaixa4_b2
         '
         Me.LblFaixa4_b2.AutoSize = True
         Me.LblFaixa4_b2.Location = New System.Drawing.Point(283, 107)
         Me.LblFaixa4_b2.Name = "LblFaixa4_b2"
-        Me.LblFaixa4_b2.Size = New System.Drawing.Size(48, 13)
+        Me.LblFaixa4_b2.Size = New System.Drawing.Size(32, 13)
         Me.LblFaixa4_b2.TabIndex = 36
-        Me.LblFaixa4_b2.Text = "Faixa 1"
+        Me.LblFaixa4_b2.Text = "0,00"
+        Me.LblFaixa4_b2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'LblFaixa4_b1
         '
         Me.LblFaixa4_b1.AutoSize = True
         Me.LblFaixa4_b1.Location = New System.Drawing.Point(283, 69)
         Me.LblFaixa4_b1.Name = "LblFaixa4_b1"
-        Me.LblFaixa4_b1.Size = New System.Drawing.Size(48, 13)
+        Me.LblFaixa4_b1.Size = New System.Drawing.Size(32, 13)
         Me.LblFaixa4_b1.TabIndex = 35
-        Me.LblFaixa4_b1.Text = "Faixa 1"
+        Me.LblFaixa4_b1.Text = "0,00"
+        Me.LblFaixa4_b1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'LblFaixa3_b5
         '
@@ -678,7 +683,7 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.GroupBox3.Size = New System.Drawing.Size(524, 84)
         Me.GroupBox3.TabIndex = 6
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "TESTE SIMULADOS PELO ANALISTA"
+        Me.GroupBox3.Text = "TESTE SIMULADO PELO ANALISTA"
         '
         'CheckBoxOK6
         '
@@ -738,7 +743,7 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         '
         'BtnConferencia
         '
-        Me.BtnConferencia.Location = New System.Drawing.Point(12, 437)
+        Me.BtnConferencia.Location = New System.Drawing.Point(12, 446)
         Me.BtnConferencia.Name = "BtnConferencia"
         Me.BtnConferencia.Size = New System.Drawing.Size(585, 35)
         Me.BtnConferencia.TabIndex = 7
@@ -769,6 +774,7 @@ Partial Class FrmFolhaINSS_TabelaCadastroTeste
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmFolhaINSS_TabelaCadastroTeste"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FOLHA - Tabela INSS   -  C O N F E R Ê N C I A"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
