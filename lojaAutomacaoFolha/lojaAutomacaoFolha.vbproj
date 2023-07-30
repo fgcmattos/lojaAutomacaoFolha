@@ -306,6 +306,30 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Folha de Pagamento\IR_Tabela\Class\ClassIRtabelaAcao.vb" />
+    <Compile Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaCadastro.Designer.vb">
+      <DependentUpon>FrmFolhaIR_TabelaCadastro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaCadastro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaCadastroTeste.Designer.vb">
+      <DependentUpon>FrmFolhaIR_TabelaCadastroTeste.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaCadastroTeste.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaPesquisa.Designer.vb">
+      <DependentUpon>FrmFolhaIR_TabelaPesquisa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaPesquisa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaPublicacao.Designer.vb">
+      <DependentUpon>FrmFolhaIR_TabelaPublicacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaPublicacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulo\Conexoes\ModInicializacao.vb" />
     <Compile Include="classes\MsgShow.vb" />
     <Compile Include="classes\ReciboAcoes.vb" />
@@ -869,6 +893,18 @@
     <EmbeddedResource Include="ADM_Sistema\Form\frmDBselecao.resx">
       <DependentUpon>frmDBselecao.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaCadastro.resx">
+      <DependentUpon>FrmFolhaIR_TabelaCadastro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaCadastroTeste.resx">
+      <DependentUpon>FrmFolhaIR_TabelaCadastroTeste.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaPesquisa.resx">
+      <DependentUpon>FrmFolhaIR_TabelaPesquisa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaPublicacao.resx">
+      <DependentUpon>FrmFolhaIR_TabelaPublicacao.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Log\Form\FrmLogPesquisa.resx">
       <DependentUpon>FrmLogPesquisa.vb</DependentUpon>
     </EmbeddedResource>
@@ -1370,7 +1406,6 @@
     <Folder Include="Contas A Pagar\" />
     <Folder Include="Contas A Receber\" />
     <Folder Include="Financeiro\" />
-    <Folder Include="Folha de Pagamento\IR_Tabela\Form\" />
     <Folder Include="Recebimento Fiscal\" />
     <Folder Include="relatorios\" />
     <Folder Include="Suprimentos\" />

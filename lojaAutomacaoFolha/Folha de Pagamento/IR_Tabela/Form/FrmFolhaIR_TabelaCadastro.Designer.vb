@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FrmFolhaINSS_TabelaCadastro
+Partial Class FrmFolhaIR_TabelaCadastro
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -57,10 +57,10 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.ListView1)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(23, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(975, 375)
-        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
         'BtnGravaTabela
@@ -269,16 +269,17 @@ Partial Class FrmFolhaINSS_TabelaCadastro
         Me.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.ColumnHeader5.Width = 160
         '
-        'FrmFolhaINSS_TabelaCadastro
+        'FrmFolhaIR_TabelaCadastro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(999, 461)
+        Me.ClientSize = New System.Drawing.Size(1018, 404)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "FrmFolhaINSS_TabelaCadastro"
-        Me.Text = "FOLHA - Tabela INSS Cadastramento"
+        Me.Name = "FrmFolhaIR_TabelaCadastro"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "FOLHA - Tabela IR Cadastramento"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
@@ -288,26 +289,26 @@ Partial Class FrmFolhaINSS_TabelaCadastro
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents BtnGravaTabela As Button
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents BtnLiberaEdicao As Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents BtnIncrementa As Button
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents ColumnHeader5 As ColumnHeader
     Friend WithEvents LblFaixa As Label
     Friend WithEvents TxtImpostoFaixaAcumulado As TextBox
     Friend WithEvents TxtImpostoFaixa As TextBox
     Friend WithEvents TxtPorcentagemFaixa As TextBox
     Friend WithEvents TxtValorFaixa As TextBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents BtnLiberaEdicao As Button
-    Friend WithEvents BtnGravaTabela As Button
+    Friend WithEvents BtnIncrementa As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
 End Class

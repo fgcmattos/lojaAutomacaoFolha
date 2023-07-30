@@ -719,4 +719,20 @@ Public Class Form1
     Private Sub PesquisaToolStripMenuItem16_Click(sender As Object, e As EventArgs) Handles PesquisaToolStripMenuItem16.Click
         FrmFolhaINSS_TabelaPesquisa.Show()
     End Sub
+
+    Private Sub CadastroToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles CadastroToolStripMenuItem9.Click
+        FrmFolhaIR_TabelaCadastro.Show()
+    End Sub
+
+    Private Sub ConferênciaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConferênciaToolStripMenuItem.Click
+        FrmFolhaIR_TabelaCadastroTeste.show()
+    End Sub
+
+    Private Sub LiberaçãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LiberaçãoToolStripMenuItem.Click
+        FrmFolhaIR_TabelaPublicacao.show()
+    End Sub
+
+    Private Sub PesquisaToolStripMenuItem17_Click(sender As Object, e As EventArgs) Handles PesquisaToolStripMenuItem17.Click
+        FrmFolhaIR_TabelaPesquisa.show()
+    End Sub
 End Class

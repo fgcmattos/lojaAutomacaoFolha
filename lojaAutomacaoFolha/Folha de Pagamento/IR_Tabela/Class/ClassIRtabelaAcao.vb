@@ -85,7 +85,7 @@ Public Class ClassIRtabelaAcao
 
 
 
-        Query += " from IR "
+        Query += " from folha_tabela_imposto_renda_pf "
         Query += "where " & IsTabela                                         'IR_ativa"
         Query += ")"
         Query += "  as IR_calc"
