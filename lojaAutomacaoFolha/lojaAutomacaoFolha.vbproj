@@ -266,6 +266,7 @@
     <Compile Include="classes\irTabelaAcao.vb" />
     <Compile Include="classes\MenuColaborador.vb" />
     <Compile Include="Folha de Pagamento\Contrato\Class\ClassContratoFolha.vb" />
+    <Compile Include="Folha de Pagamento\IR_Tabela\Class\ClassIRtabela.vb" />
     <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastro.Designer.vb">
       <DependentUpon>FrmFolhaINSS_TabelaCadastro.vb</DependentUpon>
     </Compile>
@@ -304,6 +305,7 @@
     <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaPesquisa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Folha de Pagamento\IR_Tabela\Class\ClassIRtabelaAcao.vb" />
     <Compile Include="Modulo\Conexoes\ModInicializacao.vb" />
     <Compile Include="classes\MsgShow.vb" />
     <Compile Include="classes\ReciboAcoes.vb" />
@@ -1368,7 +1370,6 @@
     <Folder Include="Contas A Pagar\" />
     <Folder Include="Contas A Receber\" />
     <Folder Include="Financeiro\" />
-    <Folder Include="Folha de Pagamento\IR_Tabela\Class\" />
     <Folder Include="Folha de Pagamento\IR_Tabela\Form\" />
     <Folder Include="Recebimento Fiscal\" />
     <Folder Include="relatorios\" />
