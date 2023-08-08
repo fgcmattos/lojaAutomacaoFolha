@@ -73,7 +73,13 @@ Public Class FmrIndUsu
             Query += " and "
             Query += "usuarioSenha = '" & pass & "'"
             Query += " and "
-            Query += "usuarioTipo = '" & tipo & "';"
+            Query += "usuarioTipo = '" & tipo & "'"
+            Query += " group by "
+            Query += "usuarioChave"
+            Query += ",usuarioSenha"
+            Query += ",usuarioTipo"
+            Query += ",usuarioNomeAcesso"
+            Query += ";"
 
 
             Dim CMD As New MySqlCommand(Query, Conn)

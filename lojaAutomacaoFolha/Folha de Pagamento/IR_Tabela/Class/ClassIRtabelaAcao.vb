@@ -44,9 +44,9 @@ Public Class ClassIRtabelaAcao
         Query += ",IRresponsavelConferencia"                                                                                                             '   25
         Query += ",IRresponsavelConferenciaTipo"                                                                                                         '   26
         Query += ",IRdataConferencia"                                                                                                                    '   27
-        Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = IRresponsavelDigitacao and usuarioTipo=IRresponsavelDigitacaoTipo)),'') as IRdigitacaoUsuario "          '  28
-        Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = IRresponsavelConferencia and usuarioTipo=IRresponsavelConferenciaTipo)),'') as IRconferenciaUsuario "    '  29
-        Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = IRresponsavelPublicacao and usuarioTipo=IRresponsavelPublicacaoTipo)),'') as IRpublicacaoUsuario "       '  30
+        Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = IRresponsavelDigitacao and usuarioTipo=IRresponsavelDigitacaoTipo COLLATE utf8mb4_general_ci)),'') as IRdigitacaoUsuario "          '  28
+        Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = IRresponsavelConferencia and usuarioTipo=IRresponsavelConferenciaTipo COLLATE utf8mb4_general_ci)),'') as IRconferenciaUsuario "    '  29
+        Query += ",coalesce((select usuarioNomeAcesso from usuario where  (usuarioChave = IRresponsavelPublicacao and usuarioTipo=IRresponsavelPublicacaoTipo COLLATE utf8mb4_general_ci)),'') as IRpublicacaoUsuario "       '  30
         Query += ",IRresponsavelPublicacao"                                                                                                              '   31
         Query += ",IRresponsavelPublicacaoTipo"                                                                                                          '   32
         Query += ",IRdataPublicacao"                                                                                                                     '   33
@@ -73,14 +73,14 @@ Public Class ClassIRtabelaAcao
         Query += ",if(IRfaixa3valor<>0,IRfaixa3valor,round((IRfaixa3-IRfaixa2)*(IRfaixa3Porcentagem/100),2)) as IRfaixa3Valor"
         Query += ",if(IRnumeroDeFaixas>3,if(IRfaixa4valor<>0,IRfaixa4valor,round((IRfaixa4-IRfaixa3)*(IRfaixa4Porcentagem/100),2)),0) as IRfaixa4Valor"
         Query += ",IRdataCriacao"
-        Query += ",ifnull(IRresponsavelDigitacao,'') as IRResponsavelDigitacao"
+        Query += ",ifnull(IRresponsavelDigitacao,0) as IRResponsavelDigitacao"
         Query += ",ifnull(IRresponsavelDigitacaoTipo,'') as IRResponsavelDigitacaoTipo"
-        Query += ",ifnull(IRresponsavelConferencia,'') as IRresponsavelConferencia"
+        Query += ",ifnull(IRresponsavelConferencia,0) as IRresponsavelConferencia"
         Query += ",ifnull(IRresponsavelConferenciaTipo,'') as IRresponsavelConferenciaTipo"
         Query += ",ifnull(IRdataConferencia,'') as IRdataConferencia"
         Query += ",IRtabelaNumero"
-        Query += ",IRresponsavelPublicacao"
-        Query += ",IRresponsavelPublicacaoTipo"
+        Query += ",ifnull(IRresponsavelPublicacao,0) as IRresponsavelPublicacao"
+        Query += ",ifnull(IRresponsavelPublicacaoTipo,'') as IRresponsavelPublicacaoTipo"
         Query += ",ifnull(IRdataPublicacao,'') as IRdataPublicacao"
 
 
