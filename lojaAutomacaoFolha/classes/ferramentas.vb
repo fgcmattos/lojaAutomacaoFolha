@@ -1007,7 +1007,7 @@ Module Module1
             Case 4 To 6
                 strvolta = strFrase.Substring(0, strfraseLen - 3) + "." + strFrase.Substring(strfraseLen - 3)
             Case 7 To 8
-                strvolta = strFrase.Substring(0, strfraseLen - 6) + "." + strFrase.Substring(strfraseLen - 3) + "."
+                strvolta = strFrase.Substring(0, strfraseLen - 6) + "." + strFrase.Substring(strfraseLen - 3) + "." + strFrase.Substring(strfraseLen - 3)
             Case 11
             Case Else
                 strvolta = strFrase
@@ -1022,10 +1022,15 @@ Module Module1
 
 
 
+        If tamanho > Len(strvolta) Then
 
-        numeroLatino = Space(tamanho - Len(strvolta)) + strvolta
+            numeroLatino = Space(tamanho - Len(strvolta)) + strvolta
 
+        Else
 
+            numeroLatino = strvolta
+
+        End If
 
     End Function
 

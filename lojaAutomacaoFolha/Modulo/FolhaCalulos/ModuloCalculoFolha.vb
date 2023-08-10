@@ -96,6 +96,22 @@
 
         Select Case IRtabela(0).Class_IRnumeroDeFaixas
 
+            Case 5
+
+                If Base_IR >= IRtabela(0).Class_IRfaixa5 Then
+                    IRretorno = ((Base_IR - IRtabela(0).Class_IRfaixa5) * (IRtabela(0).Class_IRfaixa5Porcentagem / 100) + IRtabela(0).Class_IRfaixa5Acumulado)
+                ElseIf Base_IR >= IRtabela(0).Class_IRfaixa4 Then
+                    IRretorno = ((Base_IR - IRtabela(0).Class_IRfaixa4) * (IRtabela(0).Class_IRfaixa5Porcentagem / 100) + IRtabela(0).Class_IRfaixa4Acumulado)
+                ElseIf Base_IR >= IRtabela(0).Class_IRfaixa3 Then
+                    IRretorno = ((Base_IR - IRtabela(0).Class_IRfaixa3) * (IRtabela(0).Class_IRfaixa4Porcentagem / 100) + IRtabela(0).Class_IRfaixa3Acumulado)
+                ElseIf Base_IR >= IRtabela(0).Class_IRfaixa2 Then
+                    IRretorno = ((Base_IR - IRtabela(0).Class_IRfaixa2) * (IRtabela(0).Class_IRfaixa3Porcentagem / 100) + IRtabela(0).Class_IRfaixa2Acumulado)
+                ElseIf Base_IR >= IRtabela(0).Class_IRfaixa1 Then
+                    IRretorno = ((Base_IR - IRtabela(0).Class_IRfaixa1) * (IRtabela(0).Class_IRfaixa2Porcentagem / 100) + IRtabela(0).Class_IRfaixa1Acumulado)
+                Else
+                    IRretorno = 0
+                End If
+
             Case 4
 
                 If Base_IR > IRtabela(0).Class_IRfaixa4 Then
@@ -133,6 +149,8 @@
                 End If
 
         End Select
+
+        Return (Math.Round(IRretorno, 2))
 
     End Function
 

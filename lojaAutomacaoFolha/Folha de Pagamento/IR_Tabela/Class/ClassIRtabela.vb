@@ -11,6 +11,8 @@
     Public Property Class_IRfaixa3Porcentagem As Decimal
     Public Property Class_IRfaixa4 As Decimal
     Public Property Class_IRfaixa4Porcentagem As Decimal
+    Public Property Class_IRfaixa5 As Decimal
+    Public Property Class_IRfaixa5Porcentagem As Decimal
     Public Property Class_IR_dataInicio As String
     Public Property Class_IR_dataFim As String
     Public Property Class_IRnumeroDeFaixas As Integer
@@ -19,10 +21,12 @@
     Public Property Class_IRfaixa2Valor As Decimal
     Public Property Class_IRfaixa3Valor As Decimal
     Public Property Class_IRfaixa4Valor As Decimal
+    Public Property Class_IRfaixa5Valor As Decimal
     Public Property Class_IRfaixa1Acumulado As Decimal
     Public Property Class_IRfaixa2Acumulado As Decimal
     Public Property Class_IRfaixa3Acumulado As Decimal
     Public Property Class_IRfaixa4Acumulado As Decimal
+    Public Property Class_IRfaixa5Acumulado As Decimal
     Public Property Class_IRdataCriacao As DateTime
     Public Property Class_IRresponsavelDigitacao As Integer
     Public Property Class_IRdataConferencia As DateTime
