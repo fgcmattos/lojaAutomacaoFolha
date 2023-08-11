@@ -31,6 +31,12 @@ Partial Class FrmFolhaIR_TabelaCadastroTeste
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtValorBase = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.CheckBoxOK3 = New System.Windows.Forms.CheckBox()
         Me.CheckBoxOK2 = New System.Windows.Forms.CheckBox()
         Me.CheckBoxOK1 = New System.Windows.Forms.CheckBox()
@@ -85,12 +91,6 @@ Partial Class FrmFolhaIR_TabelaCadastroTeste
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -241,6 +241,65 @@ Partial Class FrmFolhaIR_TabelaCadastroTeste
         Me.GroupBox2.TabIndex = 10
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "TESTES AUTOMATIZADOS"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(347, 223)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(32, 13)
+        Me.Label11.TabIndex = 50
+        Me.Label11.Text = "0,00"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(347, 181)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(32, 13)
+        Me.Label12.TabIndex = 49
+        Me.Label12.Text = "0,00"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(347, 146)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(32, 13)
+        Me.Label13.TabIndex = 48
+        Me.Label13.Text = "0,00"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(347, 107)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(32, 13)
+        Me.Label15.TabIndex = 47
+        Me.Label15.Text = "0,00"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(347, 69)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(32, 13)
+        Me.Label16.TabIndex = 46
+        Me.Label16.Text = "0,00"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(347, 32)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(48, 13)
+        Me.Label17.TabIndex = 45
+        Me.Label17.Text = "Faixa 5"
         '
         'CheckBoxOK3
         '
@@ -770,65 +829,6 @@ Partial Class FrmFolhaIR_TabelaCadastroTeste
         Me.Label1.Size = New System.Drawing.Size(87, 16)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Referência:"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(347, 223)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(32, 13)
-        Me.Label11.TabIndex = 50
-        Me.Label11.Text = "0,00"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(347, 181)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(32, 13)
-        Me.Label12.TabIndex = 49
-        Me.Label12.Text = "0,00"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(347, 146)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(32, 13)
-        Me.Label13.TabIndex = 48
-        Me.Label13.Text = "0,00"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(347, 107)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(32, 13)
-        Me.Label15.TabIndex = 47
-        Me.Label15.Text = "0,00"
-        Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(347, 69)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(32, 13)
-        Me.Label16.TabIndex = 46
-        Me.Label16.Text = "0,00"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(347, 32)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(48, 13)
-        Me.Label17.TabIndex = 45
-        Me.Label17.Text = "Faixa 5"
         '
         'FrmFolhaIR_TabelaCadastroTeste
         '

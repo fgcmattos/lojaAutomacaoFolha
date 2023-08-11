@@ -65,10 +65,10 @@
                     ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa4Acumulado, 2), 8, True))
 
                 Case 5
-                    ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa5, 2), 8, True))
-                    ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa5Porcentagem, 2), 8, True))
-                    ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa5Valor, 2), 8, True))
-                    ListView1.Items(3).SubItems.Add(numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa5Acumulado, 2), 8, True))
+                    ListView1.Items(4).SubItems.Add(numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa5, 2), 8, True))
+                    ListView1.Items(4).SubItems.Add(numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa5Porcentagem, 2), 8, True))
+                    ListView1.Items(4).SubItems.Add(numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa5Valor, 2), 8, True))
+                    ListView1.Items(4).SubItems.Add(numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa5Acumulado, 2), 8, True))
 
             End Select
 
@@ -200,4 +200,129 @@
         If IsMatBaseIR(5, 0) >= IRtabela(0).Class_IRfaixa3 Then LblFaixa3_b5.Text = numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa3Valor, 2), 8, True)
         If IsMatBaseIR(5, 0) >= IRtabela(0).Class_IRfaixa4 Then LblFaixa4_b5.Text = numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa4Valor, 2), 8, True)
     End Function
+
+    Private Sub TxtValorBase_TextChanged(sender As Object, e As EventArgs) Handles TxtValorBase.TextChanged
+
+    End Sub
+
+    Private Sub TxtValorBase_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtValorBase.KeyPress
+
+        With TxtValorBase
+
+            Dim strMascarado As String = ""
+
+
+            If .Text = "" Then
+
+                .Text = "0,00"
+
+                Exit Sub
+
+            End If
+
+            If .MaxLength < .Text.Length And Asc(e.KeyChar) <> 8 And Asc(e.KeyChar) <> 13 Then
+
+                e.KeyChar = ""
+
+                Exit Sub
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(27) Then
+
+                TxtValorBase.Text = "0,00"
+
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(13) Then
+
+
+                If .Text <= 0.00 Then
+
+                    MsgBox("A Base deve ter um valor maior que 0.00", vbExclamation, Me.Text)
+                    Exit Sub
+
+
+                End If
+
+                LblINSSValorSimulado.Text = IRcalculo(TxtValorBase.Text, "IRtabelaStatus=0")
+
+
+                'SendKeys.Send("{TAB}")
+
+
+                Exit Sub
+
+            End If
+
+            If Asc(e.KeyChar) = 8 Then       ' BACKSPACE
+
+                e.KeyChar = ""
+
+
+                If .Text = "0,00" Then Exit Sub
+                If .Text.Substring(0, 3) = "0,0" And .Text.Length = 4 Then .Text = "0,00" : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Substring(0, 2) = "0," And .Text.Length = 4 Then .Text = "0,0" + .Text.Substring(.Text.Length - 2, 1) : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Length = 4 Then .Text = "0," + .Text.Substring(0, 1) + .Text.Substring(2, 1) : SendKeys.Send("{END}") : Exit Sub
+
+                .Text = .Text.Substring(0, .Text.Length - 1)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+                Exit Sub
+
+            End If
+
+            If e.KeyChar >= "0" And e.KeyChar <= "9" Then
+
+                Dim strComMascara As String = Trim(.Text)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+                Dim strRetorno As String = ""
+                Dim strPressionada As String = e.KeyChar
+
+                e.KeyChar = ""
+
+                If intSemMascara > 13 Then
+
+                    Exit Sub
+
+                End If
+
+                If intSemMascara < 4 And strSemMascara.Substring(0, 1) = "0" Then
+
+                    strSemMascara += strPressionada
+                    strSemMascara = strSemMascara.Substring(1)
+
+                Else
+
+                    strSemMascara += strPressionada
+                    intSemMascara += 1
+
+                End If
+
+                .Text = retMascara(intSemMascara, strSemMascara)
+
+
+
+                SendKeys.Send("{END}")
+
+            Else
+
+                e.KeyChar = ""
+
+                .Focus()
+
+
+                ' SendKeys.Send("{END}")
+
+
+            End If
+
+        End With
+    End Sub
 End Class

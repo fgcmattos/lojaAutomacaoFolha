@@ -380,6 +380,7 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
 
 
     Private Sub TxtValorBase_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtValorBase.KeyPress
+
         With TxtValorBase
 
             Dim strMascarado As String = ""
