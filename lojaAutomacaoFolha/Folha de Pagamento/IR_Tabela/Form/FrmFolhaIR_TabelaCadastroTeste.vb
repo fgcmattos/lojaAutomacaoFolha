@@ -201,8 +201,105 @@
         If IsMatBaseIR(5, 0) >= IRtabela(0).Class_IRfaixa4 Then LblFaixa4_b5.Text = numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa4Valor, 2), 8, True)
     End Function
 
-    Private Sub TxtValorBase_TextChanged(sender As Object, e As EventArgs) Handles TxtValorBase.TextChanged
+    Private Sub CheckBoxOK1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK1.CheckedChanged
 
+        With CheckBoxOK1
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+
+    End Sub
+
+
+
+    Private Sub CheckBoxOK2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK2.CheckedChanged
+        With CheckBoxOK2
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+
+    End Sub
+
+    Private Sub CheckBoxOK3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK3.CheckedChanged
+        With CheckBoxOK3
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+    End Sub
+
+    Private Sub CheckBoxOK4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK4.CheckedChanged
+        With CheckBoxOK4
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+    End Sub
+
+    Private Sub CheckBoxOK5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK5.CheckedChanged
+        With CheckBoxOK5
+            If .Checked Then
+                .Text = "OK"
+                .ForeColor = Color.Green
+            Else
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+            End If
+        End With
+    End Sub
+
+    Private Sub CheckBoxOK6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK6.CheckedChanged
+        With CheckBoxOK6
+            If .Checked Then
+
+                If TxtValorBase.Text = "0,00" Then
+
+                    With oi
+
+                        .Msg = "Teste Simulado inválido !"
+                        .Style = vbCritical
+                        MsgBox(.Msg, .Style, .Title)
+                        CheckBoxOK6.Checked = False
+                        LblINSSValorSimulado.Text = "0,00"
+                        TxtValorBase.Focus()
+                        Exit Sub
+
+                    End With
+
+                End If
+                TxtValorBase.Enabled = False
+                LblINSSValorSimulado.Text = numeroLatino(IRcalculo(TxtValorBase.Text, "IRtabelaStatus=0"), 10, True)
+                .Text = "OK"
+                .ForeColor = Color.Green
+                TxtValorBase.Enabled = False
+
+            Else
+
+                .Text = "Não OK"
+                .ForeColor = Color.Red
+                TxtValorBase.Enabled = True
+                TxtValorBase.Enabled = True
+
+            End If
+        End With
     End Sub
 
     Private Sub TxtValorBase_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtValorBase.KeyPress
@@ -246,7 +343,7 @@
 
                 End If
 
-                LblINSSValorSimulado.Text = IRcalculo(TxtValorBase.Text, "IRtabelaStatus=0")
+                LblINSSValorSimulado.Text = numeroLatino(IRcalculo(TxtValorBase.Text, "IRtabelaStatus=0"), 10, True)
 
 
                 'SendKeys.Send("{TAB}")
@@ -322,6 +419,104 @@
 
 
             End If
+
+        End With
+    End Sub
+
+    Private Sub TxtValorBase_TextChanged(sender As Object, e As EventArgs) Handles TxtValorBase.TextChanged
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        With oi
+
+            .Msg = "Confirma a retirada da tabela?"
+            .Style = vbYesNo
+            If MsgBox(.Msg, .Style, .Title) <> 6 Then
+                .Msg = "Tabela Mantida"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+                Exit Sub
+            End If
+
+            Dim Query = "delete from folha_tabela_imposto_renda_pf where IRREF= '" & LblReferencia.Text.Replace("/", "") & "'"
+
+            If gravaSQL(Query) Then
+                .Msg = "Tabela retirada do sistema com sucesso"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+                Me.Close()
+            Else
+                .Msg = "Problema na Retirada da Tabela" & Chr(13)
+                .Msg += "Tende de novo"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+                Exit Sub
+            End If
+
+
+        End With
+    End Sub
+
+    Private Sub BtnConferencia_Click(sender As Object, e As EventArgs) Handles BtnConferencia.Click
+        Dim IsSemCheck As Boolean = True
+
+        Dim IsTexto As String = ""
+
+        If Not CheckBoxOK1.Checked Then IsSemCheck = False : IsTexto = "1.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK2.Checked Then IsSemCheck = False : IsTexto += "2.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK3.Checked Then IsSemCheck = False : IsTexto += "3.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK4.Checked Then IsSemCheck = False : IsTexto += "4.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK5.Checked Then IsSemCheck = False : IsTexto += "5.º Teste não Confirmado " + Chr(13)
+        If Not CheckBoxOK6.Checked Then IsSemCheck = False : IsTexto += "6.º Teste não Confirmado " + Chr(13)
+
+        If Not IsSemCheck Then
+            With oi
+
+                .Msg = IsTexto & Chr(13) & "Confira todos os testes"
+                .Style = vbCritical
+                MsgBox(.Msg, .Style, .Title)
+
+                Exit Sub
+
+            End With
+        End If
+
+        With oi
+
+            .Msg = " Confirma Checagem para gravação ?"
+            .Style = vbYesNo
+            If MsgBox(.Msg, .Style, .Title) <> 6 Then
+
+
+
+            Else
+
+
+                Dim Query As String
+                Query = "UPDATE folha_tabela_imposto_renda_pf "
+                Query += "SET IRtabelaStatus = 1 "
+                Query += ",IRresponsavelConferenciaTipo ='" & usuClass.Usuario_Tipo & "'"
+                Query += ",IRresponsavelConferencia =" & usuClass.Usuario_Chave
+                Query += ",IRresponsavelConferencia =" & usuClass.Usuario_Chave
+                Query += ",IRdataConferencia = now()"
+                Query += " where "
+                Query += "IRREF = '" & Replace(LblReferencia.Text, "/", "") & "'"
+                If gravaSQL(Query) Then
+                    With oi
+
+                        .Msg = "Conferência Gravada com sucesso !"
+                        .Style = vbExclamation
+                        MsgBox(.Msg, .Style, .Title)
+                        Me.Close()
+                        Exit Sub
+
+                    End With
+                End If
+
+            End If
+
+            Exit Sub
 
         End With
     End Sub

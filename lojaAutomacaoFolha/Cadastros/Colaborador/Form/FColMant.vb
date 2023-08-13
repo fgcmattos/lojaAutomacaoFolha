@@ -381,6 +381,7 @@ Public Class FColMant
             '---------------------
             Dim intElemento As Integer = 0
 
+            ' Verifica entre os itens alterados quais o operador confirma a alteração
             For Each item In ListView1.Items
 
                 If item.checked Then

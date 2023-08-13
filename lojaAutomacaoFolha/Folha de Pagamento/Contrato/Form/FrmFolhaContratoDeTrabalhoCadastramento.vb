@@ -876,7 +876,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
 
         Dim StrFrase As String = ""
 
-        If Me.LblPIS.Text = "" Then strFrase = "PIS " & Chr(13)
+        If Not PIS_digito_verificador(Me.LblPIS.Text) Then StrFrase = "PIS Inválido " & Chr(13)
         If Me.LblCTPSnumero.Text = "" Then strFrase += "CTPS Número " & Chr(13)
         If Me.LblCTPSserie.Text = "" Then strFrase += "CTPS Série " & Chr(13)
         If Me.LblASOadmissao.Text = "" Then strFrase += "ASO data de admissão " & Chr(13)
@@ -945,19 +945,5 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
 
     End Sub
 
-    Private Sub MskReferencia_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles MskReferencia.MaskInputRejected
 
-    End Sub
-
-    Private Sub TxtRegistroNumero_TextChanged(sender As Object, e As EventArgs) Handles TxtRegistroNumero.TextChanged
-
-    End Sub
-
-    Private Sub CmbSetor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbSetor.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub CmbCargo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbCargo.SelectedIndexChanged
-
-    End Sub
 End Class

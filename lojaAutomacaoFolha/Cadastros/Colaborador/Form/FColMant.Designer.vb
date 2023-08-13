@@ -3002,7 +3002,7 @@ Partial Class FColMant
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Location = New System.Drawing.Point(1132, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(196, 0)
+        Me.PictureBox1.Size = New System.Drawing.Size(196, 409)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
@@ -3018,7 +3018,7 @@ Partial Class FColMant
         Me.GrpAlteracoes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.GrpAlteracoes.Location = New System.Drawing.Point(5, 531)
         Me.GrpAlteracoes.Name = "GrpAlteracoes"
-        Me.GrpAlteracoes.Size = New System.Drawing.Size(1122, 256)
+        Me.GrpAlteracoes.Size = New System.Drawing.Size(1122, 390)
         Me.GrpAlteracoes.TabIndex = 18
         Me.GrpAlteracoes.TabStop = False
         Me.GrpAlteracoes.Text = "Alterações Solicitadas"
@@ -3051,7 +3051,7 @@ Partial Class FColMant
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(10, 30)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1105, 270)
+        Me.ListView1.Size = New System.Drawing.Size(1105, 282)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -3105,7 +3105,7 @@ Partial Class FColMant
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.form1Status})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 530)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 939)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1340, 22)
         Me.StatusStrip1.TabIndex = 21
@@ -3123,7 +3123,7 @@ Partial Class FColMant
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1340, 552)
+        Me.ClientSize = New System.Drawing.Size(1340, 961)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.BtnDetalhamentoCabAltera)
         Me.Controls.Add(Me.BtnDetalhamentoCorpoAltera)
