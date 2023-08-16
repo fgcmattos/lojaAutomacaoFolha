@@ -564,8 +564,7 @@ Public Class Form1
     End Sub
 
     Private Sub CadastramentoToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles CadastramentoToolStripMenuItem2.Click
-        'FrmFolhaContratoDeTrabalhoCadastramento.show()
-        FrmFolhaContratoDeTrabalhoAutorizados.Show()
+
 
     End Sub
 
@@ -734,5 +733,10 @@ Public Class Form1
 
     Private Sub PesquisaToolStripMenuItem17_Click(sender As Object, e As EventArgs) Handles PesquisaToolStripMenuItem17.Click
         FrmFolhaIR_TabelaPesquisa.show()
+    End Sub
+
+    Private Sub DigitaçãoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DigitaçãoToolStripMenuItem.Click
+
+        FrmFolhaContratoDeTrabalhoAutorizados.Show()
     End Sub
 End Class

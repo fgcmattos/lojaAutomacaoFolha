@@ -739,13 +739,16 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
             End If
         End With
 
-        GravaTela()
-        FrmFolhaContratoDeTrabalhoAutorizados.Show()
-        Me.Close()
+        If GravaTela() Then
+            FrmFolhaContratoDeTrabalhoAutorizados.Show()
+            Me.Close()
+        End If
 
     End Sub
 
-    Private Function GravaTela()
+    Private Function GravaTela() As Boolean
+
+        GravaTela = True
 
         Dim strReferencia As String = Replace(MskReferencia.Text, "/", "")
 
@@ -787,6 +790,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
         query += ",FCC_jornada_dia"             ' time
         query += ",FCC_jornada_mes"             ' time
         query += ",FCC_jornada_dia_fim"         ' time
+        query += ",FCC_responsavel"             ' int
         query += ")"
         query += " values "
         query += "("
@@ -823,9 +827,16 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
         query += ",'" & LblCargaHorariaDiaria.Text & "'"
         query += ",'" & LblCargaHorariaMensal.Text & "'"
         query += ",'" & LblFimDaJornada.Text & "'"
+        query += "," & usuClass.Usuario_Chave
         query += ")"
 
-        gravaSQL(query)
+        If Not gravaSQL(query) Then
+
+            MsgBox("Gravação não realizada")
+
+            GravaTela = False
+
+        End If
 
         'LblNome
         'LblCPF

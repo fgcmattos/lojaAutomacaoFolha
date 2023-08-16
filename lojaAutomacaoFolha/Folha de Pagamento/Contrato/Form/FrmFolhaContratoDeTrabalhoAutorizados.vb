@@ -7,6 +7,15 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
         ' vem de duas condições
         ' 1 - O cadastro de colaborador deve estar completo
         ' 2 - O colaborador não pode ter contrato de trabalho ativo
+        '  STATUS POSSIVEIS NA TABELA folha_col_contrato
+        '
+        '   0 Digitado
+        '   1 Conferido
+        '   2 Aprovado
+        '   3 Ativo
+        '   4 Cancelado
+        '   5 Terminado
+
 
         oi.Title = Me.Text
 
@@ -18,6 +27,7 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
         Query += " From colaborador "
         Query += " Where "
         Query += "colaboradorContratoAtivo "
+        Query += " and		(select count(*) from folha_col_contrato where FCC_keyCol = colaborador.chave and (FCC_status <> 4 or FCC_status <> 5) ) =0 "
         Query += " Order By colaboradornome "
 
         Dim StrLinha As String = ""
