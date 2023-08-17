@@ -266,6 +266,12 @@
     <Compile Include="classes\irTabelaAcao.vb" />
     <Compile Include="classes\MenuColaborador.vb" />
     <Compile Include="Folha de Pagamento\Contrato\Class\ClassContratoFolha.vb" />
+    <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoCadastramentoConferencia.Designer.vb">
+      <DependentUpon>FrmFolhaContratoDeTrabalhoCadastramentoConferencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoCadastramentoConferencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Folha de Pagamento\IR_Tabela\Class\ClassIRtabela.vb" />
     <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastro.Designer.vb">
       <DependentUpon>FrmFolhaINSS_TabelaCadastro.vb</DependentUpon>
@@ -328,6 +334,12 @@
       <DependentUpon>FrmFolhaIR_TabelaPublicacao.vb</DependentUpon>
     </Compile>
     <Compile Include="Folha de Pagamento\IR_Tabela\Form\FrmFolhaIR_TabelaPublicacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoConferencia.Designer.vb">
+      <DependentUpon>FrmFolhaContratoDeTrabalhoConferencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoConferencia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulo\Conexoes\ModInicializacao.vb" />
@@ -823,6 +835,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoAtivacao.resx">
       <DependentUpon>FrmFolhaContratoAtivacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoCadastramentoConferencia.resx">
+      <DependentUpon>FrmFolhaContratoDeTrabalhoCadastramentoConferencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoConferencia.resx">
+      <DependentUpon>FrmFolhaContratoDeTrabalhoConferencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoManutencao.resx">
       <DependentUpon>FrmFolhaContratoManutencao.vb</DependentUpon>

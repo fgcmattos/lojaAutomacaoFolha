@@ -196,7 +196,7 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         '
         'GruIdentificacao
         '
-        Me.GruIdentificacao.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.GruIdentificacao.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GruIdentificacao.Controls.Add(Me.GroupBox12)
         Me.GruIdentificacao.Controls.Add(Me.GroupBox11)
         Me.GruIdentificacao.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -575,7 +575,7 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramento
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.TabControl1)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.GruGravacao)

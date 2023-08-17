@@ -1,13 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class FrmFolhaContratoDeTrabalhoAutorizados
-    Public oi As New MsgShow
-    Private Sub FrmFolhaContratoDeTrabalhoAutorizados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ' O preenchimento da tela de colaboradores disponineis para gerar contrato
-        ' vem de duas condições
-        ' 1 - O cadastro de colaborador deve estar completo
-        ' 2 - O colaborador não pode ter contrato de trabalho ativo
-        '  STATUS POSSIVEIS NA TABELA folha_col_contrato
+Public Class FrmFolhaContratoDeTrabalhoConferencia
+
+    Public oi As New MsgShow
+    Private Sub FrmFolhaContratoDeTrabalhoConferencia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        ' Conferência das informações da digitação de um contrato de trabalho
+        ' vem da condição
+        ' STATUS FCC_status = 0 NA TABELA folha_col_contrato
         '
         '   0 Digitado
         '   1 Conferido
@@ -21,14 +21,13 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
 
         Dim Query As String
         Query = "Select "
-        Query += "lpad(chave,4,'0')"
-        Query += ",colaboradorcpf"
-        Query += ",colaboradorNome"
-        Query += " From colaborador "
+        Query += "lpad(FCC_KeyCol,4,'0')"
+        Query += ",FCC_cpf"
+        Query += ",FCC_nome"
+        Query += " From folha_col_contrato  "
         Query += " Where "
-        Query += "colaboradorContratoAtivo "
-        Query += " and		(select count(*) from folha_col_contrato where FCC_keyCol = colaborador.chave and (FCC_status <> 4 or FCC_status <> 5) ) =0 "
-        Query += " Order By colaboradornome "
+        Query += " FCC_status = 0 "
+        Query += " Order By FCC_nome "
 
         Dim StrLinha As String = ""
 
@@ -38,7 +37,6 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
         If OpenDB() Then
             Dim DTReader As MySqlDataReader
             Dim CMD As New MySqlCommand(Query, Conn)
-
             DTReader = CMD.ExecuteReader
 
             While DTReader.Read()
@@ -64,7 +62,7 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
 
         If ListBox1.SelectedItem = Nothing Or ListBox1.SelectedIndex = 0 Then
 
-            With oi
+            With Oi
                 .Msg = "Por favor!, selecione um colaborador"
                 .Style = vbCritical
                 MsgBox(.Msg, .Style, .Title)
@@ -80,7 +78,7 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
 
         Dim colContrato As List(Of colaborador) = ColaboradorAcoes.GetColContratoSQL(strChave)
 
-        FrmFolhaContratoDeTrabalhoCadastramento.Show()
+        FrmFolhaContratoDeTrabalhoCadastramentoConferencia.Show()
 
         PreencheContratoInformacoesColaborador(colContrato)
 
@@ -90,7 +88,7 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
 
     Private Function PreencheContratoInformacoesColaborador(Cc As Object)
 
-        With FrmFolhaContratoDeTrabalhoCadastramento
+        With FrmFolhaContratoDeTrabalhoCadastramentoConferencia
 
             .LblChave.Text = Cc(0).Chave
             .LblNome.Text = Cc(0).Nome
@@ -125,11 +123,4 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
         Me.Close()
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 End Class

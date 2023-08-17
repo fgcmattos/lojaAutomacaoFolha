@@ -739,4 +739,9 @@ Public Class Form1
 
         FrmFolhaContratoDeTrabalhoAutorizados.Show()
     End Sub
+
+    Private Sub ConferênciaToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ConferênciaToolStripMenuItem2.Click
+
+        FrmFolhaContratoDeTrabalhoConferencia.Show()
+    End Sub
 End Class
