@@ -21,7 +21,8 @@ Public Class FrmFolhaContratoDeTrabalhoConferencia
 
         Dim Query As String
         Query = "Select "
-        Query += "lpad(FCC_KeyCol,4,'0')"
+        Query += "lpad(ID_FCC,4,'0')"
+        Query += ",lpad(FCC_KeyCol,4,'0')"
         Query += ",FCC_cpf"
         Query += ",FCC_nome"
         Query += " From folha_col_contrato  "
@@ -31,7 +32,7 @@ Public Class FrmFolhaContratoDeTrabalhoConferencia
 
         Dim StrLinha As String = ""
 
-        StrLinha = "Chave     CPF                Nome"
+        StrLinha = "Id      Chave     CPF                Nome "
         ListBox1.Items.Clear()
         ListBox1.Items.Add(StrLinha)
         If OpenDB() Then
@@ -45,6 +46,8 @@ Public Class FrmFolhaContratoDeTrabalhoConferencia
                 StrLinha += DTReader.GetValue(1)
                 StrLinha += "    "
                 StrLinha += DTReader.GetValue(2)
+                StrLinha += "    "
+                StrLinha += DTReader.GetValue(3)
 
                 ListBox1.Items.Add(StrLinha)
 
@@ -72,11 +75,11 @@ Public Class FrmFolhaContratoDeTrabalhoConferencia
         End If
 
 
-        Dim strChave As String = ListBox1.SelectedItem
+        Dim isId As String = ListBox1.SelectedItem
 
-        strChave = strChave.Substring(0, 4)
+        isId = isId.Substring(0, 4)
 
-        Dim colContrato As List(Of colaborador) = ColaboradorAcoes.GetColContratoSQL(strChave)
+        Dim colContrato As List(Of ClassContratoFolha) = ColaboradorAcoes.GetColContratoSQL_All(isId)
 
         FrmFolhaContratoDeTrabalhoCadastramentoConferencia.Show()
 
@@ -90,17 +93,17 @@ Public Class FrmFolhaContratoDeTrabalhoConferencia
 
         With FrmFolhaContratoDeTrabalhoCadastramentoConferencia
 
-            .LblChave.Text = Cc(0).Chave
-            .LblNome.Text = Cc(0).Nome
-            .LblCPF.Text = Cc(0).CPF
-            .LblRG.Text = Cc(0).rg
-            .LblPIS.Text = Cc(0).PIS
-            .LblCTPSnumero.Text = Cc(0).CTPS
-            .LblCTPSserie.Text = Cc(0).CTPSserie
-            .LblAdmissao.Text = Cc(0).Admissao
-            .LblASOadmissao.Text = Cc(0).ASOadmissao
+            .LblChave.Text = Cc(0).FCC_keyCol
+            .LblNome.Text = Cc(0).FCC_nome
+            .LblCPF.Text = Cc(0).FCC_cpf
+            .LblRG.Text = Cc(0).FCC_rg
+            .LblPIS.Text = Cc(0).FCC_pis
+            .LblCTPSnumero.Text = Cc(0).FCC_ctps_numero
+            .LblCTPSserie.Text = Cc(0).FCC_ctps_serie
+            .LblAdmissao.Text = Cc(0).FCC_admissao_data
+            .LblASOadmissao.Text = Cc(0).FCC_aso_admissao
 
-            Dim caminho As String = "C:\" & LimpaNumero(Form1.empCNPJ.Text) & "\folha\colaborador\" & CPFretiraMascara(Cc(0).CPF) & "\Contrato\FichaDeInteresse"
+            Dim caminho As String = "C:\" & LimpaNumero(Form1.empCNPJ.Text) & "\folha\colaborador\" & CPFretiraMascara(Cc(0).FCC_cpf) & "\Contrato\FichaDeInteresse"
 
             If System.IO.Directory.Exists(caminho) Then
 

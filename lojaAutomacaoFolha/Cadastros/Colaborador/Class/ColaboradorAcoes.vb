@@ -716,4 +716,96 @@ Public Class ColaboradorAcoes
 
     End Function
 
+    Public Shared Function GetColContratoSQL_All(IdIsReg As Integer) As List(Of ClassContratoFolha)
+
+        Dim lista As New List(Of ClassContratoFolha)
+
+        Dim DTReader As MySqlDataReader
+
+        Dim Query As String = ""
+
+        Query = "Select "
+        Query += "FCC_keyCol"
+        Query += ",FCC_nome"
+        Query += ",FCC_cpf"
+        Query += ",FCC_rg"
+        Query += ",FCC_pis"
+        Query += ",FCC_ctps_numero"
+        Query += ",FCC_ctps_serie"
+        Query += ",FCC_aso_admissao"
+        Query += ",FCC_admissao_data"
+        Query += ",FCC_numero"
+        Query += ",FCC_tipo"
+        Query += ",FCC_tipoDescricao"
+        Query += ",FCC_afastamentoDescricao"
+        Query += ",FCC_remuneracaoMesAnterior"
+        Query += ",FCC_avisoPrevio_data"
+        Query += ",FCC_afastamento_data"
+        Query += ",FCC_afastamentoCodigo"
+        Query += ",FCC_pensaoAlimenticiaTRCT"
+        Query += ",FCC_pensaoAlimenticiaFGTS"
+        Query += ",FCC_categoriaCodigo"
+        Query += ",FCC_categoriaDescricao"
+        Query += ",FCC_sindical_codigo"
+        Query += ",FCC_CNPJentidadeSindical"
+        Query += ",FCC_RazaoEntidadeSindical"
+        Query += ",FCC_status"
+        Query += ",FCC_setor"
+        Query += ",FCC_cargo"
+        Query += ",FCC_cbo"
+        Query += ",FCC_referencia"
+        Query += ",FCC_salario"
+        Query += ",FCC_registro_fisico"
+        Query += ",FCC_registro_livro"
+        Query += ",FCC_registro_pagina"
+        Query += ",FCC_registro_ordem"
+        Query += ",FCC_carga_horaria_semanal"
+        Query += ",FCC_descanso_semanal"
+        Query += ",FCC_jornada_dia_inicio"
+        Query += ",FCC_jornada_descanso"
+        Query += ",FCC_jornada_dia"
+        Query += ",FCC_jornada_mes"
+        Query += ",FCC_jornada_dia_fim"
+        Query += ",FCC_criacao"
+        Query += ",FCC_responsavel"
+        Query += ",id_FCC"
+        Query += " from folha_col_contrato "
+        Query += " where "
+        Query += " id_FCC = " & IdIsReg
+
+
+        Try
+            Dim CMD As New MySqlCommand(Query, Conn)
+
+            If OpenDB() Then
+
+                DTReader = CMD.ExecuteReader
+
+                While DTReader.Read
+                    lista.Add(New ClassContratoFolha() With
+            {
+            .FCC_keyCol = DTReader.GetString(0),
+            .FCC_nome = DTReader.GetString(1),
+            .FCC_cpf = CPFcolocaMascara(DTReader.GetString(2)),
+            .FCC_rg = DTReader.GetString(3),
+            .FCC_pis = DTReader.GetString(4),
+            .FCC_ctps_numero = DTReader.GetString(5),
+            .FCC_ctps_serie = DTReader.GetString(6),
+            .FCC_admissao_data = dataLatina(DTReader.GetString(7)),
+            .FCC_aso_admissao = dataLatina(DTReader.GetString(8))
+            }
+            )
+                End While
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Conn.Close()
+
+
+        Return lista
+
+    End Function
+
 End Class
