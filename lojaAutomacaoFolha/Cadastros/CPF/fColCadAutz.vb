@@ -36,7 +36,7 @@ Public Class fColCadAutz
 
                         If DTReader.GetString(0) > 0 Then
                             msg = "CPF já cadastrado !"
-                            style = vbExclamation
+                            style = vbCritical
                         Else
                             title = "CPF Liberado para cadastro"
                             msg = "Inicia Cadastro?"
@@ -54,16 +54,18 @@ Public Class fColCadAutz
 
             Else
                 msg = "CPF invalido"
-                style = vbExclamation
+                style = vbCritical
             End If
         End If
 
         resposta = MsgBox(msg, style, title)
+
         If resposta = "6" Then
 
             fColCad.Show()
             fColCad.lblCPF.Text = CPFcolocaMascara(sCPF)
             Me.Close()
+
         Else
             mskCPF.Focus()
         End If

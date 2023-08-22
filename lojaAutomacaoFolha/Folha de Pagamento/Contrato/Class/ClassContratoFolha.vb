@@ -1,6 +1,6 @@
 ﻿Public Class ClassContratoFolha
 
-    Public Property id_FCC As Integer                           '	int AI PK 
+    Public Property Id_FCC As Integer                           '	int AI PK 
     Public Property FCC_numero As String                        '	varchar(7) PK 
     Public Property FCC_tipo As Integer                         '	int 
     Public Property FCC_tipoDescricao As String                 '	varchar(100) 

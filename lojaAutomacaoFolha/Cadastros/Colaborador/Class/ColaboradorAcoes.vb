@@ -725,50 +725,50 @@ Public Class ColaboradorAcoes
         Dim Query As String = ""
 
         Query = "Select "
-        Query += "FCC_keyCol"
-        Query += ",FCC_nome"
-        Query += ",FCC_cpf"
-        Query += ",FCC_rg"
-        Query += ",FCC_pis"
-        Query += ",FCC_ctps_numero"
-        Query += ",FCC_ctps_serie"
-        Query += ",FCC_aso_admissao"
-        Query += ",FCC_admissao_data"
-        Query += ",FCC_numero"
-        Query += ",FCC_tipo"
-        Query += ",FCC_tipoDescricao"
-        Query += ",FCC_afastamentoDescricao"
-        Query += ",FCC_remuneracaoMesAnterior"
-        Query += ",FCC_avisoPrevio_data"
-        Query += ",FCC_afastamento_data"
-        Query += ",FCC_afastamentoCodigo"
-        Query += ",FCC_pensaoAlimenticiaTRCT"
-        Query += ",FCC_pensaoAlimenticiaFGTS"
-        Query += ",FCC_categoriaCodigo"
-        Query += ",FCC_categoriaDescricao"
-        Query += ",FCC_sindical_codigo"
-        Query += ",FCC_CNPJentidadeSindical"
-        Query += ",FCC_RazaoEntidadeSindical"
-        Query += ",FCC_status"
-        Query += ",FCC_setor"
-        Query += ",FCC_cargo"
-        Query += ",FCC_cbo"
-        Query += ",FCC_referencia"
-        Query += ",FCC_salario"
-        Query += ",FCC_registro_fisico"
-        Query += ",FCC_registro_livro"
-        Query += ",FCC_registro_pagina"
-        Query += ",FCC_registro_ordem"
-        Query += ",FCC_carga_horaria_semanal"
-        Query += ",FCC_descanso_semanal"
-        Query += ",FCC_jornada_dia_inicio"
-        Query += ",FCC_jornada_descanso"
-        Query += ",FCC_jornada_dia"
-        Query += ",FCC_jornada_mes"
-        Query += ",FCC_jornada_dia_fim"
-        Query += ",FCC_criacao"
-        Query += ",FCC_responsavel"
-        Query += ",id_FCC"
+        Query += "FCC_keyCol"                       '0
+        Query += ",FCC_nome"                        '1
+        Query += ",FCC_cpf"                         '2
+        Query += ",FCC_rg"                          '3
+        Query += ",FCC_pis"                         '4
+        Query += ",FCC_ctps_numero"                 '5
+        Query += ",FCC_ctps_serie"                  '6
+        Query += ",FCC_aso_admissao"                '7
+        Query += ",FCC_admissao_data"               '8
+        Query += ",FCC_numero"                      '9
+        Query += ",FCC_tipo"                        '10
+        Query += ",FCC_tipoDescricao"               '11
+        Query += ",FCC_afastamentoDescricao"        '12
+        Query += ",FCC_remuneracaoMesAnterior"      '13
+        Query += ",FCC_avisoPrevio_data"            '14
+        Query += ",FCC_afastamento_data"            '15
+        Query += ",FCC_afastamentoCodigo"           '16
+        Query += ",FCC_pensaoAlimenticiaTRCT"       '17
+        Query += ",FCC_pensaoAlimenticiaFGTS"       '18
+        Query += ",FCC_categoriaCodigo"             '19
+        Query += ",FCC_categoriaDescricao"          '20
+        Query += ",FCC_sindical_codigo"             '21
+        Query += ",FCC_CNPJentidadeSindical"        '22
+        Query += ",FCC_RazaoEntidadeSindical"       '23
+        Query += ",FCC_status"                      '24
+        Query += ",FCC_setor"                       '25
+        Query += ",FCC_cargo"                       '26
+        Query += ",FCC_cbo"                         '27
+        Query += ",FCC_referencia"                  '28
+        Query += ",FCC_salario"                     '29
+        Query += ",FCC_registro_fisico"             '30
+        Query += ",FCC_registro_livro"              '31
+        Query += ",FCC_registro_pagina"             '32
+        Query += ",FCC_registro_ordem"              '33
+        Query += ",FCC_carga_horaria_semanal"       '34
+        Query += ",FCC_descanso_semanal"            '35
+        Query += ",FCC_jornada_dia_inicio"          '36
+        Query += ",FCC_jornada_descanso"            '37
+        Query += ",FCC_jornada_dia"                 '38
+        Query += ",FCC_jornada_mes"                 '39
+        Query += ",FCC_jornada_dia_fim"             '40
+        Query += ",FCC_criacao"                     '41
+        Query += ",FCC_responsavel"                 '42
+        Query += ",id_FCC"                          '43
         Query += " from folha_col_contrato "
         Query += " where "
         Query += " id_FCC = " & IdIsReg
@@ -791,13 +791,38 @@ Public Class ColaboradorAcoes
             .FCC_pis = DTReader.GetString(4),
             .FCC_ctps_numero = DTReader.GetString(5),
             .FCC_ctps_serie = DTReader.GetString(6),
-            .FCC_admissao_data = dataLatina(DTReader.GetString(7)),
-            .FCC_aso_admissao = dataLatina(DTReader.GetString(8))
+            .FCC_admissao_data = dataLatina(DTReader.GetString(8)),
+            .FCC_aso_admissao = dataLatina(DTReader.GetString(7)),
+            .FCC_tipo = DTReader.GetString(10),
+            .FCC_tipoDescricao = DTReader.GetString(11),
+            .FCC_categoriaCodigo = DTReader.GetString(19),
+            .FCC_categoriaDescricao = DTReader.GetString(20),
+            .FCC_setor = DTReader.GetString(25),
+            .FCC_cargo = DTReader.GetString(26),
+            .FCC_cbo = DTReader.GetString(27),
+            .FCC_referencia = DTReader.GetString(28),
+            .FCC_salario = DTReader.GetString(29),
+            .FCC_registro_fisico = DTReader.GetString(30),
+            .FCC_registro_livro = DTReader.GetString(31),
+            .FCC_registro_pagina = DTReader.GetString(32),
+            .FCC_registro_ordem = DTReader.GetString(33),
+            .FCC_sindical_codigo = DTReader.GetString(21),
+            .FCC_CNPJentidadeSindical = DTReader.GetString(22),
+            .FCC_RazaoEntidadeSindical = DTReader.GetString(23),
+            .FCC_carga_horaria_semanal = TimeSpan.Parse(DTReader.GetString(34)),
+            .FCC_descanso_semanal = DTReader.GetString(35),
+            .FCC_jornada_dia_inicio = TimeSpan.Parse(DTReader.GetString(36)),
+            .FCC_jornada_descanso = TimeSpan.Parse(DTReader.GetString(37)),
+            .FCC_jornada_dia = TimeSpan.Parse(DTReader.GetString(38)),
+            .FCC_jornada_mes = TimeSpan.Parse(DTReader.GetString(39)),
+            .FCC_jornada_dia_fim = TimeSpan.Parse(DTReader.GetString(40))
             }
             )
                 End While
             End If
         Catch ex As Exception
+
+            MsgBox(ex)
 
         End Try
 

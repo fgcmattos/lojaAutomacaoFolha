@@ -545,7 +545,7 @@ Partial Class fColCad
         Me.CheckBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox6.Location = New System.Drawing.Point(15, 162)
         Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(60, 20)
+        Me.CheckBox6.Size = New System.Drawing.Size(59, 20)
         Me.CheckBox6.TabIndex = 5
         Me.CheckBox6.Text = "Ima6"
         Me.CheckBox6.UseVisualStyleBackColor = True
@@ -556,7 +556,7 @@ Partial Class fColCad
         Me.CheckBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox5.Location = New System.Drawing.Point(15, 134)
         Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(60, 20)
+        Me.CheckBox5.Size = New System.Drawing.Size(59, 20)
         Me.CheckBox5.TabIndex = 4
         Me.CheckBox5.Text = "Ima5"
         Me.CheckBox5.UseVisualStyleBackColor = True
@@ -567,7 +567,7 @@ Partial Class fColCad
         Me.CheckBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox4.Location = New System.Drawing.Point(15, 106)
         Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(60, 20)
+        Me.CheckBox4.Size = New System.Drawing.Size(59, 20)
         Me.CheckBox4.TabIndex = 3
         Me.CheckBox4.Text = "Ima4"
         Me.CheckBox4.UseVisualStyleBackColor = True
@@ -578,7 +578,7 @@ Partial Class fColCad
         Me.CheckBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox3.Location = New System.Drawing.Point(15, 80)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(60, 20)
+        Me.CheckBox3.Size = New System.Drawing.Size(59, 20)
         Me.CheckBox3.TabIndex = 2
         Me.CheckBox3.Text = "Ima3"
         Me.CheckBox3.UseVisualStyleBackColor = True
@@ -589,7 +589,7 @@ Partial Class fColCad
         Me.CheckBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox2.Location = New System.Drawing.Point(15, 56)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(60, 20)
+        Me.CheckBox2.Size = New System.Drawing.Size(59, 20)
         Me.CheckBox2.TabIndex = 1
         Me.CheckBox2.Text = "Ima2"
         Me.CheckBox2.UseVisualStyleBackColor = True
@@ -600,7 +600,7 @@ Partial Class fColCad
         Me.CheckBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CheckBox1.Location = New System.Drawing.Point(15, 31)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(60, 20)
+        Me.CheckBox1.Size = New System.Drawing.Size(59, 20)
         Me.CheckBox1.TabIndex = 9
         Me.CheckBox1.Text = "Ima1"
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -895,7 +895,7 @@ Partial Class fColCad
         Me.LabelRGnumero.ForeColor = System.Drawing.Color.White
         Me.LabelRGnumero.Location = New System.Drawing.Point(196, 27)
         Me.LabelRGnumero.Name = "LabelRGnumero"
-        Me.LabelRGnumero.Size = New System.Drawing.Size(36, 16)
+        Me.LabelRGnumero.Size = New System.Drawing.Size(35, 16)
         Me.LabelRGnumero.TabIndex = 11
         Me.LabelRGnumero.Text = "<----"
         Me.LabelRGnumero.Visible = False
@@ -993,7 +993,7 @@ Partial Class fColCad
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(19, 200)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(124, 16)
+        Me.Label7.Size = New System.Drawing.Size(123, 16)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Zona:       Seção:"
         '
@@ -1002,7 +1002,7 @@ Partial Class fColCad
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(19, 174)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(118, 16)
+        Me.Label6.Size = New System.Drawing.Size(117, 16)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Titulo de Eleitor"
         '
@@ -1011,7 +1011,7 @@ Partial Class fColCad
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(20, 145)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(36, 16)
+        Me.Label5.Size = New System.Drawing.Size(35, 16)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "PIS:"
         '
@@ -1020,7 +1020,7 @@ Partial Class fColCad
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(20, 118)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(87, 16)
+        Me.Label4.Size = New System.Drawing.Size(86, 16)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Reservista:"
         '
@@ -1029,7 +1029,7 @@ Partial Class fColCad
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(19, 88)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 16)
+        Me.Label3.Size = New System.Drawing.Size(51, 16)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "CTPS:"
         '
@@ -1038,7 +1038,7 @@ Partial Class fColCad
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(19, 57)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 16)
+        Me.Label2.Size = New System.Drawing.Size(43, 16)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "CNH:"
         '
@@ -1047,7 +1047,7 @@ Partial Class fColCad
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(19, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(34, 16)
+        Me.Label1.Size = New System.Drawing.Size(33, 16)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "RG:"
         '
@@ -1101,7 +1101,7 @@ Partial Class fColCad
         Me.Label27.AutoSize = True
         Me.Label27.Location = New System.Drawing.Point(450, 73)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(43, 16)
+        Me.Label27.Size = New System.Drawing.Size(42, 16)
         Me.Label27.TabIndex = 14
         Me.Label27.Text = "Fone"
         '
@@ -1118,7 +1118,7 @@ Partial Class fColCad
         Me.Label26.AutoSize = True
         Me.Label26.Location = New System.Drawing.Point(450, 139)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(43, 16)
+        Me.Label26.Size = New System.Drawing.Size(42, 16)
         Me.Label26.TabIndex = 12
         Me.Label26.Text = "Fone"
         '
@@ -1177,7 +1177,7 @@ Partial Class fColCad
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(243, 134)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(37, 16)
+        Me.Label15.Size = New System.Drawing.Size(36, 16)
         Me.Label15.TabIndex = 5
         Me.Label15.Text = "CPF"
         '
@@ -1186,7 +1186,7 @@ Partial Class fColCad
         Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(34, 142)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(90, 16)
+        Me.Label16.Size = New System.Drawing.Size(89, 16)
         Me.Label16.TabIndex = 4
         Me.Label16.Text = "Nascimento"
         '
@@ -1195,7 +1195,7 @@ Partial Class fColCad
         Me.Label17.AutoSize = True
         Me.Label17.Location = New System.Drawing.Point(26, 111)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(98, 16)
+        Me.Label17.Size = New System.Drawing.Size(97, 16)
         Me.Label17.TabIndex = 3
         Me.Label17.Text = "Nome do Pai"
         '
@@ -1204,7 +1204,7 @@ Partial Class fColCad
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(243, 73)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(37, 16)
+        Me.Label14.Size = New System.Drawing.Size(36, 16)
         Me.Label14.TabIndex = 2
         Me.Label14.Text = "CPF"
         '
@@ -1213,7 +1213,7 @@ Partial Class fColCad
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(34, 73)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(90, 16)
+        Me.Label13.Size = New System.Drawing.Size(89, 16)
         Me.Label13.TabIndex = 1
         Me.Label13.Text = "Nascimento"
         '
@@ -1222,7 +1222,7 @@ Partial Class fColCad
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(26, 39)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(105, 16)
+        Me.Label12.Size = New System.Drawing.Size(104, 16)
         Me.Label12.TabIndex = 0
         Me.Label12.Text = "Nome da Mãe"
         '
@@ -1270,7 +1270,7 @@ Partial Class fColCad
         Me.Label32.AutoSize = True
         Me.Label32.Location = New System.Drawing.Point(202, 64)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(43, 16)
+        Me.Label32.Size = New System.Drawing.Size(42, 16)
         Me.Label32.TabIndex = 16
         Me.Label32.Text = "Fone"
         '
@@ -1304,7 +1304,7 @@ Partial Class fColCad
         Me.Label23.AutoSize = True
         Me.Label23.Location = New System.Drawing.Point(389, 64)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(90, 16)
+        Me.Label23.Size = New System.Drawing.Size(89, 16)
         Me.Label23.TabIndex = 9
         Me.Label23.Text = "Nascimento"
         '
@@ -1313,7 +1313,7 @@ Partial Class fColCad
         Me.Label24.AutoSize = True
         Me.Label24.Location = New System.Drawing.Point(6, 64)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(37, 16)
+        Me.Label24.Size = New System.Drawing.Size(36, 16)
         Me.Label24.TabIndex = 8
         Me.Label24.Text = "CPF"
         '
@@ -1322,7 +1322,7 @@ Partial Class fColCad
         Me.Label25.AutoSize = True
         Me.Label25.Location = New System.Drawing.Point(6, 25)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(49, 16)
+        Me.Label25.Size = New System.Drawing.Size(48, 16)
         Me.Label25.TabIndex = 7
         Me.Label25.Text = "Nome"
         '
@@ -1357,7 +1357,7 @@ Partial Class fColCad
         Me.Label31.AutoSize = True
         Me.Label31.Location = New System.Drawing.Point(202, 59)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(43, 16)
+        Me.Label31.Size = New System.Drawing.Size(42, 16)
         Me.Label31.TabIndex = 16
         Me.Label31.Text = "Fone"
         '
@@ -1391,7 +1391,7 @@ Partial Class fColCad
         Me.Label22.AutoSize = True
         Me.Label22.Location = New System.Drawing.Point(389, 62)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(90, 16)
+        Me.Label22.Size = New System.Drawing.Size(89, 16)
         Me.Label22.TabIndex = 3
         Me.Label22.Text = "Nascimento"
         '
@@ -1400,7 +1400,7 @@ Partial Class fColCad
         Me.Label21.AutoSize = True
         Me.Label21.Location = New System.Drawing.Point(6, 62)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(37, 16)
+        Me.Label21.Size = New System.Drawing.Size(36, 16)
         Me.Label21.TabIndex = 2
         Me.Label21.Text = "CPF"
         '
@@ -1409,7 +1409,7 @@ Partial Class fColCad
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(6, 23)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(49, 16)
+        Me.Label20.Size = New System.Drawing.Size(48, 16)
         Me.Label20.TabIndex = 1
         Me.Label20.Text = "Nome"
         '
@@ -1453,7 +1453,7 @@ Partial Class fColCad
         Me.col_03UniaoEstavel.AutoSize = True
         Me.col_03UniaoEstavel.Location = New System.Drawing.Point(9, 145)
         Me.col_03UniaoEstavel.Name = "col_03UniaoEstavel"
-        Me.col_03UniaoEstavel.Size = New System.Drawing.Size(124, 20)
+        Me.col_03UniaoEstavel.Size = New System.Drawing.Size(123, 20)
         Me.col_03UniaoEstavel.TabIndex = 2
         Me.col_03UniaoEstavel.Text = "União Estável"
         Me.col_03UniaoEstavel.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1464,7 +1464,7 @@ Partial Class fColCad
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(6, 85)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(91, 16)
+        Me.Label19.Size = New System.Drawing.Size(90, 16)
         Me.Label19.TabIndex = 1
         Me.Label19.Text = "Estado Civil"
         '
@@ -1473,7 +1473,7 @@ Partial Class fColCad
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(6, 28)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(43, 16)
+        Me.Label18.Size = New System.Drawing.Size(42, 16)
         Me.Label18.TabIndex = 0
         Me.Label18.Text = "Sexo"
         '
@@ -1509,7 +1509,7 @@ Partial Class fColCad
         Me.col_04AutorizaComunicaEmail.AutoSize = True
         Me.col_04AutorizaComunicaEmail.Location = New System.Drawing.Point(35, 134)
         Me.col_04AutorizaComunicaEmail.Name = "col_04AutorizaComunicaEmail"
-        Me.col_04AutorizaComunicaEmail.Size = New System.Drawing.Size(315, 20)
+        Me.col_04AutorizaComunicaEmail.Size = New System.Drawing.Size(314, 20)
         Me.col_04AutorizaComunicaEmail.TabIndex = 13
         Me.col_04AutorizaComunicaEmail.Text = "Autorização para comunicação por e-mail"
         Me.col_04AutorizaComunicaEmail.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1544,7 +1544,7 @@ Partial Class fColCad
         Me.Label35.AutoSize = True
         Me.Label35.Location = New System.Drawing.Point(32, 99)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(46, 16)
+        Me.Label35.Size = New System.Drawing.Size(45, 16)
         Me.Label35.TabIndex = 2
         Me.Label35.Text = "email"
         '
@@ -1553,7 +1553,7 @@ Partial Class fColCad
         Me.Label34.AutoSize = True
         Me.Label34.Location = New System.Drawing.Point(32, 68)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(78, 16)
+        Me.Label34.Size = New System.Drawing.Size(77, 16)
         Me.Label34.TabIndex = 1
         Me.Label34.Text = "Telefone2"
         '
@@ -1562,7 +1562,7 @@ Partial Class fColCad
         Me.Label33.AutoSize = True
         Me.Label33.Location = New System.Drawing.Point(32, 40)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(78, 16)
+        Me.Label33.Size = New System.Drawing.Size(77, 16)
         Me.Label33.TabIndex = 0
         Me.Label33.Text = "Telefone1"
         '
@@ -1609,7 +1609,7 @@ Partial Class fColCad
         Me.Label67.AutoSize = True
         Me.Label67.Location = New System.Drawing.Point(32, 71)
         Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(50, 16)
+        Me.Label67.Size = New System.Drawing.Size(49, 16)
         Me.Label67.TabIndex = 11
         Me.Label67.Text = "Bairro"
         '
@@ -1618,7 +1618,7 @@ Partial Class fColCad
         Me.Label40.AutoSize = True
         Me.Label40.Location = New System.Drawing.Point(510, 100)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(38, 16)
+        Me.Label40.Size = New System.Drawing.Size(37, 16)
         Me.Label40.TabIndex = 10
         Me.Label40.Text = "CEP"
         '
@@ -1636,7 +1636,7 @@ Partial Class fColCad
         Me.Label39.AutoSize = True
         Me.Label39.Location = New System.Drawing.Point(386, 100)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(28, 16)
+        Me.Label39.Size = New System.Drawing.Size(27, 16)
         Me.Label39.TabIndex = 8
         Me.Label39.Text = "UF"
         '
@@ -1669,7 +1669,7 @@ Partial Class fColCad
         Me.Label37.AutoSize = True
         Me.Label37.Location = New System.Drawing.Point(32, 100)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(58, 16)
+        Me.Label37.Size = New System.Drawing.Size(57, 16)
         Me.Label37.TabIndex = 1
         Me.Label37.Text = "Cidade"
         '
@@ -1678,7 +1678,7 @@ Partial Class fColCad
         Me.Label38.AutoSize = True
         Me.Label38.Location = New System.Drawing.Point(32, 40)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(87, 16)
+        Me.Label38.Size = New System.Drawing.Size(86, 16)
         Me.Label38.TabIndex = 0
         Me.Label38.Text = "Residência"
         '
@@ -1766,7 +1766,7 @@ Partial Class fColCad
         Me.Label45.AutoSize = True
         Me.Label45.Location = New System.Drawing.Point(20, 88)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(111, 16)
+        Me.Label45.Size = New System.Drawing.Size(110, 16)
         Me.Label45.TabIndex = 4
         Me.Label45.Text = "Orgão Emissor"
         '
@@ -1775,7 +1775,7 @@ Partial Class fColCad
         Me.Label44.AutoSize = True
         Me.Label44.Location = New System.Drawing.Point(513, 60)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(41, 16)
+        Me.Label44.Size = New System.Drawing.Size(40, 16)
         Me.Label44.TabIndex = 3
         Me.Label44.Text = "Data"
         '
@@ -1784,7 +1784,7 @@ Partial Class fColCad
         Me.Label43.AutoSize = True
         Me.Label43.Location = New System.Drawing.Point(345, 60)
         Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(32, 16)
+        Me.Label43.Size = New System.Drawing.Size(31, 16)
         Me.Label43.TabIndex = 2
         Me.Label43.Text = "No."
         '
@@ -1793,7 +1793,7 @@ Partial Class fColCad
         Me.Label42.AutoSize = True
         Me.Label42.Location = New System.Drawing.Point(21, 60)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(140, 16)
+        Me.Label42.Size = New System.Drawing.Size(139, 16)
         Me.Label42.TabIndex = 1
         Me.Label42.Text = "Conselho Regional"
         '
@@ -1802,7 +1802,7 @@ Partial Class fColCad
         Me.Label41.AutoSize = True
         Me.Label41.Location = New System.Drawing.Point(18, 29)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(331, 16)
+        Me.Label41.Size = New System.Drawing.Size(330, 16)
         Me.Label41.TabIndex = 0
         Me.Label41.Text = "Curso de Graduação/Mestrado/Doutorado/Pós"
         '
@@ -1811,7 +1811,7 @@ Partial Class fColCad
         Me.Label36.AutoSize = True
         Me.Label36.Location = New System.Drawing.Point(17, 35)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(130, 16)
+        Me.Label36.Size = New System.Drawing.Size(129, 16)
         Me.Label36.TabIndex = 1
         Me.Label36.Text = "Grau de Instrução"
         '
@@ -1880,7 +1880,7 @@ Partial Class fColCad
         Me.Label70.AutoSize = True
         Me.Label70.Location = New System.Drawing.Point(25, 57)
         Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(124, 16)
+        Me.Label70.Size = New System.Drawing.Size(123, 16)
         Me.Label70.TabIndex = 3
         Me.Label70.Text = "PIX identificação"
         '
@@ -1889,7 +1889,7 @@ Partial Class fColCad
         Me.Label71.AutoSize = True
         Me.Label71.Location = New System.Drawing.Point(25, 29)
         Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(89, 16)
+        Me.Label71.Size = New System.Drawing.Size(88, 16)
         Me.Label71.TabIndex = 1
         Me.Label71.Text = "PIX Número"
         '
@@ -1932,7 +1932,7 @@ Partial Class fColCad
         Me.Label30.AutoSize = True
         Me.Label30.Location = New System.Drawing.Point(25, 85)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(48, 16)
+        Me.Label30.Size = New System.Drawing.Size(47, 16)
         Me.Label30.TabIndex = 5
         Me.Label30.Text = "Conta"
         '
@@ -1949,7 +1949,7 @@ Partial Class fColCad
         Me.Label29.AutoSize = True
         Me.Label29.Location = New System.Drawing.Point(25, 57)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(65, 16)
+        Me.Label29.Size = New System.Drawing.Size(64, 16)
         Me.Label29.TabIndex = 3
         Me.Label29.Text = "Agência"
         '
@@ -1966,7 +1966,7 @@ Partial Class fColCad
         Me.Label28.AutoSize = True
         Me.Label28.Location = New System.Drawing.Point(25, 29)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(52, 16)
+        Me.Label28.Size = New System.Drawing.Size(51, 16)
         Me.Label28.TabIndex = 1
         Me.Label28.Text = "Banco"
         '
@@ -2007,7 +2007,7 @@ Partial Class fColCad
         Me.CheckBoxSF.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.CheckBoxSF.Location = New System.Drawing.Point(874, 220)
         Me.CheckBoxSF.Name = "CheckBoxSF"
-        Me.CheckBoxSF.Size = New System.Drawing.Size(79, 20)
+        Me.CheckBoxSF.Size = New System.Drawing.Size(78, 20)
         Me.CheckBoxSF.TabIndex = 23
         Me.CheckBoxSF.Text = "Dep SF"
         Me.CheckBoxSF.UseVisualStyleBackColor = False
@@ -2019,7 +2019,7 @@ Partial Class fColCad
         Me.CheckBoxIR.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.CheckBoxIR.Location = New System.Drawing.Point(874, 201)
         Me.CheckBoxIR.Name = "CheckBoxIR"
-        Me.CheckBoxIR.Size = New System.Drawing.Size(75, 20)
+        Me.CheckBoxIR.Size = New System.Drawing.Size(74, 20)
         Me.CheckBoxIR.TabIndex = 22
         Me.CheckBoxIR.Text = "Dep IR"
         Me.CheckBoxIR.UseVisualStyleBackColor = False
@@ -2075,7 +2075,7 @@ Partial Class fColCad
         Me.Label11.ForeColor = System.Drawing.Color.Snow
         Me.Label11.Location = New System.Drawing.Point(703, 190)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(90, 16)
+        Me.Label11.Size = New System.Drawing.Size(89, 16)
         Me.Label11.TabIndex = 16
         Me.Label11.Text = "Nascimento"
         '
@@ -2085,7 +2085,7 @@ Partial Class fColCad
         Me.Label10.ForeColor = System.Drawing.Color.Snow
         Me.Label10.Location = New System.Drawing.Point(585, 190)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(37, 16)
+        Me.Label10.Size = New System.Drawing.Size(36, 16)
         Me.Label10.TabIndex = 15
         Me.Label10.Text = "CPF"
         '
@@ -2095,7 +2095,7 @@ Partial Class fColCad
         Me.Label9.ForeColor = System.Drawing.Color.Snow
         Me.Label9.Location = New System.Drawing.Point(186, 190)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(49, 16)
+        Me.Label9.Size = New System.Drawing.Size(48, 16)
         Me.Label9.TabIndex = 14
         Me.Label9.Text = "Nome"
         '
@@ -2105,7 +2105,7 @@ Partial Class fColCad
         Me.Label8.ForeColor = System.Drawing.Color.Snow
         Me.Label8.Location = New System.Drawing.Point(17, 190)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(87, 16)
+        Me.Label8.Size = New System.Drawing.Size(86, 16)
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "Parentesco"
         '
@@ -2133,7 +2133,7 @@ Partial Class fColCad
         Me.LbltotalQTO.ForeColor = System.Drawing.Color.Snow
         Me.LbltotalQTO.Location = New System.Drawing.Point(1230, 69)
         Me.LbltotalQTO.Name = "LbltotalQTO"
-        Me.LbltotalQTO.Size = New System.Drawing.Size(16, 16)
+        Me.LbltotalQTO.Size = New System.Drawing.Size(15, 16)
         Me.LbltotalQTO.TabIndex = 18
         Me.LbltotalQTO.Text = "0"
         '
@@ -2143,7 +2143,7 @@ Partial Class fColCad
         Me.LblslQTO.ForeColor = System.Drawing.Color.Snow
         Me.LblslQTO.Location = New System.Drawing.Point(1230, 53)
         Me.LblslQTO.Name = "LblslQTO"
-        Me.LblslQTO.Size = New System.Drawing.Size(16, 16)
+        Me.LblslQTO.Size = New System.Drawing.Size(15, 16)
         Me.LblslQTO.TabIndex = 17
         Me.LblslQTO.Text = "0"
         '
@@ -2153,7 +2153,7 @@ Partial Class fColCad
         Me.LblirQTO.ForeColor = System.Drawing.Color.Snow
         Me.LblirQTO.Location = New System.Drawing.Point(1230, 37)
         Me.LblirQTO.Name = "LblirQTO"
-        Me.LblirQTO.Size = New System.Drawing.Size(16, 16)
+        Me.LblirQTO.Size = New System.Drawing.Size(15, 16)
         Me.LblirQTO.TabIndex = 16
         Me.LblirQTO.Text = "0"
         '
@@ -2163,7 +2163,7 @@ Partial Class fColCad
         Me.Label77.ForeColor = System.Drawing.Color.Snow
         Me.Label77.Location = New System.Drawing.Point(1180, 69)
         Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(44, 16)
+        Me.Label77.Size = New System.Drawing.Size(43, 16)
         Me.Label77.TabIndex = 13
         Me.Label77.Text = "Total"
         '
@@ -2173,7 +2173,7 @@ Partial Class fColCad
         Me.Label79.ForeColor = System.Drawing.Color.Snow
         Me.Label79.Location = New System.Drawing.Point(1201, 53)
         Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(27, 16)
+        Me.Label79.Size = New System.Drawing.Size(26, 16)
         Me.Label79.TabIndex = 15
         Me.Label79.Text = "SF"
         '
@@ -2183,7 +2183,7 @@ Partial Class fColCad
         Me.Label78.ForeColor = System.Drawing.Color.Snow
         Me.Label78.Location = New System.Drawing.Point(1201, 37)
         Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(23, 16)
+        Me.Label78.Size = New System.Drawing.Size(22, 16)
         Me.Label78.TabIndex = 14
         Me.Label78.Text = "IR"
         '
@@ -2333,7 +2333,7 @@ Partial Class fColCad
         Me.Label47.AutoSize = True
         Me.Label47.Location = New System.Drawing.Point(52, 54)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(78, 16)
+        Me.Label47.Size = New System.Drawing.Size(77, 16)
         Me.Label47.TabIndex = 7
         Me.Label47.Text = "Peso (KG)"
         '
@@ -2342,7 +2342,7 @@ Partial Class fColCad
         Me.Label46.AutoSize = True
         Me.Label46.Location = New System.Drawing.Point(42, 27)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(88, 16)
+        Me.Label46.Size = New System.Drawing.Size(87, 16)
         Me.Label46.TabIndex = 6
         Me.Label46.Text = "Altura (M:C)"
         '
@@ -2351,7 +2351,7 @@ Partial Class fColCad
         Me.col_10deficiente.AutoSize = True
         Me.col_10deficiente.Location = New System.Drawing.Point(21, 123)
         Me.col_10deficiente.Name = "col_10deficiente"
-        Me.col_10deficiente.Size = New System.Drawing.Size(155, 20)
+        Me.col_10deficiente.Size = New System.Drawing.Size(154, 20)
         Me.col_10deficiente.TabIndex = 15
         Me.col_10deficiente.Text = "Deficiência Físico "
         Me.col_10deficiente.UseVisualStyleBackColor = True
@@ -2370,7 +2370,7 @@ Partial Class fColCad
         Me.Label53.AutoSize = True
         Me.Label53.Location = New System.Drawing.Point(630, 88)
         Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(90, 16)
+        Me.Label53.Size = New System.Drawing.Size(89, 16)
         Me.Label53.TabIndex = 13
         Me.Label53.Text = "Cor da Pele"
         '
@@ -2399,7 +2399,7 @@ Partial Class fColCad
         Me.Label52.AutoSize = True
         Me.Label52.Location = New System.Drawing.Point(22, 70)
         Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(143, 16)
+        Me.Label52.Size = New System.Drawing.Size(142, 16)
         Me.Label52.TabIndex = 16
         Me.Label52.Text = "Outros - especificar"
         '
@@ -2408,7 +2408,7 @@ Partial Class fColCad
         Me.Label50.AutoSize = True
         Me.Label50.Location = New System.Drawing.Point(22, 33)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(40, 16)
+        Me.Label50.Size = New System.Drawing.Size(39, 16)
         Me.Label50.TabIndex = 15
         Me.Label50.Text = "Tipo"
         '
@@ -2435,7 +2435,7 @@ Partial Class fColCad
         Me.Label51.AutoSize = True
         Me.Label51.Location = New System.Drawing.Point(607, 117)
         Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(113, 16)
+        Me.Label51.Size = New System.Drawing.Size(112, 16)
         Me.Label51.TabIndex = 9
         Me.Label51.Text = "Tipo Sanguínio"
         '
@@ -2458,7 +2458,7 @@ Partial Class fColCad
         Me.Label49.AutoSize = True
         Me.Label49.Location = New System.Drawing.Point(614, 18)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(106, 16)
+        Me.Label49.Size = New System.Drawing.Size(105, 16)
         Me.Label49.TabIndex = 3
         Me.Label49.Text = "Cor dos Olhos"
         '
@@ -2467,7 +2467,7 @@ Partial Class fColCad
         Me.Label48.AutoSize = True
         Me.Label48.Location = New System.Drawing.Point(612, 53)
         Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(108, 16)
+        Me.Label48.Size = New System.Drawing.Size(107, 16)
         Me.Label48.TabIndex = 2
         Me.Label48.Text = "Cor do Cabelo"
         '
@@ -2517,7 +2517,7 @@ Partial Class fColCad
         Me.Label60.AutoSize = True
         Me.Label60.Location = New System.Drawing.Point(27, 162)
         Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(61, 16)
+        Me.Label60.Size = New System.Drawing.Size(60, 16)
         Me.Label60.TabIndex = 18
         Me.Label60.Text = "Contato"
         '
@@ -2541,7 +2541,7 @@ Partial Class fColCad
         Me.Label61.AutoSize = True
         Me.Label61.Location = New System.Drawing.Point(28, 190)
         Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(70, 16)
+        Me.Label61.Size = New System.Drawing.Size(69, 16)
         Me.Label61.TabIndex = 15
         Me.Label61.Text = "Telefone"
         '
@@ -2550,7 +2550,7 @@ Partial Class fColCad
         Me.Label62.AutoSize = True
         Me.Label62.Location = New System.Drawing.Point(22, 129)
         Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(78, 16)
+        Me.Label62.Size = New System.Drawing.Size(77, 16)
         Me.Label62.TabIndex = 14
         Me.Label62.Text = "Empresa2"
         '
@@ -2566,7 +2566,7 @@ Partial Class fColCad
         Me.Label66.AutoSize = True
         Me.Label66.Location = New System.Drawing.Point(27, 61)
         Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(61, 16)
+        Me.Label66.Size = New System.Drawing.Size(60, 16)
         Me.Label66.TabIndex = 12
         Me.Label66.Text = "Contato"
         '
@@ -2590,7 +2590,7 @@ Partial Class fColCad
         Me.Label64.AutoSize = True
         Me.Label64.Location = New System.Drawing.Point(28, 89)
         Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(70, 16)
+        Me.Label64.Size = New System.Drawing.Size(69, 16)
         Me.Label64.TabIndex = 1
         Me.Label64.Text = "Telefone"
         '
@@ -2599,7 +2599,7 @@ Partial Class fColCad
         Me.Label65.AutoSize = True
         Me.Label65.Location = New System.Drawing.Point(22, 28)
         Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(78, 16)
+        Me.Label65.Size = New System.Drawing.Size(77, 16)
         Me.Label65.TabIndex = 0
         Me.Label65.Text = "Empresa1"
         '
@@ -2655,7 +2655,7 @@ Partial Class fColCad
         Me.Label57.AutoSize = True
         Me.Label57.Location = New System.Drawing.Point(296, 175)
         Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(165, 16)
+        Me.Label57.Size = New System.Drawing.Size(164, 16)
         Me.Label57.TabIndex = 8
         Me.Label57.Text = "Grau de Conhecimento"
         '
@@ -2664,7 +2664,7 @@ Partial Class fColCad
         Me.Label58.AutoSize = True
         Me.Label58.Location = New System.Drawing.Point(27, 175)
         Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(70, 16)
+        Me.Label58.Size = New System.Drawing.Size(69, 16)
         Me.Label58.TabIndex = 7
         Me.Label58.Text = "Telefone"
         '
@@ -2673,7 +2673,7 @@ Partial Class fColCad
         Me.Label59.AutoSize = True
         Me.Label59.Location = New System.Drawing.Point(22, 131)
         Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(61, 16)
+        Me.Label59.Size = New System.Drawing.Size(60, 16)
         Me.Label59.TabIndex = 6
         Me.Label59.Text = "Nome 2"
         '
@@ -2707,7 +2707,7 @@ Partial Class fColCad
         Me.Label56.AutoSize = True
         Me.Label56.Location = New System.Drawing.Point(296, 69)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(165, 16)
+        Me.Label56.Size = New System.Drawing.Size(164, 16)
         Me.Label56.TabIndex = 2
         Me.Label56.Text = "Grau de Conhecimento"
         '
@@ -2716,7 +2716,7 @@ Partial Class fColCad
         Me.Label55.AutoSize = True
         Me.Label55.Location = New System.Drawing.Point(27, 72)
         Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(70, 16)
+        Me.Label55.Size = New System.Drawing.Size(69, 16)
         Me.Label55.TabIndex = 1
         Me.Label55.Text = "Telefone"
         '
@@ -2725,7 +2725,7 @@ Partial Class fColCad
         Me.Label54.AutoSize = True
         Me.Label54.Location = New System.Drawing.Point(22, 28)
         Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(61, 16)
+        Me.Label54.Size = New System.Drawing.Size(60, 16)
         Me.Label54.TabIndex = 0
         Me.Label54.Text = "Nome 1"
         '
@@ -2765,7 +2765,7 @@ Partial Class fColCad
         Me.Label75.AutoSize = True
         Me.Label75.Location = New System.Drawing.Point(30, 161)
         Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(82, 16)
+        Me.Label75.Size = New System.Drawing.Size(81, 16)
         Me.Label75.TabIndex = 10
         Me.Label75.Text = "Rescisão :"
         '
@@ -2783,7 +2783,7 @@ Partial Class fColCad
         Me.Label74.AutoSize = True
         Me.Label74.Location = New System.Drawing.Point(30, 116)
         Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(119, 16)
+        Me.Label74.Size = New System.Drawing.Size(118, 16)
         Me.Label74.TabIndex = 8
         Me.Label74.Text = "ASO demissão :"
         '
@@ -2801,7 +2801,7 @@ Partial Class fColCad
         Me.Label68.AutoSize = True
         Me.Label68.Location = New System.Drawing.Point(30, 28)
         Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(119, 16)
+        Me.Label68.Size = New System.Drawing.Size(118, 16)
         Me.Label68.TabIndex = 2
         Me.Label68.Text = "ASO admissão :"
         '
@@ -2828,7 +2828,7 @@ Partial Class fColCad
         Me.Label69.AutoSize = True
         Me.Label69.Location = New System.Drawing.Point(30, 69)
         Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(85, 16)
+        Me.Label69.Size = New System.Drawing.Size(84, 16)
         Me.Label69.TabIndex = 6
         Me.Label69.Text = "Admissão :"
         '
@@ -2881,7 +2881,7 @@ Partial Class fColCad
         Me.LblSetor.AutoSize = True
         Me.LblSetor.Location = New System.Drawing.Point(15, 72)
         Me.LblSetor.Name = "LblSetor"
-        Me.LblSetor.Size = New System.Drawing.Size(53, 16)
+        Me.LblSetor.Size = New System.Drawing.Size(52, 16)
         Me.LblSetor.TabIndex = 10
         Me.LblSetor.Text = "Setor :"
         '
@@ -2890,7 +2890,7 @@ Partial Class fColCad
         Me.Label73.AutoSize = True
         Me.Label73.Location = New System.Drawing.Point(30, 164)
         Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(59, 16)
+        Me.Label73.Size = New System.Drawing.Size(58, 16)
         Me.Label73.TabIndex = 9
         Me.Label73.Text = "C.B.O. :"
         '
@@ -2907,7 +2907,7 @@ Partial Class fColCad
         Me.LblCargo.AutoSize = True
         Me.LblCargo.Location = New System.Drawing.Point(17, 119)
         Me.LblCargo.Name = "LblCargo"
-        Me.LblCargo.Size = New System.Drawing.Size(58, 16)
+        Me.LblCargo.Size = New System.Drawing.Size(57, 16)
         Me.LblCargo.TabIndex = 6
         Me.LblCargo.Text = "Cargo :"
         '
@@ -2916,7 +2916,7 @@ Partial Class fColCad
         Me.Label63.AutoSize = True
         Me.Label63.Location = New System.Drawing.Point(15, 34)
         Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(131, 16)
+        Me.Label63.Size = New System.Drawing.Size(130, 16)
         Me.Label63.TabIndex = 5
         Me.Label63.Text = "Nome no Crachá :"
         '

@@ -125,11 +125,4 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
         Me.Close()
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 End Class

@@ -59,6 +59,7 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         Me.MskDescansoNaJornadaCab = New System.Windows.Forms.Label()
         Me.MskCargaHorariaSemanal = New System.Windows.Forms.MaskedTextBox()
         Me.GruGravacao = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGrava = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -92,7 +93,6 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         Me.CmbTipoCab = New System.Windows.Forms.Label()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox11.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GruCaracteristicasCalculo.SuspendLayout()
@@ -552,6 +552,16 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         Me.GruGravacao.TabIndex = 35
         Me.GruGravacao.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Location = New System.Drawing.Point(15, 88)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(331, 20)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Imprime Rascunho do contrato"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'BtnCancelar
         '
         Me.BtnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -931,16 +941,6 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         Me.PictureBox1.Size = New System.Drawing.Size(218, 135)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'Button1
-        '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(15, 88)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(331, 20)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Imprime Rascunho do contrato"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         '

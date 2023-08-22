@@ -24,9 +24,9 @@ Partial Class FrmFolhaContratoAtivacao
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnPesquisa = New System.Windows.Forms.Button()
-        Me.TxtNome = New System.Windows.Forms.TextBox()
+        Me.TxtNome_Pesq = New System.Windows.Forms.TextBox()
         Me.MskCPF_Pesq = New System.Windows.Forms.MaskedTextBox()
-        Me.MskChavePesq = New System.Windows.Forms.MaskedTextBox()
+        Me.MskChave_Pesq = New System.Windows.Forms.MaskedTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -47,9 +47,9 @@ Partial Class FrmFolhaContratoAtivacao
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.BtnPesquisa)
-        Me.GroupBox1.Controls.Add(Me.TxtNome)
+        Me.GroupBox1.Controls.Add(Me.TxtNome_Pesq)
         Me.GroupBox1.Controls.Add(Me.MskCPF_Pesq)
-        Me.GroupBox1.Controls.Add(Me.MskChavePesq)
+        Me.GroupBox1.Controls.Add(Me.MskChave_Pesq)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -69,13 +69,13 @@ Partial Class FrmFolhaContratoAtivacao
         Me.BtnPesquisa.Text = "P E S Q U I S A"
         Me.BtnPesquisa.UseVisualStyleBackColor = True
         '
-        'TxtNome
+        'TxtNome_Pesq
         '
-        Me.TxtNome.Location = New System.Drawing.Point(108, 104)
-        Me.TxtNome.MaxLength = 40
-        Me.TxtNome.Name = "TxtNome"
-        Me.TxtNome.Size = New System.Drawing.Size(530, 20)
-        Me.TxtNome.TabIndex = 4
+        Me.TxtNome_Pesq.Location = New System.Drawing.Point(108, 104)
+        Me.TxtNome_Pesq.MaxLength = 40
+        Me.TxtNome_Pesq.Name = "TxtNome_Pesq"
+        Me.TxtNome_Pesq.Size = New System.Drawing.Size(530, 20)
+        Me.TxtNome_Pesq.TabIndex = 4
         '
         'MskCPF_Pesq
         '
@@ -85,13 +85,13 @@ Partial Class FrmFolhaContratoAtivacao
         Me.MskCPF_Pesq.Size = New System.Drawing.Size(192, 20)
         Me.MskCPF_Pesq.TabIndex = 3
         '
-        'MskChavePesq
+        'MskChave_Pesq
         '
-        Me.MskChavePesq.Location = New System.Drawing.Point(108, 39)
-        Me.MskChavePesq.Mask = ">L0000"
-        Me.MskChavePesq.Name = "MskChavePesq"
-        Me.MskChavePesq.Size = New System.Drawing.Size(110, 20)
-        Me.MskChavePesq.TabIndex = 2
+        Me.MskChave_Pesq.Location = New System.Drawing.Point(108, 39)
+        Me.MskChave_Pesq.Mask = ">L0000"
+        Me.MskChave_Pesq.Name = "MskChave_Pesq"
+        Me.MskChave_Pesq.Size = New System.Drawing.Size(110, 20)
+        Me.MskChave_Pesq.TabIndex = 2
         '
         'Label3
         '
@@ -213,9 +213,9 @@ Partial Class FrmFolhaContratoAtivacao
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents ListView1 As ListView
-    Friend WithEvents TxtNome As TextBox
+    Friend WithEvents TxtNome_Pesq As TextBox
     Friend WithEvents MskCPF_Pesq As MaskedTextBox
-    Friend WithEvents MskChavePesq As MaskedTextBox
+    Friend WithEvents MskChave_Pesq As MaskedTextBox
     Friend WithEvents BtnPesquisa As Button
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader

@@ -8,10 +8,11 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
 
     Private Sub FrmFolhaContratoDeTrabalhoCadastramento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        oi.title = Me.Text
+        oi.Title = Me.Text
+
         Dim intContador As Integer = 0
 
-        Dim strLetra As String = ""
+        Dim StrLetra As String = ""
 
         oi.title = Me.Text
 
@@ -896,10 +897,6 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
         Return (strFrase)
 
     End Function
-
-    Private Sub GruIdentificacao_Enter(sender As Object, e As EventArgs) Handles GruIdentificacao.Enter
-
-    End Sub
 
     Private Sub BtnIniciaCadastro_Click(sender As Object, e As EventArgs) Handles BtnIniciaCadastro.Click
 

@@ -2,9 +2,10 @@
 Public Class FcolCadCargo
     Dim oi As New MsgShow
     Private Sub FcolCadCargo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        oi.title = Me.Text
 
-        ComboCarregar(Me.CmbSetor, "comercio.folha_setor", "concat(folha_setor_codigo,' - ' , folha_setor_descricao)", "")
+        oi.Title = Me.Text
+
+        ComboCarregar(Me.CmbSetor, "folha_setor", "concat(folha_setor_codigo,' - ' , folha_setor_descricao)", "")
 
     End Sub
 

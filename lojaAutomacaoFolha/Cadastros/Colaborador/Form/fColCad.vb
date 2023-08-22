@@ -5,7 +5,7 @@ Public Class fColCad
 
         If OpenDB() Then
 
-            Dim Query As String = "select * from UF order by UFsigla "
+            Dim Query As String = "select * from uf order by UFsigla "
             Dim CMD As New MySqlCommand(Query, Conn)
             Dim DTReader As MySqlDataReader
             cmbEndUF.Items.Clear()
@@ -36,7 +36,7 @@ Public Class fColCad
 
                 End While
             Catch ex As Exception
-                MsgBox("Problemas Na Pesquisa")
+                MsgBox(ex)
             End Try
         End If
         Conn.Close()
@@ -236,24 +236,11 @@ Public Class fColCad
         e.KeyChar = UCase(e.KeyChar)
     End Sub
 
-    Private Sub txtNome_TextChanged(sender As Object, e As EventArgs) Handles txtNome.TextChanged
-
-    End Sub
-    'Private Sub ckbUniaoestavel_CheckedChanged(sender As Object, e As EventArgs) Handles ckbUniaoestavel.CheckedChanged
-    '    If GroupBox8.Enabled Then
-    '        GroupBox8.Enabled = False
-    '    Else
-    '        GroupBox8.Enabled = True
-    '    End If
-    'End Sub
-
-
-
-
     Function carregaGrauInstrucao()
+
         If OpenDB() Then
 
-            Dim Query As String = "select concat(lpad(id,2,'0'),' - ',descricao) as descricao from instrucaoGrau "
+            Dim Query As String = "select concat(lpad(id,2,'0'),' - ',descricao) as descricao from instrucaograu "
             Dim CMD As New MySqlCommand(Query, Conn)
             Dim DTReader As MySqlDataReader
             cmbInstrucao.Items.Clear()
@@ -266,19 +253,11 @@ Public Class fColCad
 
                 End While
             Catch ex As Exception
-                MsgBox("Problemas Na Pesquisa")
+                MsgBox(ex.ToString)
             End Try
         End If
         Conn.Close()
     End Function
-
-    Private Sub chkDeficiencia_CheckedChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub chkDeficiencia_CheckedChanged_1(sender As Object, e As EventArgs) Handles col_10deficiente.CheckedChanged
-
-    End Sub
 
     Private Sub chkDeficiencia_Click(sender As Object, e As EventArgs) Handles col_10deficiente.Click
         If col_10deficiente.Checked Then
@@ -286,14 +265,6 @@ Public Class fColCad
         Else
             grpDeficiencia.Enabled = False
         End If
-    End Sub
-
-    Private Sub grpPessoal_Enter(sender As Object, e As EventArgs) Handles grpPessoal.Enter
-
-    End Sub
-
-    Private Sub Label56_Click(sender As Object, e As EventArgs) Handles Label56.Click
-
     End Sub
 
     Private Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles col_03UniaoEstavel.CheckedChanged
@@ -936,8 +907,8 @@ Public Class fColCad
         query += ",'" & cl(0).CTPS & "'"
         query += ",'" & Trim(cl(0).CTPSOE) & "'"
         query += ",'" & cl(0).CTPSOEuf & "'"
-        query += ",'" & cl(0).CTPSemissao & "'"
         query += ",'" & cl(0).CTPSserie & "'"
+        query += ",'" & cl(0).CTPSemissao & "'"
         query += ",'" & cl(0).CTPSvalidade & "'"
         query += ",'" & cl(0).cnh & "'"
         query += ",'" & Trim(cl(0).cnhOE) & "'"
@@ -1075,7 +1046,8 @@ Public Class fColCad
 
         Try
 
-            gravaSQL(query)
+            If Not gravaSQL(query) Then Return (False) : Exit Function
+
 
             Dim strChave As String = intChave.ToString
             Dim intNumeroDiretorios = CriaDiretorios()
@@ -1101,7 +1073,7 @@ Public Class fColCad
                 .msg += Chr(13)
                 .msg += Chr(13)
                 .msg += "Registro não Gravado!"
-                .style = vbExclamation
+                .Style = vbCritical
                 MsgBox(.msg, .style, .title)
             End With
         End Try
@@ -1131,5 +1103,7 @@ Public Class fColCad
 
     End Function
 
+    Private Sub col_12Setor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles col_12Setor.SelectedIndexChanged
 
+    End Sub
 End Class

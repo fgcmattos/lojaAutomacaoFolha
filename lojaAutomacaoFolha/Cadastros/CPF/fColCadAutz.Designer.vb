@@ -60,11 +60,11 @@ Partial Class fColCadAutz
         Me.Label2.BackColor = System.Drawing.Color.Red
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(26, 9)
+        Me.Label2.Location = New System.Drawing.Point(77, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(587, 16)
+        Me.Label2.Size = New System.Drawing.Size(496, 16)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "O CPF será testado para ver se é válido e se já está cadastrado na Base de Dados"
+        Me.Label2.Text = "O CPF será Validado e certifucado de que não está na Base de Dados"
         '
         'fColCadAutz
         '
@@ -77,7 +77,7 @@ Partial Class fColCadAutz
         Me.Controls.Add(Me.Label1)
         Me.Name = "fColCadAutz"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "fColCadAutz"
+        Me.Text = "Consulta de CPF"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

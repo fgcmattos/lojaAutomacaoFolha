@@ -6,8 +6,8 @@ Public Class FrmFolhaContratoAtivacao
 
     Dim oi As New MsgShow
 
-    Private Sub MskChavePesq_Validated(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MskChavePesq.Validating
-        Dim input As String = MskChavePesq.Text
+    Private Sub MskChavePesq_Validated(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MskChave_Pesq.Validating
+        Dim input As String = MskChave_Pesq.Text
 
         If input.Length = 0 Then Exit Sub
 
@@ -15,18 +15,18 @@ Public Class FrmFolhaContratoAtivacao
             ' Se o valor digitado for menor que 2 caracteres, está incorreto
             e.Cancel = True
             MessageBox.Show("A entrada deve ter dois caracteres.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            MskChavePesq.Focus()
+            MskChave_Pesq.Focus()
 
         ElseIf Not Char.IsLetter(input(0)) Or Not Char.IsDigit(input(1)) Then
             ' Se o primeiro caractere não for uma letra ou o segundo caractere não for um dígito, está incorreto
             e.Cancel = True
             MessageBox.Show("A entrada deve começar com uma letra seguida de 3 dígitos numéricos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            MskChavePesq.Focus()
+            MskChave_Pesq.Focus()
             Exit Sub
 
         End If
 
-        MskChavePesq.Text = MskChavePesq.Text.Substring(0, 1) & MskChavePesq.Text.Replace(" ", "").Substring(1).PadLeft(4, "0"c)
+        MskChave_Pesq.Text = MskChave_Pesq.Text.Substring(0, 1) & MskChave_Pesq.Text.Replace(" ", "").Substring(1).PadLeft(4, "0"c)
 
     End Sub
 
@@ -135,7 +135,7 @@ Public Class FrmFolhaContratoAtivacao
 
         End If
 
-            oi.Style = vbYesNo + vbDefaultButton1
+        oi.Style = vbYesNo + vbDefaultButton1
         If MsgBox(oi.Msg, oi.Style, oi.Title) = 6 Then
 
             'MsgBox("Vai para as cabeças")
@@ -176,9 +176,9 @@ Public Class FrmFolhaContratoAtivacao
 
         Else
 
-                'MsgBox("Desiste")
+            'MsgBox("Desiste")
 
-            End If
+        End If
     End Sub
 
     Private Sub FrmFolhaContratoAtivacao_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -186,10 +186,35 @@ Public Class FrmFolhaContratoAtivacao
     End Sub
 
     Private Function listviewCarega()
+        ' Função preparada para colaborador tipo F - Funcionário
+        ' Outros tipos não devem ser pesquisados 
 
-        Dim StrChave As String = MskChavePesq.Text.Replace(" ", "")
-        Dim StrNome As String = TxtNome.Text.Replace(" ", "")
+
+        Dim StrChave As String = MskChave_Pesq.Text.Replace(" ", "")
+        If StrChave.Length > 0 Then
+            StrChave = MskChave_Pesq.Text.Replace(" ", "").Substring(1)
+            Dim StrChaveTipo As String = MskChave_Pesq.Text.Replace(" ", "").Substring(0, 1)
+        End If
+        Dim StrNome As String = TxtNome_Pesq.Text.Replace(" ", "")
         Dim strCPF As String = CPFretiraMascara(MskCPF_Pesq.Text).Replace(" ", "")
+
+        Dim IsFiltro As String = ""
+
+        ListView1.Items.Clear()
+
+        ' Definindo o filtro de pesquisa
+        If StrChave <> "" Then
+            IsFiltro = "Chave = " & StrChave
+        ElseIf strCPF <> "" Then
+            IsFiltro = "colaboradorcpf = '" & strCPF & "'"
+        ElseIf StrNome <> "" Then
+            IsFiltro = "colaboradorNome like " & "'%" & StrNome & "%'"
+        End If
+        If IsFiltro <> "" Then
+            IsFiltro = " not colaboradorContratoAtivo and " & IsFiltro & ";"
+        Else
+            IsFiltro = " not colaboradorContratoAtivo;"
+        End If
 
         GroupBox2.Text = "Colaboradores com Inatividade Para Contrato de Trabalho"
         ListView1.Items.Clear()
@@ -221,7 +246,7 @@ Public Class FrmFolhaContratoAtivacao
         Query += ",ifnull(colaboradorOBS,'')"
         Query += " FROM colaborador"
         Query += " Where "
-        Query += " not colaboradorContratoAtivo;"
+        Query += IsFiltro
 
 
         Dim CMD As New MySqlCommand(Query, Conn)
@@ -251,8 +276,17 @@ Public Class FrmFolhaContratoAtivacao
             End Try
 
             Conn.Close()
+            If ListView1.Items.Count() = 0 Then
+                With oi
+                    .Msg = "Nenhum colaborador corresponde ao filtro selecionado." & Chr(13) & Chr(13)
+                    .Msg += "Por favor refaça a Pesquisa."
+                    .Style = vbCritical
+                    MsgBox(.Msg, .Style, .Title)
 
+                End With
+            End If
         End If
     End Function
+
 
 End Class

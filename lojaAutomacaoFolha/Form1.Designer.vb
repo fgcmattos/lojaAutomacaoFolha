@@ -1230,56 +1230,56 @@ Partial Class Form1
         '
         Me.CadastramentoToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DigitaçãoToolStripMenuItem, Me.ConferênciaToolStripMenuItem2, Me.LiberaçãoToolStripMenuItem2})
         Me.CadastramentoToolStripMenuItem2.Name = "CadastramentoToolStripMenuItem2"
-        Me.CadastramentoToolStripMenuItem2.Size = New System.Drawing.Size(186, 22)
+        Me.CadastramentoToolStripMenuItem2.Size = New System.Drawing.Size(196, 22)
         Me.CadastramentoToolStripMenuItem2.Text = "Cadastramento"
         '
         'DigitaçãoToolStripMenuItem
         '
         Me.DigitaçãoToolStripMenuItem.Name = "DigitaçãoToolStripMenuItem"
-        Me.DigitaçãoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DigitaçãoToolStripMenuItem.Size = New System.Drawing.Size(138, 22)
         Me.DigitaçãoToolStripMenuItem.Text = "Digitação"
         '
         'ConferênciaToolStripMenuItem2
         '
         Me.ConferênciaToolStripMenuItem2.Name = "ConferênciaToolStripMenuItem2"
-        Me.ConferênciaToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.ConferênciaToolStripMenuItem2.Size = New System.Drawing.Size(138, 22)
         Me.ConferênciaToolStripMenuItem2.Text = "Conferência"
         '
         'LiberaçãoToolStripMenuItem2
         '
         Me.LiberaçãoToolStripMenuItem2.Name = "LiberaçãoToolStripMenuItem2"
-        Me.LiberaçãoToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.LiberaçãoToolStripMenuItem2.Size = New System.Drawing.Size(138, 22)
         Me.LiberaçãoToolStripMenuItem2.Text = "Liberação"
         '
         'ManutençãoToolStripMenuItem3
         '
         Me.ManutençãoToolStripMenuItem3.Name = "ManutençãoToolStripMenuItem3"
-        Me.ManutençãoToolStripMenuItem3.Size = New System.Drawing.Size(186, 22)
+        Me.ManutençãoToolStripMenuItem3.Size = New System.Drawing.Size(196, 22)
         Me.ManutençãoToolStripMenuItem3.Text = "Manutenção"
         '
         'PesquisaToolStripMenuItem11
         '
         Me.PesquisaToolStripMenuItem11.Name = "PesquisaToolStripMenuItem11"
-        Me.PesquisaToolStripMenuItem11.Size = New System.Drawing.Size(186, 22)
+        Me.PesquisaToolStripMenuItem11.Size = New System.Drawing.Size(196, 22)
         Me.PesquisaToolStripMenuItem11.Text = "Pesquisa"
         '
         'ImpresãoToolStripMenuItem
         '
         Me.ImpresãoToolStripMenuItem.Name = "ImpresãoToolStripMenuItem"
-        Me.ImpresãoToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
+        Me.ImpresãoToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
         Me.ImpresãoToolStripMenuItem.Text = "Impressão"
         '
         'AtivaçãoDeContratoToolStripMenuItem
         '
         Me.AtivaçãoDeContratoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroToolStripMenuItem1})
         Me.AtivaçãoDeContratoToolStripMenuItem.Name = "AtivaçãoDeContratoToolStripMenuItem"
-        Me.AtivaçãoDeContratoToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
-        Me.AtivaçãoDeContratoToolStripMenuItem.Text = "Ativação de Contrato"
+        Me.AtivaçãoDeContratoToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.AtivaçãoDeContratoToolStripMenuItem.Text = "Ativação para Contrato"
         '
         'RegistroToolStripMenuItem1
         '
         Me.RegistroToolStripMenuItem1.Name = "RegistroToolStripMenuItem1"
-        Me.RegistroToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
+        Me.RegistroToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.RegistroToolStripMenuItem1.Text = "Registro"
         '
         'CadastramentoToolStripMenuItem1
@@ -1293,7 +1293,7 @@ Partial Class Form1
         'ManutençãoToolStripMenuItem1
         '
         Me.ManutençãoToolStripMenuItem1.Name = "ManutençãoToolStripMenuItem1"
-        Me.ManutençãoToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ManutençãoToolStripMenuItem1.Size = New System.Drawing.Size(141, 22)
         Me.ManutençãoToolStripMenuItem1.Text = "Manutenção"
         '
         'ManutençãoToolStripMenuItem
@@ -1605,14 +1605,14 @@ Partial Class Form1
         '
         Me.CaixaToolStripMenuItem.AccessibleName = "5.1"
         Me.CaixaToolStripMenuItem.Name = "CaixaToolStripMenuItem"
-        Me.CaixaToolStripMenuItem.Size = New System.Drawing.Size(167, 22)
+        Me.CaixaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CaixaToolStripMenuItem.Text = "Caixa"
         '
         'RecibosToolStripMenuItem
         '
         Me.RecibosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NovoToolStripMenuItem, Me.PesquisaImpressãoToolStripMenuItem, Me.HistoricosPadrãoToolStripMenuItem})
         Me.RecibosToolStripMenuItem.Name = "RecibosToolStripMenuItem"
-        Me.RecibosToolStripMenuItem.Size = New System.Drawing.Size(167, 22)
+        Me.RecibosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecibosToolStripMenuItem.Text = "Recibos"
         '
         'NovoToolStripMenuItem
@@ -1637,7 +1637,7 @@ Partial Class Form1
         '
         Me.ContasAPagarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LançamentosToolStripMenuItem, Me.BaixaToolStripMenuItem, Me.AlteraçãoToolStripMenuItem4, Me.FluxoDePagamentoToolStripMenuItem})
         Me.ContasAPagarToolStripMenuItem.Name = "ContasAPagarToolStripMenuItem"
-        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(167, 22)
+        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ContasAPagarToolStripMenuItem.Text = "Contas A Pagar"
         '
         'LançamentosToolStripMenuItem
@@ -1668,7 +1668,7 @@ Partial Class Form1
         '
         Me.ContasAReceberToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LançamentoToolStripMenuItem, Me.BaixaToolStripMenuItem1, Me.ManutençãoToolStripMenuItem7, Me.FluxoDeRecebimentoToolStripMenuItem})
         Me.ContasAReceberToolStripMenuItem1.Name = "ContasAReceberToolStripMenuItem1"
-        Me.ContasAReceberToolStripMenuItem1.Size = New System.Drawing.Size(167, 22)
+        Me.ContasAReceberToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ContasAReceberToolStripMenuItem1.Text = "Contas A Receber"
         '
         'LançamentoToolStripMenuItem
@@ -1698,7 +1698,7 @@ Partial Class Form1
         'FluxoDeCaixaToolStripMenuItem
         '
         Me.FluxoDeCaixaToolStripMenuItem.Name = "FluxoDeCaixaToolStripMenuItem"
-        Me.FluxoDeCaixaToolStripMenuItem.Size = New System.Drawing.Size(167, 22)
+        Me.FluxoDeCaixaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.FluxoDeCaixaToolStripMenuItem.Text = "Fluxo de Caixa"
         '
         'AcessoToolStripMenuItem1

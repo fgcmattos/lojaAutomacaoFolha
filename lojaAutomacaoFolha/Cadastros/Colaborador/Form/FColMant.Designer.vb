@@ -2855,10 +2855,11 @@ Partial Class FColMant
         Me.grpIdentificacao.Controls.Add(Me.lblRecusa)
         Me.grpIdentificacao.Controls.Add(Me.lblIdadeCritica)
         Me.grpIdentificacao.Controls.Add(Me.grpCPF)
+        Me.grpIdentificacao.Controls.Add(Me.PictureBox1)
         Me.grpIdentificacao.ForeColor = System.Drawing.Color.White
         Me.grpIdentificacao.Location = New System.Drawing.Point(51, 2)
         Me.grpIdentificacao.Name = "grpIdentificacao"
-        Me.grpIdentificacao.Size = New System.Drawing.Size(1075, 129)
+        Me.grpIdentificacao.Size = New System.Drawing.Size(1287, 142)
         Me.grpIdentificacao.TabIndex = 9
         Me.grpIdentificacao.TabStop = False
         Me.grpIdentificacao.Text = "I D E N T I F I C A Ç Ã O"
@@ -2872,7 +2873,7 @@ Partial Class FColMant
         Me.GruIdentificacao.Controls.Add(Me.lblNascimento)
         Me.GruIdentificacao.Location = New System.Drawing.Point(243, 22)
         Me.GruIdentificacao.Name = "GruIdentificacao"
-        Me.GruIdentificacao.Size = New System.Drawing.Size(691, 101)
+        Me.GruIdentificacao.Size = New System.Drawing.Size(752, 101)
         Me.GruIdentificacao.TabIndex = 8
         Me.GruIdentificacao.TabStop = False
         '
@@ -3000,9 +3001,9 @@ Partial Class FColMant
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(1132, 5)
+        Me.PictureBox1.Location = New System.Drawing.Point(1030, 19)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(196, 409)
+        Me.PictureBox1.Size = New System.Drawing.Size(189, 117)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 17
         Me.PictureBox1.TabStop = False
@@ -3105,9 +3106,9 @@ Partial Class FColMant
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.form1Status})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 939)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 512)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1340, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1341, 22)
         Me.StatusStrip1.TabIndex = 21
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -3123,12 +3124,11 @@ Partial Class FColMant
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1340, 961)
+        Me.ClientSize = New System.Drawing.Size(1341, 534)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.BtnDetalhamentoCabAltera)
         Me.Controls.Add(Me.BtnDetalhamentoCorpoAltera)
         Me.Controls.Add(Me.GrpAlteracoes)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.BtnLimpardetalhamento)
         Me.Controls.Add(Me.BtnLimpaTelaFoco)
         Me.Controls.Add(Me.BtnGrava)
