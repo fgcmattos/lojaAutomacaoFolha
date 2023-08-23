@@ -6,6 +6,43 @@ Imports System.Text
 Module Module1
 
     Private Oi As New MsgShow
+    Function Time_To_String(IsTimes As TimeSpan) As String
+
+        Dim isRetorno As String
+
+        Dim timeString As String = IsTimes.ToString
+
+        Dim parts() As String = timeString.Split(":"c)
+
+        Dim isDays As Integer = Convert.ToDecimal(parts(0).Replace(".", ","))
+
+        Dim isDays_decimal As Integer = (Convert.ToDecimal(parts(0).Replace(".", ",")) - isDays) * 100
+
+        'If parts.Length = 3 Then
+
+        Dim isHours As Integer = (Convert.ToInt32(isDays) * 24) + isDays_decimal
+
+        'If isHours > 0 Then
+
+
+        '    isHours += Convert.ToInt32(parts(0).Substring(parts(0).IndexOf(".") - 1))
+
+        'Else
+
+        '    isHours = Convert.ToInt32(parts(0))
+
+        'End If
+
+        isRetorno = isHours.ToString & ":" & parts(2).ToString
+
+        'Else
+
+        '    isRetorno = parts(0).ToString & ":" & parts(2).ToString
+
+        'End If
+        Return (isRetorno)
+
+    End Function
     Function CPFdigito(nCPF As String) As Boolean
 
         If nCPF.Length < 9 Then CPFdigito = False : Exit Function
@@ -1191,7 +1228,7 @@ Module Module1
     End Function
 
     Public Function SQLvetor(query As String) As Object
-        'tentativa de passar o vetor do Mysql para o visualn - nao deu certo
+        'tentativa de passar o vetor do Mysql para o visual - nao deu certo
         ''Dim DTReader As MySqlDataReader
         ''Dim CMD As New MySqlCommand(query, Conn)
         ''Dim MySqlVetor As Object

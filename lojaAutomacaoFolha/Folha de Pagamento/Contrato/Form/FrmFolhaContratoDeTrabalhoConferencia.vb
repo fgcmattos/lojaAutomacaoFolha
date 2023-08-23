@@ -138,8 +138,8 @@ Public Class FrmFolhaContratoDeTrabalhoConferencia
             .MskNumeroDescansosNaSemana.Text = Cc(0).FCC_descanso_semanal
             .MskInicioDaJornada.Text = Cc(0).FCC_jornada_dia_inicio.ToString
             .MskDescansoNaJornada.Text = Cc(0).FCC_jornada_descanso.ToString
-            .LblCargaHorariaDiaria.Text = Cc(0).FCC_jornada_dia.ToString
-            .LblCargaHorariaMensal.Text = Cc(0).FCC_jornada_mes.ToString
+            .LblCargaHorariaDiaria.Text = Time_To_String(Cc(0).FCC_jornada_dia)
+            .LblCargaHorariaMensal.Text = Time_To_String(Cc(0).FCC_jornada_mes)
             .LblFimDaJornada.Text = Cc(0).FCC_jornada_dia_fim.ToString
 
             Dim caminho As String = "C:\" & LimpaNumero(Form1.empCNPJ.Text) & "\folha\colaborador\" & CPFretiraMascara(Cc(0).FCC_cpf) & "\Contrato\FichaDeInteresse"

@@ -774,6 +774,7 @@ Public Class ColaboradorAcoes
         Query += " id_FCC = " & IdIsReg
 
 
+
         Try
             Dim CMD As New MySqlCommand(Query, Conn)
 
@@ -781,7 +782,10 @@ Public Class ColaboradorAcoes
 
                 DTReader = CMD.ExecuteReader
 
+
+
                 While DTReader.Read
+
                     lista.Add(New ClassContratoFolha() With
             {
             .FCC_keyCol = DTReader.GetString(0),
