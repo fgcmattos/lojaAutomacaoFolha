@@ -176,10 +176,10 @@ Public Class frmFolhaRescisaoDestratoGravacao
 
         Query = "Update folha_col_contrato set "
         Query += "FCC_afastamentoDescricao = '" & CmbTipoDeAcordo.Text.Substring(6) & "'"
-        Query += ",FCC_remuneracaoMesAnterior =" & MoneyUSA(LblSalarioAtual.Text)           ' FCC_remuneracaoMesAnterior.    
-        Query += ",FCC_avisoPrevio_data = '" & dataAAAAMMDD(MskDataAviso.Text) & "'"         ' FCC_avisoPrevio_data          
-        Query += ",FCC_afastamento_data = '" & dataAAAAMMDD(MskAfastamento.Text) & "'"       ' FCC_afastamento_data         
-        Query += ",FCC_afastamentoCodigo = '" & CmbTipoDeAcordo.Text.Substring(0, 4) & "'"   ' FCC_afastamentoCodigo         
+        Query += ",FCC_remuneracaoMesAnterior =" & MoneyUSA(LblSalarioAtual.Text)               ' FCC_remuneracaoMesAnterior.    
+        Query += ",FCC_avisoPrevio_data = '" & dataAAAAMMDD(MskDataAviso.Text) & "'"            ' FCC_avisoPrevio_data          
+        Query += ",FCC_afastamento_data = '" & dataAAAAMMDD(MskAfastamento.Text) & "'"          ' FCC_afastamento_data         
+        Query += ",FCC_afastamentoCodigo = '" & CmbTipoDeAcordo.Text.Substring(0, 4) & "'"      ' FCC_afastamentoCodigo         
         Query += ",FCC_pensaoAlimenticiaTRCT = 0.00"
         Query += ",FCC_pensaoAlimenticiaFGTS = 0.00"
         Query += ",FCC_status =1"

@@ -907,7 +907,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
             .Style = vbYesNo
             .Resposta = MsgBox(.Msg, .Style, .Title)
             If .Resposta = 6 Then
-                FrmFolhaContratoDeTrabalhoAutorizados.Show()
+                FrmFolhaContratoDeTrabalhoConferencia.Show()
                 Me.Close()
             End If
         End With
@@ -945,6 +945,12 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
             ComboCarregar(Me.CmbSalario, "folha_salario_base", "format(folha_salario_utilizado,2,'de_DE')", strFiltro)
 
         End If
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        FrmFolhaContratoRel_rascunho.Show()
 
     End Sub
 End Class

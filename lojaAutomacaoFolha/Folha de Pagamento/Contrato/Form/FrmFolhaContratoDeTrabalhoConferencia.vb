@@ -123,7 +123,9 @@ Public Class FrmFolhaContratoDeTrabalhoConferencia
             .CmbSetor.Text = Cc(0).FCC_setor
             .CmbCargo.Text = Cc(0).FCC_cargo
             .CmbCBO.Text = Cc(0).FCC_cbo
-            .MskReferencia.Text = Cc(0).FCC_referencia
+            Dim strReferencia As String = Cc(0).FCC_referencia
+            strReferencia = strReferencia.Substring(4) & strReferencia.Substring(0, 4)
+            .MskReferencia.Text = strReferencia
             Dim IsSalario As String = numeroLatino(Cc(0).FCC_salario, 10, True)
             .CmbSalario.Items.Add(IsSalario)
             .CmbSalario.Text = IsSalario
@@ -134,13 +136,13 @@ Public Class FrmFolhaContratoDeTrabalhoConferencia
             .TxtSindicatoCodigo.Text = Cc(0).FCC_sindical_codigo
             .MskCNPJsindicato.Text = Cc(0).FCC_CNPJentidadeSindical
             .TxtSindicatoRazaoSocial.Text = Cc(0).FCC_RazaoEntidadeSindical
-            .MskCargaHorariaSemanal.Text = Cc(0).FCC_carga_horaria_semanal.ToString
+            .MskCargaHorariaSemanal.Text = Time_To_String(Cc(0).FCC_carga_horaria_semanal)
             .MskNumeroDescansosNaSemana.Text = Cc(0).FCC_descanso_semanal
             .MskInicioDaJornada.Text = Cc(0).FCC_jornada_dia_inicio.ToString
             .MskDescansoNaJornada.Text = Cc(0).FCC_jornada_descanso.ToString
             .LblCargaHorariaDiaria.Text = Time_To_String(Cc(0).FCC_jornada_dia)
             .LblCargaHorariaMensal.Text = Time_To_String(Cc(0).FCC_jornada_mes)
-            .LblFimDaJornada.Text = Cc(0).FCC_jornada_dia_fim.ToString
+            .LblFimDaJornada.Text = Time_To_String(Cc(0).FCC_jornada_dia_fim)
 
             Dim caminho As String = "C:\" & LimpaNumero(Form1.empCNPJ.Text) & "\folha\colaborador\" & CPFretiraMascara(Cc(0).FCC_cpf) & "\Contrato\FichaDeInteresse"
 

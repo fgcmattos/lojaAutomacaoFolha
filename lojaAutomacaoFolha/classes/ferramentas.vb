@@ -18,28 +18,26 @@ Module Module1
 
         Dim isDays_decimal As Integer = (Convert.ToDecimal(parts(0).Replace(".", ",")) - isDays) * 100
 
+        Dim isHours As Integer
+
         'If parts.Length = 3 Then
+        If isDays_decimal > 0 Then
 
-        Dim isHours As Integer = (Convert.ToInt32(isDays) * 24) + isDays_decimal
-
-        'If isHours > 0 Then
+            isHours = (Convert.ToInt32(isDays) * 24) + isDays_decimal
 
 
-        '    isHours += Convert.ToInt32(parts(0).Substring(parts(0).IndexOf(".") - 1))
+            isRetorno = isHours.ToString & ":" & parts(2).ToString
 
-        'Else
+        Else
 
-        '    isHours = Convert.ToInt32(parts(0))
+            isHours = isDays
 
-        'End If
+            isRetorno = isHours.ToString.PadLeft(2, "0"c) & ":" & parts(1).ToString
 
-        isRetorno = isHours.ToString & ":" & parts(2).ToString
+        End If
 
-        'Else
 
-        '    isRetorno = parts(0).ToString & ":" & parts(2).ToString
 
-        'End If
         Return (isRetorno)
 
     End Function

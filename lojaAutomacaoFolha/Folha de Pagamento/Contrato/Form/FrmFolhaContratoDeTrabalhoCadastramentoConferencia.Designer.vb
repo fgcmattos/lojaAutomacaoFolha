@@ -955,6 +955,7 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmFolhaContratoDeTrabalhoCadastramentoConferencia"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Folha - Contrato de Trabalho - C O N F E R Ê N CI A"
         Me.GroupBox11.ResumeLayout(False)
         Me.GroupBox11.PerformLayout()
