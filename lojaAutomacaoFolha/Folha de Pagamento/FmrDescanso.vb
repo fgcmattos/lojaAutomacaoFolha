@@ -254,8 +254,8 @@ Public Class FmrDescanso
             Dim help As String
             Dim resposta As String
             '---------------------
-            Dim Query As String
-            Dim DTReader As MySqlDataReader
+            'Dim Query As String
+            'Dim DTReader As MySqlDataReader
             msg = "Confirma Cancelamento? - Todas as operações serão abandonadas"
             style = vbYesNo + vbQuestion + vbDefaultButton1
             title = "C O N T R O L E   D E   D E S C A N S O"
@@ -272,7 +272,7 @@ Public Class FmrDescanso
         descansoLimpar()
     End Sub
 
-    Function descansoLimpar()
+    Sub DescansoLimpar()
         ListView1.Items.Clear()
         ListBox1.Items.Clear()
         ListBox2.Items.Clear()
@@ -298,9 +298,9 @@ Public Class FmrDescanso
 
         MskChave.Focus()
 
-    End Function
+    End Sub
 
-    Private Function PesquisaDescanso()
+    Private Sub PesquisaDescanso()
 
         If OpenDB() Then
             Dim Query = "Select  count(*) as qto
@@ -328,7 +328,7 @@ Public Class FmrDescanso
                 If DTReader.GetString(0) = 0 Then
                     MsgBox("Colaborador Não Encontrado!")
                     Conn.Close()
-                    Exit Function
+                    Exit Sub
                 End If
                 LblColaborador.Text = DTReader.GetString(1)
                 LblTurno.Text = DTReader.GetString(2)
@@ -346,9 +346,9 @@ Public Class FmrDescanso
         End If
         Dim cmbMeses As New ComboBox
         cmbMeses.Show()
-    End Function
+    End Sub
 
-    Private Function mostraDescanso()
+    Private Sub MostraDescanso()
         Dim perm(7) As Integer
         Dim UltimoDiaMes As Integer = Int(
                                             Convert.ToString(
@@ -404,9 +404,9 @@ Public Class FmrDescanso
 
 
 
-        '''Dim j As Integer
+        'Dim j As Integer
 
-        '''j = 1
+        'j = 1
         arrayDiaSemana(1) = "Dom"
         arrayDiaSemana(2) = "Seg"
         arrayDiaSemana(3) = "Ter"
@@ -415,27 +415,27 @@ Public Class FmrDescanso
         arrayDiaSemana(6) = "Sex"
         arrayDiaSemana(7) = "Sab"
 
-        '''For i = diaSemana To 7
+        'For i = diaSemana To 7
 
-        '''    perm(j) = i
-        '''    j += 1
+        '    perm(j) = i
+        '    j += 1
 
-        '''Next
+        'Next
 
-        '''For i = 1 To (diaSemana - 1)
+        'For i = 1 To (diaSemana - 1)
 
-        '''    perm(j) = i
-        '''    j += 1
+        '    perm(j) = i
+        '    j += 1
 
-        '''Next
+        'Next
 
-        '''LblW1.Text = arrayDiaSemana(perm(1))
-        '''LblW2.Text = arrayDiaSemana(perm(2))
-        '''LblW3.Text = arrayDiaSemana(perm(3))
-        '''LblW4.Text = arrayDiaSemana(perm(4))
-        '''LblW5.Text = arrayDiaSemana(perm(5))
-        '''LblW6.Text = arrayDiaSemana(perm(6))
-        '''LblW7.Text = arrayDiaSemana(perm(7))
+        'LblW1.Text = arrayDiaSemana(perm(1))
+        'LblW2.Text = arrayDiaSemana(perm(2))
+        'LblW3.Text = arrayDiaSemana(perm(3))
+        'LblW4.Text = arrayDiaSemana(perm(4))
+        'LblW5.Text = arrayDiaSemana(perm(5))
+        'LblW6.Text = arrayDiaSemana(perm(6))
+        'LblW7.Text = arrayDiaSemana(perm(7))
 
         LblW1.Text = "Dom"
         LblW2.Text = "Seg"
@@ -473,7 +473,7 @@ Public Class FmrDescanso
                 End If
             End If
         Next
-    End Function
+    End Sub
 
     Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
 

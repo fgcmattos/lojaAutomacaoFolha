@@ -340,6 +340,7 @@ Public Class FrmFornecedorCad
         'MskGerADM
         'MskGerADMfone
 
+        Return (IntRetorno)
 
     End Function
 End Class

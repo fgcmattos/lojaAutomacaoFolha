@@ -55,8 +55,8 @@ Public Class FreciboHistPadrao
             Dim msg As String
             Dim style As String
             Dim title As String
-            Dim ctxt As String
-            Dim help As String
+            'Dim ctxt As String
+            'Dim help As String
             Dim resposta As String
             '---------------------
             msg = strResultado & Chr(13) & Chr(13) & "Confirma alterações "
@@ -224,15 +224,15 @@ Public Class FreciboHistPadrao
 
     End Sub
 
-    Private Function limpaTela()
+    Private Sub limpaTela()
 
         TxNome.Text = ""
         TxFuncao.Text = ""
         RtHistorico.Text = ""
 
-    End Function
+    End Sub
 
-    Public Function LVcarregaHistorico()
+    Public Sub LVcarregaHistorico()
 
         Hrp = ReciboRP.GetReciboHist()
         LViewRecHistPadrao.Items.Clear()
@@ -250,7 +250,7 @@ Public Class FreciboHistPadrao
         Next
 
 
-    End Function
+    End Sub
 
     Private Function contaString(str As String, frase As String) As Integer
 
@@ -314,7 +314,7 @@ Public Class FreciboHistPadrao
         End If
 
     End Sub
-    Private Function recVarLimpaTela()
+    Private Sub recVarLimpaTela()
 
         RtHistorico.Text = ""
         TxFuncao.Text = ""
@@ -332,7 +332,7 @@ Public Class FreciboHistPadrao
         LblEdicao.Visible = False
         GrpPlanilhaPesquisa.Enabled = True
         GrpPlanilhaPesquisa.Focus()
-    End Function
+    End Sub
 
     Private Sub GrpMesa_Enter(sender As Object, e As EventArgs) Handles GrpMesa.Enter
 

@@ -201,7 +201,7 @@ Public Class FrmFolhaSalAjusteManual
         End If
 
     End Sub
-    Private Function grupoPesquisaEdicao()
+    Private Sub grupoPesquisaEdicao()
 
         BtnAbreEdicao.Enabled = False
         LblUltimaMovimentacao.Text = ""
@@ -209,7 +209,7 @@ Public Class FrmFolhaSalAjusteManual
         LblPesqColNome.Text = ""
         LblSalarioAtualValor.Text = ""
         LblRG.Text = ""
-    End Function
+    End Sub
 
     Private Sub BtnAbreEdicao_Click(sender As Object, e As EventArgs) Handles BtnAbreEdicao.Click
         GroupBox2.Enabled = True
@@ -467,7 +467,7 @@ Public Class FrmFolhaSalAjusteManual
             End If
 
     End Sub
-    Private Function grupoEddicaoDeRendimentosLimpar()
+    Private Sub grupoEddicaoDeRendimentosLimpar()
 
         'CheckedListBox1.GetItemChecked(0).ge = False
         TxtEdicaoVariacao.Text = ""
@@ -476,7 +476,7 @@ Public Class FrmFolhaSalAjusteManual
         CmbEdicaoCargo.Text = ""
         TxtEdicaoHistorico.Text = ""
 
-    End Function
+    End Sub
     Private Sub FrmFolhaSalAjusteManual_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         variaveisAuxiliaresInvisiveis()
         oi.title = Me.Text
@@ -485,13 +485,13 @@ Public Class FrmFolhaSalAjusteManual
         LblReferencia.Text = ref(0).Data.Substring(4, 2) & "/" & ref(0).Data.Substring(0, 4)
 
     End Sub
-    Private Function VariaveisAuxiliaresInvisiveis()
+    Private Sub VariaveisAuxiliaresInvisiveis()
 
         LblUltimaMovimentacao.Visible = False
         LblUltimaMovimentacaoReg.Visible = False
         lblCPF.Visible = False
 
-    End Function
+    End Sub
 
 
     Private Sub CmbEdicaoFato_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbEdicaoFato.KeyPress

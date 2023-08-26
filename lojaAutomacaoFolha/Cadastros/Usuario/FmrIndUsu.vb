@@ -377,47 +377,47 @@ Public Class FmrIndUsu
     Private Sub TxtSenha_DoubleClick(sender As Object, e As EventArgs) Handles TxtSenha.DoubleClick
 
 
-        '''If Not sistemaInicializado() Then ' Verifica a presenca de autorizacao
+        'If Not sistemaInicializado() Then ' Verifica a presenca de autorizacao
 
-        '''    With oi
-        '''        .msg = "Sistema Não autorizado!"
-        '''        .style = vbCritical
-        '''        MsgBox(.msg, .style, .title)
-        '''        Exit Sub
-        '''    End With
+        '    With oi
+        '        .msg = "Sistema Não autorizado!"
+        '        .style = vbCritical
+        '        MsgBox(.msg, .style, .title)
+        '        Exit Sub
+        '    End With
 
-        '''End If
+        'End If
 
-        '''Dim strNumero As String = ""
+        'Dim strNumero As String = ""
 
-        '''strNumero = InputBox("Senha de ADM")
+        'strNumero = InputBox("Senha de ADM")
 
-        '''If strNumero = "84" Then
+        'If strNumero = "84" Then
 
-        '''    For Each item As ToolStripMenuItem In Form1.MenuStrip1.Items
+        '    For Each item As ToolStripMenuItem In Form1.MenuStrip1.Items
 
-        '''        If item.Text = "Acesso" Then
+        '        If item.Text = "Acesso" Then
 
-        '''            item.Enabled = True
-        '''            item.Visible = True
-        '''            For Each subitem As ToolStripMenuItem In item.DropDownItems
-        '''                If subitem.Text = "Cadastro" Then
+        '            item.Enabled = True
+        '            item.Visible = True
+        '            For Each subitem As ToolStripMenuItem In item.DropDownItems
+        '                If subitem.Text = "Cadastro" Then
 
-        '''                    subitem.Enabled = True
-        '''                    subitem.Visible = True
-        '''                    Exit For
+        '                    subitem.Enabled = True
+        '                    subitem.Visible = True
+        '                    Exit For
 
-        '''                End If
-        '''            Next
-        '''            Exit For
+        '                End If
+        '            Next
+        '            Exit For
 
-        '''        End If
+        '        End If
 
-        '''    Next
+        '    Next
 
 
 
-        '''End If
+        'End If
 
     End Sub
 

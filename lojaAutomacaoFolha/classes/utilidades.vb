@@ -157,11 +157,11 @@
         Extenso = Trim(VLTextenso)
     End Function
 
-    Function menuGeraOrdem(objMenu As Object)
+    Sub menuGeraOrdem(objMenu As Object)
 
-        '''Esta função cria uma estrutura de identificação
-        '''Nos menu definidos na interpretação do código
-        '''no objeto MenuStrip1 escrevendo no AccessibleName do objeto 
+        'Esta função cria uma estrutura de identificação
+        'Nos menu definidos na interpretação do código
+        'no objeto MenuStrip1 escrevendo no AccessibleName do objeto 
 
         Dim n1, n2, n3, n4, n5, n6, n7, n8 As Integer
         n1 = 1
@@ -209,9 +209,9 @@
 
             Next
         Next
-    End Function
+    End Sub
 
-    Function MenuTrava(trava As Boolean, ObjMenu As Object)
+    Sub MenuTrava(trava As Boolean, ObjMenu As Object)
 
         For Each item As ToolStripMenuItem In Form1.MenuStrip1.Items
 
@@ -278,7 +278,7 @@
 
         Next
 
-    End Function
+    End Sub
 
 
 End Module

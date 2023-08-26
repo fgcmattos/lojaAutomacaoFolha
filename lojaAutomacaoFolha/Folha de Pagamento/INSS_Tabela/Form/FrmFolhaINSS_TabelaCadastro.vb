@@ -1,14 +1,14 @@
 ﻿Public Class FrmFolhaINSS_TabelaCadastro
     Dim oi As New MsgShow
 
-    Private Function LimpaEdicao()
+    Private Sub LimpaEdicao()
 
         TxtValorFaixa.Text = "0,00"
         TxtPorcentagemFaixa.Text = "0,00"
         TxtImpostoFaixa.Text = "0,00"
         TxtImpostoFaixaAcumulado.Text = "0,00"
 
-    End Function
+    End Sub
 
     Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
 
@@ -111,31 +111,31 @@
 
         'Dim data_tabela_em_vigor As String = gravaSQLretorno("select INSS_dataInicio from inss where INSS_ativa")
 
-        ''''If data_tabela_em_vigor >= StrData1 Then
+        ''If data_tabela_em_vigor >= StrData1 Then
 
-        ''''    With oi
-        ''''        .Msg = "Início data de válidade da tabela em vigor é " & data_tabela_em_vigor & Chr(13)
-        ''''        .Msg += "Portanto a data de validade da nova Tabela tem que ser superior a essa data"
-        ''''        .Style = vbExclamation
-        ''''        MsgBox(.Msg, .Style, .Title)
-        ''''        Exit Sub
-        ''''    End With
+        ''    With oi
+        ''        .Msg = "Início data de válidade da tabela em vigor é " & data_tabela_em_vigor & Chr(13)
+        ''        .Msg += "Portanto a data de validade da nova Tabela tem que ser superior a essa data"
+        ''        .Style = vbExclamation
+        ''        MsgBox(.Msg, .Style, .Title)
+        ''        Exit Sub
+        ''    End With
 
-        ''''End If
+        ''End If
 
 
-        'Dim data_do_servidor As String = gravaSQLretorno("select concat(Year(Now()), lpad(Month(Now()), 2,'0'))")
+        Dim data_do_servidor As String = gravaSQLretorno("select concat(Year(Now()), lpad(Month(Now()), 2,'0'))")
 
-        '''If data_do_servidor > StrData1 Then
-        '''    With oi
-        '''        .Msg = "Início da data de válidade da nova tabela" & Chr(13)
-        '''        .Msg += "não pode ser no passado, Ano e Mês atual " & data_do_servidor
-        '''        .Style = vbExclamation
-        '''        MsgBox(.Msg, .Style, .Title)
-        '''        Exit Sub
-        '''    End With
+        'If data_do_servidor > StrData1 Then
+        '    With oi
+        '        .Msg = "Início da data de válidade da nova tabela" & Chr(13)
+        '        .Msg += "não pode ser no passado, Ano e Mês atual " & data_do_servidor
+        '        .Style = vbExclamation
+        '        MsgBox(.Msg, .Style, .Title)
+        '        Exit Sub
+        '    End With
 
-        '''End If
+        'End If
 
         TxtValorFaixa.Enabled = True
 
@@ -588,13 +588,13 @@
         End With
 
 
-        '''TxtImpostoFaixa.Enabled = False
+        'TxtImpostoFaixa.Enabled = False
 
-        '''TxtImpostoFaixaAcumulado.Enabled = True
+        'TxtImpostoFaixaAcumulado.Enabled = True
 
-        '''SendKeys.Send("{TAB}")
+        'SendKeys.Send("{TAB}")
 
-        '''EditarCampoTextBox(TxtImpostoFaixaAcumulado)
+        'EditarCampoTextBox(TxtImpostoFaixaAcumulado)
 
     End Sub
 

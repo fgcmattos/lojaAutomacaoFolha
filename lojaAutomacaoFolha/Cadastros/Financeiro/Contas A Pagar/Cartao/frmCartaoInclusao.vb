@@ -23,7 +23,7 @@ Public Class FrmCartaoInclusao
 
     End Sub
 
-    Function LimpaCartao()
+    Sub LimpaCartao()
 
         CmbBandeira.Text = ""
         MskNumero.Text = ""
@@ -33,7 +33,7 @@ Public Class FrmCartaoInclusao
         MskSeguranca.Text = ""
         MskFatura.Text = ""
 
-    End Function
+    End Sub
 
     Private Sub BtoGrava_Click(sender As Object, e As EventArgs) Handles BtoGrava.Click
 

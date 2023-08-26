@@ -142,7 +142,7 @@ Public Class ClassFornecedorAcao
 
     End Function
 
-    Public Shared Function FornecedorGravaDBobjeto(StrCNPJ As String)
+    Public Shared Sub FornecedorGravaDBobjeto(StrCNPJ As String)
 
         'Dim objFornecedor As List(Of ClassFornecedor) = ClassFornecedorAcao.FornecedorCarregaTela()
 
@@ -237,7 +237,7 @@ Public Class ClassFornecedorAcao
 
         End Try
 
-    End Function
+    End Sub
 
 
 End Class

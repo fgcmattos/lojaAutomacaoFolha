@@ -131,12 +131,12 @@ Public Class ClassContratoFolhaAcao
 
     End Function
 
-    Public Shared Function PutFolhaContratoTL(CtFolha As Object)
+    Public Shared Sub PutFolhaContratoTL(CtFolha As Object)
 
 
-        With FrmFolhaContratoManutencao
+        With FrmfolhaContratoManutencao
 
-            .LblNome.text = CtFolha.FCC_nome
+            .LblNome.Text = CtFolha.FCC_nome
             .LblChave.Text = CtFolha.FCC_keyCol
             .LblPIS.Text = CtFolha.FCC_pis
             .LblCTPSnumero.Text = CtFolha.FCC_ctps_numero
@@ -151,7 +151,7 @@ Public Class ClassContratoFolhaAcao
 
         End With
 
-    End Function
+    End Sub
 
 
 End Class

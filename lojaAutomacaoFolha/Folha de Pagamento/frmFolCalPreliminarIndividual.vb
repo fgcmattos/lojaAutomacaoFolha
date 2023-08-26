@@ -217,7 +217,10 @@ Public Class frmFolCalPreliminarIndividual
 
     Public Function DataNow() As String
 
+        Dim IsDatashow As String = ""
+
         Dim Query As String = "select DATE_FORMAT(now(), '%Y%m%d%H%i%s')"
+
         If OpenDB() Then
 
 
@@ -228,16 +231,19 @@ Public Class frmFolCalPreliminarIndividual
                 DTReader = CMD.ExecuteReader
                 DTReader.Read()
 
-                DataNow = DTReader(0)
+                IsDatashow = DTReader(0)
 
             Catch ex As Exception
                 MsgBox("Problemas na comunicacao")
-                DataNow = "Erro!"
+                IsDatashow = "Erro!"
             End Try
 
             Conn.Close()
-            Return DataNow
+
         End If
+
+        Return IsDatashow
+
     End Function
 
     Public Function HoraExtra(tempo As Decimal, acr As Decimal) As Decimal
@@ -369,7 +375,7 @@ Public Class frmFolCalPreliminarIndividual
 
     End Function
 
-    Private Function DSRvariavelIncrementar(hora As Decimal, vr As Object)
+    Sub DSRvariavelIncrementar(hora As Decimal, vr As Object)
 
         Dim nHora As Decimal = hora
 
@@ -377,6 +383,6 @@ Public Class frmFolCalPreliminarIndividual
 
         addVR(Hol, "0021", "DSR SALARIO VARIAVEL", "R$", True, True, True, vr, "C", decDsrValor, 0, 0, 0)
 
-    End Function
+    End Sub
 
 End Class

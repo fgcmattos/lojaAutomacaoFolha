@@ -291,13 +291,13 @@ Public Class formUsuarioCad
 
     End Sub
 
-    Private Function LimpaSenhas()
+    Private Sub LimpaSenhas()
         CmbTipo.Text = ""
         mskUsuario.Text = ""
         txtSenha1.Text = ""
         txtSenha2.Text = ""
         LblUsuarioNome.Text = ""
         PictureBox1.Visible = False
-    End Function
+    End Sub
 
 End Class

@@ -11,7 +11,7 @@ Public Class frmTurno
     End Sub
 
 
-    Function TurnoInicia()
+    Sub TurnoInicia()
 
         TurnoNome.Text = ""
         TurnoTempoSemanal.Text = ""
@@ -24,9 +24,9 @@ Public Class frmTurno
         grpControle.Text = "C A D A S T R O"
         TurnoNome.Focus()
 
-    End Function
+    End Sub
 
-    Function LimpaCampos()
+    Sub LimpaCampos()
 
         TurnoNome.Text = ""
         TurnoTempoSemanal.Text = ""
@@ -42,9 +42,9 @@ Public Class frmTurno
         lblOrdem.Text = "0"
         lblColaboradoresNumero.Text = ""
         grpTurnos.Enabled = True
-    End Function
+    End Sub
 
-    Function CarregaGrid()
+    Sub CarregaGrid()
 
         ListViewTurno.Items.Clear()
 
@@ -67,7 +67,7 @@ Public Class frmTurno
             ListViewTurno.Items(ListViewTurno.Items.Count - 1).SubItems.Add((ponto(i).funcionariosNoTurno))
 
         Next
-    End Function
+    End Sub
 
     Private Sub TurnoTempo_Click(sender As Object, e As EventArgs) Handles turnoTempo.Click
 

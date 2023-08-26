@@ -185,7 +185,7 @@ Public Class FrmFolhaContratoAtivacao
         oi.Title = Me.Text
     End Sub
 
-    Private Function listviewCarega()
+    Private Sub ListviewCarega()
         ' Função preparada para colaborador tipo F - Funcionário
         ' Outros tipos não devem ser pesquisados 
 
@@ -286,7 +286,7 @@ Public Class FrmFolhaContratoAtivacao
                 End With
             End If
         End If
-    End Function
+    End Sub
 
 
 End Class

@@ -133,7 +133,7 @@ Public Class FrmFolhaRefDescanso
     End Sub
 
 
-    Private Function preencheLvwEdicao()
+    Private Sub preencheLvwEdicao()
 
         Dim dtDataPrimeira As Date = "01/" + MskMesAno.Text
         Dim dtDataUltima As Date = Func_Ultimo_Dia_Mes(dtDataPrimeira)
@@ -151,7 +151,7 @@ Public Class FrmFolhaRefDescanso
 
         DomingosNoMes = DomingosDoIntervalo(a1, m1, d1, a2, m2, d2, Me.LvwShow)
 
-    End Function
+    End Sub
 
 
     Private Sub MskEdicaoDia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MskEdicaoDia.KeyPress
@@ -246,7 +246,7 @@ Public Class FrmFolhaRefDescanso
         BtnEdita.Visible = False
 
     End Sub
-    Private Function lvwShowEdicaoLimpa()
+    Private Sub lvwShowEdicaoLimpa()
 
         MskEdicaoDia.Text = ""
         LbDiaSemanal.Text = ""
@@ -255,7 +255,7 @@ Public Class FrmFolhaRefDescanso
         TxtEdicaoHistorico.Text = ""
         LblEdicaoTipo.Visible = False
 
-    End Function
+    End Sub
 
     Private Sub LvwShow_DoubleClick(sender As Object, e As EventArgs) Handles LvwShow.DoubleClick
         Dim Indice As Integer
@@ -483,13 +483,13 @@ Public Class FrmFolhaRefDescanso
             .DUCabNumSemanaFinal = LvwShow.Items(LvwShow.Items.Count - 1).SubItems(3).Text
 
 
-            '''If LblAviso.Visible Then
-            '''    Dim refCorpo As List(Of DiasUteisCorpo) = DiasUteisAcao.GetDiasUteisCorpoLvw(refCab(0).idCab)
-            '''Else
-            '''    Dim refCorpo As List(Of DiasUteisCorpo) = DiasUteisAcao.GetDiasUteisCorpoSQL(refCab(0).idCab)
-            '''End If
+            'If LblAviso.Visible Then
+            '    Dim refCorpo As List(Of DiasUteisCorpo) = DiasUteisAcao.GetDiasUteisCorpoLvw(refCab(0).idCab)
+            'Else
+            '    Dim refCorpo As List(Of DiasUteisCorpo) = DiasUteisAcao.GetDiasUteisCorpoSQL(refCab(0).idCab)
+            'End If
 
-            Dim desc As Object
+            Dim desc As Object = ""
             desc = abc(desc, refCab(0).idCab)
 
             Dim strStatus As String
@@ -699,23 +699,23 @@ Public Class FrmFolhaRefDescanso
 
     End Sub
 
-    Private Function GravaSemEdicao(boFlag As Boolean)
+    Sub GravaSemEdicao(boFlag As Boolean)
 
         GruEdicaoGeral.Enabled = boFlag
         GruEdicao.Enabled = Not boFlag
         LvwShow.Enabled = Not boFlag
         BtnGravar.Enabled = boFlag
 
-    End Function
+    End Sub
 
-    Private Function AbreEdicao(boFlag As Boolean)
+    Sub AbreEdicao(boFlag As Boolean)
 
         GruEdicaoGeral.Enabled = boFlag
         GruEdicao.Enabled = boFlag
         LvwShow.Enabled = boFlag
         BtnGravar.Enabled = boFlag
 
-    End Function
+    End Sub
     Private Sub CmbTitulo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbTitulo.KeyPress
 
         If e.KeyChar = Convert.ToChar(27) Then

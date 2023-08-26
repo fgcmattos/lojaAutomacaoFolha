@@ -590,23 +590,28 @@ Module Module1
         End If
 
     End Function
-    Function formaString(tipo As Integer, palavra As String) As String
-        If tipo = 1 Then ' CPF
-            formaString = palavra.Substring(0, 3) & "." & palavra.Substring(3, 3) & "." & palavra.Substring(6, 3) & "-" & palavra.Substring(9)
-        End If
-        If tipo = 3 Then ' CPF
-            formaString = palavra.Substring(0, 2) & "." & palavra.Substring(2, 3) & "." & palavra.Substring(5, 3) & "/" & palavra.Substring(8, 4) & "-" & palavra.Substring(12)
-        End If
+    Function FormaString(tipo As Integer, palavra As String) As String
+
+        Select Case tipo
+            Case 1      ' CPF
+                FormaString = palavra.Substring(0, 3) & "." & palavra.Substring(3, 3) & "." & palavra.Substring(6, 3) & "-" & palavra.Substring(9)
+            Case 3      ' CNPJ
+                FormaString = palavra.Substring(0, 2) & "." & palavra.Substring(2, 3) & "." & palavra.Substring(5, 3) & "/" & palavra.Substring(8, 4) & "-" & palavra.Substring(12)
+            Case Else
+                FormaString = palavra
+        End Select
+
+
     End Function
-    Function bhSaldoHoras(chave As String, tempo As String) As String
+    Function BhSaldoHoras(chave As String, tempo As String) As String
 
         Dim data As String = dataAAAAMMDD(tempo)
-        Dim dataAnterior As String = ""
-        Dim saldo As String = ""
-        Dim diaAnterior As Integer = 0
-        Dim dAnterior As String
-        Dim diasAnterioresSaldo As String = ""
-        Dim dataInicio As String = ""
+        Dim DataAnterior As String = ""
+        Dim Saldo As String = ""
+        Dim DiaAnterior As Integer = 0
+        Dim DAnterior As String
+        Dim DiasAnterioresSaldo As String = ""
+        Dim DataInicio As String = ""
         Dim anoMesAnterior As String
         Dim ano, mes As Integer
         Dim sAno As String = ""
@@ -695,11 +700,12 @@ Module Module1
             End If
         End If
 
-        bhSaldoHoras = hhmmSoma(acTempo, anoMesAnteriorSaldo, 1, 1)
+        BhSaldoHoras = hhmmSoma(acTempo, anoMesAnteriorSaldo, 1, 1)
 
     End Function
     Function dataSoma(data As String, dia As Integer) As String
-        Dim dataCalculada, dataPesquisa As String
+        Dim dataCalculada As String = ""
+        Dim dataPesquisa As String = ""
         dataPesquisa = dataAAAAMMDD(data)
         dataPesquisa = dataPesquisa.Substring(0, 4) & "/" & dataPesquisa.Substring(4, 2) & "/" & dataPesquisa.Substring(6, 2)
         If OpenDB() Then
@@ -829,9 +835,10 @@ Module Module1
 
             End Try
 
-            Return booRetorno
-
         End If
+
+        Return booRetorno
+
     End Function
     Public Function PIS_digito_verificador(Identificador As String) As Boolean
         Dim booChek As Boolean = True
@@ -918,7 +925,7 @@ Module Module1
 
                         If inChekLength > variavelLenght Then
 
-                            '''strResultado = "Variavel formada entre # tem mais do que " & variavelLenght & " digitos. Verifique o seu histórico"
+                            'strResultado = "Variavel formada entre # tem mais do que " & variavelLenght & " digitos. Verifique o seu histórico"
 
                             ReciboHistoricoCheck = False
 
@@ -1144,7 +1151,7 @@ Module Module1
         Return (strRetorno)
 
     End Function
-    Public Function folhaFechada(referencia As String) As Boolean
+    Public Function FolhaFechada(referencia As String) As Boolean
         Dim booRetorno As Boolean = False
         Dim query As String
         query = "Select count(*) from folha_close_cab where fcCol_ref = '" & referencia & "'"
@@ -1163,13 +1170,17 @@ Module Module1
 
             Conn.Close()
 
-            Return (booRetorno)
+
 
         End If
+
+        Return (booRetorno)
 
     End Function
 
     Function MesNome(mes As Integer) As String
+
+        MesNome = ""
 
         Select Case mes
 
@@ -1225,26 +1236,27 @@ Module Module1
 
     End Function
 
-    Public Function SQLvetor(query As String) As Object
-        'tentativa de passar o vetor do Mysql para o visual - nao deu certo
-        ''Dim DTReader As MySqlDataReader
-        ''Dim CMD As New MySqlCommand(query, Conn)
-        ''Dim MySqlVetor As Object
+    'Public Function SQLvetor(query As String) As Object
 
-        ''If OpenDB() Then
+    '    ' / tentativa de passar o vetor do Mysql para o visual - nao deu certo
+    '    'Dim DTReader As MySqlDataReader
+    '    'Dim CMD As New MySqlCommand(query, Conn)
+    '    'Dim MySqlVetor As Object
 
-        ''    DTReader = CMD.ExecuteReader
-        ''    DTReader.Read()
-        ''    MySqlVetor = DTReader.
-        ''    Return(MySqlVetor)
-        ''    Conn.Close()
+    '    'If OpenDB() Then
 
-        ''End If
+    '    '    DTReader = CMD.ExecuteReader
+    '    '    DTReader.Read()
+    '    '    MySqlVetor = DTReader.
+    '    '    Return(MySqlVetor)
+    '    '    Conn.Close()
+
+    '    'End If
 
 
 
-    End Function
-    Public Function telefoneRetiraMascara(strTelefoneRecebido As String)
+    'End Function
+    Public Function TelefoneRetiraMascara(strTelefoneRecebido As String) As String
 
         Dim strTelefone As String = strTelefoneRecebido
         strTelefone = Trim(Replace(Replace(Replace(strTelefone, "(", ""), ")", ""), "-", ""))
@@ -1681,7 +1693,7 @@ Module Module1
 
     End Function
 
-    Public Function ComboCarregar(Combo As Object, strTabela As String, frase As String, condicao As String)
+    Public Sub ComboCarregar(Combo As Object, strTabela As String, frase As String, condicao As String)
 
         Combo.items.clear()
         Dim Query As String = ""
@@ -1710,7 +1722,7 @@ Module Module1
 
         End If
 
-    End Function
+    End Sub
     Public Function HoraMinuto_horas(tempo As String) As Decimal
         Dim intPonto As Integer = InStr(tempo, ":")
         Dim strTempo As String = tempo
@@ -1754,7 +1766,7 @@ Module Module1
     End Function
 
     ' Funcoes do holerite
-    Public Function ColaboradorCarrega(hol As Object, chave As Integer, referencia As String, ref_mes_ano As String)
+    Public Sub ColaboradorCarrega(hol As Object, chave As Integer, referencia As String, ref_mes_ano As String)
 
         Dim intKeyCol As Integer = chave
 
@@ -1799,8 +1811,8 @@ Module Module1
             Conn.Close()
         End If
 
-    End Function
-    Public Function ParametrosDaReferenciaCarrega(referencia As String, hol As Object) ' Parametros para calculo da Referencia AAAAMM
+    End Sub
+    Public Sub ParametrosDaReferenciaCarrega(referencia As String, hol As Object) ' Parametros para calculo da Referencia AAAAMM
 
         Dim strReferencia As String = referencia
 
@@ -1844,8 +1856,8 @@ Module Module1
 
             Conn.Close()
         End If
-    End Function
-    Public Function ParametrosBasicosCalculo(strReferencia As String, hol As Object)
+    End Sub
+    Public Sub ParametrosBasicosCalculo(strReferencia As String, hol As Object)
 
         ' Calculo do Salario Base Befetivo   SBefetivo
         If strReferencia = hol.AdmissaoReferencia Then
@@ -1875,8 +1887,8 @@ Module Module1
 
         End With
 
-    End Function
-    Public Function IncrementoVariaveisAutomaticas(Vaut As Object, VR As Object, hol As Object)
+    End Sub
+    Public Sub IncrementoVariaveisAutomaticas(Vaut As Object, VR As Object, hol As Object)
         ' 1 - Preparando o objeto 
         ' incremento das variaveis AUTOMATICAS
 
@@ -1888,8 +1900,8 @@ Module Module1
         Next
 
 
-    End Function
-    Public Function HoleriteTelaCorpo(vr As Object, Formulario As Object)
+    End Sub
+    Public Sub HoleriteTelaCorpo(vr As Object, Formulario As Object)
 
         Dim strUnidade As String = ""
         Dim strQTO As String = ""
@@ -1933,9 +1945,9 @@ Module Module1
             End If
 
         Next
-    End Function
+    End Sub
 
-    Public Function addVR(hol As Object, variavel As String, descricao As String, unidade As String, b_INSS As Boolean, b_fgts As Boolean, b_IR As Boolean, vr As Object, t_financeiro As String, VALOR As Decimal, QTO As Decimal, Calculo As Integer, CalculoParametro As Decimal)
+    Sub addVR(hol As Object, variavel As String, descricao As String, unidade As String, b_INSS As Boolean, b_fgts As Boolean, b_IR As Boolean, vr As Object, t_financeiro As String, VALOR As Decimal, QTO As Decimal, Calculo As Integer, CalculoParametro As Decimal)
         vr.Add(New FolHolLanc() With
      {
             .referencia = hol.Referencia_mes_ano,
@@ -1953,7 +1965,7 @@ Module Module1
             .Calculo_parametro = CalculoParametro
      }
      )
-    End Function
+    End Sub
 
     Public Function LimpaNumero(numero As String) As String
         '/ Retira numeros que receberam apenas mascara
@@ -1973,11 +1985,11 @@ Module Module1
 
         Next
 
-        '''If strNumeroRetorno = "" Then
+        'If strNumeroRetorno = "" Then
 
-        '''    strNumeroRetorno = strNumero
+        '    strNumeroRetorno = strNumero
 
-        '''End If
+        'End If
 
         Return (strNumeroRetorno)
 
@@ -2156,7 +2168,7 @@ Module Module1
         Return Query
     End Function
 
-    Public Function StatusDeCapa()
+    Public Sub StatusDeCapa()
 
         Form1.form1Status.BackColor = Color.White
         Form1.form1Status.Text = "Status: On-Line // "
@@ -2184,7 +2196,7 @@ Module Module1
         Form1.Timer1.Start()
         'Form1.form1DataHora = current
 
-    End Function
+    End Sub
 
     Public Function SistemaInicializado() As Boolean
 

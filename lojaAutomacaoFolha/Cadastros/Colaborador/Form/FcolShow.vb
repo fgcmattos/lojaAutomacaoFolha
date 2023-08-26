@@ -168,7 +168,7 @@ Public Class FcolShow
     Sub CarregaImagens(ByVal pasta As String)
         strImagens = Directory.GetFiles(pasta, "*.jpeg")
     End Sub
-    Private Function colIlustra(caminho As String)
+    Private Sub ColIlustra(caminho As String)
 
         CarregaImagens(caminho)
 
@@ -176,7 +176,7 @@ Public Class FcolShow
 
             MsgBox("Tipo de documento não digitalizado !")
 
-            Exit Function
+            Exit Sub
 
         End If
 
@@ -234,7 +234,7 @@ Public Class FcolShow
 
 
         Next
-    End Function
+    End Sub
 
     Private Sub FcolShow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -356,35 +356,35 @@ Public Class FcolShow
         End Using
         Shell("NotePad.Exe ""C:\Users\paulo\text.txt""")
     End Sub
-    '''Private Shared Function ExecutaComando(pComando As String, pParametros As String) As String
-    '''    Dim _ret As String = ""
+    'Private Shared Function ExecutaComando(pComando As String, pParametros As String) As String
+    '    Dim _ret As String = ""
 
-    '''    Dim procShell As New Process()
+    '    Dim procShell As New Process()
 
-    '''    'Seu comando vai aqui.
-    '''    procShell.StartInfo.FileName = pComando
+    '    'Seu comando vai aqui.
+    '    procShell.StartInfo.FileName = pComando
 
-    '''    'Os argumentos, aqui.
-    '''    procShell.StartInfo.Arguments = pParametros
+    '    'Os argumentos, aqui.
+    '    procShell.StartInfo.Arguments = pParametros
 
-    '''    procShell.StartInfo.CreateNoWindow = True
-    '''    procShell.StartInfo.RedirectStandardOutput = True
-    '''    procShell.StartInfo.UseShellExecute = False
-    '''    procShell.StartInfo.RedirectStandardError = True
-    '''    procShell.Start()
+    '    procShell.StartInfo.CreateNoWindow = True
+    '    procShell.StartInfo.RedirectStandardOutput = True
+    '    procShell.StartInfo.UseShellExecute = False
+    '    procShell.StartInfo.RedirectStandardError = True
+    '    procShell.Start()
 
-    '''    Dim streamReader As New StreamReader(procShell.StandardOutput.BaseStream, procShell.StandardOutput.CurrentEncoding)
+    '    Dim streamReader As New StreamReader(procShell.StandardOutput.BaseStream, procShell.StandardOutput.CurrentEncoding)
 
-    '''    Do
-    '''        Dim _line As String = streamReader.ReadLine()
-    '''        If (IsNothing(_line)) Then Exit Do
-    '''        _ret = _ret + _line + vbCrLf
-    '''    Loop
+    '    Do
+    '        Dim _line As String = streamReader.ReadLine()
+    '        If (IsNothing(_line)) Then Exit Do
+    '        _ret = _ret + _line + vbCrLf
+    '    Loop
 
-    '''    streamReader.Close()
+    '    streamReader.Close()
 
-    '''    Return _ret
+    '    Return _ret
 
-    '''End Function
+    'End Function
 
 End Class

@@ -45,7 +45,7 @@
 
         TxtPassWord.Focus()
     End Sub
-    Private Function IR_mostra_tabela(StrReferencia As String)
+    Private Sub IR_mostra_tabela(StrReferencia As String)
 
         Dim IsComparacao As String = "IRREF = '" & StrReferencia & "'"
 
@@ -97,7 +97,7 @@
 
         Next
 
-    End Function
+    End Sub
 
     Private Sub BtnAutoriza_Click(sender As Object, e As EventArgs) Handles BtnAutoriza.Click
         Dim isAno As String = LblRef.Text.Substring(5, 4)

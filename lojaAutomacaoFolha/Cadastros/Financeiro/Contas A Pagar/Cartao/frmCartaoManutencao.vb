@@ -150,7 +150,7 @@ Public Class frmCartaoManutencao
         cartaoLimpar()
 
     End Sub
-    Function cartaoLimpar()
+    Sub cartaoLimpar()
 
         CmbBandeira.Text = ""
         MskNumero.Text = ""
@@ -158,7 +158,7 @@ Public Class frmCartaoManutencao
         MskSeguranca.Text = ""
         MskFatura.Text = ""
 
-    End Function
+    End Sub
 
     Private Sub BtoGrava_Click(sender As Object, e As EventArgs) Handles BtoGrava.Click
         If OpenDB() Then

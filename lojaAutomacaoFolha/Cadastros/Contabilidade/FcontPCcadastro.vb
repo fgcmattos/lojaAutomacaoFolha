@@ -1,9 +1,9 @@
 ﻿Public Class FcontPCcadastro
     Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs)
 
-        '''If e.Action = Windows.Forms.MouseButtons.Right Then
-        '''    MessageBox.Show("Oi! sou o botão direito")
-        '''End If
+        'If e.Action = Windows.Forms.MouseButtons.Right Then
+        '    MessageBox.Show("Oi! sou o botão direito")
+        'End If
 
         'FcontPCCadastroConta.show
 
@@ -11,15 +11,15 @@
     End Sub
 
     Private Sub TreeView1_DoubleClick(sender As Object, e As EventArgs)
-        '''Dim Incluir As New FcontPCCadastroConta
+        'Dim Incluir As New FcontPCCadastroConta
 
-        '''Me.TreeView1.Enabled = False
+        'Me.TreeView1.Enabled = False
 
-        '''Incluir.MdiParent = Me 'Permite que o Form Filho seja aberto dentro do Form MDI
+        'Incluir.MdiParent = Me 'Permite que o Form Filho seja aberto dentro do Form MDI
 
-        '''Incluir.Show() 'Chama o Form Incluir, lembrar de declarar o form
+        'Incluir.Show() 'Chama o Form Incluir, lembrar de declarar o form
 
-        ''''Incluir.Lorigem.Text = TreeView1.
+        ''Incluir.Lorigem.Text = TreeView1.
 
         MsgBox(TreeView1.SelectedNode.Text)
 

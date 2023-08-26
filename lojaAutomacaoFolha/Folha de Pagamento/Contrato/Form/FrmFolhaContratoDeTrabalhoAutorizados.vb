@@ -88,7 +88,7 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
 
     End Sub
 
-    Private Function PreencheContratoInformacoesColaborador(Cc As Object)
+    Private Sub PreencheContratoInformacoesColaborador(Cc As Object)
 
         With FrmFolhaContratoDeTrabalhoCadastramento
 
@@ -111,15 +111,9 @@ Public Class FrmFolhaContratoDeTrabalhoAutorizados
 
             End If
 
-
-
-
-
         End With
 
-
-
-    End Function
+    End Sub
 
     Private Sub Butnancela_Click(sender As Object, e As EventArgs) Handles Butnancela.Click
         Me.Close()

@@ -13,9 +13,9 @@
         CR_folhaAdiantamentoDeposito.Database.Tables(0).SetDataSource(emp)
         CR_folhaAdiantamentoDeposito.SetParameterValue("extenso", FrmFolhaAdiantamentoResumoPagamento.Lblextenso.Text)
         CR_folhaAdiantamentoDeposito.SetParameterValue("dataImpressao", strData)
-        '''FolhaAdiantamentoHolerite.SetParameterValue("mensagem01", FrmFolhaAdiantamentoSalarialHolerite.TxtMens1.Text)
-        '''FolhaAdiantamentoHolerite.SetParameterValue("mensagem02", FrmFolhaAdiantamentoSalarialHolerite.TxtMens2.Text)
-        '''FolhaAdiantamentoHolerite.SetParameterValue("mensagem03", FrmFolhaAdiantamentoSalarialHolerite.TxtMens3.Text)
+        'FolhaAdiantamentoHolerite.SetParameterValue("mensagem01", FrmFolhaAdiantamentoSalarialHolerite.TxtMens1.Text)
+        'FolhaAdiantamentoHolerite.SetParameterValue("mensagem02", FrmFolhaAdiantamentoSalarialHolerite.TxtMens2.Text)
+        'FolhaAdiantamentoHolerite.SetParameterValue("mensagem03", FrmFolhaAdiantamentoSalarialHolerite.TxtMens3.Text)
 
     End Sub
 

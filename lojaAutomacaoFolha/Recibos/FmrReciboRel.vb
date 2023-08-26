@@ -30,7 +30,7 @@ Public Class FmrReciboRel
 
         ' Necessario descobrir de que formulario vem a requisicao
         If formulario = "FreciboNew" Then
-            '''Dim apRecibo As List(Of recibo) = ReciboAcoes.
+            'Dim apRecibo As List(Of recibo) = ReciboAcoes.
 
             Rrecibo.SetParameterValue("NomeBeneficiado", FreciboNew.LblColNome.Text)
             Rrecibo.SetParameterValue("Rg", FreciboNew.LblColRG.Text)
@@ -39,7 +39,7 @@ Public Class FmrReciboRel
             Rrecibo.SetParameterValue("DataEmissao", FreciboNew.mskReciboData.Text)
             Rrecibo.SetParameterValue("textoPactuado", FreciboNew.rbHist.Text)
             Rrecibo.SetParameterValue("Cabecario", FreciboNew.rc(0).Cabecario)
-            '''Rrecibo.SetParameterValue("ReciboNumero", apRecibo(0).NumeroLocal & apRecibo(0).NumeroAnoMesSeq)
+            'Rrecibo.SetParameterValue("ReciboNumero", apRecibo(0).NumeroLocal & apRecibo(0).NumeroAnoMesSeq)
             FreciboNew.rc(0).Referencia = FreciboNew.TxtReferencia.Text
             Rrecibo.SetParameterValue("Referencia", "REF: " + FreciboNew.rc(0).Referencia)
 

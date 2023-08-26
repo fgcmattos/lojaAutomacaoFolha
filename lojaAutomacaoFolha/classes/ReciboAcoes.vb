@@ -45,17 +45,27 @@ Public Class ReciboAcoes
                 }
                 )
             Catch ex As Exception
-                Conn.Close()
+
+                'Conn.Close()
+
                 With Mn
                     .style = vbCritical
                     .msg = "Problemas com a leitura do Arquivo! (ReciboAcoes)"
                     MsgBox(.msg, .style, .title)
                 End With
-                MsgBox("Problemas com a leitura do Arquivo")
-                Exit Function
-            End Try
 
-            Conn.Close()
+                MsgBox("Problemas com a leitura do Arquivo")
+
+                'Return lista
+
+                'Exit Function
+
+            Finally
+
+                Conn.Close() ' Fecha a conexão no final da leitura, seja ela bem-sucedida ou não.
+
+
+            End Try
 
         End If
 

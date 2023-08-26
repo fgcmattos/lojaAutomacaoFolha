@@ -57,7 +57,7 @@ Public Class frmCadastroAcesso
 
 
 
-            '''Dim Query As String = "call sp_menu_usuario(" & mskUsuarioID.Text & ")"
+            'Dim Query As String = "call sp_menu_usuario(" & mskUsuarioID.Text & ")"
 
             Dim Query As String = ""
             Query = "select count(*) from usuario where usuariochave =" & mskUsuarioID.Text
@@ -409,11 +409,11 @@ Public Class frmCadastroAcesso
 
     End Sub
 
-    Private Function LimpaBox()
+    Private Sub LimpaBox()
 
         ListBox1.Items.Clear()
         ListBox2.Items.Clear()
 
-    End Function
+    End Sub
 
 End Class

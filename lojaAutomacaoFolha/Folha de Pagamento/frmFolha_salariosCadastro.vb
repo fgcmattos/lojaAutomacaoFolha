@@ -39,7 +39,7 @@ Public Class frmFolha_salariosCadastro
         GruShow.Enabled = False
 
     End Sub
-    Private Function carregaLv()
+    Private Sub CarregaLv()
 
         Dim query As String
 
@@ -88,7 +88,7 @@ Public Class frmFolha_salariosCadastro
             Conn.Close()
 
         End If
-    End Function
+    End Sub
 
     Private Sub BtnDiponibiliza_Click(sender As Object, e As EventArgs) Handles BtnDiponibiliza.Click
         Try
@@ -125,7 +125,7 @@ Public Class frmFolha_salariosCadastro
 
     End Sub
 
-    Private Function LimpaTela()
+    Private Sub LimpaTela()
 
         GruEntradaSalarios.Enabled = False
 
@@ -138,7 +138,7 @@ Public Class frmFolha_salariosCadastro
         GruShow.Enabled = True
         GruEntradaSalarios.Enabled = False
 
-    End Function
+    End Sub
     Private Sub TxtSB_TextChanged(sender As Object, e As EventArgs) Handles TxtSB.TextChanged
 
     End Sub

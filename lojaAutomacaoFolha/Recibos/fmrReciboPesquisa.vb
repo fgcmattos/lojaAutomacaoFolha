@@ -279,9 +279,9 @@ Public Class fmrReciboPesquisa
         End If
 
         Dim QueryTable As String = " from "
-        QueryTable += "Recibo A "
-        QueryTable += ",Recibo_Tipo A1 "
-        QueryTable += ",Recibo_Status A2 "
+        QueryTable += "recibo A "
+        QueryTable += ",recibo_tipo A1 "
+        QueryTable += ",recibo_status A2 "
 
         If Query = "" Then
             QueryComplementar = " Where " & QueryComplementar
@@ -373,7 +373,7 @@ Public Class fmrReciboPesquisa
 
             Catch ex As Exception
 
-                MsgBox("Problemas Name Gravação!")
+                MsgBox(ex)
 
             End Try
 

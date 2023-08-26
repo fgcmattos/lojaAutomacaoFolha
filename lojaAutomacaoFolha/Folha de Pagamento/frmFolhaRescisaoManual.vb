@@ -223,7 +223,7 @@ Public Class frmFolhaRescisaoManual
         'lblEdicaoConteudo.text = LblRubrica1.Text
     End Sub
 
-    Private Function EdicaoControleVariaveis(booLiga As Boolean)
+    Private Sub EdicaoControleVariaveis(booLiga As Boolean)
 
         GruVerbasRescisorias.Enabled = Not booLiga
         GruEdicaoVerbasRescisoria.Enabled = booLiga
@@ -235,7 +235,7 @@ Public Class frmFolhaRescisaoManual
         End If
 
 
-    End Function
+    End Sub
 
     Private Function SomaLiquida() As String
 
@@ -251,7 +251,7 @@ Public Class frmFolhaRescisaoManual
         Return SomaLiquida
 
     End Function
-    Private Function edicaoControleVariaveisDeducoes(booLiga As Boolean)
+    Private Sub edicaoControleVariaveisDeducoes(booLiga As Boolean)
 
         GruDeducoes.Enabled = Not booLiga
         GruEdicaoVerbasRescisoriaDeducoes.Enabled = booLiga
@@ -263,10 +263,10 @@ Public Class frmFolhaRescisaoManual
             TxtValorDeducoes.Text = "0,00"
         End If
 
-    End Function
+    End Sub
 
 
-    Private Function EdicaoRescisao(intVariavel As Integer)
+    Private Sub EdicaoRescisao(intVariavel As Integer)
 
         Dim intCondicaoContrato As Integer = intVariavel
 
@@ -349,66 +349,66 @@ Public Class frmFolhaRescisaoManual
 
         Lbl100.Text = MoneyLatino(VerbasRescisoriasSoma())
 
-        '''Select Case intCondicaoContrato
-        '''    Case 1
-        '''        LblcontrTipoCab.Text = TxtCab.Text      'contrato(0).TipoCab
-        '''        LblcontrTipo.Text = Txt.Text            'contrato(0).ContratoTipo
-        '''    Case 2
-        '''        LblcontrAfastamentoCausaCab.Text = TxtCab.Text      'contrato(0).AfastamentoCab
-        '''        LblcontrAfastamentoCausa.Text = Txt.Text            'contrato(0).AfastamentoCausa
-        '''    Case 3
+        'Select Case intCondicaoContrato
+        '    Case 1
+        '        LblcontrTipoCab.Text = TxtCab.Text      'contrato(0).TipoCab
+        '        LblcontrTipo.Text = Txt.Text            'contrato(0).ContratoTipo
+        '    Case 2
+        '        LblcontrAfastamentoCausaCab.Text = TxtCab.Text      'contrato(0).AfastamentoCab
+        '        LblcontrAfastamentoCausa.Text = Txt.Text            'contrato(0).AfastamentoCausa
+        '    Case 3
 
 
 
-        '''        LblcontrRemuneracaMesAnteriorCab.Text = TxtCab.Text         ' contrato(0).RemuneracaoMesAnteriorCab
-        '''        LblcontrRemuneracaMesAnterior.Text = Txt.Text           'Trim(numeroLatino(contrato(0).RemuneracaoMesAnterior, 10, True))
-        '''    Case 4
-        '''        LblcontrSindicalCodCab.Text = TxtCab.Text       'contrato(0).SindicalCodigoCab
-        '''        LblcontrSindicalCod.Text = Txt.Text             'contrato(0).SindicalCodigo
-        '''    Case 5
-        '''        LblcontrAdmissaoDataCab.Text = TxtCab.Text      'contrato(0).AdmissaoDataCab
-        '''        LblcontrAdmissaoData.Text = Txt.Text            'dataLatina(contrato(0).AdmissaoData)
-        '''    Case 6
-        '''        LblcontrAvisoDataCab.Text = TxtCab.Text         'contrato(0).AvisoPrevioDataCab
-        '''        LblcontrAvisoData.Text = Txt.Text           'dataLatina(contrato(0).AvisoPrevioData)
-        '''    Case 7
-        '''        LblcontrCNPJsindicalCab.Text = TxtCab.Text      'contrato(0).CNPJEntidadeSindicalCab
-        '''        LblcontrCNPJsindical.Text = Txt.Text            'contrato(0).CNPJEntidadeSindical
-        '''    Case 8
-        '''        LblcontrAfastamentoDataCab.Text = TxtCab.Text       'contrato(0).AfastamentoDataCab
-        '''        LblcontrAfastamentoData.Text = Txt.Text             'dataLatina(contrato(0).AfastamentoData)
-        '''    Case 9
-        '''        LblcontrAfastamentoCodigoCab.Text = TxtCab.Text         'contrato(0).AfastamentoCodigoCab
-        '''        LblcontrAfastamentoCodigo.Text = Txt.Text           'contrato(0).AfastamentoCodigo
-        '''    Case 10
-        '''        LblcontrPensaoTRCTCab.Text = TxtCab.Text        'contrato(0).PensaoAlimenticiaTRCTCab
-        '''        LblcontrPensaoTRCT.Text = Txt.Text          'contrato(0).PensaoAlimenticiaTRCT
-        '''    Case 11
-        '''        LblcontrPensaoFGTScab.Text = TxtCab.Text        'contrato(0).PensaoAlimenticiaFGTSCab
-        '''        LblcontrPensaoFGTS.Text = Txt.Text          'contrato(0).PensaoAlimenticiaFGTS
-        '''    Case 12
-        '''        LblcontrCategoriacab.Text = TxtCab.Text         'contrato(0).CategoriaCab
-        '''        LblcontrCategoria.Text = Txt.Text           'contrato(0).Categoria
-        '''    Case 13
-        '''        LblTitulo0.Text = TxtCab.Text       'contrato(0).Vr_l0_titulo0CAb
-        '''    Case 14
-        '''        LblTitulo1.Text = TxtCab.Text       'contrato(0).Vr_l1_Titulo1CAb
-        '''    Case 15
-        '''        LblRubrica1.Text = TxtCab.Text      'contrato(0).Vr_l2_Titulo1CAb
-        '''        LblValor1.Text = Txt.Text           'contrato(0).Vr_l2_Titulo2CAb
-        '''    Case 16
-        '''        LblRubrica2.Text = TxtCab.Text      'contrato(0).Vr_l2_Titulo3CAb
-        '''        LblValor2.Text = Txt.Text           'contrato(0).Vr_l2_Titulo4CAb
-        '''    Case 17
-        '''        LblRubrica3.Text = TxtCab.Text      'contrato(0).Vr_l2_Titulo5CAb
-        '''        LblValor3.Text = Txt.Text           'contrato(0).Vr_l2_Titulo6CAb
+        '        LblcontrRemuneracaMesAnteriorCab.Text = TxtCab.Text         ' contrato(0).RemuneracaoMesAnteriorCab
+        '        LblcontrRemuneracaMesAnterior.Text = Txt.Text           'Trim(numeroLatino(contrato(0).RemuneracaoMesAnterior, 10, True))
+        '    Case 4
+        '        LblcontrSindicalCodCab.Text = TxtCab.Text       'contrato(0).SindicalCodigoCab
+        '        LblcontrSindicalCod.Text = Txt.Text             'contrato(0).SindicalCodigo
+        '    Case 5
+        '        LblcontrAdmissaoDataCab.Text = TxtCab.Text      'contrato(0).AdmissaoDataCab
+        '        LblcontrAdmissaoData.Text = Txt.Text            'dataLatina(contrato(0).AdmissaoData)
+        '    Case 6
+        '        LblcontrAvisoDataCab.Text = TxtCab.Text         'contrato(0).AvisoPrevioDataCab
+        '        LblcontrAvisoData.Text = Txt.Text           'dataLatina(contrato(0).AvisoPrevioData)
+        '    Case 7
+        '        LblcontrCNPJsindicalCab.Text = TxtCab.Text      'contrato(0).CNPJEntidadeSindicalCab
+        '        LblcontrCNPJsindical.Text = Txt.Text            'contrato(0).CNPJEntidadeSindical
+        '    Case 8
+        '        LblcontrAfastamentoDataCab.Text = TxtCab.Text       'contrato(0).AfastamentoDataCab
+        '        LblcontrAfastamentoData.Text = Txt.Text             'dataLatina(contrato(0).AfastamentoData)
+        '    Case 9
+        '        LblcontrAfastamentoCodigoCab.Text = TxtCab.Text         'contrato(0).AfastamentoCodigoCab
+        '        LblcontrAfastamentoCodigo.Text = Txt.Text           'contrato(0).AfastamentoCodigo
+        '    Case 10
+        '        LblcontrPensaoTRCTCab.Text = TxtCab.Text        'contrato(0).PensaoAlimenticiaTRCTCab
+        '        LblcontrPensaoTRCT.Text = Txt.Text          'contrato(0).PensaoAlimenticiaTRCT
+        '    Case 11
+        '        LblcontrPensaoFGTScab.Text = TxtCab.Text        'contrato(0).PensaoAlimenticiaFGTSCab
+        '        LblcontrPensaoFGTS.Text = Txt.Text          'contrato(0).PensaoAlimenticiaFGTS
+        '    Case 12
+        '        LblcontrCategoriacab.Text = TxtCab.Text         'contrato(0).CategoriaCab
+        '        LblcontrCategoria.Text = Txt.Text           'contrato(0).Categoria
+        '    Case 13
+        '        LblTitulo0.Text = TxtCab.Text       'contrato(0).Vr_l0_titulo0CAb
+        '    Case 14
+        '        LblTitulo1.Text = TxtCab.Text       'contrato(0).Vr_l1_Titulo1CAb
+        '    Case 15
+        '        LblRubrica1.Text = TxtCab.Text      'contrato(0).Vr_l2_Titulo1CAb
+        '        LblValor1.Text = Txt.Text           'contrato(0).Vr_l2_Titulo2CAb
+        '    Case 16
+        '        LblRubrica2.Text = TxtCab.Text      'contrato(0).Vr_l2_Titulo3CAb
+        '        LblValor2.Text = Txt.Text           'contrato(0).Vr_l2_Titulo4CAb
+        '    Case 17
+        '        LblRubrica3.Text = TxtCab.Text      'contrato(0).Vr_l2_Titulo5CAb
+        '        LblValor3.Text = Txt.Text           'contrato(0).Vr_l2_Titulo6CAb
 
-        '''End Select
+        'End Select
 
 
 
-    End Function
-    Private Function EdicaoRescisaoDeducao(intVariavel As Integer)
+    End Sub
+    Private Sub EdicaoRescisaoDeducao(intVariavel As Integer)
 
 
         Dim intCondicaoContrato As Integer = intVariavel
@@ -455,7 +455,7 @@ Public Class frmFolhaRescisaoManual
 
         LblDedTotalDeducoes.Text = MoneyLatino(VerbasRescisoriasDeducoesSoma)
 
-    End Function
+    End Sub
     Private Function VerbasRescisoriasSoma()
 
         Dim DecSoma As Decimal

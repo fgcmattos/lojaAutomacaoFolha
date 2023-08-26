@@ -20,23 +20,23 @@
         FolhaAdiantamentoHolerite.SetParameterValue("mensagem03", FrmFolhaAdiantamentoSalarialHolerite.TxtMens3.Text)
         'MsgBox(FolhaAdiantamentoHolerite.Database.Tables(0).Name)
 
-        '''For i = 0 To emp.Count - 1
+        'For i = 0 To emp.Count - 1
 
-        '''    ' identificacao do empregador
-        '''emp(i).ColReferencia = FrmFolhaAdiantamentoSalarialHolerite.MskReferencia.Text
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("empNome", emp(i).emprRazaoSocial)
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("empCNPJ", emp(i).EmprCNPJ)
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("empEndereco", emp(i).EmprEndereco)
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("colCodigo", emp(i).ColChave)
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("colNome", emp(i).ColNome)
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("colCargo", emp(i).ColFuncao)
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("colSetor", emp(i).ColSetor)
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("colLocal", emp(i).emprRazaoSocial)
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("processo", emp(i).Processo)
-        '''    FolhaAdiantamentoHolerite.SetParameterValue("folReferencia", emp(i).ColReferencia)
+        '    ' identificacao do empregador
+        'emp(i).ColReferencia = FrmFolhaAdiantamentoSalarialHolerite.MskReferencia.Text
+        '    FolhaAdiantamentoHolerite.SetParameterValue("empNome", emp(i).emprRazaoSocial)
+        '    FolhaAdiantamentoHolerite.SetParameterValue("empCNPJ", emp(i).EmprCNPJ)
+        '    FolhaAdiantamentoHolerite.SetParameterValue("empEndereco", emp(i).EmprEndereco)
+        '    FolhaAdiantamentoHolerite.SetParameterValue("colCodigo", emp(i).ColChave)
+        '    FolhaAdiantamentoHolerite.SetParameterValue("colNome", emp(i).ColNome)
+        '    FolhaAdiantamentoHolerite.SetParameterValue("colCargo", emp(i).ColFuncao)
+        '    FolhaAdiantamentoHolerite.SetParameterValue("colSetor", emp(i).ColSetor)
+        '    FolhaAdiantamentoHolerite.SetParameterValue("colLocal", emp(i).emprRazaoSocial)
+        '    FolhaAdiantamentoHolerite.SetParameterValue("processo", emp(i).Processo)
+        '    FolhaAdiantamentoHolerite.SetParameterValue("folReferencia", emp(i).ColReferencia)
 
-        '''Next
-        '''    ' fim da identificacao do emprengador
+        'Next
+        '    ' fim da identificacao do emprengador
     End Sub
 
     Private Sub FolhaAdiantamentoHolerite_InitReport(sender As Object, e As EventArgs) Handles FolhaAdiantamentoHolerite.InitReport

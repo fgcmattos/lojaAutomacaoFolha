@@ -310,6 +310,8 @@ Public Class FreciboNew
 
         CarregaHistRrecibo()
 
+        oi.Title = Me.Text
+
     End Sub
 
     Private Sub BtnPreencheHistorico_Click(sender As Object, e As EventArgs) Handles BtnPreencheHistorico.Click
@@ -516,7 +518,36 @@ Public Class FreciboNew
 
     End Sub
 
-    Private Function CarregaHistRrecibo()
+    'Private Function CarregaHistRrecibo() As Nullable
+
+    '    CmbHistPad.Items.Clear()
+
+    '    If OpenDB() Then
+    '        Dim Query As String = "Select * from recibohistpad order by reciboHistPadCod"
+    '        Dim CMD As New MySqlCommand(Query, Conn)
+    '        Dim DTReader As MySqlDataReader
+    '        Try
+    '            DTReader = CMD.ExecuteReader
+
+    '            While DTReader.Read
+
+    '                CmbHistPad.Items.Add(DTReader.GetString(1) & " - " & DTReader.GetString(2) & " / " & DTReader.GetString(3))
+
+    '            End While
+
+    '        Catch ex As Exception
+    '            Conn.Close()
+    '            MsgBox("Problemas com a leitura do Arquivo recibohistpad")
+
+    '        End Try
+
+    '        Conn.Close()
+
+    '    End If
+
+    'End Function
+
+    Sub CarregaHistRrecibo()
 
         CmbHistPad.Items.Clear()
 
@@ -543,7 +574,7 @@ Public Class FreciboNew
 
         End If
 
-    End Function
+    End Sub
 
     Private Sub BtnHistAtualiza_Click(sender As Object, e As EventArgs) Handles BtnHistAtualiza.Click
         CarregaHistRrecibo()
@@ -772,7 +803,7 @@ Public Class FreciboNew
 
         Dim Mn As New MsgShow
 
-        Mn.title = "Gerenciamento de Impressão de Recibos"
+        Mn.Title = "Gerenciamento de Impressão de Recibos"
 
         If e.KeyChar = "" Then
             With Mn
@@ -788,10 +819,25 @@ Public Class FreciboNew
 
             LimpaIdentificacaoColaborador(False)
 
+
+            Dim Query As String = ""
+            Query = "select count(*) as qto from colaborador where chave = " & MskColChave.Text
+
+
+
+            If gravaSQLretorno(Query) = 0 Then
+                With oi
+                    .Msg = "Colaborador não cadastrado!"
+                    .Style = vbCritical
+                    MsgBox(.Msg, .Style, .Title)
+                    Exit Sub
+                End With
+            End If
+
             If OpenDB() Then
-                Dim Query As String = ""
-                Query += "select "
-                Query += " count(*) as qto "
+
+                Query = "select "
+                Query += " (select count(*) as qto from colaborador where chave = " & MskColChave.Text & ")"
                 Query += ",colaboradorNome "
                 Query += ",colaboradorRG "
                 Query += ",colaboradorCPF "
@@ -807,9 +853,9 @@ Public Class FreciboNew
                     DTReader.Read()
                     If DTReader.GetString(0) = "0" Then
                         With Mn
-                            .style = vbCritical
-                            .msg = "Colaborador não encontrado!"
-                            MsgBox(.msg, .style, .title)
+                            .Style = vbCritical
+                            .Msg = "Colaborador não encontrado!"
+                            MsgBox(.Msg, .Style, .Title)
                         End With
                         MskColChave.Focus()
                         Conn.Close()
@@ -833,7 +879,7 @@ Public Class FreciboNew
 
     End Sub
 
-    Private Function LimpaIdentificacaoColaborador(col As Boolean)
+    Private Sub LimpaIdentificacaoColaborador(col As Boolean)
         If col Then MskColChave.Text = ""
         LblColNome.Text = ""
         LblColRG.Text = ""
@@ -842,9 +888,9 @@ Public Class FreciboNew
         LblEmissao.Text = ""
         LblColCPF.Text = ""
         LblEndereco.Text = ""
-    End Function
+    End Sub
 
-    Private Function LimpaIdentificacaoFornecedor()
+    Private Sub LimpaIdentificacaoFornecedor()
         MskCNPJ.Text = ""
         TxtCNPJnome.Text = ""
         TxtInscricaoMunicipal.Text = ""
@@ -855,9 +901,9 @@ Public Class FreciboNew
         TxtPortadorRGdataEmissao.Text = ""
         TxtPortadorCPF.Text = ""
         MskPortadorFuncao.Text = ""
-    End Function
+    End Sub
 
-    Private Function LimpaIdentificacaoGeral()
+    Private Sub LimpaIdentificacaoGeral()
         TxtGeralNome.Text = ""
         mskGeralRG.Text = ""
         TxtGeralOeUF.Text = ""
@@ -865,7 +911,6 @@ Public Class FreciboNew
         mskGeralCPF.Text = ""
         MskGeralFone.Text = ""
         TxtGeralEndereco.Text = ""
-    End Function
-
+    End Sub
 
 End Class

@@ -223,7 +223,7 @@ Public Class fColCad
         ListViewDependente.Items(ListViewDependente.Items.Count - 1).SubItems.Add(ret)
         limpaDependente()
     End Sub
-    Function limpaDependente()
+    Sub limpaDependente()
         cmbParentesco.Text = ""
         txtNomeDependente.Text = ""
         txtNomeDependente.Text = ""
@@ -231,12 +231,12 @@ Public Class fColCad
         mskNascDependente.Text = ""
         CheckBoxIR.Checked = False
         CheckBoxSF.Checked = False
-    End Function
+    End Sub
     Private Sub txtNomeDependente_KeyPress(sender As Object, e As KeyPressEventArgs)
         e.KeyChar = UCase(e.KeyChar)
     End Sub
 
-    Function carregaGrauInstrucao()
+    Sub CarregaGrauInstrucao()
 
         If OpenDB() Then
 
@@ -257,7 +257,8 @@ Public Class fColCad
             End Try
         End If
         Conn.Close()
-    End Function
+
+    End Sub
 
     Private Sub chkDeficiencia_Click(sender As Object, e As EventArgs) Handles col_10deficiente.Click
         If col_10deficiente.Checked Then
@@ -388,7 +389,7 @@ Public Class fColCad
                 pg11Limpar()
         End Select
     End Sub
-    Function pg0Limpar()
+    Sub pg0Limpar()
 
         col_01_rg.Text = ""
         col_01_rgOE.Text = ""
@@ -429,8 +430,8 @@ Public Class fColCad
         col_01_teSecao.Text = ""
         CheckBox6.Checked = False
 
-    End Function
-    Function pg1Limpar()
+    End Sub
+    Sub pg1Limpar()
 
         col_02_Mae.Text = ""
         col_02_MaeNascimento.Text = ""
@@ -441,8 +442,8 @@ Public Class fColCad
         col_02_paiCPF.Text = ""
         col_02_paiFone.Text = ""
 
-    End Function
-    Function pg2Limpar()
+    End Sub
+    Sub pg2Limpar()
         col_03Sexo.SelectedIndex = -1
         col_03EstadoCivil.SelectedIndex = -1
         col_03UniaoEstavel.Checked = False
@@ -454,44 +455,44 @@ Public Class fColCad
         col_03CompanheiraCPF.Text = ""
         col_03CompanheiraFone.Text = ""
         col_03CompanheiraNascimento.Text = ""
-    End Function
-    Function pg3Limpar()
+    End Sub
+    Sub pg3Limpar()
 
         col_04Fone1.Text = ""
         col_04Fone2.Text = ""
         col_04email.Text = ""
         col_04AutorizaComunicaEmail.Checked = False
 
-    End Function
-    Function pg4Limpar()
+    End Sub
+    Sub pg4Limpar()
         col_05endereco.Text = ""
         col_05cidade.Text = ""
         cmbEndUF.SelectedIndex = -1
         col_05cep.Text = ""
-    End Function
-    Function pg5Limpar()
+    End Sub
+    Sub pg5Limpar()
         cmbInstrucao.SelectedIndex = -1
         col_06Curso.Text = ""
         col_06ConselhoRegional.Text = ""
         col_06ConselhoRegionalNumero.Text = ""
         col_06ConselhoRegionalData.Text = ""
         col_06OE.Text = ""
-    End Function
-    Function pg7Limpar()
+    End Sub
+    Sub pg7Limpar()
         col_08banco.Text = ""
         col_08agencia.Text = ""
         col_08agenciaDigito.Text = ""
         col_08conta.Text = ""
         col_08contaDigito.Text = ""
-    End Function
-    Function pg8Limpar()
+    End Sub
+    Sub pg8Limpar()
         ListViewDependente.Items.Clear()
         cmbParentesco.SelectedIndex = -1
         txtNomeDependente.Text = ""
         mskCPFdependente.Text = ""
         mskNascDependente.Text = ""
-    End Function
-    Function pg9Limpar()
+    End Sub
+    Sub pg9Limpar()
         col_10altura.Text = ""
         col_10peso.Text = ""
         col_10cabelo.Text = ""
@@ -501,8 +502,8 @@ Public Class fColCad
         col_10deficiente.Checked = False
         col_10deficienteTipo.Text = ""
         col_10deficienteOutros.Text = ""
-    End Function
-    Function pg10Limpar()
+    End Sub
+    Sub pg10Limpar()
         col_11nome1.Text = ""
         col_11Telefone1.Text = ""
         col_11conhecimento1.SelectedIndex = -1
@@ -515,14 +516,14 @@ Public Class fColCad
         col_11Empresa2.Text = ""
         col_11Contato2.Text = ""
         col_11EmpresaTel2.Text = ""
-    End Function
-    Function pg11Limpar()
+    End Sub
+    Sub pg11Limpar()
         col_12nomeCracha.Text = ""
         col_12Cargo.Text = ""
         col_12ASOadmissao.Text = ""
         col_12Admissao.Text = ""
-    End Function
-    Function LimpaTudo()
+    End Sub
+    Sub LimpaTudo()
         pg0Limpar()
         pg1Limpar()
         pg2Limpar()
@@ -534,7 +535,7 @@ Public Class fColCad
         pg9Limpar()
         pg10Limpar()
         pg11Limpar()
-    End Function
+    End Sub
     Private Sub BtnLimpardetalhamento_Click(sender As Object, e As EventArgs) Handles BtnLimpardetalhamento.Click
 
         LimpaTudo()
@@ -681,7 +682,7 @@ Public Class fColCad
         limpaDependente()
     End Sub
 
-    Private Function DependentesContabiliza()
+    Private Sub DependentesContabiliza()
 
         Dim inContIR As Integer = 0
         Dim inContSF As Integer = 0
@@ -694,7 +695,7 @@ Public Class fColCad
 
             LbltotalQTO.Text = 0
 
-            Exit Function
+            Exit Sub
 
         End If
 
@@ -711,7 +712,7 @@ Public Class fColCad
             LbltotalQTO.Text = ListViewDependente.Items.Count
 
         Next
-    End Function
+    End Sub
 
     Private Sub ListViewDependente_DoubleClick(sender As Object, e As EventArgs) Handles ListViewDependente.DoubleClick
 

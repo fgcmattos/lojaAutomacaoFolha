@@ -93,7 +93,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
 
     End Sub
 
-    Private Function CamposEdicaoVai(entra As Object, entraCab As Object, sai As Object, saiCab As Object)
+    Sub CamposEdicaoVai(entra As Object, entraCab As Object, sai As Object, saiCab As Object)
 
         Dim corColor As Color = entraCab.BackColor
         entra.Enabled = True
@@ -107,9 +107,9 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
         sai.Enabled = False
         entra.Focus()
 
-    End Function
+    End Sub
 
-    Private Function CamposEdicaoVolta(entra As Object, entraCab As Object, sai As Object, saiCab As Object)
+    Sub CamposEdicaoVolta(entra As Object, entraCab As Object, sai As Object, saiCab As Object)
 
         Dim corColor As Color = entraCab.BackColor
         entra.Enabled = True
@@ -123,7 +123,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
         sai.Enabled = False
         entra.Focus()
 
-    End Function
+    End Sub
 
     Private Sub MskNumeroDescansosNaSemana_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MskNumeroDescansosNaSemana.KeyPress
 
@@ -262,7 +262,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
         End With
     End Sub
 
-    Private Function ContratoCalculo()
+    Private Sub ContratoCalculo()
 
         Dim decCargaHorariaDiaria As Decimal
         Dim decCargaHorariaSemanal As Decimal
@@ -314,7 +314,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
         LblCargaHorariaMensal.Text = strCargaHorariaMensal_horas & ":" & strCargaHorariaMensal_minutos
         LblFimDaJornada.Text = strJornadaSaida_horas & ":" & strJornadaSaida_minutos
 
-    End Function
+    End Sub
 
     Private Sub CmbSetor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbSetor.KeyPress
 
@@ -871,7 +871,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
 
     End Function
 
-    Private Function indentificacaoLimpa()
+    Private Sub indentificacaoLimpa()
 
         LblChave.Text = ""
         LblNome.Text = ""
@@ -882,19 +882,20 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramento
         LblCTPSserie.Text = ""
         LblAdmissao.Text = "__/__/____"
         LblASOadmissao.Text = "__/__/____"
-    End Function
+
+    End Sub
 
     Private Function ChecarVariaveisNecessarias() As String
 
         Dim StrFrase As String = ""
 
         If Not PIS_digito_verificador(Me.LblPIS.Text) Then StrFrase = "PIS Inválido " & Chr(13)
-        If Me.LblCTPSnumero.Text = "" Then strFrase += "CTPS Número " & Chr(13)
-        If Me.LblCTPSserie.Text = "" Then strFrase += "CTPS Série " & Chr(13)
-        If Me.LblASOadmissao.Text = "" Then strFrase += "ASO data de admissão " & Chr(13)
-        If Me.LblAdmissao.Text = "" Then strFrase += "Data de admissão " & Chr(13)
+        If Me.LblCTPSnumero.Text = "" Then StrFrase += "CTPS Número " & Chr(13)
+        If Me.LblCTPSserie.Text = "" Then StrFrase += "CTPS Série " & Chr(13)
+        If Me.LblASOadmissao.Text = "" Then StrFrase += "ASO data de admissão " & Chr(13)
+        If Me.LblAdmissao.Text = "" Then StrFrase += "Data de admissão " & Chr(13)
 
-        Return (strFrase)
+        Return (StrFrase)
 
     End Function
 

@@ -7,7 +7,7 @@ Public Class FrmFolhaIR_TabelaPesquisa
 
     End Sub
 
-    Private Function LimpaLabel()
+    Private Sub LimpaLabel()
         LblTabelaNumero.Text = ""
         LblDataAtivacao.Text = ""
         LblDataDesativacao.Text = ""
@@ -23,7 +23,7 @@ Public Class FrmFolhaIR_TabelaPesquisa
         LblLiberacaoResponsavelChave.Text = ""
         LblLiberacaoResponsavelTipo.Text = ""
 
-    End Function
+    End Sub
 
     Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles BtnPesquisa.Click
 
@@ -107,7 +107,7 @@ Public Class FrmFolhaIR_TabelaPesquisa
 
     End Sub
 
-    Private Function IR_mostra_tabela(StrReferencia As String)
+    Private Sub IR_mostra_tabela(StrReferencia As String)
 
         Dim IsComparacao As String = "IRREF = '" & StrReferencia & "'"
 
@@ -173,7 +173,7 @@ Public Class FrmFolhaIR_TabelaPesquisa
         LblLiberacaoResponsavelTipo.Text = IRtabela(0).Class_IRresponsavelPublicacaoTipo
         LblLiberacaoData.Text = IRtabela(0).Class_IRdataPublicação
 
-    End Function
+    End Sub
 
     Private Sub BtnSelecao_Click(sender As Object, e As EventArgs) Handles BtnSelecao.Click
 
@@ -192,12 +192,12 @@ Public Class FrmFolhaIR_TabelaPesquisa
 
     End Sub
 
-    Private Function GrpInterruptor(IsLed As Boolean)
+    Private Sub GrpInterruptor(IsLed As Boolean)
 
         GroupPainelDePesquisa.Enabled = IsLed
         GroupIdentificacaoDaTabela.Enabled = IsLed
         GroupTabelaShow.Enabled = IsLed
 
-    End Function
+    End Sub
 
 End Class

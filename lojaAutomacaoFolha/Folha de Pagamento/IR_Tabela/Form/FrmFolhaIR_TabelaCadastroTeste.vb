@@ -22,7 +22,7 @@
 
     End Sub
 
-    Private Function IR_mostra_tabela(StrReferencia As String)
+    Private Sub IR_mostra_tabela(StrReferencia As String)
 
         Dim IsComparacao As String = "IRREF = '" & StrReferencia & "'"
 
@@ -199,7 +199,7 @@
         If IsMatBaseIR(5, 0) >= IRtabela(0).Class_IRfaixa2 Then LblFaixa2_b5.Text = numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa2Valor, 2), 8, True)
         If IsMatBaseIR(5, 0) >= IRtabela(0).Class_IRfaixa3 Then LblFaixa3_b5.Text = numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa3Valor, 2), 8, True)
         If IsMatBaseIR(5, 0) >= IRtabela(0).Class_IRfaixa4 Then LblFaixa4_b5.Text = numeroLatino(Math.Round(IRtabela(0).Class_IRfaixa4Valor, 2), 8, True)
-    End Function
+    End Sub
 
     Private Sub CheckBoxOK1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK1.CheckedChanged
 

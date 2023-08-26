@@ -96,7 +96,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
 
     End Sub
 
-    Private Function CamposEdicaoVai(entra As Object, entraCab As Object, sai As Object, saiCab As Object)
+    Sub CamposEdicaoVai(entra As Object, entraCab As Object, sai As Object, saiCab As Object)
 
         Dim corColor As Color = entraCab.BackColor
         entra.Enabled = True
@@ -110,9 +110,9 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         sai.Enabled = False
         entra.Focus()
 
-    End Function
+    End Sub
 
-    Private Function CamposEdicaoVolta(entra As Object, entraCab As Object, sai As Object, saiCab As Object)
+    Sub CamposEdicaoVolta(entra As Object, entraCab As Object, sai As Object, saiCab As Object)
 
         Dim corColor As Color = entraCab.BackColor
         entra.Enabled = True
@@ -126,7 +126,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         sai.Enabled = False
         entra.Focus()
 
-    End Function
+    End Sub
 
     Private Sub MskNumeroDescansosNaSemana_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MskNumeroDescansosNaSemana.KeyPress
 
@@ -265,7 +265,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         End With
     End Sub
 
-    Private Function ContratoCalculo()
+    Private Sub ContratoCalculo()
 
         Dim decCargaHorariaDiaria As Decimal
         Dim decCargaHorariaSemanal As Decimal
@@ -317,7 +317,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         LblCargaHorariaMensal.Text = strCargaHorariaMensal_horas & ":" & strCargaHorariaMensal_minutos
         LblFimDaJornada.Text = strJornadaSaida_horas & ":" & strJornadaSaida_minutos
 
-    End Function
+    End Sub
 
     Private Sub CmbSetor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbSetor.KeyPress
 
@@ -872,7 +872,7 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
 
     End Function
 
-    Private Function IndentificacaoLimpa()
+    Private Sub IndentificacaoLimpa()
 
         LblChave.Text = ""
         LblNome.Text = ""
@@ -883,7 +883,8 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         LblCTPSserie.Text = ""
         LblAdmissao.Text = "__/__/____"
         LblASOadmissao.Text = "__/__/____"
-    End Function
+
+    End Sub
 
     Private Function ChecarVariaveisNecessarias() As String
 
@@ -911,10 +912,6 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
                 Me.Close()
             End If
         End With
-
-    End Sub
-
-    Private Sub CmbTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbTipo.SelectedIndexChanged
 
     End Sub
 

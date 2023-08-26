@@ -2,11 +2,12 @@
     Dim oi As New MsgShow
 
     Private Sub FrmFolhaINSS_TabelaPublicacao_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Oi.Title = Me.Text
+        oi.Title = Me.Text
 
         Dim Query As String
 
-        Query = "Select count(*) from inss where INSStabelaStatus=1"            'Conferido
+
+        Query = "Select count(*) from inss where INSStabelaStatus=1" 'Conferido
 
         Dim isQto As Integer = ApontaSQL(Query)
 
@@ -47,7 +48,7 @@
         TxtPassWord.Focus()
 
     End Sub
-    Private Function INSS_mostra_tabela(StrReferencia As String)
+    Private Sub INSS_mostra_tabela(StrReferencia As String)
 
         Dim IsComparacao As String = "INSSREF = '" & StrReferencia & "'"
 
@@ -93,7 +94,7 @@
 
         Next
 
-    End Function
+    End Sub
 
     Private Sub BtnAutoriza_Click(sender As Object, e As EventArgs) Handles BtnAutoriza.Click
 
@@ -137,7 +138,7 @@
                     Query += " where "
                     Query += "INSStabelaStatus = 1;"
 
-                    '''
+
 
                     'Query = "Call sp_Folha_tabela_INSS_agenda ('" & isRef & "'," & usuClass.Usuario_Chave & ",'" & usuClass.Usuario_Tipo & "')"
 
@@ -187,7 +188,4 @@
 
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 End Class

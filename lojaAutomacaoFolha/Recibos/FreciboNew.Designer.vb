@@ -86,6 +86,7 @@ Partial Class FreciboNew
         Me.GruCaracteristicas = New System.Windows.Forms.GroupBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.lblAnoMesSequencial = New System.Windows.Forms.Label()
         Me.LblReciboLOcalAponta = New System.Windows.Forms.Label()
         Me.LblReciboDataAponta = New System.Windows.Forms.Label()
         Me.LblReciboValorAponta = New System.Windows.Forms.Label()
@@ -106,7 +107,6 @@ Partial Class FreciboNew
         Me.BtnPreencheHistorico = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CmbHistPad = New System.Windows.Forms.ComboBox()
-        Me.lblAnoMesSequencial = New System.Windows.Forms.Label()
         Me.GruFavorecido.SuspendLayout()
         Me.TbcFavorecido.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -798,6 +798,15 @@ Partial Class FreciboNew
         Me.TabPage4.TabIndex = 0
         Me.TabPage4.Text = "Tratados"
         '
+        'lblAnoMesSequencial
+        '
+        Me.lblAnoMesSequencial.AutoSize = True
+        Me.lblAnoMesSequencial.Location = New System.Drawing.Point(747, 21)
+        Me.lblAnoMesSequencial.Name = "lblAnoMesSequencial"
+        Me.lblAnoMesSequencial.Size = New System.Drawing.Size(62, 16)
+        Me.lblAnoMesSequencial.TabIndex = 36
+        Me.lblAnoMesSequencial.Text = "Label13"
+        '
         'LblReciboLOcalAponta
         '
         Me.LblReciboLOcalAponta.AutoSize = True
@@ -997,15 +1006,6 @@ Partial Class FreciboNew
         Me.CmbHistPad.Name = "CmbHistPad"
         Me.CmbHistPad.Size = New System.Drawing.Size(321, 24)
         Me.CmbHistPad.TabIndex = 23
-        '
-        'lblAnoMesSequencial
-        '
-        Me.lblAnoMesSequencial.AutoSize = True
-        Me.lblAnoMesSequencial.Location = New System.Drawing.Point(747, 21)
-        Me.lblAnoMesSequencial.Name = "lblAnoMesSequencial"
-        Me.lblAnoMesSequencial.Size = New System.Drawing.Size(62, 16)
-        Me.lblAnoMesSequencial.TabIndex = 36
-        Me.lblAnoMesSequencial.Text = "Label13"
         '
         'FreciboNew
         '

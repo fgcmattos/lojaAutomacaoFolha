@@ -507,7 +507,7 @@ Public Class ColaboradorCapTela
 
         Next
 
-        Dim auxInstrucao As String
+        Dim auxInstrucao As String = ""
 
         Dim lista As New List(Of colaborador) From {
             New colaborador() With {

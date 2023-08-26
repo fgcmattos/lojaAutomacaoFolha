@@ -248,11 +248,11 @@ Public Class FrmReciboConformidade
             End If
 
             Dim QueryTable As String = " from "
-            QueryTable += "Recibo A "
-            QueryTable += ",Recibo_Tipo A1 "
-            QueryTable += ",Recibo_Status A2 "
+        QueryTable += "recibo A "
+        QueryTable += ",recibo_tipo A1 "
+        QueryTable += ",recibo_status A2 "
 
-            If Query = "" Then
+        If Query = "" Then
                 QueryComplementar = " Where " & QueryComplementar
             Else
                 QueryComplementar = " And " & QueryComplementar
@@ -451,4 +451,8 @@ Public Class FrmReciboConformidade
         Private Sub BtnTermina_Click(sender As Object, e As EventArgs) Handles BtnTermina.Click
             Me.Close()
         End Sub
+
+    Private Sub BtnImprimeResumo_Click(sender As Object, e As EventArgs) Handles BtnImprimeResumo.Click
+
+    End Sub
 End Class

@@ -624,7 +624,7 @@ Public Class Form1
         BaixarFormulariosAbertos()
 
     End Sub
-    Private Function barraLimpa()
+    Sub BarraLimpa()
 
         form1Status.Text = "Status : Off Line //"
         empCNPJ.Text = "CNPJ : //"
@@ -634,7 +634,7 @@ Public Class Form1
         Form1Inicio.Text = "Inicio : //"
         Form1tempo.Text = "Tempo : //"
 
-    End Function
+    End Sub
 
     Private Sub InclusãoToolStripMenuItem6_Click(sender As Object, e As EventArgs) Handles InclusãoToolStripMenuItem6.Click
         frmADMcad.Show()

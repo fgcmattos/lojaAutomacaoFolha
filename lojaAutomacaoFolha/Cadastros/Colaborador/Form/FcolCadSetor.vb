@@ -2,43 +2,44 @@
 Public Class FcolCadSetor
     Dim oi As New MsgShow
     Private Sub FcolCadSetor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        oi.title = Me.Text
-        Dim Query As String
-        Dim IntQto As Integer = 0
+        'oi.title = Me.Text
+        'Dim Query As String
+        'Dim IntQto As Integer = 0
 
         ReiniciaListView()
 
-        '''Query = "Select count(*) from folha_setor"
+        'Query = "Select count(*) from folha_setor"
 
-        '''If gravaSQLretorno(Query) > 0 Then
+        'If gravaSQLretorno(Query) > 0 Then
 
-        '''    Query = "Select lpad(folha_setor_codigo,4,'0'),folha_setor_descricao"
-        '''    Query += ",(select count(*) from colaborador where colaboradorSetor = folha_setor.folha_setor_codigo and colaboradorStatus = 100)"
-        '''    Query += "from folha_setor order by folha_setor_codigo"
+        '    Query = "Select lpad(folha_setor_codigo,4,'0'),folha_setor_descricao"
+        '    Query += ",(select count(*) from colaborador where colaboradorSetor = folha_setor.folha_setor_codigo and colaboradorStatus = 100)"
+        '    Query += "from folha_setor order by folha_setor_codigo"
 
-        '''    Dim DTReader As MySqlDataReader
-        '''    Dim CMD As New MySqlCommand(Query, Conn)
+        '    Dim DTReader As MySqlDataReader
+        '    Dim CMD As New MySqlCommand(Query, Conn)
 
-        '''    ListView1.Items.Clear()
+        '    ListView1.Items.Clear()
 
-        '''    If OpenDB() Then
+        '    If OpenDB() Then
 
-        '''        DTReader = CMD.ExecuteReader
+        '        DTReader = CMD.ExecuteReader
 
-        '''        While DTReader.Read()
+        '        While DTReader.Read()
 
-        '''            ListView1.Items.Add(DTReader.GetValue(0))
-        '''            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(DTReader.GetValue(1))
-        '''            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(DTReader.GetValue(2))
+        '            ListView1.Items.Add(DTReader.GetValue(0))
+        '            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(DTReader.GetValue(1))
+        '            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(DTReader.GetValue(2))
 
-        '''        End While
+        '        End While
 
-        '''        Conn.Close()
+        '        Conn.Close()
 
-        '''    End If
-        '''End If
+        '    End If
+        'End If
+
     End Sub
-    Private Function ReiniciaListView()
+    Private Sub ReiniciaListView()
 
         Dim Query As String
         Query = "Select count(*) from folha_setor"
@@ -69,9 +70,10 @@ Public Class FcolCadSetor
                 Conn.Close()
 
             End If
+
         End If
 
-    End Function
+    End Sub
 
     Private Sub ListView1_ColumnClick(sender As Object, e As ColumnClickEventArgs) Handles ListView1.ColumnClick
 
@@ -173,11 +175,11 @@ Public Class FcolCadSetor
         reiniciaTela()
 
     End Sub
-    Private Function reiniciaTela()
+    Private Sub reiniciaTela()
         MskCodigo.Text = "____"
         Txtdescricao.Text = ""
         ReiniciaListView()
-    End Function
+    End Sub
 
     Private Sub BtnTermina_Click(sender As Object, e As EventArgs) Handles BtnTermina.Click
         Me.Close()

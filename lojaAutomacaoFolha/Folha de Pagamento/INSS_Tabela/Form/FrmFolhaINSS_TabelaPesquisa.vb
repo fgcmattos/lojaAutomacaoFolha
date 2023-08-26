@@ -12,7 +12,7 @@ Public Class FrmFolhaINSS_TabelaPesquisa
 
     End Sub
 
-    Private Function LimpaLabel()
+    Private Sub LimpaLabel()
         LblTabelaNumero.Text = ""
         LblDataAtivacao.Text = ""
         LblDataDesativacao.Text = ""
@@ -28,7 +28,7 @@ Public Class FrmFolhaINSS_TabelaPesquisa
         LblLiberacaoResponsavelChave.Text = ""
         LblLiberacaoResponsavelTipo.Text = ""
 
-    End Function
+    End Sub
 
     Private Sub BtnPesquisa_Click(sender As Object, e As EventArgs) Handles BtnPesquisa.Click
 
@@ -113,7 +113,7 @@ Public Class FrmFolhaINSS_TabelaPesquisa
 
     End Sub
 
-    Private Function INSS_mostra_tabela(StrReferencia As String)
+    Private Sub INSS_mostra_tabela(StrReferencia As String)
 
         Dim IsComparacao As String = "INSSREF = '" & StrReferencia & "'"
 
@@ -174,7 +174,7 @@ Public Class FrmFolhaINSS_TabelaPesquisa
         LblLiberacaoResponsavelTipo.Text = INSStabela(0).Class_INSSresponsavelPublicacaoTipo
         LblLiberacaoData.Text = INSStabela(0).Class_INSSdataPublicação
 
-    End Function
+    End Sub
 
     Private Sub BtnSelecao_Click(sender As Object, e As EventArgs) Handles BtnSelecao.Click
 
@@ -193,12 +193,12 @@ Public Class FrmFolhaINSS_TabelaPesquisa
 
     End Sub
 
-    Private Function GrpInterruptor(IsLed As Boolean)
+    Private Sub GrpInterruptor(IsLed As Boolean)
 
         GroupPainelDePesquisa.Enabled = IsLed
         GroupIdentificacaoDaTabela.Enabled = IsLed
         GroupTabelaShow.Enabled = IsLed
 
-    End Function
+    End Sub
 
 End Class

@@ -88,7 +88,7 @@ Public Class FcolCadCargo
 
     End Sub
 
-    Private Function CarregaListView()
+    Private Sub CarregaListView()
 
         ListView1.Items.Clear()
         Dim query As String = ""
@@ -116,6 +116,6 @@ Public Class FcolCadCargo
 
         End If
 
-    End Function
+    End Sub
 
 End Class

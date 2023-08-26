@@ -12,7 +12,7 @@ Public Class FrmFolhaEfetivacao
 
     Private Sub BtoCalcular_Click(sender As Object, e As EventArgs) Handles BtoCalcular.Click
 
-        '''area de teste teste ==========================================================================
+        'area de teste teste ==========================================================================
 
         While True
             Dim base As Decimal = InputBox("Entre com a Base INSS")
@@ -343,7 +343,7 @@ Public Class FrmFolhaEfetivacao
     End Sub
 
 
-    Public Function FolhaGravaCabecario(holerite As Object)
+    Public Sub FolhaGravaCabecario(holerite As Object)
 
         Dim Query As String = ""
         With holerite
@@ -449,11 +449,12 @@ Public Class FrmFolhaEfetivacao
 
 
         End With
-    End Function
+
+    End Sub
 
     'FolhaGravaCorpo(VR(i).Variavel, Trim(strDescricao), VR(i).Qto, Trim(strUnidade), Math.Abs(VR(i).Valor), IIf(VR(i).Base_INSS, "S", "N"), IIf(VR(i).Base_fgts, "S", "N"), IIf(VR(i).Base_ir, "S", "N"), VR(i).TipoFinanceiro, VR(i).ValorBase, VR(i).DataOcorrencia, VR(i).Historico)
 
-    Public Function FolhaGravaCorpo(strRubrica As String, strRubricaDescricao As String, strQTO As String, strUN As String, strValor As String, strBaseInss As String, strBaseFGTS As String, strBaseIR As String, strTipoFinanceiro As String, strValorBase As String, strDataOcorrencia As String, strHistorico As String)
+    Public Function FolhaGravaCorpo(strRubrica As String, strRubricaDescricao As String, strQTO As String, strUN As String, strValor As String, strBaseInss As String, strBaseFGTS As String, strBaseIR As String, strTipoFinanceiro As String, strValorBase As String, strDataOcorrencia As String, strHistorico As String) As Boolean
 
         Dim Query As String = ""
         Query = "insert into folha_close_corpo("
@@ -503,12 +504,15 @@ Public Class FrmFolhaEfetivacao
         Query += ");"
 
 
-        gravaSQL(Query)
+        Return (gravaSQL(Query))
 
     End Function
     Public Function DataNow() As String
 
+        DataNow = ""
+
         Dim Query As String = "select DATE_FORMAT(now(), '%Y%m%d%H%i%s')"
+
         If OpenDB() Then
 
 
@@ -529,6 +533,7 @@ Public Class FrmFolhaEfetivacao
             Conn.Close()
             Return DataNow
         End If
+
     End Function
 
     Public Function HoraExtra(tempo As Decimal, acr As Decimal) As Decimal
@@ -551,27 +556,27 @@ Public Class FrmFolhaEfetivacao
 
     End Function
 
-    '''Private Function INSScalculo(baseInss As Decimal)
+    'Private Function INSScalculo(baseInss As Decimal)
 
-    '''    Dim numSomaINISS As Decimal = 0
+    '    Dim numSomaINISS As Decimal = 0
 
-    '''    For i = 0 To INSS.Count - 1
-    '''        If INSS(i).Limite < baseInss Then
+    '    For i = 0 To INSS.Count - 1
+    '        If INSS(i).Limite < baseInss Then
 
-    '''            numSomaINISS += INSS(i).Valor
+    '            numSomaINISS += INSS(i).Valor
 
-    '''        Else
+    '        Else
 
-    '''            numSomaINISS += ((baseInss - INSS(i - 1).Limite)) * (INSS(i).Taxa / 100)
+    '            numSomaINISS += ((baseInss - INSS(i - 1).Limite)) * (INSS(i).Taxa / 100)
 
-    '''            Exit For
+    '            Exit For
 
-    '''        End If
+    '        End If
 
-    '''    Next
-    '''    Return Int(numSomaINISS * 100) / 100
+    '    Next
+    '    Return Int(numSomaINISS * 100) / 100
 
-    '''End Function
+    'End Function
 
     Private Function IRcalculo(baseIR As Decimal)
 
@@ -655,11 +660,12 @@ Public Class FrmFolhaEfetivacao
 
     Private Sub BtnIprintHolerite_Click(sender As Object, e As EventArgs) Handles BtnIprintHolerite.Click
 
-        Dim strReferencia As String
+        'Dim strReferencia As String
 
 
 
-        '''FrmFolhaHoleriteClose_rel.Show()
+        'FrmFolhaHoleriteClose_rel.Show()
+
         FrmFolhaHoleriteClose_Final_rel.show()
 
     End Sub

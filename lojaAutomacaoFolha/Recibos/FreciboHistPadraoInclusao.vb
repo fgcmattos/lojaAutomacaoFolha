@@ -29,8 +29,8 @@ Public Class FreciboHistPadraoInclusao
             Dim msg As String
             Dim style As String
             Dim title As String
-            Dim ctxt As String
-            Dim help As String
+            'Dim ctxt As String
+            'Dim help As String
             Dim resposta As String
             '---------------------
             msg = strResultado & Chr(13) & Chr(13) & "Confirma Gravação  "

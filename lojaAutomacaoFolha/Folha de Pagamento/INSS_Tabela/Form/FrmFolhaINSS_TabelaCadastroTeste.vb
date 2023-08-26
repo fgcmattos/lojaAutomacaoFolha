@@ -104,7 +104,7 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
 
     End Sub
 
-    Private Function INSS_mostra_tabela(StrReferencia As String)
+    Private Sub INSS_mostra_tabela(StrReferencia As String)
 
         Dim IsComparacao As String = "INSSREF = '" & StrReferencia & "'"
 
@@ -275,7 +275,7 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
         If IsMatBaseInss(5, 0) >= INSStabela(0).Class_INSSfaixa2 Then LblFaixa2_b5.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa2Valor, 2), 8, True)
         If IsMatBaseInss(5, 0) >= INSStabela(0).Class_INSSfaixa3 Then LblFaixa3_b5.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa3Valor, 2), 8, True)
         If IsMatBaseInss(5, 0) >= INSStabela(0).Class_INSSfaixa4 Then LblFaixa4_b5.Text = numeroLatino(Math.Round(INSStabela(0).Class_INSSfaixa4Valor, 2), 8, True)
-    End Function
+    End Sub
 
     Private Sub CheckBoxOK1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxOK1.CheckedChanged
 

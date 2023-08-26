@@ -107,7 +107,7 @@ Public Class FColMant
 
         carregaGrauInstrucao()
 
-        '''Dim cor As List(Of captObs) = captObsRP.GetcaptObs()
+        'Dim cor As List(Of captObs) = captObsRP.GetcaptObs()
 
 
 
@@ -254,7 +254,7 @@ Public Class FColMant
         DependentesContabiliza()
         limpaDependente()
     End Sub
-    Private Function DependentesContabiliza()
+    Private Sub DependentesContabiliza()
 
         Dim inContIR As Integer = 0
         Dim inContSF As Integer = 0
@@ -267,7 +267,7 @@ Public Class FColMant
 
             LbltotalQTO.Text = 0
 
-            Exit Function
+            Exit Sub
 
         End If
 
@@ -284,8 +284,9 @@ Public Class FColMant
             LbltotalQTO.Text = ListViewDependente.Items.Count
 
         Next
-    End Function
-    Function LimpaDependente()
+
+    End Sub
+    Sub LimpaDependente()
 
         cmbParentesco.Text = ""
         txtNomeDependente.Text = ""
@@ -295,7 +296,7 @@ Public Class FColMant
         CheckBoxIR.Checked = False
         CheckBoxSF.Checked = False
 
-    End Function
+    End Sub
     Private Sub ListViewDependente_DoubleClick(sender As Object, e As EventArgs) Handles ListViewDependente.DoubleClick
 
         ListViewDependente.SelectedItems(0).Remove()
@@ -305,7 +306,7 @@ Public Class FColMant
     End Sub
 
 
-    Function CarregaGrauInstrucao()
+    Sub CarregaGrauInstrucao()
         If OpenDB() Then
 
             Dim Query As String = "select concat(lpad(id,2,'0'),' - ',descricao) as descricao from instrucaograu "
@@ -325,7 +326,7 @@ Public Class FColMant
             End Try
         End If
         Conn.Close()
-    End Function
+    End Sub
 
     Private Sub chkDeficiencia_Click(sender As Object, e As EventArgs) Handles col_10deficiente.Click
         If col_10deficiente.Checked Then
@@ -376,7 +377,7 @@ Public Class FColMant
             Dim style As String
             Dim title As String
             Dim ctxt As String
-            Dim help As String
+            'Dim help As String
             Dim resposta As String
             '---------------------
             Dim intElemento As Integer = 0
@@ -569,7 +570,7 @@ Public Class FColMant
                 pg11Limpar()                    ' referencias internas
         End Select
     End Sub
-    Function pg0Limpar()
+    Sub pg0Limpar()
 
         col_01_rg.Text = ""
         col_01_rgOE.Text = ""
@@ -609,8 +610,8 @@ Public Class FColMant
         col_01_teSecao.Text = ""
 
 
-    End Function
-    Function pg1Limpar()
+    End Sub
+    Sub pg1Limpar()
 
         col_02_Mae.Text = ""
         col_02_MaeNascimento.Text = ""
@@ -621,8 +622,8 @@ Public Class FColMant
         col_02_paiCPF.Text = ""
         col_02_paiFone.Text = ""
 
-    End Function
-    Function pg2Limpar()
+    End Sub
+    Sub pg2Limpar()
         col_03Sexo.SelectedIndex = -1
         col_03EstadoCivil.SelectedIndex = -1
         col_03UniaoEstavel.Checked = False
@@ -634,37 +635,37 @@ Public Class FColMant
         col_03CompanheiraCPF.Text = ""
         col_03CompanheiraFone.Text = ""
         col_03CompanheiraNascimento.Text = ""
-    End Function
-    Function pg3Limpar()
+    End Sub
+    Sub pg3Limpar()
 
         col_04Fone1.Text = ""
         col_04Fone2.Text = ""
         col_04email.Text = ""
         col_04AutorizaComunicaEmail.Checked = False
 
-    End Function
-    Function pg4Limpar()
+    End Sub
+    Sub pg4Limpar()
         col_05endereco.Text = ""
         col_05cidade.Text = ""
         cmbEndUF.SelectedIndex = -1
         col_05cep.Text = ""
-    End Function
-    Function pg5Limpar()
+    End Sub
+    Sub pg5Limpar()
         cmbInstrucao.SelectedIndex = -1
         col_06Curso.Text = ""
         col_06ConselhoRegional.Text = ""
         col_06ConselhoRegionalNumero.Text = ""
         col_06ConselhoRegionalData.Text = ""
         col_06OE.Text = ""
-    End Function
-    Function pg7Limpar()
+    End Sub
+    Sub pg7Limpar()
         col_08banco.Text = ""
         col_08agencia.Text = ""
         col_08agenciaDigito.Text = ""
         col_08conta.Text = ""
         col_08contaDigito.Text = ""
-    End Function
-    Function pg8Limpar()
+    End Sub
+    Sub pg8Limpar()
 
         ListViewDependente.Items.Clear()
         cmbParentesco.SelectedIndex = -1
@@ -673,8 +674,8 @@ Public Class FColMant
         mskNascDependente.Text = ""
         DependentesContabiliza()
 
-    End Function
-    Function pg9Limpar()
+    End Sub
+    Sub pg9Limpar()
         col_10altura.Text = ""
         col_10peso.Text = ""
         col_10cabelo.Text = ""
@@ -684,8 +685,8 @@ Public Class FColMant
         col_10deficiente.Checked = False
         col_10deficienteTipo.Text = ""
         col_10deficienteOutros.Text = ""
-    End Function
-    Function pg10Limpar()
+    End Sub
+    Sub pg10Limpar()
         col_11nome1.Text = ""
         col_11Telefone1.Text = ""
         col_11conhecimento1.SelectedIndex = -1
@@ -698,16 +699,16 @@ Public Class FColMant
         col_11Empresa2.Text = ""
         col_11Contato2.Text = ""
         col_11EmpresaTel2.Text = ""
-    End Function
+    End Sub
 
-    Function pg11Limpar()
+    Sub pg11Limpar()
         col_12nomeCracha.Text = ""
         col_12funcao.Text = ""
         col_12ASOadmissao.Text = ""
         col_12Admissao.Text = ""
-    End Function
+    End Sub
 
-    Function LimpaTudo()
+    Sub LimpaTudo()
         pg0Limpar()
         pg1Limpar()
         pg2Limpar()
@@ -721,7 +722,7 @@ Public Class FColMant
         pg11Limpar()
         ListView1.Items.Clear()
         ListView1.Visible = False
-    End Function
+    End Sub
 
     Private Sub BtnLimpardetalhamento_Click(sender As Object, e As EventArgs) Handles BtnLimpardetalhamento.Click
 
@@ -846,7 +847,7 @@ Public Class FColMant
         strImagens = Directory.GetFiles(pasta, "*.jpeg")
     End Sub
 
-    Private Function colIlustra(caminho As String)
+    Private Sub ColIlustra(caminho As String)
 
         CarregaImagens(caminho)
 
@@ -854,7 +855,7 @@ Public Class FColMant
 
             MsgBox("Tipo de documento não digitalizado !")
 
-            Exit Function
+            Exit Sub
 
         End If
 
@@ -912,7 +913,7 @@ Public Class FColMant
 
 
         Next
-    End Function
+    End Sub
     Private Function VerificaPreenchimentoCamposNecessariosFColMant() As Boolean
 
         Dim MS As New MsgShow
@@ -1024,19 +1025,22 @@ Public Class FColMant
                 End With
 
             End If
-            Return (True)
+
         End If
+
+        Return (True)
+
     End Function
 
-    Private Function preencheAlteracoesColaboradores()
+    Private Sub preencheAlteracoesColaboradores()
 
         If Not VerificaPreenchimentoCamposNecessariosFColMant() Then
 
-            Exit Function
+            Exit Sub
 
         End If
 
-        '''Dim comoEra As List(Of colaborador) = ColaboradorAcoes.GetColSQL(LblChave.Text) ' DB
+        'Dim comoEra As List(Of colaborador) = ColaboradorAcoes.GetColSQL(LblChave.Text) ' DB
 
         Dim comoEra As List(Of ClassCol_pesq) = ClassCol_pesqAcao.getColShowDB(LblChave.Text)
 
@@ -1079,17 +1083,17 @@ Public Class FColMant
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorNascimento")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(0)
         End If
-        If comoEra(0).rg <> comoEsta(0).rg Then
+        If comoEra(0).RG <> comoEsta(0).rg Then
             ListView1.Items.Add("RG")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).rg)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).RG)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).rg)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).rg)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorRG")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(1)
         End If
-        If comoEra(0).rgOE <> comoEsta(0).rgOE Then
+        If comoEra(0).RGoe <> comoEsta(0).rgOE Then
             ListView1.Items.Add("Expedidor")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).rgOE)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).RGoe)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).rgOE)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).rgOE)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorRGoe")
@@ -1119,17 +1123,17 @@ Public Class FColMant
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorRGvalidade")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(1)
         End If
-        If comoEra(0).cnh <> comoEsta(0).cnh Then
+        If comoEra(0).CNH <> comoEsta(0).cnh Then
             ListView1.Items.Add("CNH n.")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).cnh)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).CNH)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).cnh)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).cnh)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorCNH")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(1)
         End If
-        If comoEra(0).cnhOE <> comoEsta(0).cnhOE Then
+        If comoEra(0).CNHoe <> comoEsta(0).cnhOE Then
             ListView1.Items.Add("CNH Orgão Expedidor")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).cnhOE)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).CNHoe)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).cnhOE)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).cnhOE)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorCNHoe")
@@ -1175,9 +1179,9 @@ Public Class FColMant
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorCTPSerie")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(1)
         End If
-        If comoEra(0).CTPSOE <> comoEsta(0).CTPSOE Then
+        If comoEra(0).CTPSoe <> comoEsta(0).CTPSOE Then
             ListView1.Items.Add("CTPS Expedidor")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).CTPSOE)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).CTPSoe)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).CTPSOE)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).CTPSOE)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorCTPSoe")
@@ -1375,33 +1379,33 @@ Public Class FColMant
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorMaeFone")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(2)
         End If
-        If comoEra(0).pai <> comoEsta(0).pai Then
+        If comoEra(0).Pai <> comoEsta(0).pai Then
             ListView1.Items.Add("Pai Nome")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).pai)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Pai)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).pai)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).pai)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorPai")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(2)
         End If
-        If dataAAAAMMDD(comoEra(0).paiNascimento) <> comoEsta(0).paiNascimento Then
+        If dataAAAAMMDD(comoEra(0).PaiNascimento) <> comoEsta(0).paiNascimento Then
             ListView1.Items.Add("Pai Nascimento")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).paiNascimento)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).PaiNascimento)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(dataLatina(comoEsta(0).paiNascimento))
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).paiNascimento)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorPaiNascimento")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(2)
         End If
-        If CPFretiraMascara(comoEra(0).paiCPF) <> comoEsta(0).paiCPF Then
+        If CPFretiraMascara(comoEra(0).PaiCPF) <> comoEsta(0).paiCPF Then
             ListView1.Items.Add("Pai CPF")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).paiCPF)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).PaiCPF)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(CPFcolocaMascara(comoEsta(0).paiCPF))
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).paiCPF)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorPaiCPF")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(2)
         End If
-        If comoEra(0).paiFone <> comoEsta(0).paiFone Then
+        If comoEra(0).PaiFone <> comoEsta(0).paiFone Then
             ListView1.Items.Add("Pai Fone")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).paiFone)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).PaiFone)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).paiFone)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).paiFone)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorPaiFone")
@@ -1548,9 +1552,9 @@ Public Class FColMant
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorFone2")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(4)
         End If
-        If comoEra(0).email <> comoEsta(0).email Then
+        If comoEra(0).Email <> comoEsta(0).email Then
             ListView1.Items.Add("e-mail")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).email)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Email)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).email)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).email)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorEmail")
@@ -1647,30 +1651,30 @@ Public Class FColMant
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(6)
         End If
 
-        If comoEra(0).banco <> comoEsta(0).banco Then
+        If comoEra(0).Banco <> comoEsta(0).banco Then
             ListView1.Items.Add("Banco")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).banco)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Banco)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).banco)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).banco)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorBanco")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(8)
         End If
-        If comoEra(0).agencia <> comoEsta(0).agencia Then
+        If comoEra(0).Agencia <> comoEsta(0).agencia Then
             ListView1.Items.Add("Agência")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).agencia)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Agencia)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).agencia)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).agencia)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorAgencia")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(8)
         End If
 
-        '''If comoEra(0).agenciaDigito <> comoEsta(0).agenciaDigito Then
-        '''    ListView1.Items.Add("Agência Digito")
-        '''    ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).agenciaDigito)
-        '''    ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).agenciaDigito)
-        '''    ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).agenciaDigito)
-        '''    ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("")
-        '''End If
+        'If comoEra(0).agenciaDigito <> comoEsta(0).agenciaDigito Then
+        '    ListView1.Items.Add("Agência Digito")
+        '    ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).agenciaDigito)
+        '    ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).agenciaDigito)
+        '    ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).agenciaDigito)
+        '    ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("")
+        'End If
 
         If comoEra(0).ContaCorrente <> comoEsta(0).conta Then
             ListView1.Items.Add("Conta Bancária")
@@ -2004,33 +2008,33 @@ Public Class FColMant
 
 
         '''''''''''''''''''''''''''''''''
-        If comoEra(0).altura <> comoEsta(0).altura Then
+        If comoEra(0).Altura <> comoEsta(0).altura Then
             ListView1.Items.Add("Altura")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).altura)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Altura)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).altura)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).altura)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorAltura")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(10)
         End If
-        If comoEra(0).peso <> comoEsta(0).peso Then
+        If comoEra(0).Peso <> comoEsta(0).peso Then
             ListView1.Items.Add("Peso")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).peso)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Peso)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).peso)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).peso)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorPeso")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(10)
         End If
-        If comoEra(0).cabelo <> comoEsta(0).cabelo Then
+        If comoEra(0).Cabelo <> comoEsta(0).cabelo Then
             ListView1.Items.Add("Cor do Cabelo")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).cabelo)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Cabelo)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).cabelo)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).cabelo)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorCabelo")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(10)
         End If
-        If comoEra(0).olhos <> comoEsta(0).olhos Then
+        If comoEra(0).Olhos <> comoEsta(0).olhos Then
             ListView1.Items.Add("Cor dos Olhos")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).olhos)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Olhos)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).olhos)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).olhos)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorOlhos")
@@ -2044,17 +2048,17 @@ Public Class FColMant
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorTipoDeSangues")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(10)
         End If
-        If comoEra(0).cor <> comoEsta(0).cor Then
+        If comoEra(0).Cor <> comoEsta(0).cor Then
             ListView1.Items.Add("Cor da Pele")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).cor)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Cor)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).cor)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).cor)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorCor")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(10)
         End If
-        If comoEra(0).deficiente <> comoEsta(0).deficiente Then
+        If comoEra(0).Deficiente <> comoEsta(0).deficiente Then
             ListView1.Items.Add("Deficiente")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).deficiente)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Deficiente)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).deficiente)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).deficiente)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorDeficiente")
@@ -2080,17 +2084,17 @@ Public Class FColMant
             End If
 
         End If
-        If comoEra(0).deficienteTipo <> comoEsta(0).deficienteTipo Then
+        If comoEra(0).DeficienteTipo <> comoEsta(0).deficienteTipo Then
             ListView1.Items.Add("Deficiênte Tipo")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).deficienteTipo)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).DeficienteTipo)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).deficienteTipo)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).deficienteTipo)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorDeficienteTipo")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(10)
         End If
-        If comoEra(0).deficienteOutros <> comoEsta(0).deficienteOutros Then
+        If comoEra(0).DeficienteOutros <> comoEsta(0).deficienteOutros Then
             ListView1.Items.Add("Deficiênte Outros")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).deficienteOutros)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).DeficienteOutros)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).deficienteOutros)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).deficienteOutros)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorDeficienteOutros")
@@ -2239,9 +2243,9 @@ Public Class FColMant
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorAdmissaoReferencia")
             ListView1.Items(ListView1.Items.Count - 1).Group = ListView1.Groups(12)
         End If
-        If comoEra(0).Cbo <> comoEsta(0).Cbo Then
+        If comoEra(0).CBO <> comoEsta(0).Cbo Then
             ListView1.Items.Add("C.B.O. ")
-            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).Cbo)
+            ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEra(0).CBO)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).Cbo)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add(comoEsta(0).Cbo)
             ListView1.Items(ListView1.Items.Count - 1).SubItems.Add("colaboradorCBO")
@@ -2287,10 +2291,10 @@ Public Class FColMant
         If itemsAlterados = 0 Then
             Dim Mn As New MsgShow
             With Mn
-                .msg = "Não foram feitas alterações no cadastro para o Colaborador"
-                .style = vbExclamation
-                .title = "Colaborador Manutenção"
-                MsgBox(.msg, .style, .title)
+                .Msg = "Não foram feitas alterações no cadastro para o Colaborador"
+                .Style = vbExclamation
+                .Title = "Colaborador Manutenção"
+                MsgBox(.Msg, .Style, .Title)
             End With
         Else
 
@@ -2300,7 +2304,7 @@ Public Class FColMant
 
         End If
 
-    End Function
+    End Sub
 
     Private Sub BtoCancela_Click(sender As Object, e As EventArgs) Handles BtoCancela.Click
         colaboradorAlteracoes(False)
@@ -2464,53 +2468,51 @@ Public Class FColMant
 
     End Sub
 
-    Private Function MostraMatriz()
+    Private Sub MostraMatriz()
         With oi
-            .msg = strMascara
-            .msg += Chr(13)
-            .msg += Chr(13)
-            .msg += "arrVariavel(0) = " & arrVariavel(0) & " arrIndex(0) = " & arrIndex(0)
-            .msg += Chr(13)
-            .msg += "arrVariavel(1) = " & arrVariavel(1) & " arrIndex(1) = " & arrIndex(1)
-            .msg += Chr(13)
-            .msg += "arrVariavel(2) = " & arrVariavel(2) & " arrIndex(2) = " & arrIndex(2)
-            .msg += Chr(13)
-            .msg += "arrVariavel(3) = " & arrVariavel(3) & " arrIndex(3) = " & arrIndex(3)
-            .msg += Chr(13)
-            .msg += "arrVariavel(4) = " & arrVariavel(4) & " arrIndex(4) = " & arrIndex(4)
-            .msg += Chr(13)
-            .msg += "arrVariavel(5) = " & arrVariavel(5) & " arrIndex(5) = " & arrIndex(5)
-            .msg += Chr(13)
-            .msg += "arrVariavel(6) = " & arrVariavel(6) & " arrIndex(6) = " & arrIndex(6)
-            .msg += Chr(13)
-            .msg += "arrVariavel(7) = " & arrVariavel(7) & " arrIndex(7) = " & arrIndex(7)
-            .msg += Chr(13)
-            .msg += "arrVariavel(8) = " & arrVariavel(8) & " arrIndex(8) = " & arrIndex(8)
-            .msg += Chr(13)
-            .msg += "arrVariavel(9) = " & arrVariavel(9) & " arrIndex(9) = " & arrIndex(9)
-            .msg += Chr(13)
-            .msg += "arrVariavel(10) = " & arrVariavel(10) & " arrIndex(10) = " & arrIndex(10)
-            .msg += Chr(13)
-            .msg += "arrVariavel(11) = " & arrVariavel(11) & " arrIndex(11) = " & arrIndex(11)
-            .msg += Chr(13)
-            .msg += "arrVariavel(12) = " & arrVariavel(12) & " arrIndex(12) = " & arrIndex(12)
-            .msg += Chr(13)
-            .msg += "arrVariavel(13) = " & arrVariavel(13) & " arrIndex(13) = " & arrIndex(13)
-            .msg += Chr(13)
+            .Msg = strMascara
+            .Msg += Chr(13)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(0) = " & arrVariavel(0) & " arrIndex(0) = " & arrIndex(0)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(1) = " & arrVariavel(1) & " arrIndex(1) = " & arrIndex(1)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(2) = " & arrVariavel(2) & " arrIndex(2) = " & arrIndex(2)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(3) = " & arrVariavel(3) & " arrIndex(3) = " & arrIndex(3)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(4) = " & arrVariavel(4) & " arrIndex(4) = " & arrIndex(4)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(5) = " & arrVariavel(5) & " arrIndex(5) = " & arrIndex(5)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(6) = " & arrVariavel(6) & " arrIndex(6) = " & arrIndex(6)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(7) = " & arrVariavel(7) & " arrIndex(7) = " & arrIndex(7)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(8) = " & arrVariavel(8) & " arrIndex(8) = " & arrIndex(8)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(9) = " & arrVariavel(9) & " arrIndex(9) = " & arrIndex(9)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(10) = " & arrVariavel(10) & " arrIndex(10) = " & arrIndex(10)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(11) = " & arrVariavel(11) & " arrIndex(11) = " & arrIndex(11)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(12) = " & arrVariavel(12) & " arrIndex(12) = " & arrIndex(12)
+            .Msg += Chr(13)
+            .Msg += "arrVariavel(13) = " & arrVariavel(13) & " arrIndex(13) = " & arrIndex(13)
+            .Msg += Chr(13)
             '.msg += "arrVariavel(14) = " & arrVariavel(14)
             '.msg += Chr(13)
             '.msg += "arrVariavel(15) = " & arrVariavel(15)
             '.msg += Chr(13)
             '.msg += "arrVariavel(16) = " & arrVariavel(16)
 
-            .style = vbYesNo
-            MsgBox(.msg, .style, .title)
+            .Style = vbYesNo
+            MsgBox(.Msg, .Style, .Title)
         End With
-    End Function
+    End Sub
 
     Private Sub col_01_PIS_GotFocus(sender As Object, e As EventArgs) Handles col_01_PIS.GotFocus
-
-
 
         With col_01_PIS
 

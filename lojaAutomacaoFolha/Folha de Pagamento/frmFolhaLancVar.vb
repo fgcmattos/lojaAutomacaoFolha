@@ -257,7 +257,7 @@ Public Class frmFolhaLancVar
 
     End Sub
 
-    Private Function preenchevariaveis(ParPesquisa As Integer)
+    Private Sub preenchevariaveis(ParPesquisa As Integer)
 
         ' Se parPesquisa = 0 nao pesquisa
         ' Se parPesquisa = 1 pesquisa por parte do nome
@@ -294,7 +294,7 @@ Public Class frmFolhaLancVar
         End If
         Conn.Close()
 
-    End Function
+    End Sub
 
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
 
@@ -1050,7 +1050,7 @@ Public Class frmFolhaLancVar
 
     End Sub
 
-    Private Function LimpaGruEdicaoDigitacao()
+    Private Sub LimpaGruEdicaoDigitacao()
 
         TxtEdicaoOrdem.Text = ""
         TxtEdicaoVariavel.Text = ""
@@ -1070,12 +1070,14 @@ Public Class frmFolhaLancVar
         BtnNovo.Enabled = True
         BtnEditar.Enabled = True
         GruEdicaoDigitacao.Enabled = False
-    End Function
+
+    End Sub
 
     Private Sub frmFolhaLancVar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Dim lstData As List(Of Aponta) = ApontaAcoes.GetApontaDB()
 
-        oi.title = Me.Text
+        oi.Title = Me.Text
 
         Dim strReferencia As String = lstData(0).Data
 
