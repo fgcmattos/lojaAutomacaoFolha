@@ -18,7 +18,9 @@ Public Class ClassAponta_DB_acao
 
 
                 While DTReader.Read()
+
                     ObjCombo.items.add(DTReader.GetString(0))
+
                 End While
 
             Catch ex As Exception

@@ -23,17 +23,17 @@ Partial Class frmADMcad
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.MskCPF = New System.Windows.Forms.MaskedTextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TxtSenhaConfirma = New System.Windows.Forms.TextBox()
+        Me.TxtSenha = New System.Windows.Forms.TextBox()
+        Me.TxtUsuarioNome = New System.Windows.Forms.TextBox()
+        Me.TxtNome = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtNome = New System.Windows.Forms.TextBox()
-        Me.TxtUsuarioNome = New System.Windows.Forms.TextBox()
-        Me.TxtSenha = New System.Windows.Forms.TextBox()
-        Me.TxtSenhaConfirma = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.MskCPF = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,6 +59,58 @@ Partial Class frmADMcad
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Adminisrador - Informações"
+        '
+        'MskCPF
+        '
+        Me.MskCPF.Location = New System.Drawing.Point(179, 32)
+        Me.MskCPF.Mask = "000.000.000-00"
+        Me.MskCPF.Name = "MskCPF"
+        Me.MskCPF.Size = New System.Drawing.Size(139, 22)
+        Me.MskCPF.TabIndex = 5
+        '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Location = New System.Drawing.Point(592, 140)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(105, 27)
+        Me.Button1.TabIndex = 10
+        Me.Button1.Text = "Gravar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TxtSenhaConfirma
+        '
+        Me.TxtSenhaConfirma.Location = New System.Drawing.Point(179, 112)
+        Me.TxtSenhaConfirma.MaxLength = 15
+        Me.TxtSenhaConfirma.Name = "TxtSenhaConfirma"
+        Me.TxtSenhaConfirma.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtSenhaConfirma.Size = New System.Drawing.Size(139, 22)
+        Me.TxtSenhaConfirma.TabIndex = 9
+        '
+        'TxtSenha
+        '
+        Me.TxtSenha.Location = New System.Drawing.Point(179, 92)
+        Me.TxtSenha.MaxLength = 15
+        Me.TxtSenha.Name = "TxtSenha"
+        Me.TxtSenha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtSenha.Size = New System.Drawing.Size(139, 22)
+        Me.TxtSenha.TabIndex = 8
+        '
+        'TxtUsuarioNome
+        '
+        Me.TxtUsuarioNome.Location = New System.Drawing.Point(179, 72)
+        Me.TxtUsuarioNome.MaxLength = 15
+        Me.TxtUsuarioNome.Name = "TxtUsuarioNome"
+        Me.TxtUsuarioNome.Size = New System.Drawing.Size(139, 22)
+        Me.TxtUsuarioNome.TabIndex = 7
+        '
+        'TxtNome
+        '
+        Me.TxtNome.Location = New System.Drawing.Point(179, 52)
+        Me.TxtNome.MaxLength = 50
+        Me.TxtNome.Name = "TxtNome"
+        Me.TxtNome.Size = New System.Drawing.Size(519, 22)
+        Me.TxtNome.TabIndex = 6
         '
         'Label5
         '
@@ -120,64 +172,14 @@ Partial Class frmADMcad
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "CPF"
         '
-        'TxtNome
-        '
-        Me.TxtNome.Location = New System.Drawing.Point(179, 52)
-        Me.TxtNome.MaxLength = 50
-        Me.TxtNome.Name = "TxtNome"
-        Me.TxtNome.Size = New System.Drawing.Size(519, 22)
-        Me.TxtNome.TabIndex = 6
-        '
-        'TxtUsuarioNome
-        '
-        Me.TxtUsuarioNome.Location = New System.Drawing.Point(179, 72)
-        Me.TxtUsuarioNome.MaxLength = 15
-        Me.TxtUsuarioNome.Name = "TxtUsuarioNome"
-        Me.TxtUsuarioNome.Size = New System.Drawing.Size(139, 22)
-        Me.TxtUsuarioNome.TabIndex = 7
-        '
-        'TxtSenha
-        '
-        Me.TxtSenha.Location = New System.Drawing.Point(179, 92)
-        Me.TxtSenha.MaxLength = 15
-        Me.TxtSenha.Name = "TxtSenha"
-        Me.TxtSenha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtSenha.Size = New System.Drawing.Size(139, 22)
-        Me.TxtSenha.TabIndex = 8
-        '
-        'TxtSenhaConfirma
-        '
-        Me.TxtSenhaConfirma.Location = New System.Drawing.Point(179, 112)
-        Me.TxtSenhaConfirma.MaxLength = 15
-        Me.TxtSenhaConfirma.Name = "TxtSenhaConfirma"
-        Me.TxtSenhaConfirma.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtSenhaConfirma.Size = New System.Drawing.Size(139, 22)
-        Me.TxtSenhaConfirma.TabIndex = 9
-        '
-        'Button1
-        '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(592, 140)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(105, 27)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Gravar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'MskCPF
-        '
-        Me.MskCPF.Location = New System.Drawing.Point(179, 32)
-        Me.MskCPF.Mask = "000.000.000-00"
-        Me.MskCPF.Name = "MskCPF"
-        Me.MskCPF.Size = New System.Drawing.Size(139, 22)
-        Me.MskCPF.TabIndex = 5
-        '
         'frmADMcad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(713, 177)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmADMcad"
         Me.Text = "Cadastro - Administrador do Sistema"
         Me.GroupBox1.ResumeLayout(False)

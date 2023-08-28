@@ -233,6 +233,18 @@ Partial Class Form1
         Me.HistoricosPadrãoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContasAPagarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LançamentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TransaçãoDiretaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcolhimentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PesquisaToolStripMenuItem18 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManutençãoToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecebimentoFiscalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcolhimentoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PesquisaToolStripMenuItem19 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManutençãoToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContratosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcolhimentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PesquisaToolStripMenuItem20 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ManutençãoToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BaixaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AlteraçãoToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FluxoDePagamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -1279,7 +1291,7 @@ Partial Class Form1
         'RegistroToolStripMenuItem1
         '
         Me.RegistroToolStripMenuItem1.Name = "RegistroToolStripMenuItem1"
-        Me.RegistroToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.RegistroToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
         Me.RegistroToolStripMenuItem1.Text = "Registro"
         '
         'CadastramentoToolStripMenuItem1
@@ -1642,9 +1654,85 @@ Partial Class Form1
         '
         'LançamentosToolStripMenuItem
         '
+        Me.LançamentosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransaçãoDiretaToolStripMenuItem, Me.RecebimentoFiscalToolStripMenuItem, Me.ContratosToolStripMenuItem})
         Me.LançamentosToolStripMenuItem.Name = "LançamentosToolStripMenuItem"
         Me.LançamentosToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
         Me.LançamentosToolStripMenuItem.Text = "Lançamentos"
+        '
+        'TransaçãoDiretaToolStripMenuItem
+        '
+        Me.TransaçãoDiretaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcolhimentoToolStripMenuItem, Me.PesquisaToolStripMenuItem18, Me.ManutençãoToolStripMenuItem11})
+        Me.TransaçãoDiretaToolStripMenuItem.Name = "TransaçãoDiretaToolStripMenuItem"
+        Me.TransaçãoDiretaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TransaçãoDiretaToolStripMenuItem.Text = "Transação Direta"
+        '
+        'AcolhimentoToolStripMenuItem
+        '
+        Me.AcolhimentoToolStripMenuItem.Name = "AcolhimentoToolStripMenuItem"
+        Me.AcolhimentoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AcolhimentoToolStripMenuItem.Text = "Acolhimento"
+        '
+        'PesquisaToolStripMenuItem18
+        '
+        Me.PesquisaToolStripMenuItem18.Name = "PesquisaToolStripMenuItem18"
+        Me.PesquisaToolStripMenuItem18.Size = New System.Drawing.Size(180, 22)
+        Me.PesquisaToolStripMenuItem18.Text = "Pesquisa"
+        '
+        'ManutençãoToolStripMenuItem11
+        '
+        Me.ManutençãoToolStripMenuItem11.Name = "ManutençãoToolStripMenuItem11"
+        Me.ManutençãoToolStripMenuItem11.Size = New System.Drawing.Size(180, 22)
+        Me.ManutençãoToolStripMenuItem11.Text = "Manutenção"
+        '
+        'RecebimentoFiscalToolStripMenuItem
+        '
+        Me.RecebimentoFiscalToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcolhimentoToolStripMenuItem1, Me.PesquisaToolStripMenuItem19, Me.ManutençãoToolStripMenuItem12})
+        Me.RecebimentoFiscalToolStripMenuItem.Name = "RecebimentoFiscalToolStripMenuItem"
+        Me.RecebimentoFiscalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecebimentoFiscalToolStripMenuItem.Text = "Recebimento Fiscal"
+        '
+        'AcolhimentoToolStripMenuItem1
+        '
+        Me.AcolhimentoToolStripMenuItem1.Name = "AcolhimentoToolStripMenuItem1"
+        Me.AcolhimentoToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
+        Me.AcolhimentoToolStripMenuItem1.Text = "Acolhimento"
+        '
+        'PesquisaToolStripMenuItem19
+        '
+        Me.PesquisaToolStripMenuItem19.Name = "PesquisaToolStripMenuItem19"
+        Me.PesquisaToolStripMenuItem19.Size = New System.Drawing.Size(143, 22)
+        Me.PesquisaToolStripMenuItem19.Text = "Pesquisa"
+        '
+        'ManutençãoToolStripMenuItem12
+        '
+        Me.ManutençãoToolStripMenuItem12.Name = "ManutençãoToolStripMenuItem12"
+        Me.ManutençãoToolStripMenuItem12.Size = New System.Drawing.Size(143, 22)
+        Me.ManutençãoToolStripMenuItem12.Text = "Manutenção"
+        '
+        'ContratosToolStripMenuItem
+        '
+        Me.ContratosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcolhimentToolStripMenuItem, Me.PesquisaToolStripMenuItem20, Me.ManutençãoToolStripMenuItem13})
+        Me.ContratosToolStripMenuItem.Name = "ContratosToolStripMenuItem"
+        Me.ContratosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ContratosToolStripMenuItem.Text = "Contratos"
+        '
+        'AcolhimentToolStripMenuItem
+        '
+        Me.AcolhimentToolStripMenuItem.Name = "AcolhimentToolStripMenuItem"
+        Me.AcolhimentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.AcolhimentToolStripMenuItem.Text = "Acolhimento"
+        '
+        'PesquisaToolStripMenuItem20
+        '
+        Me.PesquisaToolStripMenuItem20.Name = "PesquisaToolStripMenuItem20"
+        Me.PesquisaToolStripMenuItem20.Size = New System.Drawing.Size(143, 22)
+        Me.PesquisaToolStripMenuItem20.Text = "Pesquisa"
+        '
+        'ManutençãoToolStripMenuItem13
+        '
+        Me.ManutençãoToolStripMenuItem13.Name = "ManutençãoToolStripMenuItem13"
+        Me.ManutençãoToolStripMenuItem13.Size = New System.Drawing.Size(143, 22)
+        Me.ManutençãoToolStripMenuItem13.Text = "Manutenção"
         '
         'BaixaToolStripMenuItem
         '
@@ -2179,4 +2267,16 @@ Partial Class Form1
     Friend WithEvents DigitaçãoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConferênciaToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents LiberaçãoToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents TransaçãoDiretaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcolhimentoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PesquisaToolStripMenuItem18 As ToolStripMenuItem
+    Friend WithEvents ManutençãoToolStripMenuItem11 As ToolStripMenuItem
+    Friend WithEvents RecebimentoFiscalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcolhimentoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents PesquisaToolStripMenuItem19 As ToolStripMenuItem
+    Friend WithEvents ManutençãoToolStripMenuItem12 As ToolStripMenuItem
+    Friend WithEvents ContratosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcolhimentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PesquisaToolStripMenuItem20 As ToolStripMenuItem
+    Friend WithEvents ManutençãoToolStripMenuItem13 As ToolStripMenuItem
 End Class

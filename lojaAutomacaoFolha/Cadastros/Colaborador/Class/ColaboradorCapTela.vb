@@ -155,10 +155,6 @@ Public Class ColaboradorCapTela
 
         End If
 
-
-
-
-
         Dim lista As New List(Of colaborador) From {
             New colaborador() With {
                 .CPF = CPFretiraMascara(fColCad.lblCPF.Text),
@@ -291,6 +287,7 @@ Public Class ColaboradorCapTela
             }}
 
         Return lista
+
     End Function
 
 

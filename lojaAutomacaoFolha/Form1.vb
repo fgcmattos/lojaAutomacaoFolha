@@ -450,10 +450,6 @@ Public Class Form1
 
     End Sub
 
-    Private Sub LançamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LançamentosToolStripMenuItem.Click
-        FmrCPlancamento.Show()
-    End Sub
-
     Private Sub InclusãoToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles InclusãoToolStripMenuItem4.Click
         FrmCartaoInclusao.Show()
     End Sub
@@ -743,5 +739,10 @@ Public Class Form1
     Private Sub ConferênciaToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ConferênciaToolStripMenuItem2.Click
 
         FrmFolhaContratoDeTrabalhoConferencia.Show()
+    End Sub
+
+    Private Sub AcolhimentoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcolhimentoToolStripMenuItem.Click
+
+        FmrCPlancamento.Show()
     End Sub
 End Class

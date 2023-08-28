@@ -74,9 +74,9 @@ Public Class ColaboradorAcoes
                 FcolShow.lblCPF.Text = CPFcolocaMascara(.CPF)
                 FcolShow.txtNome.Text = Tb_col(0).Nome
                 FcolShow.mskNascimento.Text = dataLatina(.Nascimento)
-                FcolShow.lblIdadeCritica.Text = Module1.idade(FcolShow.mskNascimento.Text)
+                FcolShow.lblIdadeCritica.Text = ModuleTempo.Idade(FcolShow.mskNascimento.Text)
                 FcolShow.LblcadastroData.Text = .CadastroDataHora
-                FcolShow.LblcadastroTempo.Text = Module1.idade(FcolShow.LblcadastroData.Text.Substring(0, 10))
+                FcolShow.LblcadastroTempo.Text = ModuleTempo.Idade(FcolShow.LblcadastroData.Text.Substring(0, 10))
                 FcolShow.LblCadastroAlteracoes.Text = "0"         ' pesquisa a ser criada
                 FcolShow.LblCadastroAutoriza.Text = .UsuarioCadastroResponsavel.PadLeft(4, "0")
                 FcolShow.col_01_rg.Text = .RG
@@ -291,7 +291,7 @@ Public Class ColaboradorAcoes
                 FColMant.lblCPF.Text = CPFcolocaMascara(.CPF)
                 FColMant.txtNome.Text = .Nome
                 FColMant.mskNascimento.Text = dataLatina(.Nascimento)
-                FColMant.lblIdadeCritica.Text = Module1.idade(.Nascimento)
+                FColMant.lblIdadeCritica.Text = ModuleTempo.Idade(.Nascimento)
 
                 FColMant.col_01_rg.Text = .RG
                 FColMant.col_01_rgOE.Text = .RGoe

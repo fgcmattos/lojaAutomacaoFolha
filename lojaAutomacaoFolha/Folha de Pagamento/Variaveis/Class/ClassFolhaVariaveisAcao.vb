@@ -35,19 +35,6 @@ Public Class ClassFolhaVariaveisAcao
 
         Return lista
 
-        '.Codigo = frmFolhaLancVar.TxtEdicaoVariavel.Text,
-        '.Descricao = frmFolhaLancVar.TxtEdicaoDescricao.Text,
-        '.UN = frmFolhaLancVar.TxtEdicaoUN.Text,
-        '.QTO = frmFolhaLancVar.TxtEdicaoQTO.Text,
-        '.Valor = frmFolhaLancVar.TxtEdicaovalor.Text,
-        '.TipoFinanceiro = frmFolhaLancVar.TxtEdicaoTipo.Text,
-        '.BaseINSS = frmFolhaLancVar.TxtEdicaoBaseINSS.Text,
-        '.BaseFGTS = frmFolhaLancVar.TxtEdicaoBaseFGTS.Text,
-        '.BaseIR = frmFolhaLancVar.TxtEdicaoBaseIR.Text,
-        '.OcorrenciaData = frmFolhaLancVar.TxtEdicaoDataOcorrencia.Text,
-        '.Historico = frmFolhaLancVar.TxtEdicaoHistorico.Text
     End Function
-
-
 
 End Class

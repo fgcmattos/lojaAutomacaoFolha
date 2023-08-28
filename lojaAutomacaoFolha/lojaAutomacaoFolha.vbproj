@@ -235,62 +235,67 @@
     <Compile Include="Cadastros\Fornecedor\Form\FrmFornecedorMostra.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="classes\Aponta.vb" />
-    <Compile Include="classes\ApontaAcoes.vb" />
-    <Compile Include="classes\captObs.vb" />
-    <Compile Include="classes\captObsRP.vb" />
+    <Compile Include="classes\Tempo\Class\Aponta.vb" />
+    <Compile Include="classes\Tempo\Class\ApontaAcoes.vb" />
+    <Compile Include="Folha de Pagamento\Ponto\Class\captObs.vb" />
+    <Compile Include="Folha de Pagamento\Ponto\Class\captObsRP.vb" />
     <Compile Include="Cadastros\Financeiro\Contas A Pagar\Cartao\Class\CartaoClass.vb" />
     <Compile Include="Cadastros\Financeiro\Contas A Pagar\Cartao\Class\CartaoClassRP.vb" />
     <Compile Include="classes\ClassAponta_DB.vb" />
     <Compile Include="classes\ClassAponta_DB_acao.vb" />
-    <Compile Include="classes\ClassColaborador_Holerite.vb" />
-    <Compile Include="classes\ClassColaborador_HoleriteAcao.vb" />
-    <Compile Include="classes\ClassCol_pesq.vb" />
-    <Compile Include="classes\ClassCol_pesqAcao.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassColaborador_Holerite.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassColaborador_HoleriteAcao.vb" />
+    <Compile Include="Cadastros\Colaborador\Class\ClassCol_pesq.vb" />
+    <Compile Include="Cadastros\Colaborador\Class\ClassCol_pesqAcao.vb" />
+    <Compile Include="classes\DB\MySQL\ModuleVB_MySQL.vb" />
+    <Compile Include="classes\Documentos_Controle _Digitos\ModuleDocumentosControleDeDigitos.vb" />
+    <Compile Include="classes\Formatação\ModuleFormatacao.vb" />
+    <Compile Include="classes\Servidor\ModuleServidor.vb" />
+    <Compile Include="classes\Tempo\Class\ModuleTempo.vb" />
     <Compile Include="Folha de Pagamento\Contrato\Class\ClassContratoFolhaAcao.vb" />
-    <Compile Include="classes\ClassFolhaVariaveisAcao.vb" />
-    <Compile Include="classes\ClassFolhaReferencia.vb" />
-    <Compile Include="classes\ClassFolhaReferenciaAcao.vb" />
-    <Compile Include="classes\ClassFolhaVariaveis.vb" />
-    <Compile Include="classes\ClassFolha_Cargo.vb" />
-    <Compile Include="classes\ClassFolha_cargoAcao.vb" />
-    <Compile Include="classes\ClassFolha_diretorio.vb" />
-    <Compile Include="classes\ClassFolha_diretorioAcao.vb" />
-    <Compile Include="classes\ClassFolha_holerite_close_cab.vb" />
-    <Compile Include="classes\ClassFolha_holerite_close_cabAcao.vb" />
-    <Compile Include="classes\ClassFolha_holerite_close_corp.vb" />
-    <Compile Include="classes\ClassFolha_holerite_close_corpAcao.vb" />
-    <Compile Include="classes\ClassFolha_holerite_emp.vb" />
-    <Compile Include="classes\ClassFolha_holerite_emp_acao.vb" />
-    <Compile Include="classes\ClassFolha_Setor.vb" />
-    <Compile Include="classes\ClassFolha_SetorAcao.vb" />
-    <Compile Include="classes\ClassHolerite_completo.vb" />
-    <Compile Include="classes\ClassHolerite_completoAcao.vb" />
+    <Compile Include="Folha de Pagamento\Variaveis\Class\ClassFolhaVariaveisAcao.vb" />
+    <Compile Include="Folha de Pagamento\Parametros\Class\ClassFolhaReferencia.vb" />
+    <Compile Include="Folha de Pagamento\Parametros\Class\ClassFolhaReferenciaAcao.vb" />
+    <Compile Include="Folha de Pagamento\Variaveis\Class\ClassFolhaVariaveis.vb" />
+    <Compile Include="Folha de Pagamento\Cargo\Class\ClassFolha_Cargo.vb" />
+    <Compile Include="Folha de Pagamento\Cargo\Class\ClassFolha_cargoAcao.vb" />
+    <Compile Include="Folha de Pagamento\Diretorio\Class\ClassFolha_diretorio.vb" />
+    <Compile Include="Folha de Pagamento\Diretorio\Class\ClassFolha_diretorioAcao.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassFolha_holerite_close_cab.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassFolha_holerite_close_cabAcao.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassFolha_holerite_close_corp.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassFolha_holerite_close_corpAcao.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassFolha_holerite_emp.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassFolha_holerite_emp_acao.vb" />
+    <Compile Include="Folha de Pagamento\Setor\Class\ClassFolha_Setor.vb" />
+    <Compile Include="Folha de Pagamento\Setor\Class\ClassFolha_SetorAcao.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassHolerite_completo.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\ClassHolerite_completoAcao.vb" />
     <Compile Include="classes\ClassListViewItemComparer.vb" />
-    <Compile Include="classes\ClassRegistro.vb" />
-    <Compile Include="classes\ClassRegistroAcao.vb" />
-    <Compile Include="classes\ClassSegurancao.vb" />
-    <Compile Include="classes\CNPJteste.vb" />
-    <Compile Include="classes\CNPJtesteAcao.vb" />
+    <Compile Include="Folha de Pagamento\Cargo\Class\ClassRegistro.vb" />
+    <Compile Include="Folha de Pagamento\Cargo\Class\ClassRegistroAcao.vb" />
+    <Compile Include="Seguranca\Class\ClassSegurancao.vb" />
+    <Compile Include="Cadastros\CNPJ\Class\CNPJteste.vb" />
+    <Compile Include="Cadastros\CNPJ\Class\CNPJtesteAcao.vb" />
     <Compile Include="Cadastros\Colaborador\Class\colaborador.vb" />
     <Compile Include="Cadastros\Colaborador\Class\ColaboradorAcoes.vb" />
     <Compile Include="Cadastros\Colaborador\Class\ColaboradorCapTela.vb" />
-    <Compile Include="classes\descansoRP.vb" />
-    <Compile Include="classes\DiasUteisAcao.vb" />
-    <Compile Include="classes\DiasUteisCab.vb" />
-    <Compile Include="classes\DiasUteisCorpo.vb" />
-    <Compile Include="classes\EmpregadorAcao.vb" />
-    <Compile Include="classes\empresaEmpregadora.vb" />
-    <Compile Include="classes\empresaEmpregadoraRP.vb" />
-    <Compile Include="classes\FolhaAdiantamento.vb" />
-    <Compile Include="classes\FolhaAdiantamentoAcao.vb" />
-    <Compile Include="classes\FolhaColContrato.vb" />
-    <Compile Include="classes\FolhaColContratoAcao.vb" />
-    <Compile Include="classes\FolHolLanc.vb" />
-    <Compile Include="classes\FolHolLancAcao.vb" />
-    <Compile Include="classes\INSStabelaAcao.vb" />
-    <Compile Include="classes\irTabelaAcao.vb" />
-    <Compile Include="classes\MenuColaborador.vb" />
+    <Compile Include="Folha de Pagamento\Descanso\Class\descansoRP.vb" />
+    <Compile Include="Folha de Pagamento\Parametros\Class\DiasUteisAcao.vb" />
+    <Compile Include="Folha de Pagamento\Parametros\Class\DiasUteisCab.vb" />
+    <Compile Include="Folha de Pagamento\Parametros\Class\DiasUteisCorpo.vb" />
+    <Compile Include="Cadastros\Empresa\Class\EmpregadorAcao.vb" />
+    <Compile Include="Cadastros\Empresa\Class\empresaEmpregadora.vb" />
+    <Compile Include="Cadastros\Empresa\Class\empresaEmpregadoraRP.vb" />
+    <Compile Include="Folha de Pagamento\Adiantamento\Class\FolhaAdiantamento.vb" />
+    <Compile Include="Folha de Pagamento\Adiantamento\Class\FolhaAdiantamentoAcao.vb" />
+    <Compile Include="Folha de Pagamento\Contrato\Class\FolhaColContrato.vb" />
+    <Compile Include="Folha de Pagamento\Contrato\Class\FolhaColContratoAcao.vb" />
+    <Compile Include="Folha de Pagamento\Lancamentos\Class\FolHolLanc.vb" />
+    <Compile Include="Folha de Pagamento\Lancamentos\Class\FolHolLancAcao.vb" />
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Class\INSStabelaAcao.vb" />
+    <Compile Include="Folha de Pagamento\IR_Tabela\Class\irTabelaAcao.vb" />
+    <Compile Include="Cadastros\Colaborador\Class\MenuColaborador.vb" />
     <Compile Include="Folha de Pagamento\Contrato\Class\ClassContratoFolha.vb" />
     <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoCadastramentoConferencia.Designer.vb">
       <DependentUpon>FrmFolhaContratoDeTrabalhoCadastramentoConferencia.vb</DependentUpon>
@@ -304,6 +309,7 @@
     <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoRel_rascunho.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Folha de Pagamento\Holerite\Mod\ModuleHolerite.vb" />
     <Compile Include="Folha de Pagamento\IR_Tabela\Class\ClassIRtabela.vb" />
     <Compile Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastro.Designer.vb">
       <DependentUpon>FrmFolhaINSS_TabelaCadastro.vb</DependentUpon>
@@ -376,13 +382,13 @@
     </Compile>
     <Compile Include="Modulo\Conexoes\ModInicializacao.vb" />
     <Compile Include="classes\MsgShow.vb" />
-    <Compile Include="classes\ReciboAcoes.vb" />
-    <Compile Include="classes\ReciboRP.vb" />
-    <Compile Include="classes\ReciboHist.vb" />
-    <Compile Include="classes\ReciboVariaveis.vb" />
-    <Compile Include="classes\Empregador.vb" />
-    <Compile Include="classes\Trabalhador.vb" />
-    <Compile Include="classes\TrabalhadorAcao.vb" />
+    <Compile Include="Recibos\Class\ReciboAcoes.vb" />
+    <Compile Include="Recibos\Class\ReciboRP.vb" />
+    <Compile Include="Recibos\Class\ReciboHist.vb" />
+    <Compile Include="Recibos\Class\ReciboVariaveis.vb" />
+    <Compile Include="Cadastros\Empresa\Class\Empregador.vb" />
+    <Compile Include="Folha de Pagamento\Rescisao\Class\Trabalhador.vb" />
+    <Compile Include="Folha de Pagamento\Rescisao\Class\TrabalhadorAcao.vb" />
     <Compile Include="Cadastros\Contabilidade\FcontPCcadastro.Designer.vb">
       <DependentUpon>FcontPCcadastro.vb</DependentUpon>
     </Compile>
@@ -414,16 +420,16 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Log\Class\ClassLog.vb" />
-    <Compile Include="Folha de Pagamento\FrmFolhaHoleriteClose_Final_rel.Designer.vb">
+    <Compile Include="Folha de Pagamento\Holerite\Form\FrmFolhaHoleriteClose_Final_rel.Designer.vb">
       <DependentUpon>FrmFolhaHoleriteClose_Final_rel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaHoleriteClose_Final_rel.vb">
+    <Compile Include="Folha de Pagamento\Holerite\Form\FrmFolhaHoleriteClose_Final_rel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaHoleriteClose_rel.Designer.vb">
+    <Compile Include="Folha de Pagamento\Holerite\Form\FrmFolhaHoleriteClose_rel.Designer.vb">
       <DependentUpon>FrmFolhaHoleriteClose_rel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaHoleriteClose_rel.vb">
+    <Compile Include="Folha de Pagamento\Holerite\Form\FrmFolhaHoleriteClose_rel.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Folha de Pagamento\Relatorios\CR_folhaAdiantamentoDeposito.vb">
@@ -432,10 +438,10 @@
       <DependentUpon>CR_folhaAdiantamentoDeposito.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoResumoPagamento_rel.Designer.vb">
+    <Compile Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoResumoPagamento_rel.Designer.vb">
       <DependentUpon>FrmFolhaAdiantamentoResumoPagamento_rel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoResumoPagamento_rel.vb">
+    <Compile Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoResumoPagamento_rel.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoCadastramento.Designer.vb">
@@ -462,10 +468,10 @@
     <Compile Include="formCrstalTeste1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoResumoPagamento.Designer.vb">
+    <Compile Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoResumoPagamento.Designer.vb">
       <DependentUpon>FrmFolhaAdiantamentoResumoPagamento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoResumoPagamento.vb">
+    <Compile Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoResumoPagamento.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Folha de Pagamento\FrmFolhaEfetivacao.Designer.vb">
@@ -486,16 +492,16 @@
     <Compile Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoPesquisa.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmFolha_salariosCadastro.Designer.vb">
+    <Compile Include="Folha de Pagamento\Salario\Form\frmFolha_salariosCadastro.Designer.vb">
       <DependentUpon>frmFolha_salariosCadastro.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmFolha_salariosCadastro.vb">
+    <Compile Include="Folha de Pagamento\Salario\Form\frmFolha_salariosCadastro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmFolha_salariosPesquisa.Designer.vb">
+    <Compile Include="Folha de Pagamento\Salario\Form\frmFolha_salariosPesquisa.Designer.vb">
       <DependentUpon>frmFolha_salariosPesquisa.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmFolha_salariosPesquisa.vb">
+    <Compile Include="Folha de Pagamento\Salario\Form\frmFolha_salariosPesquisa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cadastros\Usuario\formUsuarioManutencao.Designer.vb">
@@ -549,7 +555,7 @@
     <Compile Include="Recibos\FmrReciboRel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="classes\FolhaHolerite.vb" />
+    <Compile Include="Folha de Pagamento\Holerite\Class\FolhaHolerite.vb" />
     <Compile Include="Folha de Pagamento\Relatorios\FolhaAdiantamentoHolerite.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -568,10 +574,10 @@
     <Compile Include="Recibos\FreciboHistPadraoInclusao.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastros\CNPJ\frmCNPJautoriza.Designer.vb">
+    <Compile Include="Cadastros\CNPJ\Form\frmCNPJautoriza.Designer.vb">
       <DependentUpon>frmCNPJautoriza.vb</DependentUpon>
     </Compile>
-    <Compile Include="Cadastros\CNPJ\frmCNPJautoriza.vb">
+    <Compile Include="Cadastros\CNPJ\Form\frmCNPJautoriza.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Folha de Pagamento\frmFolCalPreliminarIndividual.Designer.vb">
@@ -580,28 +586,28 @@
     <Compile Include="Folha de Pagamento\frmFolCalPreliminarIndividual.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoHolerite_REL.Designer.vb">
+    <Compile Include="Folha de Pagamento\Holerite\Form\FrmFolhaAdiantamentoHolerite_REL.Designer.vb">
       <DependentUpon>FrmFolhaAdiantamentoHolerite_REL.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoHolerite_REL.vb">
+    <Compile Include="Folha de Pagamento\Holerite\Form\FrmFolhaAdiantamentoHolerite_REL.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoSalarialHolerite.Designer.vb">
+    <Compile Include="Folha de Pagamento\Holerite\Form\FrmFolhaAdiantamentoSalarialHolerite.Designer.vb">
       <DependentUpon>FrmFolhaAdiantamentoSalarialHolerite.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoSalarialHolerite.vb">
+    <Compile Include="Folha de Pagamento\Holerite\Form\FrmFolhaAdiantamentoSalarialHolerite.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoSalarialPreliminarEfetiva.Designer.vb">
+    <Compile Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoSalarialPreliminarEfetiva.Designer.vb">
       <DependentUpon>FrmFolhaAdiantamentoSalarialPreliminarEfetiva.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoSalarialPreliminarEfetiva.vb">
+    <Compile Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoSalarialPreliminarEfetiva.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoSalarialPreliminarTodos.Designer.vb">
+    <Compile Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoSalarialPreliminarTodos.Designer.vb">
       <DependentUpon>FrmFolhaAdiantamentoSalarialPreliminarTodos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaAdiantamentoSalarialPreliminarTodos.vb">
+    <Compile Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoSalarialPreliminarTodos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Folha de Pagamento\frmFolhaLancVar.Designer.vb">
@@ -610,34 +616,34 @@
     <Compile Include="Folha de Pagamento\frmFolhaLancVar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaRefDescanso.Designer.vb">
+    <Compile Include="Folha de Pagamento\Descanso\Form\FrmFolhaRefDescanso.Designer.vb">
       <DependentUpon>FrmFolhaRefDescanso.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaRefDescanso.vb">
+    <Compile Include="Folha de Pagamento\Descanso\Form\FrmFolhaRefDescanso.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmFolhaRescisaoDestratoGravacao.Designer.vb">
+    <Compile Include="Folha de Pagamento\Rescisao\Form\frmFolhaRescisaoDestratoGravacao.Designer.vb">
       <DependentUpon>frmFolhaRescisaoDestratoGravacao.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmFolhaRescisaoDestratoGravacao.vb">
+    <Compile Include="Folha de Pagamento\Rescisao\Form\frmFolhaRescisaoDestratoGravacao.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmFolhaRescisaoManual.Designer.vb">
+    <Compile Include="Folha de Pagamento\Rescisao\Form\frmFolhaRescisaoManual.Designer.vb">
       <DependentUpon>frmFolhaRescisaoManual.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmFolhaRescisaoManual.vb">
+    <Compile Include="Folha de Pagamento\Rescisao\Form\frmFolhaRescisaoManual.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaRescisaoManualRel.Designer.vb">
+    <Compile Include="Folha de Pagamento\Rescisao\Form\FrmFolhaRescisaoManualRel.Designer.vb">
       <DependentUpon>FrmFolhaRescisaoManualRel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaRescisaoManualRel.vb">
+    <Compile Include="Folha de Pagamento\Rescisao\Form\FrmFolhaRescisaoManualRel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaSalAjusteManual.Designer.vb">
+    <Compile Include="Folha de Pagamento\Salario\Form\FrmFolhaSalAjusteManual.Designer.vb">
       <DependentUpon>FrmFolhaSalAjusteManual.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrmFolhaSalAjusteManual.vb">
+    <Compile Include="Folha de Pagamento\Salario\Form\FrmFolhaSalAjusteManual.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Folha de Pagamento\FrmFolLancAutomaticos.Designer.vb">
@@ -652,14 +658,15 @@
     <Compile Include="Recibos\FrmReciboConformidade.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="classes\INSStabela.vb" />
-    <Compile Include="classes\irTabela.vb" />
+    <Compile Include="Folha de Pagamento\INSS_Tabela\Class\INSStabela.vb" />
+    <Compile Include="Folha de Pagamento\IR_Tabela\Class\irTabela.vb" />
     <Compile Include="Folha de Pagamento\Relatorios\folhaRescisao.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>folhaRescisao.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Recibos\Mod\ModuleRecibos.vb" />
     <Compile Include="Recibos\Relatorios\Rrecibo.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -672,11 +679,11 @@
     <Compile Include="Cadastros\Colaborador\Form\FColMant.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="classes\folCaptDiario.vb" />
+    <Compile Include="Folha de Pagamento\Ponto\Class\folCaptDiario.vb" />
     <Compile Include="classes\captura.vb" />
     <Compile Include="classes\CapturaRepositorio.vb" />
     <Compile Include="Modulo\Conexoes\conecaoDB.vb" />
-    <Compile Include="classes\descanso.vb" />
+    <Compile Include="Folha de Pagamento\Descanso\Class\descanso.vb" />
     <Compile Include="Cadastros\Colaborador\Form\FcolAlt.Designer.vb">
       <DependentUpon>FcolAlt.vb</DependentUpon>
     </Compile>
@@ -720,16 +727,16 @@
     <Compile Include="Cadastros\Colaborador\Form\FcolShow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastros\Contabilidade\FmrCPlancamento.Designer.vb">
+    <Compile Include="Contas A Pagar\Form\FmrCPlancamento.Designer.vb">
       <DependentUpon>FmrCPlancamento.vb</DependentUpon>
     </Compile>
-    <Compile Include="Cadastros\Contabilidade\FmrCPlancamento.vb">
+    <Compile Include="Contas A Pagar\Form\FmrCPlancamento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FmrDescanso.Designer.vb">
+    <Compile Include="Folha de Pagamento\Descanso\Form\FmrDescanso.Designer.vb">
       <DependentUpon>FmrDescanso.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FmrDescanso.vb">
+    <Compile Include="Folha de Pagamento\Descanso\Form\FmrDescanso.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cadastros\Usuario\FmrIndUsu.Designer.vb">
@@ -738,7 +745,7 @@
     <Compile Include="Cadastros\Usuario\FmrIndUsu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="classes\folhaPontoCaptura.vb" />
+    <Compile Include="Folha de Pagamento\Contrato\Class\folhaPontoCaptura.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -766,10 +773,10 @@
     <Compile Include="Recibos\FreciboNew.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrelfolPonto.Designer.vb">
+    <Compile Include="Folha de Pagamento\Ponto\Form\FrelfolPonto.Designer.vb">
       <DependentUpon>FrelfolPonto.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\FrelfolPonto.vb">
+    <Compile Include="Folha de Pagamento\Ponto\Form\FrelfolPonto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cadastros\Acesso\frmCadastroAcesso.Designer.vb">
@@ -796,10 +803,10 @@
     <Compile Include="Folha de Pagamento\frmFolhaDiarioRelatorio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmTurno.Designer.vb">
+    <Compile Include="Folha de Pagamento\Turno\Form\frmTurno.Designer.vb">
       <DependentUpon>frmTurno.vb</DependentUpon>
     </Compile>
-    <Compile Include="Folha de Pagamento\frmTurno.vb">
+    <Compile Include="Folha de Pagamento\Turno\Form\frmTurno.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Recibos\ImpRecibo.Designer.vb">
@@ -824,9 +831,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="classes\pontoCorrecao.vb" />
-    <Compile Include="classes\pontoCorrecaoRP.vb" />
-    <Compile Include="classes\Recibo.vb" />
+    <Compile Include="Folha de Pagamento\Ponto\Class\pontoCorrecao.vb" />
+    <Compile Include="Folha de Pagamento\Ponto\Class\pontoCorrecaoRP.vb" />
+    <Compile Include="Recibos\Class\Recibo.vb" />
     <Compile Include="testeReport.Designer.vb">
       <DependentUpon>testeReport.vb</DependentUpon>
     </Compile>
@@ -834,8 +841,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="classes\utilidades.vb" />
-    <Compile Include="classes\turno.vb" />
-    <Compile Include="classes\turnoRP.vb" />
+    <Compile Include="Folha de Pagamento\Turno\Class\turno.vb" />
+    <Compile Include="Folha de Pagamento\Turno\Class\turnoRP.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Cadastros\Colaborador\Form\FdocMostra.resx">
@@ -880,10 +887,10 @@
     <EmbeddedResource Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoRel_rascunho.resx">
       <DependentUpon>FrmFolhaContratoRel_rascunho.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaHoleriteClose_Final_rel.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Holerite\Form\FrmFolhaHoleriteClose_Final_rel.resx">
       <DependentUpon>FrmFolhaHoleriteClose_Final_rel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaHoleriteClose_rel.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Holerite\Form\FrmFolhaHoleriteClose_rel.resx">
       <DependentUpon>FrmFolhaHoleriteClose_rel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\INSS_Tabela\Form\FrmFolhaINSS_TabelaCadastro.resx">
@@ -902,7 +909,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_folhaAdiantamentoDeposito.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaAdiantamentoResumoPagamento_rel.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoResumoPagamento_rel.resx">
       <DependentUpon>FrmFolhaAdiantamentoResumoPagamento_rel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoCadastramento.resx">
@@ -919,7 +926,7 @@
     <EmbeddedResource Include="formCrstalTeste1.resx">
       <DependentUpon>formCrstalTeste1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaAdiantamentoResumoPagamento.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoResumoPagamento.resx">
       <DependentUpon>FrmFolhaAdiantamentoResumoPagamento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\FrmFolhaEfetivacao.resx">
@@ -931,10 +938,10 @@
     <EmbeddedResource Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoDeTrabalhoPesquisa.resx">
       <DependentUpon>FrmFolhaContratoDeTrabalhoPesquisa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\frmFolha_salariosCadastro.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Salario\Form\frmFolha_salariosCadastro.resx">
       <DependentUpon>frmFolha_salariosCadastro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\frmFolha_salariosPesquisa.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Salario\Form\frmFolha_salariosPesquisa.resx">
       <DependentUpon>frmFolha_salariosPesquisa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\Usuario\formUsuarioManutencao.resx">
@@ -977,40 +984,40 @@
     <EmbeddedResource Include="Recibos\FreciboHistPadraoInclusao.resx">
       <DependentUpon>FreciboHistPadraoInclusao.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastros\CNPJ\frmCNPJautoriza.resx">
+    <EmbeddedResource Include="Cadastros\CNPJ\Form\frmCNPJautoriza.resx">
       <DependentUpon>frmCNPJautoriza.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\frmFolCalPreliminarIndividual.resx">
       <DependentUpon>frmFolCalPreliminarIndividual.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaAdiantamentoHolerite_REL.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Holerite\Form\FrmFolhaAdiantamentoHolerite_REL.resx">
       <DependentUpon>FrmFolhaAdiantamentoHolerite_REL.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaAdiantamentoSalarialHolerite.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Holerite\Form\FrmFolhaAdiantamentoSalarialHolerite.resx">
       <DependentUpon>FrmFolhaAdiantamentoSalarialHolerite.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaAdiantamentoSalarialPreliminarEfetiva.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoSalarialPreliminarEfetiva.resx">
       <DependentUpon>FrmFolhaAdiantamentoSalarialPreliminarEfetiva.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaAdiantamentoSalarialPreliminarTodos.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Adiantamento\Form\FrmFolhaAdiantamentoSalarialPreliminarTodos.resx">
       <DependentUpon>FrmFolhaAdiantamentoSalarialPreliminarTodos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\frmFolhaLancVar.resx">
       <DependentUpon>frmFolhaLancVar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaRefDescanso.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Descanso\Form\FrmFolhaRefDescanso.resx">
       <DependentUpon>FrmFolhaRefDescanso.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\frmFolhaRescisaoDestratoGravacao.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Rescisao\Form\frmFolhaRescisaoDestratoGravacao.resx">
       <DependentUpon>frmFolhaRescisaoDestratoGravacao.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\frmFolhaRescisaoManual.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Rescisao\Form\frmFolhaRescisaoManual.resx">
       <DependentUpon>frmFolhaRescisaoManual.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaRescisaoManualRel.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Rescisao\Form\FrmFolhaRescisaoManualRel.resx">
       <DependentUpon>FrmFolhaRescisaoManualRel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrmFolhaSalAjusteManual.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Salario\Form\FrmFolhaSalAjusteManual.resx">
       <DependentUpon>FrmFolhaSalAjusteManual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\FrmFolLancAutomaticos.resx">
@@ -1051,10 +1058,10 @@
     <EmbeddedResource Include="Cadastros\Colaborador\Form\FcolShow.resx">
       <DependentUpon>FcolShow.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastros\Contabilidade\FmrCPlancamento.resx">
+    <EmbeddedResource Include="Contas A Pagar\Form\FmrCPlancamento.resx">
       <DependentUpon>FmrCPlancamento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FmrDescanso.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Descanso\Form\FmrDescanso.resx">
       <DependentUpon>FmrDescanso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\Usuario\FmrIndUsu.resx">
@@ -1073,7 +1080,7 @@
     <EmbeddedResource Include="Recibos\FreciboNew.resx">
       <DependentUpon>FreciboNew.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\FrelfolPonto.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Ponto\Form\FrelfolPonto.resx">
       <DependentUpon>FrelfolPonto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\Acesso\frmCadastroAcesso.resx">
@@ -1088,7 +1095,7 @@
     <EmbeddedResource Include="Folha de Pagamento\frmFolhaDiarioRelatorio.resx">
       <DependentUpon>frmFolhaDiarioRelatorio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Folha de Pagamento\frmTurno.resx">
+    <EmbeddedResource Include="Folha de Pagamento\Turno\Form\frmTurno.resx">
       <DependentUpon>frmTurno.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recibos\ImpRecibo.resx">
@@ -1455,11 +1462,14 @@
   <ItemGroup>
     <Folder Include="ADM_Sistema\Class\" />
     <Folder Include="Cadastros\Colaborador\Relatorios\" />
+    <Folder Include="classes\DB\SQL\" />
     <Folder Include="Compras\" />
-    <Folder Include="Contas A Pagar\" />
     <Folder Include="Contas A Receber\" />
     <Folder Include="Financeiro\" />
     <Folder Include="Folha de Pagamento\Contrato\Relatorios\" />
+    <Folder Include="Folha de Pagamento\Turno\Mod\" />
+    <Folder Include="Folha de Pagamento\Variaveis\Form\" />
+    <Folder Include="Menu\Class\" />
     <Folder Include="Recebimento Fiscal\" />
     <Folder Include="relatorios\" />
     <Folder Include="Suprimentos\" />

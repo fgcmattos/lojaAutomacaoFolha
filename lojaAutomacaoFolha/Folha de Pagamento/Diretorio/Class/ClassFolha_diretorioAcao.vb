@@ -99,4 +99,5 @@ Public Class ClassFolha_diretorioAcao
         Return (lista)
 
     End Function
+
 End Class

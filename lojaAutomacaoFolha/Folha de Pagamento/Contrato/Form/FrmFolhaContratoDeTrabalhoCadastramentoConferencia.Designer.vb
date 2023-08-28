@@ -93,6 +93,8 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         Me.CmbTipoCab = New System.Windows.Forms.Label()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.MskRascunho = New System.Windows.Forms.MaskedTextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox11.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GruCaracteristicasCalculo.SuspendLayout()
@@ -542,6 +544,8 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         'GruGravacao
         '
         Me.GruGravacao.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GruGravacao.Controls.Add(Me.Label1)
+        Me.GruGravacao.Controls.Add(Me.MskRascunho)
         Me.GruGravacao.Controls.Add(Me.Button1)
         Me.GruGravacao.Controls.Add(Me.BtnCancelar)
         Me.GruGravacao.Controls.Add(Me.BtnGrava)
@@ -557,7 +561,7 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button1.Location = New System.Drawing.Point(15, 88)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(331, 20)
+        Me.Button1.Size = New System.Drawing.Size(225, 20)
         Me.Button1.TabIndex = 7
         Me.Button1.Text = "Imprime Rascunho do contrato"
         Me.Button1.UseVisualStyleBackColor = True
@@ -565,9 +569,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         'BtnCancelar
         '
         Me.BtnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnCancelar.Location = New System.Drawing.Point(15, 49)
+        Me.BtnCancelar.Location = New System.Drawing.Point(15, 62)
         Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(331, 20)
+        Me.BtnCancelar.Size = New System.Drawing.Size(225, 20)
         Me.BtnCancelar.TabIndex = 6
         Me.BtnCancelar.Text = "Cancela"
         Me.BtnCancelar.UseVisualStyleBackColor = True
@@ -575,9 +579,9 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         'BtnGrava
         '
         Me.BtnGrava.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BtnGrava.Location = New System.Drawing.Point(15, 19)
+        Me.BtnGrava.Location = New System.Drawing.Point(15, 36)
         Me.BtnGrava.Name = "BtnGrava"
-        Me.BtnGrava.Size = New System.Drawing.Size(331, 20)
+        Me.BtnGrava.Size = New System.Drawing.Size(225, 20)
         Me.BtnGrava.TabIndex = 5
         Me.BtnGrava.Text = "Gravar"
         Me.BtnGrava.UseVisualStyleBackColor = True
@@ -942,6 +946,24 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'MskRascunho
+        '
+        Me.MskRascunho.Location = New System.Drawing.Point(264, 36)
+        Me.MskRascunho.Mask = "##-###-###"
+        Me.MskRascunho.Name = "MskRascunho"
+        Me.MskRascunho.Size = New System.Drawing.Size(143, 20)
+        Me.MskRascunho.TabIndex = 8
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(273, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(119, 13)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "Rascunho Aprovado N."
+        '
         'FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -965,6 +987,7 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         Me.GruCaracteristicas.ResumeLayout(False)
         Me.GruCaracteristicas.PerformLayout()
         Me.GruGravacao.ResumeLayout(False)
+        Me.GruGravacao.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox12.ResumeLayout(False)
@@ -1044,4 +1067,6 @@ Partial Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
     Friend WithEvents GroupBox12 As GroupBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents MskRascunho As MaskedTextBox
 End Class

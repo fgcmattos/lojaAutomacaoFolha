@@ -732,19 +732,43 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
 
     Private Sub BtnGrava_Click(sender As Object, e As EventArgs) Handles BtnGrava.Click
 
+        Dim strIsCodigoLiberacao As String = MskRascunho.Text.Replace("-", "").Trim
+
+        If strIsCodigoLiberacao = "" Then
+
+            With oi
+
+                .Msg = "Campo Rascunho deve preenchido com o número "
+                .Msg += Chr(13) & Chr(13)
+                .Msg += "de Autorização impresso no contrato"
+                .Style = vbCritical
+                MsgBox(.Msg, .Style, .Title)
+
+                MskRascunho.Focus()
+
+                Exit Sub
+
+            End With
+
+        End If
+
         With oi
-            .Msg = "Confirma a gravação?"
+
+            .Msg = "Confirma a gravação?" & Chr(13) & Chr(13)
+            .Msg += "A gravação deve acompanha da digitalização "
+            .Msg += "Do contrato assinado" & Chr(13)
             .Style = vbYesNo
             .Resposta = MsgBox(.Msg, .Style, .Title)
             If .Resposta <> 6 Then
                 Exit Sub
             End If
+
         End With
 
-        If GravaTela() Then
-            FrmFolhaContratoDeTrabalhoAutorizados.Show()
-            Me.Close()
-        End If
+        'If GravaTela() Then
+        '    FrmFolhaContratoDeTrabalhoAutorizados.Show()
+        '    Me.Close()
+        'End If
 
     End Sub
 
@@ -760,39 +784,39 @@ Public Class FrmFolhaContratoDeTrabalhoCadastramentoConferencia
         query += "Insert into folha_col_contrato "
         query += "("
         query += "FCC_tipo"                     ' Int(11) 
-        query += ",FCC_tipoDescricao"           ' varchar(100) 
-        query += ",FCC_admissao_data"           ' varchar(8)  
-        query += ",FCC_categoriaCodigo"         ' varchar(10) 
-        query += ",FCC_categoriaDescricao"      ' varchar(40) 
-        query += ",FCC_sindical_codigo"         ' varchar(20) 
-        query += ",FCC_CNPJentidadeSindical"    ' varchar(25) 
-        query += ",FCC_RazaoEntidadeSindical"   ' varchar(100) 
-        query += ",FCC_keyCol"                  ' Int(11) 
-        query += ",FCC_status"                  ' Int(11)
-        query += ",FCC_nome"                    ' varchar(50)
-        query += ",FCC_cpf"                     ' varchar(11)
-        query += ",FCC_rg"                      ' varchar(20)
-        query += ",FCC_pis"                     ' varchar(20)
-        query += ",FCC_ctps_numero"             ' varchar(10)
-        query += ",FCC_ctps_serie"              ' varchar(10)
-        query += ",FCC_aso_admissao"            ' varchar(8)
-        query += ",FCC_setor"                   ' varchar(20)
-        query += ",FCC_cargo"                   ' varchar(30)
-        query += ",FCC_cbo"                     ' varchar(60)
-        query += ",FCC_referencia"              ' varchar(6)
-        query += ",FCC_salario"                 ' decimal(15,2)
-        query += ",FCC_registro_fisico"         ' varchar(20)
-        query += ",FCC_registro_livro"          ' varchar(15)
-        query += ",FCC_registro_pagina"         ' varchar(10)
-        query += ",FCC_registro_ordem"          ' int(11)
-        query += ",FCC_carga_horaria_semanal"   ' time
-        query += ",FCC_descanso_semanal"        ' int(11)
-        query += ",FCC_jornada_dia_inicio"      ' time
-        query += ",FCC_jornada_descanso"        ' time
-        query += ",FCC_jornada_dia"             ' time
-        query += ",FCC_jornada_mes"             ' time
-        query += ",FCC_jornada_dia_fim"         ' time
-        query += ",FCC_responsavel"             ' int
+        query += ", FCC_tipoDescricao"           ' varchar(100) 
+        query += ", FCC_admissao_data"           ' varchar(8)  
+        query += ", FCC_categoriaCodigo"         ' varchar(10) 
+        query += ", FCC_categoriaDescricao"      ' varchar(40) 
+        query += ", FCC_sindical_codigo"         ' varchar(20) 
+        query += ", FCC_CNPJentidadeSindical"    ' varchar(25) 
+        query += ", FCC_RazaoEntidadeSindical"   ' varchar(100) 
+        query += ", FCC_keyCol"                  ' Int(11) 
+        query += ", FCC_status"                  ' Int(11)
+        query += ", FCC_nome"                    ' varchar(50)
+        query += ", FCC_cpf"                     ' varchar(11)
+        query += ", FCC_rg"                      ' varchar(20)
+        query += ", FCC_pis"                     ' varchar(20)
+        query += ", FCC_ctps_numero"             ' varchar(10)
+        query += ", FCC_ctps_serie"              ' varchar(10)
+        query += ", FCC_aso_admissao"            ' varchar(8)
+        query += ", FCC_setor"                   ' varchar(20)
+        query += ", FCC_cargo"                   ' varchar(30)
+        query += ", FCC_cbo"                     ' varchar(60)
+        query += ", FCC_referencia"              ' varchar(6)
+        query += ", FCC_salario"                 ' decimal(15,2)
+        query += ", FCC_registro_fisico"         ' varchar(20)
+        query += ", FCC_registro_livro"          ' varchar(15)
+        query += ", FCC_registro_pagina"         ' varchar(10)
+        query += ", FCC_registro_ordem"          ' int(11)
+        query += ", FCC_carga_horaria_semanal"   ' time
+        query += ", FCC_descanso_semanal"        ' int(11)
+        query += ", FCC_jornada_dia_inicio"      ' time
+        query += ", FCC_jornada_descanso"        ' time
+        query += ", FCC_jornada_dia"             ' time
+        query += ", FCC_jornada_mes"             ' time
+        query += ", FCC_jornada_dia_fim"         ' time
+        query += ", FCC_responsavel"             ' int
         query += ")"
         query += " values "
         query += "("
