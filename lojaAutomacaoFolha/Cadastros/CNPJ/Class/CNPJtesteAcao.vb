@@ -2,6 +2,8 @@
 
     Public Shared Function CNPJchek(CNPJ As String) As Boolean
 
+        ' Procedimento do CNPJ com máscara __.___.___/____-__
+
         Dim resultado As Decimal
         Dim Cj As New CNPJteste
 
@@ -44,4 +46,5 @@
         End With
 
     End Function
+
 End Class

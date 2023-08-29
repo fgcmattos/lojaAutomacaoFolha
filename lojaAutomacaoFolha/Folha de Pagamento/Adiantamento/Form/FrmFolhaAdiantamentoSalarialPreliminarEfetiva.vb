@@ -144,4 +144,11 @@ Public Class FrmFolhaAdiantamentoSalarialPreliminarEfetiva
 
     End Sub
 
+    Private Sub MskTotalAdiantamento_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles MskTotalAdiantamento.MaskInputRejected
+
+    End Sub
+
+    Private Sub MskTotalAdiantamento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MskTotalAdiantamento.KeyPress
+
+    End Sub
 End Class

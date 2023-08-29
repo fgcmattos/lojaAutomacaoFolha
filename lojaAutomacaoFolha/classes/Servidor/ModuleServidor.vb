@@ -2,8 +2,10 @@
     Public Function SistemaInicializado() As Boolean
 
         Dim fluxoTexto As IO.StreamReader
-        Dim StrArquivo As String = ""
+        Dim StrArquivo As String
+
         StrArquivo = "c:\Spial\ID\empresa.txt"
+
         If IO.File.Exists(StrArquivo) Then
 
             fluxoTexto = New IO.StreamReader(StrArquivo)
