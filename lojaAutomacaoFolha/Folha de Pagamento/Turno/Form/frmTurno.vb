@@ -505,6 +505,15 @@ Public Class frmTurno
         Me.Close()
     End Sub
 
+    Private Sub ListViewTurno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewTurno.SelectedIndexChanged
 
+    End Sub
 
+    Private Sub ListViewTurno_DoubleClick(sender As Object, e As EventArgs) Handles ListViewTurno.DoubleClick
+
+    End Sub
+
+    Private Sub ListViewTurno_Click(sender As Object, e As EventArgs) Handles ListViewTurno.Click
+
+    End Sub
 End Class

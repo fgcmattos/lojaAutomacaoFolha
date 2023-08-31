@@ -1,4 +1,8 @@
-﻿Public Class FmrCPlancamento
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Header
+Imports CrystalDecisions.Windows.Forms
+
+Public Class FmrCPlancamento
     Dim oi As New MsgShow
     Private Sub BtnTermina_Click(sender As Object, e As EventArgs) Handles BtnTermina.Click
         Me.Close()
@@ -25,28 +29,59 @@
         Dim StrData1 As String = DataLatina(DataAAAAMMDD(DateTimePicker1.Value.ToString.Substring(0, 10)))
         Dim StrData2 As String = DataLatina(DataAAAAMMDD(DateTimePicker2.Value.ToString.Substring(0, 10)))
 
-        Dim intIndex As Integer = ListView1.Items.Count
-        With ListView1
 
-            .Items.Add(intIndex + 1)
-            .Items(intIndex).SubItems.Add(StrData1)
-            .Items(intIndex).SubItems.Add(StrData2)
+        If LblAlteracao.Text = "C A D A S T R A M E N T O" Then
 
-            .Items(intIndex).SubItems.Add(Cmbcredor.text)
-            .Items(intIndex).SubItems.Add(MskIndentifica.Text)
-            .Items(intIndex).SubItems.Add(TxtNome.Text)
-            .Items(intIndex).SubItems.Add(MskTelefone.Text)
-            .Items(intIndex).SubItems.Add(CmbFerramenta.Text)
-            .Items(intIndex).SubItems.Add(MskDocNumero.Text)
-            .Items(intIndex).SubItems.Add(TxtValor.Text)
-            .Items(intIndex).SubItems.Add(TxtHistorico.Text)
+            Dim intIndex As Integer = ListView1.Items.Count
+            With ListView1
+
+                .Items.Add(intIndex + 1)
+                .Items(intIndex).SubItems.Add(StrData1)
+                .Items(intIndex).SubItems.Add(StrData2)
+
+                .Items(intIndex).SubItems.Add(Cmbcredor.Text)
+                .Items(intIndex).SubItems.Add(MskIndentifica.Text)
+                .Items(intIndex).SubItems.Add(TxtNome.Text)
+                .Items(intIndex).SubItems.Add(MskTelefone.Text)
+                .Items(intIndex).SubItems.Add(CmbFerramenta.Text)
+                .Items(intIndex).SubItems.Add(MskDocNumero.Text)
+                .Items(intIndex).SubItems.Add(TxtValor.Text)
+                .Items(intIndex).SubItems.Add(TxtHistorico.Text)
 
 
-        End With
+            End With
+
+        Else
+
+            Dim intIndeceAlatreacao As Integer = Convert.ToInt32(LblItem.Text) - 1
+
+            With ListView1
+
+                .Items(intIndeceAlatreacao).SubItems(1).Text = DataLatina(DataAAAAMMDD(DateTimePicker1.Value.ToString.Substring(0, 10)))
+                .Items(intIndeceAlatreacao).SubItems(2).Text = DataLatina(DataAAAAMMDD(DateTimePicker2.Value.ToString.Substring(0, 10)))
+                .Items(intIndeceAlatreacao).SubItems(3).Text = Cmbcredor.Text
+                .Items(intIndeceAlatreacao).SubItems(4).Text = MskIndentifica.Text
+                .Items(intIndeceAlatreacao).SubItems(5).Text = TxtNome.Text
+                .Items(intIndeceAlatreacao).SubItems(6).Text = MskTelefone.Text
+                .Items(intIndeceAlatreacao).SubItems(7).Text = CmbFerramenta.Text
+                .Items(intIndeceAlatreacao).SubItems(8).Text = MskDocNumero.Text
+                .Items(intIndeceAlatreacao).SubItems(9).Text = TxtValor.Text
+                .Items(intIndeceAlatreacao).SubItems(10).Text = TxtHistorico.Text
+
+            End With
+
+            LblAlteracao.Text = "C A D A S T R A M E N T O"
+
+            GroupBox3.Enabled = True
+
+
+        End If
 
         LabelTotalLancado.Text = SomaValores(ListView1, 9)
 
-        limpaCPtransDireta()
+        LimpaCPtransDireta()
+
+        BtnDeleta.Visible = False
 
         Cmbcredor.Focus()
 
@@ -66,6 +101,7 @@
         CmbFerramenta.SelectedIndex = 0
         MskDocNumero.Text = ""
         TxtValor.Text = "0,00"
+        TxtHistorico.Text = ""
 
     End Sub
 
@@ -319,5 +355,102 @@
         DateTimePicker1.Value = Date.ParseExact(Agenda(0).Data, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture)
         DateTimePicker2.Value = Date.ParseExact(Agenda(0).Data, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture)
 
+    End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+
+        'Dim itemText As String
+
+        'If ListView1.SelectedItems.Count > 0 Then
+        '    Dim selectedItem As ListViewItem = ListView1.SelectedItems(0)
+
+        '    itemText = selectedItem.Text
+
+        '    ' Faça algo com o texto do item selecionado
+        '    MessageBox.Show("Item selecionado: " & itemText)
+
+        '    DateTimePicker1.Value = Date.ParseExact(selectedItem.SubItems(1).Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
+        '    DateTimePicker2.Value = Date.ParseExact(selectedItem.SubItems(2).Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
+
+        '    Cmbcredor.Text = selectedItem.SubItems(3).Text
+        '    MskIndentifica.Text = selectedItem.SubItems(4).Text
+        '    TxtNome.Text = selectedItem.SubItems(5).Text
+        '    MskTelefone.Text = selectedItem.SubItems(6).Text
+        '    CmbFerramenta.Text = selectedItem.SubItems(7).Text
+        '    MskDocNumero.Text = selectedItem.SubItems(8).Text
+        '    TxtValor.Text = selectedItem.SubItems(9).Text
+        '    TxtHistorico.Text = selectedItem.SubItems(10).Text
+
+        '    GroupBox3.Enabled = False
+
+        '    LblAlteracao.Text = "A L T E R A Ç Ã O"
+        '    LblItem.Text = selectedItem.SubItems(0).Text
+
+        'Else
+        '    Exit Sub
+        'End If
+
+        'Dim selectedItem As ListViewItem = ListView1.SelectedItems(0)
+        'Dim secondColumnText As String = selectedItem.SubItems(1).Text
+
+        'TxtNome.Text = ""
+        'MskTelefone.Text = ""
+        'CmbFerramenta.SelectedIndex = 0
+        'MskDocNumero.Text = ""
+        'TxtValor.Text = "0,00"
+        'TxtHistorico.Text = ""
+
+    End Sub
+
+    Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
+
+        Dim itemText As String
+
+        If ListView1.SelectedItems.Count > 0 Then
+            Dim selectedItem As ListViewItem = ListView1.SelectedItems(0)
+
+            itemText = selectedItem.Text
+
+            ' Faça algo com o texto do item selecionado
+            MessageBox.Show("Item selecionado: " & itemText)
+
+            DateTimePicker1.Value = Date.ParseExact(selectedItem.SubItems(1).Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
+            DateTimePicker2.Value = Date.ParseExact(selectedItem.SubItems(2).Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
+
+            Cmbcredor.Text = selectedItem.SubItems(3).Text
+            MskIndentifica.Text = selectedItem.SubItems(4).Text
+            TxtNome.Text = selectedItem.SubItems(5).Text
+            MskTelefone.Text = selectedItem.SubItems(6).Text
+            CmbFerramenta.Text = selectedItem.SubItems(7).Text
+            MskDocNumero.Text = selectedItem.SubItems(8).Text
+            TxtValor.Text = selectedItem.SubItems(9).Text
+            TxtHistorico.Text = selectedItem.SubItems(10).Text
+
+            GroupBox3.Enabled = False
+
+            LblAlteracao.Text = "A L T E R A Ç Ã O"
+            LblItem.Text = selectedItem.SubItems(0).Text
+            BtnDeleta.Visible = True
+        Else
+            Exit Sub
+        End If
+
+    End Sub
+
+    Private Sub BtnDeleta_Click(sender As Object, e As EventArgs) Handles BtnDeleta.Click
+        If ListView1.SelectedItems.Count > 0 Then
+
+            Dim selectedItem As ListViewItem = ListView1.SelectedItems(0)
+            ListView1.Items.Remove(selectedItem)
+
+            LabelTotalLancado.Text = SomaValores(ListView1, 9)
+
+            LimpaCPtransDireta()
+
+            BtnDeleta.Visible = False
+
+            Cmbcredor.Focus()
+
+        End If
     End Sub
 End Class
