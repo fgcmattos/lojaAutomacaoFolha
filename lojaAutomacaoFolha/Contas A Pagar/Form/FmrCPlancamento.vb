@@ -12,6 +12,8 @@ Public Class FmrCPlancamento
 
         Dim intIsApuracao As Integer = CheckLancamento()
 
+        If intIsApuracao = 100 Then Exit Sub ' Já criticado na função
+
         If intIsApuracao > 0 And intIsApuracao < 10 Then
 
             With oi
@@ -162,7 +164,7 @@ Public Class FmrCPlancamento
 
                 MskIndentifica.Focus()
 
-                Return (1)
+                Return (100)
 
                 Exit Function
 
@@ -180,7 +182,7 @@ Public Class FmrCPlancamento
 
                 MskIndentifica.Focus()
 
-                Return (1)
+                Return (100)
 
                 Exit Function
 
@@ -357,62 +359,18 @@ Public Class FmrCPlancamento
 
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-
-        'Dim itemText As String
-
-        'If ListView1.SelectedItems.Count > 0 Then
-        '    Dim selectedItem As ListViewItem = ListView1.SelectedItems(0)
-
-        '    itemText = selectedItem.Text
-
-        '    ' Faça algo com o texto do item selecionado
-        '    MessageBox.Show("Item selecionado: " & itemText)
-
-        '    DateTimePicker1.Value = Date.ParseExact(selectedItem.SubItems(1).Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
-        '    DateTimePicker2.Value = Date.ParseExact(selectedItem.SubItems(2).Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
-
-        '    Cmbcredor.Text = selectedItem.SubItems(3).Text
-        '    MskIndentifica.Text = selectedItem.SubItems(4).Text
-        '    TxtNome.Text = selectedItem.SubItems(5).Text
-        '    MskTelefone.Text = selectedItem.SubItems(6).Text
-        '    CmbFerramenta.Text = selectedItem.SubItems(7).Text
-        '    MskDocNumero.Text = selectedItem.SubItems(8).Text
-        '    TxtValor.Text = selectedItem.SubItems(9).Text
-        '    TxtHistorico.Text = selectedItem.SubItems(10).Text
-
-        '    GroupBox3.Enabled = False
-
-        '    LblAlteracao.Text = "A L T E R A Ç Ã O"
-        '    LblItem.Text = selectedItem.SubItems(0).Text
-
-        'Else
-        '    Exit Sub
-        'End If
-
-        'Dim selectedItem As ListViewItem = ListView1.SelectedItems(0)
-        'Dim secondColumnText As String = selectedItem.SubItems(1).Text
-
-        'TxtNome.Text = ""
-        'MskTelefone.Text = ""
-        'CmbFerramenta.SelectedIndex = 0
-        'MskDocNumero.Text = ""
-        'TxtValor.Text = "0,00"
-        'TxtHistorico.Text = ""
-
-    End Sub
-
     Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
 
         Dim itemText As String
 
         If ListView1.SelectedItems.Count > 0 Then
+
             Dim selectedItem As ListViewItem = ListView1.SelectedItems(0)
 
             itemText = selectedItem.Text
 
             ' Faça algo com o texto do item selecionado
-            MessageBox.Show("Item selecionado: " & itemText)
+            'MessageBox.Show("Item selecionado: " & itemText)
 
             DateTimePicker1.Value = Date.ParseExact(selectedItem.SubItems(1).Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
             DateTimePicker2.Value = Date.ParseExact(selectedItem.SubItems(2).Text, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)
@@ -438,10 +396,22 @@ Public Class FmrCPlancamento
     End Sub
 
     Private Sub BtnDeleta_Click(sender As Object, e As EventArgs) Handles BtnDeleta.Click
+
         If ListView1.SelectedItems.Count > 0 Then
 
             Dim selectedItem As ListViewItem = ListView1.SelectedItems(0)
+
             ListView1.Items.Remove(selectedItem)
+
+            Dim intContador As Integer = 0
+            'Or Each item As ListViewItem In objTabela.Items
+            For Each item As ListViewItem In ListView1.Items
+
+                intContador += 1
+
+                item.Text = intContador
+
+            Next
 
             LabelTotalLancado.Text = SomaValores(ListView1, 9)
 
@@ -449,8 +419,91 @@ Public Class FmrCPlancamento
 
             BtnDeleta.Visible = False
 
+            GroupBox3.Enabled = True
+
+            LblAlteracao.Text = "C A D A S T R A M E N T O"
+
             Cmbcredor.Focus()
 
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        With oi
+
+            .Msg = "Confirma a Gravação ?" & Chr(13) & Chr(13)
+            .Style = vbYesNo
+            If MsgBox(.Msg, .Style, .Title) <> 6 Then Exit Sub
+
+        End With
+        Dim IntNUmeroRegistros As Integer = ListView1.Items.Count()
+
+        Dim Query As String
+
+        Query = "Insert into "
+        Query += " CP "
+        Query += "("
+        Query += "CP_ordem "
+        Query += ",CP_SIS_Lac"
+        Query += ",CP_DTA_Fato"
+        Query += ",CP_DTA_Venc"
+        Query += ",CP_DTA_PG"
+        Query += ",CP_Valor_Cobrado"
+        Query += ",CP_Valor_Final"
+        Query += ",CP_Valor_Desconto"
+        Query += ",CP_Valor_Juros"
+        Query += ",CP_Valor_Multa"
+        Query += ",CP_Credor_Tipo"
+        Query += ",CP_Credor_ID"
+        Query += ",CP_Credor_Nome"
+        Query += ",CP_Tipo_Cobranca"
+        Query += ",CP_Doc_Numero"
+        Query += ",CP_Historico"
+        Query += ")"
+        Query += " values "
+
+        For Each item As ListViewItem In ListView1.Items
+
+            Query += "("
+            Query += "1"
+            Query += "TD"
+            Query += "," & "'" & DataAAAAMMDD(item.SubItems(1).Text) & "'"              ' Data do Fato
+            Query += "," & "'" & DataAAAAMMDD(item.SubItems(2).Text) & "'"              ' Previsão de Pagamento
+            Query += ", null"
+            Query += "," & MoneyUSA(item.SubItems(9).Text) & "'"                        ' Valor acordado
+            Query += ",0.00"
+            Query += ",0.00"
+            Query += ",0.00"
+            Query += ",0.00"
+            Query += "," & "'" & item.SubItems(3).Text & "'"                            ' Tipo de Credor
+            Query += "," & "'" & item.SubItems(4).Text & "'"                            ' Indetificação do credor
+            Query += "," & "'" & item.SubItems(5).Text & "'"                            ' Nome/Razao Social do Credor
+            Query += "," & "'" & item.SubItems(7).Text & "'"                            ' Tipo de Cobrança
+            Query += "," & "'" & item.SubItems(8).Text & "'"                            ' Número do documento de cobrança
+            Query += "," & "'" & item.SubItems(10).Text & "'"                           ' Histórico
+            Query += "),"
+
+        Next
+
+        Query = Query.Substring(0, Query.Length - 1)
+
+        If GravaSQL(Query) Then
+            With oi
+                .Msg = "Gravação realizada com sucesso"
+                .Style = vbExclamation
+                MsgBox(.Msg, .Style, .Title)
+            End With
+
+        Else
+            With oi
+                .Msg = "Gravação não Realizada"
+                .Style = vbCritical
+                MsgBox(.Msg, .Style, .Title)
+            End With
+
+        End If
+
+
     End Sub
 End Class

@@ -23,6 +23,7 @@ Partial Class FmrCPlancamento
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtnDeleta = New System.Windows.Forms.Button()
         Me.LblItem = New System.Windows.Forms.Label()
         Me.LblAlteracao = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
@@ -64,7 +65,6 @@ Partial Class FmrCPlancamento
         Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.BtnTermina = New System.Windows.Forms.Button()
-        Me.BtnDeleta = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -97,6 +97,16 @@ Partial Class FmrCPlancamento
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "L A N Ç A M E N T O"
+        '
+        'BtnDeleta
+        '
+        Me.BtnDeleta.Location = New System.Drawing.Point(281, 293)
+        Me.BtnDeleta.Name = "BtnDeleta"
+        Me.BtnDeleta.Size = New System.Drawing.Size(234, 26)
+        Me.BtnDeleta.TabIndex = 18
+        Me.BtnDeleta.Text = "R E M O V E R"
+        Me.BtnDeleta.UseVisualStyleBackColor = True
+        Me.BtnDeleta.Visible = False
         '
         'LblItem
         '
@@ -432,16 +442,6 @@ Partial Class FmrCPlancamento
         Me.BtnTermina.TabIndex = 3
         Me.BtnTermina.Text = "Termina"
         Me.BtnTermina.UseVisualStyleBackColor = True
-        '
-        'BtnDeleta
-        '
-        Me.BtnDeleta.Location = New System.Drawing.Point(281, 293)
-        Me.BtnDeleta.Name = "BtnDeleta"
-        Me.BtnDeleta.Size = New System.Drawing.Size(234, 26)
-        Me.BtnDeleta.TabIndex = 18
-        Me.BtnDeleta.Text = "R E M O V E R"
-        Me.BtnDeleta.UseVisualStyleBackColor = True
-        Me.BtnDeleta.Visible = False
         '
         'FmrCPlancamento
         '
