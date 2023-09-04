@@ -37,6 +37,10 @@ Public Class FmrCPlancamento
             Dim intIndex As Integer = ListView1.Items.Count
             With ListView1
 
+                Dim strCodigoCC As String = CmbCentroDeCusto.Text.Substring(0, 3)
+                Dim strNomeCC As String = CmbCentroDeCusto.Text.Substring(6)
+
+
                 .Items.Add(intIndex + 1)
                 .Items(intIndex).SubItems.Add(StrData1)
                 .Items(intIndex).SubItems.Add(StrData2)
@@ -50,6 +54,9 @@ Public Class FmrCPlancamento
                 .Items(intIndex).SubItems.Add(TxtValor.Text)
                 .Items(intIndex).SubItems.Add(TxtHistorico.Text)
 
+                .Items(intIndex).SubItems.Add(strCodigoCC)
+                .Items(intIndex).SubItems.Add(strNomeCC)
+
 
             End With
 
@@ -58,6 +65,9 @@ Public Class FmrCPlancamento
             Dim intIndeceAlatreacao As Integer = Convert.ToInt32(LblItem.Text) - 1
 
             With ListView1
+
+                Dim strCodigoCC As String = CmbCentroDeCusto.Text.Substring(0, 3)
+                Dim strNomeCC As String = CmbCentroDeCusto.Text.Substring(6)
 
                 .Items(intIndeceAlatreacao).SubItems(1).Text = DataLatina(DataAAAAMMDD(DateTimePicker1.Value.ToString.Substring(0, 10)))
                 .Items(intIndeceAlatreacao).SubItems(2).Text = DataLatina(DataAAAAMMDD(DateTimePicker2.Value.ToString.Substring(0, 10)))
@@ -69,6 +79,9 @@ Public Class FmrCPlancamento
                 .Items(intIndeceAlatreacao).SubItems(8).Text = MskDocNumero.Text
                 .Items(intIndeceAlatreacao).SubItems(9).Text = TxtValor.Text
                 .Items(intIndeceAlatreacao).SubItems(10).Text = TxtHistorico.Text
+                .Items(intIndeceAlatreacao).SubItems(11).Text = strCodigoCC
+                .Items(intIndeceAlatreacao).SubItems(12).Text = strNomeCC
+
 
             End With
 
@@ -96,6 +109,7 @@ Public Class FmrCPlancamento
         DateTimePicker1.Value = Date.ParseExact(Agenda(0).Data, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture)
         DateTimePicker2.Value = Date.ParseExact(Agenda(0).Data, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture)
 
+        CmbCentroDeCusto.SelectedIndex = 0
         Cmbcredor.SelectedIndex = 0
         MskIndentifica.Text = ""
         TxtNome.Text = ""
@@ -152,6 +166,22 @@ Public Class FmrCPlancamento
 
         If LblCPF_CNPJ.Text = "C.N.P.J" Then strISid = CNPJretiraMascara(strISid)
         If LblCPF_CNPJ.Text = "C.P.F" Then strISid = CPFretiraMascara(strISid) : intVerifica = 1
+
+        If CmbCentroDeCusto.Text.Replace("-", "").Trim = "" Then
+
+            With oi
+                .Msg = "Centro de custo não selecionado !" & Chr(13) & Chr(13)
+                .Msg += "Por favor selecione um centro de custo apropriado para o seu lançamento"
+                .Style = vbCritical
+                MsgBox(.Msg, MsgBoxStyle.RetryCancel, .Title)
+
+            End With
+
+            CmbCentroDeCusto.Focus()
+
+            Return (100)
+
+        End If
 
         If intVerifica = 0 Then
             If strISid.Length < 14 Then
@@ -356,6 +386,7 @@ Public Class FmrCPlancamento
 
         DateTimePicker1.Value = Date.ParseExact(Agenda(0).Data, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture)
         DateTimePicker2.Value = Date.ParseExact(Agenda(0).Data, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture)
+        ComboCarregar(CmbCentroDeCusto, "centro_custo", "concat(cc_codigo,' - ' , cc_descricao)", "Order by cc_descricao")
 
     End Sub
 
@@ -383,6 +414,8 @@ Public Class FmrCPlancamento
             MskDocNumero.Text = selectedItem.SubItems(8).Text
             TxtValor.Text = selectedItem.SubItems(9).Text
             TxtHistorico.Text = selectedItem.SubItems(10).Text
+
+            CmbCentroDeCusto.Text = selectedItem.SubItems(11).Text & " - " & selectedItem.SubItems(12).Text
 
             GroupBox3.Enabled = False
 
@@ -441,6 +474,12 @@ Public Class FmrCPlancamento
 
         Dim Query As String
 
+        Query = "SELECT IFNULL(MAX(CP_ordem), 0) FROM CP;"
+        Dim IntSequencial As Integer = gravaSQLretorno(Query)
+
+        Query = "SELECT IFNULL(MAX(CP_Lote_Lancamento), 0) FROM CP;"
+        Dim IntLote As Integer = gravaSQLretorno(Query) + 1
+
         Query = "Insert into "
         Query += " CP "
         Query += "("
@@ -460,33 +499,47 @@ Public Class FmrCPlancamento
         Query += ",CP_Tipo_Cobranca"
         Query += ",CP_Doc_Numero"
         Query += ",CP_Historico"
+        Query += ",CP_Credor_Fone"
+        Query += ",CP_Lote_Lancamento"
+        Query += ",CP_Centro_Custo_codigo"
+        Query += ",CP_Centro_Custo_nome"
         Query += ")"
         Query += " values "
 
+        Dim IncIncremento As Integer = 0
+
         For Each item As ListViewItem In ListView1.Items
 
+            Dim IntCheckCredor As Integer = IIf(item.SubItems(3).Text = "Pessoa Juridica PJ", 0, 1)
+
+            IncIncremento += 1
+
             Query += "("
-            Query += "1"
-            Query += "TD"
-            Query += "," & "'" & DataAAAAMMDD(item.SubItems(1).Text) & "'"              ' Data do Fato
-            Query += "," & "'" & DataAAAAMMDD(item.SubItems(2).Text) & "'"              ' Previsão de Pagamento
+            Query += "(" & IntSequencial + IncIncremento & ")"
+            Query += ",'TD'"
+            Query += "," & "'" & DataAAAAMMDD(item.SubItems(1).Text) & "'"                                                                              ' Data do Fato
+            Query += "," & "'" & DataAAAAMMDD(item.SubItems(2).Text) & "'"                                                                              ' Previsão de Pagamento
             Query += ", null"
-            Query += "," & MoneyUSA(item.SubItems(9).Text) & "'"                        ' Valor acordado
+            Query += "," & MoneyUSA(item.SubItems(9).Text)                                                                                              ' Valor acordado
             Query += ",0.00"
             Query += ",0.00"
             Query += ",0.00"
             Query += ",0.00"
-            Query += "," & "'" & item.SubItems(3).Text & "'"                            ' Tipo de Credor
-            Query += "," & "'" & item.SubItems(4).Text & "'"                            ' Indetificação do credor
-            Query += "," & "'" & item.SubItems(5).Text & "'"                            ' Nome/Razao Social do Credor
-            Query += "," & "'" & item.SubItems(7).Text & "'"                            ' Tipo de Cobrança
-            Query += "," & "'" & item.SubItems(8).Text & "'"                            ' Número do documento de cobrança
-            Query += "," & "'" & item.SubItems(10).Text & "'"                           ' Histórico
+            Query += "," & IntCheckCredor                                                                                                               ' Tipo de Credor
+            Query += "," & "'" & IIf(IntCheckCredor = 0, CNPJretiraMascara(item.SubItems(4).Text), CPFretiraMascara(item.SubItems(4).Text)) & "'"       ' Indetificação do credor
+            Query += "," & "'" & item.SubItems(5).Text & "'"                                                                                            ' Nome/Razao Social do Credor
+            Query += "," & "'" & item.SubItems(7).Text & "'"                                                                                            ' Tipo de Cobrança
+            Query += "," & "'" & item.SubItems(8).Text & "'"                                                                                            ' Número do documento de cobrança
+            Query += "," & "'" & item.SubItems(10).Text & "'"                                                                                           ' Histórico
+            Query += "," & "'" & item.SubItems(6).Text & "'"                                                                                            ' Credor Telefone
+            Query += "," & IntLote
+            Query += "," & "'" & item.SubItems(11).Text & "'"
+            Query += "," & "'" & item.SubItems(12).Text & "'"
             Query += "),"
 
         Next
 
-        Query = Query.Substring(0, Query.Length - 1)
+        Query = Query.Substring(0, Query.Length - 1) & ";"
 
         If GravaSQL(Query) Then
             With oi
@@ -504,6 +557,10 @@ Public Class FmrCPlancamento
 
         End If
 
+
+    End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
 
     End Sub
 End Class

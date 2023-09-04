@@ -745,4 +745,8 @@ Public Class Form1
 
         FmrCPlancamento.Show()
     End Sub
+
+    Private Sub PesquisaToolStripMenuItem18_Click(sender As Object, e As EventArgs) Handles PesquisaToolStripMenuItem18.Click
+        FrmCPLibera_lancamento.Show()
+    End Sub
 End Class

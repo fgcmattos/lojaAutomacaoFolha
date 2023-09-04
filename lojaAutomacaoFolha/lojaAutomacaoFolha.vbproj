@@ -237,6 +237,14 @@
     </Compile>
     <Compile Include="classes\Tempo\Class\Aponta.vb" />
     <Compile Include="classes\Tempo\Class\ApontaAcoes.vb" />
+    <Compile Include="Contas A Pagar\Class\ClassCP.vb" />
+    <Compile Include="Contas A Pagar\Class\ClassCP_Acao.vb" />
+    <Compile Include="Contas A Pagar\Form\FrmCPLibera_lancamento.Designer.vb">
+      <DependentUpon>FrmCPLibera_lancamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contas A Pagar\Form\FrmCPLibera_lancamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Folha de Pagamento\Ponto\Class\captObs.vb" />
     <Compile Include="Folha de Pagamento\Ponto\Class\captObsRP.vb" />
     <Compile Include="Cadastros\Financeiro\Contas A Pagar\Cartao\Class\CartaoClass.vb" />
@@ -871,6 +879,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\Fornecedor\Form\FrmFornecedorPesq.resx">
       <DependentUpon>FrmFornecedorPesq.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contas A Pagar\Form\FrmCPLibera_lancamento.resx">
+      <DependentUpon>FrmCPLibera_lancamento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Folha de Pagamento\Contrato\Form\FrmFolhaContratoAtivacao.resx">
       <DependentUpon>FrmFolhaContratoAtivacao.vb</DependentUpon>

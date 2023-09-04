@@ -65,6 +65,10 @@ Partial Class FmrCPlancamento
         Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.BtnTermina = New System.Windows.Forms.Button()
+        Me.CmbCentroDeCusto = New System.Windows.Forms.ComboBox()
+        Me.LabelCentroDeCusto = New System.Windows.Forms.Label()
+        Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -72,6 +76,8 @@ Partial Class FmrCPlancamento
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.CmbCentroDeCusto)
+        Me.GroupBox2.Controls.Add(Me.LabelCentroDeCusto)
         Me.GroupBox2.Controls.Add(Me.BtnDeleta)
         Me.GroupBox2.Controls.Add(Me.LblItem)
         Me.GroupBox2.Controls.Add(Me.LblAlteracao)
@@ -91,16 +97,16 @@ Partial Class FmrCPlancamento
         Me.GroupBox2.Controls.Add(Me.LabelValor)
         Me.GroupBox2.Controls.Add(Me.LabelDataOcorrencia)
         Me.GroupBox2.Controls.Add(Me.LabelTipo)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 3)
+        Me.GroupBox2.Location = New System.Drawing.Point(23, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1053, 325)
+        Me.GroupBox2.Size = New System.Drawing.Size(1053, 303)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "L A N Ç A M E N T O"
         '
         'BtnDeleta
         '
-        Me.BtnDeleta.Location = New System.Drawing.Point(281, 293)
+        Me.BtnDeleta.Location = New System.Drawing.Point(265, 266)
         Me.BtnDeleta.Name = "BtnDeleta"
         Me.BtnDeleta.Size = New System.Drawing.Size(234, 26)
         Me.BtnDeleta.TabIndex = 18
@@ -127,30 +133,30 @@ Partial Class FmrCPlancamento
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(122, 228)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(583, 211)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(255, 20)
         Me.DateTimePicker2.TabIndex = 9
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(122, 201)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(583, 184)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(255, 20)
         Me.DateTimePicker1.TabIndex = 8
         '
         'MskDocNumero
         '
-        Me.MskDocNumero.Location = New System.Drawing.Point(622, 79)
+        Me.MskDocNumero.Location = New System.Drawing.Point(629, 119)
         Me.MskDocNumero.Mask = "#########"
         Me.MskDocNumero.Name = "MskDocNumero"
-        Me.MskDocNumero.Size = New System.Drawing.Size(140, 20)
+        Me.MskDocNumero.Size = New System.Drawing.Size(136, 20)
         Me.MskDocNumero.TabIndex = 6
         '
         'LabelDocNumero
         '
         Me.LabelDocNumero.AutoSize = True
-        Me.LabelDocNumero.Location = New System.Drawing.Point(559, 83)
+        Me.LabelDocNumero.Location = New System.Drawing.Point(562, 123)
         Me.LabelDocNumero.Name = "LabelDocNumero"
         Me.LabelDocNumero.Size = New System.Drawing.Size(44, 13)
         Me.LabelDocNumero.TabIndex = 15
@@ -165,7 +171,7 @@ Partial Class FmrCPlancamento
         Me.GroupBox1.Controls.Add(Me.LblTelefone)
         Me.GroupBox1.Controls.Add(Me.LblCPF_CNPJ)
         Me.GroupBox1.Controls.Add(Me.LblIdentificacao)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 65)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 116)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(444, 115)
         Me.GroupBox1.TabIndex = 14
@@ -224,7 +230,7 @@ Partial Class FmrCPlancamento
         '
         'TxtHistorico
         '
-        Me.TxtHistorico.Location = New System.Drawing.Point(72, 264)
+        Me.TxtHistorico.Location = New System.Drawing.Point(72, 237)
         Me.TxtHistorico.MaxLength = 150
         Me.TxtHistorico.Name = "TxtHistorico"
         Me.TxtHistorico.Size = New System.Drawing.Size(848, 20)
@@ -232,7 +238,7 @@ Partial Class FmrCPlancamento
         '
         'TxtValor
         '
-        Me.TxtValor.Location = New System.Drawing.Point(626, 142)
+        Me.TxtValor.Location = New System.Drawing.Point(629, 148)
         Me.TxtValor.MaxLength = 15
         Me.TxtValor.Name = "TxtValor"
         Me.TxtValor.Size = New System.Drawing.Size(110, 20)
@@ -246,7 +252,7 @@ Partial Class FmrCPlancamento
         Me.CmbFerramenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbFerramenta.FormattingEnabled = True
         Me.CmbFerramenta.Items.AddRange(New Object() {"", "Boleto", "Fatura", "Nota Fiscal", "Recibo"})
-        Me.CmbFerramenta.Location = New System.Drawing.Point(626, 28)
+        Me.CmbFerramenta.Location = New System.Drawing.Point(629, 86)
         Me.CmbFerramenta.Name = "CmbFerramenta"
         Me.CmbFerramenta.Size = New System.Drawing.Size(137, 21)
         Me.CmbFerramenta.TabIndex = 5
@@ -254,7 +260,7 @@ Partial Class FmrCPlancamento
         'LabelCobranca
         '
         Me.LabelCobranca.AutoSize = True
-        Me.LabelCobranca.Location = New System.Drawing.Point(511, 36)
+        Me.LabelCobranca.Location = New System.Drawing.Point(514, 94)
         Me.LabelCobranca.Name = "LabelCobranca"
         Me.LabelCobranca.Size = New System.Drawing.Size(92, 13)
         Me.LabelCobranca.TabIndex = 10
@@ -263,7 +269,7 @@ Partial Class FmrCPlancamento
         'LabelDataVencimento
         '
         Me.LabelDataVencimento.AutoSize = True
-        Me.LabelDataVencimento.Location = New System.Drawing.Point(13, 230)
+        Me.LabelDataVencimento.Location = New System.Drawing.Point(474, 213)
         Me.LabelDataVencimento.Name = "LabelDataVencimento"
         Me.LabelDataVencimento.Size = New System.Drawing.Size(89, 13)
         Me.LabelDataVencimento.TabIndex = 8
@@ -275,14 +281,14 @@ Partial Class FmrCPlancamento
         Me.Cmbcredor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cmbcredor.FormattingEnabled = True
         Me.Cmbcredor.Items.AddRange(New Object() {"", "Pessoa Juridica PJ", "Pessoa Fisica    PF"})
-        Me.Cmbcredor.Location = New System.Drawing.Point(95, 23)
+        Me.Cmbcredor.Location = New System.Drawing.Point(105, 68)
         Me.Cmbcredor.Name = "Cmbcredor"
         Me.Cmbcredor.Size = New System.Drawing.Size(168, 21)
         Me.Cmbcredor.TabIndex = 1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(14, 293)
+        Me.Button1.Location = New System.Drawing.Point(14, 266)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(234, 26)
         Me.Button1.TabIndex = 11
@@ -292,7 +298,7 @@ Partial Class FmrCPlancamento
         'LabelHistorco
         '
         Me.LabelHistorco.AutoSize = True
-        Me.LabelHistorco.Location = New System.Drawing.Point(12, 264)
+        Me.LabelHistorco.Location = New System.Drawing.Point(12, 237)
         Me.LabelHistorco.Name = "LabelHistorco"
         Me.LabelHistorco.Size = New System.Drawing.Size(48, 13)
         Me.LabelHistorco.TabIndex = 4
@@ -301,7 +307,7 @@ Partial Class FmrCPlancamento
         'LabelValor
         '
         Me.LabelValor.AutoSize = True
-        Me.LabelValor.Location = New System.Drawing.Point(572, 145)
+        Me.LabelValor.Location = New System.Drawing.Point(575, 155)
         Me.LabelValor.Name = "LabelValor"
         Me.LabelValor.Size = New System.Drawing.Size(31, 13)
         Me.LabelValor.TabIndex = 3
@@ -310,7 +316,7 @@ Partial Class FmrCPlancamento
         'LabelDataOcorrencia
         '
         Me.LabelDataOcorrencia.AutoSize = True
-        Me.LabelDataOcorrencia.Location = New System.Drawing.Point(13, 204)
+        Me.LabelDataOcorrencia.Location = New System.Drawing.Point(474, 187)
         Me.LabelDataOcorrencia.Name = "LabelDataOcorrencia"
         Me.LabelDataOcorrencia.Size = New System.Drawing.Size(85, 13)
         Me.LabelDataOcorrencia.TabIndex = 2
@@ -319,7 +325,7 @@ Partial Class FmrCPlancamento
         'LabelTipo
         '
         Me.LabelTipo.AutoSize = True
-        Me.LabelTipo.Location = New System.Drawing.Point(13, 31)
+        Me.LabelTipo.Location = New System.Drawing.Point(34, 76)
         Me.LabelTipo.Name = "LabelTipo"
         Me.LabelTipo.Size = New System.Drawing.Size(62, 13)
         Me.LabelTipo.TabIndex = 1
@@ -331,7 +337,7 @@ Partial Class FmrCPlancamento
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.Button2)
         Me.GroupBox3.Controls.Add(Me.ListView1)
-        Me.GroupBox3.Location = New System.Drawing.Point(13, 334)
+        Me.GroupBox3.Location = New System.Drawing.Point(23, 321)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(1105, 277)
         Me.GroupBox3.TabIndex = 2
@@ -368,7 +374,7 @@ Partial Class FmrCPlancamento
         '
         'ListView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader7})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader7, Me.ColumnHeader12, Me.ColumnHeader13})
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
@@ -436,18 +442,46 @@ Partial Class FmrCPlancamento
         '
         'BtnTermina
         '
-        Me.BtnTermina.Location = New System.Drawing.Point(26, 617)
+        Me.BtnTermina.Location = New System.Drawing.Point(37, 604)
         Me.BtnTermina.Name = "BtnTermina"
         Me.BtnTermina.Size = New System.Drawing.Size(133, 28)
         Me.BtnTermina.TabIndex = 3
         Me.BtnTermina.Text = "Termina"
         Me.BtnTermina.UseVisualStyleBackColor = True
         '
+        'CmbCentroDeCusto
+        '
+        Me.CmbCentroDeCusto.AutoCompleteCustomSource.AddRange(New String() {"Forecedor", "Colaborador"})
+        Me.CmbCentroDeCusto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbCentroDeCusto.FormattingEnabled = True
+        Me.CmbCentroDeCusto.Items.AddRange(New Object() {"", "Pessoa Juridica PJ", "Pessoa Fisica    PF"})
+        Me.CmbCentroDeCusto.Location = New System.Drawing.Point(105, 32)
+        Me.CmbCentroDeCusto.Name = "CmbCentroDeCusto"
+        Me.CmbCentroDeCusto.Size = New System.Drawing.Size(315, 21)
+        Me.CmbCentroDeCusto.TabIndex = 19
+        '
+        'LabelCentroDeCusto
+        '
+        Me.LabelCentroDeCusto.AutoSize = True
+        Me.LabelCentroDeCusto.Location = New System.Drawing.Point(16, 40)
+        Me.LabelCentroDeCusto.Name = "LabelCentroDeCusto"
+        Me.LabelCentroDeCusto.Size = New System.Drawing.Size(83, 13)
+        Me.LabelCentroDeCusto.TabIndex = 20
+        Me.LabelCentroDeCusto.Text = "Centro de Custo"
+        '
+        'ColumnHeader12
+        '
+        Me.ColumnHeader12.Text = "Cod CC"
+        '
+        'ColumnHeader13
+        '
+        Me.ColumnHeader13.Text = "CC"
+        '
         'FmrCPlancamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1140, 657)
+        Me.ClientSize = New System.Drawing.Size(1140, 638)
         Me.Controls.Add(Me.BtnTermina)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -508,4 +542,8 @@ Partial Class FmrCPlancamento
     Friend WithEvents LblItem As Label
     Friend WithEvents LblAlteracao As Label
     Friend WithEvents BtnDeleta As Button
+    Friend WithEvents CmbCentroDeCusto As ComboBox
+    Friend WithEvents LabelCentroDeCusto As Label
+    Friend WithEvents ColumnHeader12 As ColumnHeader
+    Friend WithEvents ColumnHeader13 As ColumnHeader
 End Class
