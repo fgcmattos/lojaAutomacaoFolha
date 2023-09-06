@@ -503,6 +503,11 @@ Public Class FmrCPlancamento
         Query += ",CP_Lote_Lancamento"
         Query += ",CP_Centro_Custo_codigo"
         Query += ",CP_Centro_Custo_nome"
+
+        Query += ",CP_usuario_lancamento_codigo"
+        Query += ",CP_usuario_lancamento_Tipo"
+        Query += ",CP_usuario_lancamento_nome"
+        Query += ",CP_usuario_lancamento_data"
         Query += ")"
         Query += " values "
 
@@ -535,6 +540,15 @@ Public Class FmrCPlancamento
             Query += "," & IntLote
             Query += "," & "'" & item.SubItems(11).Text & "'"
             Query += "," & "'" & item.SubItems(12).Text & "'"
+
+            Query += "," & usuClass.Usuario_Chave
+
+            Query += "," & "'" & usuClass.Usuario_Tipo & "'"
+
+            Query += "," & "'" & usuClass.Usuario_Nome & "'"
+
+            Query += ", now()"
+
             Query += "),"
 
         Next
@@ -547,7 +561,7 @@ Public Class FmrCPlancamento
                 .Style = vbExclamation
                 MsgBox(.Msg, .Style, .Title)
             End With
-
+            Me.Close()
         Else
             With oi
                 .Msg = "Gravação não Realizada"

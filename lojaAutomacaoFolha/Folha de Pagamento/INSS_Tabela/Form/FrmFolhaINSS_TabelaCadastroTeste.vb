@@ -89,7 +89,14 @@ Public Class FrmFolhaINSS_TabelaCadastroTeste
 
         If ApontaSQL(Query) = 0 Then
 
-            MsgBox("Não existe tabela digitada para a conferência")
+            With oi
+
+                .Msg = "Não existe tabela digitada para a conferência"
+                .Style = vbCritical
+
+                MsgBox(.Msg, .Style, .Title)
+
+            End With
 
             Me.Close()
 

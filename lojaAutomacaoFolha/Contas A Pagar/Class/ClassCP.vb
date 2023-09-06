@@ -20,6 +20,9 @@
     Public Property Class_CP_DTA_Inclusao As DateTime
     Public Property Class_CP_Credor_Fone As String
     Public Property Class_CP_Lote_Lancamento As Integer
+    Public Property Class_CP_Centro_Custo_codigo As String
+    Public Property Class_CP_Centro_Custo_nome As String
+    Public Property Class_CP_Prazo As Integer
 
 
 End Class
