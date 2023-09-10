@@ -23,6 +23,7 @@ Partial Class frmCartaoManutencao
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GpbPainel = New System.Windows.Forms.GroupBox()
+        Me.CheckBoxAtivo = New System.Windows.Forms.CheckBox()
         Me.BtnPesquisa = New System.Windows.Forms.Button()
         Me.MskFaturaPesq = New System.Windows.Forms.MaskedTextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -35,6 +36,8 @@ Partial Class frmCartaoManutencao
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Lid = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.MskFatura = New System.Windows.Forms.MaskedTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BtoLimpa = New System.Windows.Forms.Button()
@@ -48,14 +51,31 @@ Partial Class frmCartaoManutencao
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Btotermina = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Lid = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GpbPainel.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GpbPainel
         '
+        Me.GpbPainel.Controls.Add(Me.CheckBoxAtivo)
         Me.GpbPainel.Controls.Add(Me.BtnPesquisa)
         Me.GpbPainel.Controls.Add(Me.MskFaturaPesq)
         Me.GpbPainel.Controls.Add(Me.Label6)
@@ -67,25 +87,36 @@ Partial Class frmCartaoManutencao
         Me.GpbPainel.Controls.Add(Me.Label8)
         Me.GpbPainel.Controls.Add(Me.Label9)
         Me.GpbPainel.Controls.Add(Me.Label10)
-        Me.GpbPainel.Location = New System.Drawing.Point(304, 14)
+        Me.GpbPainel.Location = New System.Drawing.Point(8, 12)
         Me.GpbPainel.Name = "GpbPainel"
-        Me.GpbPainel.Size = New System.Drawing.Size(281, 255)
+        Me.GpbPainel.Size = New System.Drawing.Size(664, 158)
         Me.GpbPainel.TabIndex = 0
         Me.GpbPainel.TabStop = False
         Me.GpbPainel.Text = "Painel de Pesquisa"
         '
+        'CheckBoxAtivo
+        '
+        Me.CheckBoxAtivo.AutoSize = True
+        Me.CheckBoxAtivo.Location = New System.Drawing.Point(575, 84)
+        Me.CheckBoxAtivo.Name = "CheckBoxAtivo"
+        Me.CheckBoxAtivo.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.CheckBoxAtivo.Size = New System.Drawing.Size(50, 17)
+        Me.CheckBoxAtivo.TabIndex = 16
+        Me.CheckBoxAtivo.Text = "Ativo"
+        Me.CheckBoxAtivo.UseVisualStyleBackColor = True
+        '
         'BtnPesquisa
         '
-        Me.BtnPesquisa.Location = New System.Drawing.Point(187, 183)
+        Me.BtnPesquisa.Location = New System.Drawing.Point(15, 118)
         Me.BtnPesquisa.Name = "BtnPesquisa"
-        Me.BtnPesquisa.Size = New System.Drawing.Size(88, 26)
+        Me.BtnPesquisa.Size = New System.Drawing.Size(610, 26)
         Me.BtnPesquisa.TabIndex = 27
         Me.BtnPesquisa.Text = "Pesquisar"
         Me.BtnPesquisa.UseVisualStyleBackColor = True
         '
         'MskFaturaPesq
         '
-        Me.MskFaturaPesq.Location = New System.Drawing.Point(129, 187)
+        Me.MskFaturaPesq.Location = New System.Drawing.Point(580, 47)
         Me.MskFaturaPesq.Mask = "00"
         Me.MskFaturaPesq.Name = "MskFaturaPesq"
         Me.MskFaturaPesq.Size = New System.Drawing.Size(45, 20)
@@ -94,7 +125,7 @@ Partial Class frmCartaoManutencao
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(23, 187)
+        Me.Label6.Location = New System.Drawing.Point(577, 30)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(37, 13)
         Me.Label6.TabIndex = 25
@@ -102,7 +133,7 @@ Partial Class frmCartaoManutencao
         '
         'MskSegurancaPesq
         '
-        Me.MskSegurancaPesq.Location = New System.Drawing.Point(129, 145)
+        Me.MskSegurancaPesq.Location = New System.Drawing.Point(504, 47)
         Me.MskSegurancaPesq.Mask = "000"
         Me.MskSegurancaPesq.Name = "MskSegurancaPesq"
         Me.MskSegurancaPesq.Size = New System.Drawing.Size(45, 20)
@@ -110,7 +141,7 @@ Partial Class frmCartaoManutencao
         '
         'MskVencimentoPesq
         '
-        Me.MskVencimentoPesq.Location = New System.Drawing.Point(129, 106)
+        Me.MskVencimentoPesq.Location = New System.Drawing.Point(378, 47)
         Me.MskVencimentoPesq.Mask = "00/00"
         Me.MskVencimentoPesq.Name = "MskVencimentoPesq"
         Me.MskVencimentoPesq.Size = New System.Drawing.Size(45, 20)
@@ -118,7 +149,7 @@ Partial Class frmCartaoManutencao
         '
         'MskNumeroPesq
         '
-        Me.MskNumeroPesq.Location = New System.Drawing.Point(95, 65)
+        Me.MskNumeroPesq.Location = New System.Drawing.Point(222, 46)
         Me.MskNumeroPesq.Mask = "0000-0000-0000-0000"
         Me.MskNumeroPesq.Name = "MskNumeroPesq"
         Me.MskNumeroPesq.Size = New System.Drawing.Size(132, 20)
@@ -128,7 +159,7 @@ Partial Class frmCartaoManutencao
         '
         Me.CmbBandeiraPesq.FormattingEnabled = True
         Me.CmbBandeiraPesq.Items.AddRange(New Object() {"VISA", "MASTERCAD", "ELO"})
-        Me.CmbBandeiraPesq.Location = New System.Drawing.Point(95, 25)
+        Me.CmbBandeiraPesq.Location = New System.Drawing.Point(15, 46)
         Me.CmbBandeiraPesq.Name = "CmbBandeiraPesq"
         Me.CmbBandeiraPesq.Size = New System.Drawing.Size(132, 21)
         Me.CmbBandeiraPesq.TabIndex = 21
@@ -136,7 +167,7 @@ Partial Class frmCartaoManutencao
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(23, 150)
+        Me.Label7.Location = New System.Drawing.Point(501, 30)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(59, 13)
         Me.Label7.TabIndex = 20
@@ -145,7 +176,7 @@ Partial Class frmCartaoManutencao
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(23, 114)
+        Me.Label8.Location = New System.Drawing.Point(375, 30)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(103, 13)
         Me.Label8.TabIndex = 19
@@ -154,7 +185,7 @@ Partial Class frmCartaoManutencao
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(23, 72)
+        Me.Label9.Location = New System.Drawing.Point(219, 30)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(44, 13)
         Me.Label9.TabIndex = 18
@@ -163,7 +194,7 @@ Partial Class frmCartaoManutencao
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(23, 30)
+        Me.Label10.Location = New System.Drawing.Point(12, 30)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(49, 13)
         Me.Label10.TabIndex = 17
@@ -185,12 +216,29 @@ Partial Class frmCartaoManutencao
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 399)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(286, 257)
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Cartão de Crédito - Manutenção"
+        '
+        'Lid
+        '
+        Me.Lid.AutoSize = True
+        Me.Lid.Location = New System.Drawing.Point(92, 30)
+        Me.Lid.Name = "Lid"
+        Me.Lid.Size = New System.Drawing.Size(0, 13)
+        Me.Lid.TabIndex = 18
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(22, 27)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(18, 13)
+        Me.Label11.TabIndex = 17
+        Me.Label11.Text = "ID"
         '
         'MskFatura
         '
@@ -298,44 +346,124 @@ Partial Class frmCartaoManutencao
         '
         'Btotermina
         '
-        Me.Btotermina.Location = New System.Drawing.Point(5, 275)
+        Me.Btotermina.Location = New System.Drawing.Point(34, 677)
         Me.Btotermina.Name = "Btotermina"
         Me.Btotermina.Size = New System.Drawing.Size(88, 26)
         Me.Btotermina.TabIndex = 15
         Me.Btotermina.Text = "Terminar"
         Me.Btotermina.UseVisualStyleBackColor = True
         '
-        'Label11
+        'GroupBox2
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(22, 27)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(18, 13)
-        Me.Label11.TabIndex = 17
-        Me.Label11.Text = "ID"
+        Me.GroupBox2.Controls.Add(Me.ListView1)
+        Me.GroupBox2.Location = New System.Drawing.Point(9, 175)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(1063, 215)
+        Me.GroupBox2.TabIndex = 16
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Resultado da Pesquisa"
         '
-        'Lid
+        'ListView1
         '
-        Me.Lid.AutoSize = True
-        Me.Lid.Location = New System.Drawing.Point(92, 30)
-        Me.Lid.Name = "Lid"
-        Me.Lid.Size = New System.Drawing.Size(0, 13)
-        Me.Lid.TabIndex = 18
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader8, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader9, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15})
+        Me.ListView1.GridLines = True
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(6, 19)
+        Me.ListView1.MultiSelect = False
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(1043, 179)
+        Me.ListView1.TabIndex = 0
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "ID"
+        Me.ColumnHeader1.Width = 50
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Bandeira"
+        Me.ColumnHeader2.Width = 100
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Número"
+        Me.ColumnHeader3.Width = 100
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Responsável"
+        Me.ColumnHeader4.Width = 150
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Nome Impresso"
+        Me.ColumnHeader5.Width = 150
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "Validade"
+        Me.ColumnHeader8.Width = 90
+        '
+        'ColumnHeader10
+        '
+        Me.ColumnHeader10.Text = "SEG"
+        Me.ColumnHeader10.Width = 100
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "FAT"
+        Me.ColumnHeader11.Width = 100
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Ativação"
+        Me.ColumnHeader6.Width = 100
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Desativação"
+        Me.ColumnHeader7.Width = 100
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Banco"
+        '
+        'ColumnHeader12
+        '
+        Me.ColumnHeader12.Text = "Agencia"
+        '
+        'ColumnHeader13
+        '
+        Me.ColumnHeader13.Text = "Agenci_DV"
+        '
+        'ColumnHeader14
+        '
+        Me.ColumnHeader14.Text = "Conta"
+        '
+        'ColumnHeader15
+        '
+        Me.ColumnHeader15.Text = "Conta_DV"
         '
         'frmCartaoManutencao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(592, 313)
+        Me.ClientSize = New System.Drawing.Size(1075, 711)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Btotermina)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GpbPainel)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmCartaoManutencao"
         Me.Text = "CARTÃO - Manutenção"
         Me.GpbPainel.ResumeLayout(False)
         Me.GpbPainel.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -368,4 +496,22 @@ Partial Class frmCartaoManutencao
     Friend WithEvents Btotermina As Button
     Friend WithEvents Lid As Label
     Friend WithEvents Label11 As Label
+    Friend WithEvents CheckBoxAtivo As CheckBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents ColumnHeader8 As ColumnHeader
+    Friend WithEvents ColumnHeader10 As ColumnHeader
+    Friend WithEvents ColumnHeader11 As ColumnHeader
+    Friend WithEvents ColumnHeader6 As ColumnHeader
+    Friend WithEvents ColumnHeader7 As ColumnHeader
+    Friend WithEvents ColumnHeader9 As ColumnHeader
+    Friend WithEvents ColumnHeader12 As ColumnHeader
+    Friend WithEvents ColumnHeader13 As ColumnHeader
+    Friend WithEvents ColumnHeader14 As ColumnHeader
+    Friend WithEvents ColumnHeader15 As ColumnHeader
 End Class

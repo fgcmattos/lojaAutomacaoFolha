@@ -23,6 +23,8 @@ Partial Class FmrCPlancamento
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CmbCentroDeCusto = New System.Windows.Forms.ComboBox()
+        Me.LabelCentroDeCusto = New System.Windows.Forms.Label()
         Me.BtnDeleta = New System.Windows.Forms.Button()
         Me.LblItem = New System.Windows.Forms.Label()
         Me.LblAlteracao = New System.Windows.Forms.Label()
@@ -64,11 +66,9 @@ Partial Class FmrCPlancamento
         Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.BtnTermina = New System.Windows.Forms.Button()
-        Me.CmbCentroDeCusto = New System.Windows.Forms.ComboBox()
-        Me.LabelCentroDeCusto = New System.Windows.Forms.Label()
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.BtnTermina = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -103,6 +103,26 @@ Partial Class FmrCPlancamento
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "L A N Ç A M E N T O"
+        '
+        'CmbCentroDeCusto
+        '
+        Me.CmbCentroDeCusto.AutoCompleteCustomSource.AddRange(New String() {"Forecedor", "Colaborador"})
+        Me.CmbCentroDeCusto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbCentroDeCusto.FormattingEnabled = True
+        Me.CmbCentroDeCusto.Items.AddRange(New Object() {"", "Pessoa Juridica PJ", "Pessoa Fisica    PF"})
+        Me.CmbCentroDeCusto.Location = New System.Drawing.Point(105, 32)
+        Me.CmbCentroDeCusto.Name = "CmbCentroDeCusto"
+        Me.CmbCentroDeCusto.Size = New System.Drawing.Size(315, 21)
+        Me.CmbCentroDeCusto.TabIndex = 19
+        '
+        'LabelCentroDeCusto
+        '
+        Me.LabelCentroDeCusto.AutoSize = True
+        Me.LabelCentroDeCusto.Location = New System.Drawing.Point(16, 40)
+        Me.LabelCentroDeCusto.Name = "LabelCentroDeCusto"
+        Me.LabelCentroDeCusto.Size = New System.Drawing.Size(83, 13)
+        Me.LabelCentroDeCusto.TabIndex = 20
+        Me.LabelCentroDeCusto.Text = "Centro de Custo"
         '
         'BtnDeleta
         '
@@ -251,7 +271,7 @@ Partial Class FmrCPlancamento
         Me.CmbFerramenta.AutoCompleteCustomSource.AddRange(New String() {"Forecedor", "Colaborador"})
         Me.CmbFerramenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbFerramenta.FormattingEnabled = True
-        Me.CmbFerramenta.Items.AddRange(New Object() {"", "Boleto", "Fatura", "Nota Fiscal", "Recibo"})
+        Me.CmbFerramenta.Items.AddRange(New Object() {"", "Boleto", "Cartão de Débito", "Cartão de Crédito", "Fatura", "Nota Fiscal", "PIX", "Recibo"})
         Me.CmbFerramenta.Location = New System.Drawing.Point(629, 86)
         Me.CmbFerramenta.Name = "CmbFerramenta"
         Me.CmbFerramenta.Size = New System.Drawing.Size(137, 21)
@@ -440,6 +460,14 @@ Partial Class FmrCPlancamento
         Me.ColumnHeader7.Text = "Historico"
         Me.ColumnHeader7.Width = 200
         '
+        'ColumnHeader12
+        '
+        Me.ColumnHeader12.Text = "Cod CC"
+        '
+        'ColumnHeader13
+        '
+        Me.ColumnHeader13.Text = "CC"
+        '
         'BtnTermina
         '
         Me.BtnTermina.Location = New System.Drawing.Point(37, 604)
@@ -448,34 +476,6 @@ Partial Class FmrCPlancamento
         Me.BtnTermina.TabIndex = 3
         Me.BtnTermina.Text = "Termina"
         Me.BtnTermina.UseVisualStyleBackColor = True
-        '
-        'CmbCentroDeCusto
-        '
-        Me.CmbCentroDeCusto.AutoCompleteCustomSource.AddRange(New String() {"Forecedor", "Colaborador"})
-        Me.CmbCentroDeCusto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CmbCentroDeCusto.FormattingEnabled = True
-        Me.CmbCentroDeCusto.Items.AddRange(New Object() {"", "Pessoa Juridica PJ", "Pessoa Fisica    PF"})
-        Me.CmbCentroDeCusto.Location = New System.Drawing.Point(105, 32)
-        Me.CmbCentroDeCusto.Name = "CmbCentroDeCusto"
-        Me.CmbCentroDeCusto.Size = New System.Drawing.Size(315, 21)
-        Me.CmbCentroDeCusto.TabIndex = 19
-        '
-        'LabelCentroDeCusto
-        '
-        Me.LabelCentroDeCusto.AutoSize = True
-        Me.LabelCentroDeCusto.Location = New System.Drawing.Point(16, 40)
-        Me.LabelCentroDeCusto.Name = "LabelCentroDeCusto"
-        Me.LabelCentroDeCusto.Size = New System.Drawing.Size(83, 13)
-        Me.LabelCentroDeCusto.TabIndex = 20
-        Me.LabelCentroDeCusto.Text = "Centro de Custo"
-        '
-        'ColumnHeader12
-        '
-        Me.ColumnHeader12.Text = "Cod CC"
-        '
-        'ColumnHeader13
-        '
-        Me.ColumnHeader13.Text = "CC"
         '
         'FmrCPlancamento
         '

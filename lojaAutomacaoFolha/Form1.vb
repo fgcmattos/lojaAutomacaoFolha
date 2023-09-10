@@ -455,7 +455,9 @@ Public Class Form1
     End Sub
 
     Private Sub AlteraçãoToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles AlteraçãoToolStripMenuItem9.Click
+
         frmCartaoManutencao.Show()
+
     End Sub
 
     Private Sub AlteraçãoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AlteraçãoToolStripMenuItem1.Click

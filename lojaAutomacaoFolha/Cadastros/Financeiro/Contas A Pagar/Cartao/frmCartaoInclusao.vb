@@ -9,7 +9,7 @@ Public Class FrmCartaoInclusao
             .Msg = "Confirma A Saída da tela  "
             .Style = vbYesNo + vbQuestion + vbDefaultButton1
             .Resposta = MsgBox(.Msg, .Style, .Title)
-            If .Resposta <> 6 Then
+            If .Resposta = 6 Then
                 Me.Close()
             End If
 
