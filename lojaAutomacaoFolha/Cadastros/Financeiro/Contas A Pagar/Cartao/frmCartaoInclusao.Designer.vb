@@ -23,6 +23,13 @@ Partial Class FrmCartaoInclusao
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.MskConta = New System.Windows.Forms.MaskedTextBox()
+        Me.MskAgencia = New System.Windows.Forms.MaskedTextBox()
+        Me.MskBanco = New System.Windows.Forms.MaskedTextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtNomeImpresso = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtResponsavel = New System.Windows.Forms.TextBox()
@@ -40,19 +47,14 @@ Partial Class FrmCartaoInclusao
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.MskBanco = New System.Windows.Forms.MaskedTextBox()
-        Me.MskAgencia = New System.Windows.Forms.MaskedTextBox()
-        Me.MskConta = New System.Windows.Forms.MaskedTextBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CheckBox1)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.TxtNomeImpresso)
         Me.GroupBox1.Controls.Add(Me.Label7)
@@ -79,6 +81,73 @@ Partial Class FrmCartaoInclusao
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Cartão de Crédito"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.MskConta)
+        Me.GroupBox2.Controls.Add(Me.MskAgencia)
+        Me.GroupBox2.Controls.Add(Me.MskBanco)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Enabled = False
+        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GroupBox2.Location = New System.Drawing.Point(223, 169)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(244, 106)
+        Me.GroupBox2.TabIndex = 20
+        Me.GroupBox2.TabStop = False
+        '
+        'MskConta
+        '
+        Me.MskConta.Location = New System.Drawing.Point(71, 70)
+        Me.MskConta.Mask = "##############-#"
+        Me.MskConta.Name = "MskConta"
+        Me.MskConta.Size = New System.Drawing.Size(135, 20)
+        Me.MskConta.TabIndex = 23
+        '
+        'MskAgencia
+        '
+        Me.MskAgencia.Location = New System.Drawing.Point(71, 44)
+        Me.MskAgencia.Mask = "####-#"
+        Me.MskAgencia.Name = "MskAgencia"
+        Me.MskAgencia.Size = New System.Drawing.Size(57, 20)
+        Me.MskAgencia.TabIndex = 22
+        '
+        'MskBanco
+        '
+        Me.MskBanco.Location = New System.Drawing.Point(71, 17)
+        Me.MskBanco.Mask = "###"
+        Me.MskBanco.Name = "MskBanco"
+        Me.MskBanco.Size = New System.Drawing.Size(57, 20)
+        Me.MskBanco.TabIndex = 21
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(9, 73)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(40, 13)
+        Me.Label10.TabIndex = 20
+        Me.Label10.Text = "Conta"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(6, 49)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(53, 13)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "Agência"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 20)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(43, 13)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Banco"
         '
         'TxtNomeImpresso
         '
@@ -230,71 +299,15 @@ Partial Class FrmCartaoInclusao
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Bandeira"
         '
-        'GroupBox2
+        'CheckBox1
         '
-        Me.GroupBox2.Controls.Add(Me.MskConta)
-        Me.GroupBox2.Controls.Add(Me.MskAgencia)
-        Me.GroupBox2.Controls.Add(Me.MskBanco)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(223, 171)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(244, 106)
-        Me.GroupBox2.TabIndex = 20
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Banco Vinculado"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 20)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(43, 13)
-        Me.Label8.TabIndex = 18
-        Me.Label8.Text = "Banco"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 49)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(53, 13)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "Agência"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(9, 73)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(40, 13)
-        Me.Label10.TabIndex = 20
-        Me.Label10.Text = "Conta"
-        '
-        'MskBanco
-        '
-        Me.MskBanco.Location = New System.Drawing.Point(71, 17)
-        Me.MskBanco.Mask = "###"
-        Me.MskBanco.Name = "MskBanco"
-        Me.MskBanco.Size = New System.Drawing.Size(57, 20)
-        Me.MskBanco.TabIndex = 21
-        '
-        'MskAgencia
-        '
-        Me.MskAgencia.Location = New System.Drawing.Point(71, 44)
-        Me.MskAgencia.Mask = "####-#"
-        Me.MskAgencia.Name = "MskAgencia"
-        Me.MskAgencia.Size = New System.Drawing.Size(57, 20)
-        Me.MskAgencia.TabIndex = 22
-        '
-        'MskConta
-        '
-        Me.MskConta.Location = New System.Drawing.Point(71, 70)
-        Me.MskConta.Mask = "##############-#"
-        Me.MskConta.Name = "MskConta"
-        Me.MskConta.Size = New System.Drawing.Size(135, 20)
-        Me.MskConta.TabIndex = 23
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(223, 158)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(122, 17)
+        Me.CheckBox1.TabIndex = 21
+        Me.CheckBox1.Text = "Banco Vinculado"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'FrmCartaoInclusao
         '
@@ -342,4 +355,5 @@ Partial Class FrmCartaoInclusao
     Friend WithEvents MskConta As MaskedTextBox
     Friend WithEvents MskAgencia As MaskedTextBox
     Friend WithEvents MskBanco As MaskedTextBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

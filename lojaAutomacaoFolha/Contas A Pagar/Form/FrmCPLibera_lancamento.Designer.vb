@@ -23,6 +23,11 @@ Partial Class FrmCPLibera_lancamento
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LabelTotalLiberado = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.LabelTotalLiberar = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -37,20 +42,71 @@ Partial Class FrmCPLibera_lancamento
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LabelTotalLiberado)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.LabelTotalLiberar)
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.ListView1)
         Me.GroupBox1.Location = New System.Drawing.Point(25, 58)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1106, 403)
+        Me.GroupBox1.Size = New System.Drawing.Size(1106, 440)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        Me.GroupBox1.Text = "S E L E C I O N E   OS   L A N Ç A M E N T O S   A  S E R E M   L I B E R A D O S" &
+    ""
+        '
+        'LabelTotalLiberado
+        '
+        Me.LabelTotalLiberado.AutoSize = True
+        Me.LabelTotalLiberado.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTotalLiberado.Location = New System.Drawing.Point(944, 397)
+        Me.LabelTotalLiberado.Name = "LabelTotalLiberado"
+        Me.LabelTotalLiberado.Size = New System.Drawing.Size(49, 24)
+        Me.LabelTotalLiberado.TabIndex = 9
+        Me.LabelTotalLiberado.Text = "0,00"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(761, 405)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(177, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "T O T A L   L I B E R A D O ---------->"
+        '
+        'LabelTotalLiberar
+        '
+        Me.LabelTotalLiberar.AutoSize = True
+        Me.LabelTotalLiberar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelTotalLiberar.Location = New System.Drawing.Point(944, 361)
+        Me.LabelTotalLiberar.Name = "LabelTotalLiberar"
+        Me.LabelTotalLiberar.Size = New System.Drawing.Size(49, 24)
+        Me.LabelTotalLiberar.TabIndex = 7
+        Me.LabelTotalLiberar.Text = "0,00"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(759, 362)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(179, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "T O T A L     A     L I B E R A R ----->"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(6, 352)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(196, 33)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Liberar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'ListView1
         '
@@ -129,15 +185,6 @@ Partial Class FrmCPLibera_lancamento
         '
         Me.ColumnHeader13.Text = "CC"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(6, 352)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(196, 33)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Liberar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'FrmCPLibera_lancamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -149,6 +196,7 @@ Partial Class FrmCPLibera_lancamento
         Me.Name = "FrmCPLibera_lancamento"
         Me.Text = "C O N T A S   A   P A G A R   -  Lançamento Liberação"
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -169,4 +217,8 @@ Partial Class FrmCPLibera_lancamento
     Friend WithEvents ColumnHeader12 As ColumnHeader
     Friend WithEvents ColumnHeader13 As ColumnHeader
     Friend WithEvents Button1 As Button
+    Friend WithEvents LabelTotalLiberado As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents LabelTotalLiberar As Label
+    Friend WithEvents Label1 As Label
 End Class

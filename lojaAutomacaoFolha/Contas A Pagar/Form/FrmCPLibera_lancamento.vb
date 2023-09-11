@@ -1,10 +1,11 @@
 ﻿Public Class FrmCPLibera_lancamento
     Dim oi As New MsgShow
+    Private ignoreItemCheckedEvent = False
 
     Private Sub FrmCPLibera_lancamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         oi.Title = Me.Text
-
+        ignoreItemCheckedEvent = True
 
         Dim cp As List(Of ClassCP) = ClassCP_Acao.GetCP_DB(" Where CP_Status = 0 ")
 
@@ -54,13 +55,20 @@
                 .Items(i).SubItems.Add(cp(i).Class_CP_Centro_Custo_nome)
 
             End With
+
+
+
         Next
+
+        LabelTotalLiberar.Text = SomaValores(ListView1, 9, False)
+
+        ignoreItemCheckedEvent = False
 
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Dim Query As String 
+        Dim Query As String
         Query = "UPDATE CP SET "
         Query += "CP_Status = 1"
         Query += ",CP_usuario_aprovacao_codigo = " & usuClass.Usuario_Chave
@@ -135,6 +143,40 @@
 
             End With
         End If
+
+    End Sub
+
+    Private Function SomaValores(objTabela As Object, intColuna As Integer, boTipo As Boolean) As String
+
+        Dim boTeste As Boolean = boTipo
+        Dim total As Decimal = 0
+
+        For Each item As ListViewItem In objTabela.Items
+
+            If item.Checked = boTeste Then
+
+                total += Decimal.Parse((item.SubItems(intColuna).Text))
+
+            End If
+        Next
+
+
+        Return NumeroLatino(total, 10, True)
+
+    End Function
+
+
+
+    Private Sub ListView1_ItemChecked(sender As Object, e As ItemCheckedEventArgs) Handles ListView1.ItemChecked
+
+        If ignoreItemCheckedEvent Then
+
+            Exit Sub
+
+        End If
+
+        LabelTotalLiberar.Text = SomaValores(ListView1, 9, False)
+        LabelTotalLiberado.Text = SomaValores(ListView1, 9, True)
 
     End Sub
 End Class

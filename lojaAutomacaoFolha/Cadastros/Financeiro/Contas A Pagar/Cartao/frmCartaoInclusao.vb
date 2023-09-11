@@ -32,6 +32,11 @@ Public Class FrmCartaoInclusao
         MskValidade.Text = ""
         MskSeguranca.Text = ""
         MskFatura.Text = ""
+        CheckBox1.Checked = False
+        MskBanco.Text = ""
+        MskAgencia.Text = ""
+        MskConta.Text = ""
+        GroupBox2.Enabled = False
 
     End Sub
 
@@ -66,6 +71,24 @@ Public Class FrmCartaoInclusao
 
         If OpenDB() Then
 
+            Dim intlocal As Integer
+            Dim strAgencia_dv As String = ""
+            Dim strConta_dv As String = ""
+
+            If CheckBox1.Checked Then
+
+                intlocal = MskAgencia.Text.IndexOf("-")
+                strAgencia_dv = MskAgencia.Text.Substring(intlocal + 1)
+                intlocal = MskConta.Text.IndexOf("-")
+                strConta_dv = MskConta.Text.Substring(intlocal + 1)
+
+            Else
+
+                MskAgencia.Text = ""
+                MskConta.Text = ""
+
+            End If
+
             Dim Query As String
 
             Query = "Insert Into cartao "
@@ -92,14 +115,14 @@ Public Class FrmCartaoInclusao
             Query += ",'" & MskValidade.Text & "'"
             Query += "," & MskFatura.Text
             Query += ",'" & MskSeguranca.Text & "'"
-            Query += ",''"
-            Query += ",''"
-            Query += ",''"
-            Query += ",''"
-            Query += ",''"
+            Query += ",'" & MskBanco.Text & "'"
+            Query += ",'" & MskAgencia.Text.Substring(0, 4).Trim & "'"
+            Query += ",'" & strAgencia_dv & "'"
+            Query += ",'" & MskConta.Text.Substring(0, 14).Trim & "'"
+            Query += ",'" & strConta_dv & "'"
             Query += ")"
 
-            If gravaSQL(Query) Then
+            If GravaSQL(Query) Then
 
                 With oi
                     .Msg = "Gravação Realizada com sucesso"
@@ -273,6 +296,12 @@ Public Class FrmCartaoInclusao
     Private Sub frmCartaoInclusao_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         oi.Title = Me.Text
+
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+
+        GroupBox2.Enabled = CheckBox1.Checked
 
     End Sub
 End Class
