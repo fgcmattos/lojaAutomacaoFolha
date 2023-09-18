@@ -16,4 +16,22 @@
 
     End Sub
 
+    Public Class ItemWithTextBox
+        ' Classe personalizada para armazenar um ListViewItem e um TextBox associados
+        Public Property Item As ListViewItem
+        Public Property TextBox As TextBox
+
+        Public Sub New(item As ListViewItem, textBox As TextBox)
+            Me.Item = item
+            Me.TextBox = textBox
+        End Sub
+    End Class
+
+    Public Class Class_Listview_Lista
+        Public Property Coluna As String
+        Public Property Linha As String
+
+    End Class
+
+
 End Module

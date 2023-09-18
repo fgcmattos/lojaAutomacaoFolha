@@ -1,9 +1,41 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Header
+﻿'Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+'Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Header
 Imports CrystalDecisions.Windows.Forms
+Imports System.Windows.Forms
 
 Public Class FmrCPlancamento
+
+    'Inherits Form
+
+    'Public Sub New()
+    '    ' Inicialize o formulário
+    '    InitializeComponent()
+
+    '    ' Chame o método para criar o TextBox em tempo de execução
+    '    CriarTextBox()
+    'End Sub
+
+    'Private Sub CriarTextBox()
+    '    ' Crie uma instância de TextBox
+    '    Dim txtBox As New TextBox()
+
+    '    ' Configure as propriedades do TextBox
+    '    txtBox.Name = "editTxt"
+    '    txtBox.Text = "dsafdffdfasdfdsafds"
+    '    txtBox.Location = New Point(691, 309) ' Defina a posição do TextBox no formulário
+    '    txtBox.Size = New Size(150, 20) ' Defina o tamanho do TextBox
+    '    txtBox.BringToFront()
+    '    txtBox.Visible = True
+    '    ' Adicione o TextBox ao formulário
+    '    Me.Controls.Add(txtBox)
+    '    Me.Refresh()
+    'End Sub
+    Dim coor As New Class_Listview_Lista
+
+    Dim editingTextBox As TextBox ' Para manter controle do controle de edição
     Dim oi As New MsgShow
+    Private Query As String
+
     Private Sub BtnTermina_Click(sender As Object, e As EventArgs) Handles BtnTermina.Click
         Me.Close()
     End Sub
@@ -388,6 +420,7 @@ Public Class FmrCPlancamento
         DateTimePicker2.Value = Date.ParseExact(Agenda(0).Data, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture)
         ComboCarregar(CmbCentroDeCusto, "centro_custo", "concat(cc_codigo,' - ' , cc_descricao)", "Order by cc_descricao")
 
+
     End Sub
 
     Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
@@ -574,7 +607,371 @@ Public Class FmrCPlancamento
 
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+    Private Sub BtnCriaEdicaoParcela_Click(sender As Object, e As EventArgs) Handles BtnCriaEdicaoParcela.Click
+
+        Dim inParcelas As Integer = Convert.ToInt32(MskNparcelas.Text)
+
+        Dim dtAgora As String = gravaSQLretorno("SELECT DATE_FORMAT(now(), '%d/%m/%Y')")
+
+        ListView2.Items.Clear()
+
+        For i As Integer = 0 To inParcelas
+
+            With ListView2
+                If i < inParcelas Then
+
+                    .Items.Add(i + 1)
+                    .Items(i).SubItems.Add("")
+                    .Items(i).SubItems.Add(dtAgora)
+                    .Items(i).SubItems.Add("0,00")
+                    .Items(i).SubItems.Add("")
+                Else
+
+                    .Items.Add("T O T A L")
+                    .Items(i).SubItems.Add("")
+                    .Items(i).SubItems.Add("")
+                    .Items(i).SubItems.Add("0,00")
+
+                End If
+
+            End With
+        Next
+
+    End Sub
+
+
+
+
+    Private Sub ListView2_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles ListView2.MouseDoubleClick
+
+        '' Captura o item e a subitem (célula) clicados
+        'Dim item As ListViewItem = ListView2.GetItemAt(e.X, e.Y)
+        'Dim subItem As ListViewItem.ListViewSubItem = item.GetSubItemAt(e.X, e.Y)
+
+        'If subItem IsNot Nothing Then
+        '    ' Inicia a edição
+        '    StartEditing(subItem, item)
+        'End If
+
+        ' Obtenha o item clicado
+        'Dim item As ListViewItem = ListView2.GetItemAt(e.X, e.Y)
+
+        'If item IsNot Nothing Then
+        '    ' Determine qual subitem foi clicado
+        '    Dim subItemIndex As Integer = -1
+        '    Dim x As Integer = e.X
+        '    For i As Integer = 0 To item.SubItems.Count - 1
+        '        If x < item.SubItems(i).Bounds.Left Then
+        '            ' A coordenada x está antes do início deste subitem, então paramos aqui
+        '            Exit For
+        '        End If
+        '        If x >= item.SubItems(i).Bounds.Left And x <= item.SubItems(i).Bounds.Right Then
+        '            ' A coordenada x está dentro deste subitem
+        '            subItemIndex = i
+        '            Exit For
+        '        End If
+        '    Next
+
+        '    If subItemIndex >= 0 Then
+        '        ' Inicie a edição
+        '        StartEditing(item.SubItems(subItemIndex), item)
+        '    End If
+        'End If
+        Dim columnIndex As Integer = 1 ' Coluna que você deseja permitir a edição
+
+        ' Verifique se o clique ocorreu em uma área de subitem da coluna desejada
+
+        'Dim item As ListViewItem = ListView2.GetItemAt(e.X, e.Y)
+        'If item IsNot Nothing AndAlso e.X > item.SubItems(columnIndex).Bounds.Left AndAlso e.X < item.SubItems(columnIndex).Bounds.Right Then
+        '    ' Inicie a edição
+        '    'StartEditing(item.SubItems(columnIndex))
+        '    MsgBox(item.SubItems(columnIndex))
+        'End If
+
+    End Sub
+    Private Sub StartEditing(subItem As ListViewItem.ListViewSubItem, item As ListViewItem)
+        ' Crie um controle TextBox para edição
+        editingTextBox = New TextBox()
+        editingTextBox.Text = subItem.Text
+        editingTextBox.Bounds = subItem.Bounds
+        editingTextBox.Tag = subItem ' Guarde a referência ao subItem
+
+        ' Adicione o controle TextBox ao controle ListView2
+        ListView2.Controls.Add(editingTextBox)
+
+        ' Lidar com o evento de perda de foco para encerrar a edição
+        AddHandler editingTextBox.LostFocus, AddressOf EndEditing
+
+        ' Lidar com a tecla Enter para encerrar a edição
+        AddHandler editingTextBox.KeyDown, AddressOf TextBox_KeyDown
+
+        ' Defina o foco no controle TextBox e selecione todo o texto
+        editingTextBox.Focus()
+        editingTextBox.SelectAll()
+    End Sub
+
+    Private Sub EndEditing(sender As Object, e As EventArgs)
+        ' Quando a edição estiver concluída, atualize o valor do subItem
+        Dim textBox As TextBox = DirectCast(sender, TextBox)
+        Dim subItem As ListViewItem.ListViewSubItem = DirectCast(textBox.Tag, ListViewItem.ListViewSubItem)
+        subItem.Text = textBox.Text
+
+        ' Remova o controle TextBox
+        ListView2.Controls.Remove(textBox)
+    End Sub
+
+    Private Sub TextBox_KeyDown(sender As Object, e As KeyEventArgs)
+        ' Se a tecla Enter for pressionada, encerre a edição
+        If e.KeyCode = Keys.Enter Then
+            EndEditing(sender, EventArgs.Empty)
+        End If
+    End Sub
+
+    Private Sub ListView2_MouseDown(sender As Object, e As MouseEventArgs) Handles ListView2.MouseDown
+        '   Leitura de uma celula do ListView
+        '=====================================
+        Dim columnIndex As Integer = -1
+        Dim lineIndex As Integer = -1
+        Dim chaveIndex As String
+        '======================================
+        ' Obter informações sobre a posição do clique
+        Dim info As ListViewHitTestInfo = ListView2.HitTest(e.Location)
+        Dim cellBounds As Rectangle = info.SubItem.Bounds
+
+
+        ' Verificar se um item foi clicado
+        If info.Item IsNot Nothing Then
+            ' Verificar se um subitem foi clicado
+            If info.SubItem IsNot Nothing Then
+                ' Obter o índice da coluna clicada
+                columnIndex = info.Item.SubItems.IndexOf(info.SubItem)
+                lineIndex = info.Item.Index
+                chaveIndex = info.SubItem.Text
+                'EditTxt.Location = e.Location
+
+                'MessageBox.Show("Célula clicada: " & info.SubItem.Text & " (Coluna: " & columnIndex & ", Linha: " & lineIndex & ")")
+
+                'MessageBox.Show("Tipo de usuário: " & ListView1.Items(lineIndex).SubItems(9).Text)
+
+                Select Case columnIndex
+
+                    Case 0
+
+                    Case 1
+                        'TxtADM.Text = ListView1.Items(lineIndex).SubItems(columnIndex).Text
+
+                    Case 2
+                        With DateTimePickerEdicao
+                            .Text = chaveIndex
+                            .Width = ListView2.Columns(columnIndex).Width
+                            .Location = New Point(cellBounds.Left + ListView2.Left, cellBounds.Top + ListView2.Top)
+                            .Visible = True
+                            .Focus()
+                        End With
+                        coor.Coluna = columnIndex
+                        coor.Linha = lineIndex
+                        ListView2.Enabled = False
+
+                    Case 3
+
+                        EditTxtValor.Text = chaveIndex
+                        EditTxtValor.Width = ListView2.Columns(columnIndex).Width
+                        'EditTxt.Location = e.Location
+                        ' Calcula as coordenadas corretas para o TextBox
+                        EditTxtValor.Location = New Point(cellBounds.Left + ListView2.Left, cellBounds.Top + ListView2.Top)
+                        EditTxtValor.Visible = True
+
+                        coor.Coluna = columnIndex
+                        coor.Linha = lineIndex
+                        EditTxtValor.Focus()
+                        ListView2.Enabled = False
+
+                    Case 4
+                        'TxtOriginal.Text = ListView1.Items(lineIndex).SubItems(columnIndex).Text
+                    Case 5
+                        'TxtAlterado.Text = ListView1.Items(lineIndex).SubItems(columnIndex).Text
+                    Case 6
+                        'TxtSistema.Text = ListView1.Items(lineIndex).SubItems(columnIndex).Text
+                    Case 8
+                        'TxtUsuario.Text = ListView1.Items(lineIndex).SubItems(columnIndex).Text
+                    Case 9
+                        'MskUsuarioTipo.Text = ListView1.Items(lineIndex).SubItems(columnIndex).Text
+                End Select
+
+            End If
+
+        Else
+            columnIndex = -1
+        End If
+
+
+
+
+
+
+        'Dim columnIndex As Integer = 1 ' Coluna que você deseja permitir a edição
+
+        '' Obtenha a linha clicada
+        'Dim clickedItem As ListViewItem = ListView2.GetItemAt(e.X, e.Y)
+
+        'If clickedItem IsNot Nothing AndAlso e.Button = MouseButtons.Left Then
+        '    ' Calcule a coluna com base nas coordenadas do mouse
+        '    Dim clickedSubItem As ListViewItem.ListViewSubItem = Nothing
+        '    Dim x As Integer = e.X
+        '    Dim colWidth As Integer = 0
+
+        '    For Each subItem As ListViewItem.ListViewSubItem In clickedItem.SubItems
+        '        colWidth += subItem.Bounds.Width
+
+        '        If x < colWidth Then
+        '            clickedSubItem = subItem
+        '            Exit For
+        '        End If
+        '    Next
+
+        '    If clickedSubItem IsNot Nothing Then
+        '        ' Inicie a edição
+        '        StartEditing(clickedSubItem)
+        '    End If
+        'End If
+    End Sub
+
+
+    Private Sub StartEditing(subItem As ListViewItem.ListViewSubItem)
+        ' Implemente a lógica para criar um controle de edição (por exemplo, TextBox) e iniciar a edição aqui
+        ' Certifique-se de lidar com eventos como LostFocus ou Enter para encerrar a edição e atualizar o subitem
+
+        MsgBox(subItem.Text)
+    End Sub
+
+    Private Sub EditTxtValor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles EditTxtValor.KeyPress
+
+        With EditTxtValor
+
+            Dim strMascarado As String = ""
+
+            If .Text = "" Then
+
+                .Text = "0,00"
+
+                Exit Sub
+
+            End If
+
+            If .MaxLength < .Text.Length And Asc(e.KeyChar) <> 8 And Asc(e.KeyChar) <> 13 Then
+
+                e.KeyChar = ""
+
+                Exit Sub
+
+            End If
+
+            'If e.KeyChar = Convert.ToChar(27) Then
+
+            '    TxtValorBase.Text = "0,00"
+
+
+            'End If
+
+            If e.KeyChar = Convert.ToChar(13) Then
+
+
+                If .Text <= 0.00 Then
+
+                    MsgBox("A Base deve ter um valor maior que 0.00", vbExclamation, Me.Text)
+                    Exit Sub
+
+
+                End If
+
+                'MsgBox(ListView2.Items(coor.Linha).SubItems(coor.Coluna).Text)
+                'ListView2.Items(coor.Linha).SubItems(coor.Coluna).Text = .Text
+
+                AcertaListview(Me.ListView2, Me.EditTxtValor, coor.Linha, coor.Coluna, 3)     ' Grava edição e soma a coluna 3
+
+                'SendKeys.Send("{TAB}")
+
+                .Visible = False
+
+                Exit Sub
+
+            End If
+
+            If Asc(e.KeyChar) = 8 Then       ' BACKSPACE
+
+                e.KeyChar = ""
+
+
+                If .Text = "0,00" Then Exit Sub
+                If .Text.Substring(0, 3) = "0,0" And .Text.Length = 4 Then .Text = "0,00" : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Substring(0, 2) = "0," And .Text.Length = 4 Then .Text = "0,0" + .Text.Substring(.Text.Length - 2, 1) : SendKeys.Send("{END}") : Exit Sub
+                If .Text.Length = 4 Then .Text = "0," + .Text.Substring(0, 1) + .Text.Substring(2, 1) : SendKeys.Send("{END}") : Exit Sub
+
+                .Text = .Text.Substring(0, .Text.Length - 1)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+
+
+                .Text = RetMascara(intSemMascara, strSemMascara)
+                SendKeys.Send("{END}")
+                Exit Sub
+
+            End If
+
+            If e.KeyChar >= "0" And e.KeyChar <= "9" Then
+
+                Dim strComMascara As String = Trim(.Text)
+                Dim strSemMascara As String = Trim(Replace(Replace(.Text, ",", ""), ".", ""))
+                Dim intSemMascara As Integer = strSemMascara.Length
+                Dim strRetorno As String = ""
+                Dim strPressionada As String = e.KeyChar
+
+                e.KeyChar = ""
+
+                If intSemMascara > 13 Then
+
+                    Exit Sub
+
+                End If
+
+                If intSemMascara < 4 And strSemMascara.Substring(0, 1) = "0" Then
+
+                    strSemMascara += strPressionada
+                    strSemMascara = strSemMascara.Substring(1)
+
+                Else
+
+                    strSemMascara += strPressionada
+                    intSemMascara += 1
+
+                End If
+
+                .Text = RetMascara(intSemMascara, strSemMascara)
+
+
+
+                SendKeys.Send("{END}")
+
+            Else
+
+                e.KeyChar = ""
+
+                .Focus()
+
+
+                ' SendKeys.Send("{END}")
+
+
+            End If
+
+        End With
+    End Sub
+
+    Private Sub EditTxtValor_TextChanged(sender As Object, e As EventArgs) Handles EditTxtValor.TextChanged
+
+    End Sub
+
+    Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged
 
     End Sub
 End Class

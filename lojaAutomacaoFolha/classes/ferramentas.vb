@@ -445,7 +445,7 @@ Module Module1
 
         For i = 0 To Vaut.Count - 1
 
-            addVR(hol, Vaut(i).Variavel, Vaut(i).Descricao, Vaut(i).Unidade, Vaut(i).Base_INSS, Vaut(i).Base_fgts, Vaut(i).Base_ir, VR, Vaut(i).TipoFinanceiro, Vaut(i).Valor, Vaut(i).Qto, Vaut(i).Calculo, Vaut(i).Calculo_parametro)
+            AddVR(hol, Vaut(i).Variavel, Vaut(i).Descricao, Vaut(i).Unidade, Vaut(i).Base_INSS, Vaut(i).Base_fgts, Vaut(i).Base_ir, VR, Vaut(i).TipoFinanceiro, Vaut(i).Valor, Vaut(i).Qto, Vaut(i).Calculo, Vaut(i).Calculo_parametro)
 
         Next
 
@@ -671,7 +671,7 @@ Module Module1
 
         Dim ap As List(Of Aponta) = ApontaAcoes.GetApontaDB()
         Form1.Form1Inicio.BackColor = Color.White
-        Form1.Form1Inicio.Text = dataLatina(ap(0).Data) & " - " & ap(0).Tempo & " // "
+        Form1.Form1Inicio.Text = DataLatina(ap(0).Data) & " - " & ap(0).Tempo & " // "
         Form1.Timer1.Start()
         'Form1.form1DataHora = current
 
@@ -690,6 +690,46 @@ Module Module1
             If strLetra = str Then ContaString += 1
 
         Next
+
+    End Function
+
+    Public Sub AcertaListview(objLista As Object, objComando As Object, Xcoor As Integer, Ycoor As Integer, colSoma As Integer)
+
+        With objLista
+
+            .Items(Xcoor).SubItems(Ycoor).Text = objComando.text
+            .enabled = True
+            objComando.visible = False
+
+            Dim strValor As String = ListView_SomarColuna(objLista, colSoma)
+
+            .Items(objLista.items.count() - 1).SubItems(colSoma).Text = NumeroLatino(ListView_SomarColuna(objLista, colSoma), 10, True)
+
+
+        End With
+
+
+
+    End Sub
+
+    Public Function ListView_SomarColuna(ByVal listView As ListView, ByVal colunaIndex As Integer) As Double
+
+        Dim total As Double = 0.0
+
+        For Each item As ListViewItem In listView.Items
+
+            If item.SubItems.Count - 1 > colunaIndex Then
+                Dim valorTexto As String = item.SubItems(colunaIndex).Text
+                Dim valor As Double
+                If Double.TryParse(valorTexto, valor) Then
+                    total += valor
+                End If
+            End If
+
+        Next
+
+
+        Return total
 
     End Function
 

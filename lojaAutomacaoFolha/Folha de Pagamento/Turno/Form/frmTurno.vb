@@ -316,7 +316,7 @@ Public Class frmTurno
 
                 grpTurnos.Enabled = False
             Catch ex As Exception
-                MsgBox("Problemas NameOf Gravação!")
+                MsgBox("Problemas  Gravação!")
             End Try
 
             Conn.Close()
