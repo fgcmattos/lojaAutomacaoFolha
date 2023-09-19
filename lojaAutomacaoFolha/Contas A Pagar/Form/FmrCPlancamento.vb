@@ -614,10 +614,10 @@ Public Class FmrCPlancamento
         Dim dtAgora As String = gravaSQLretorno("SELECT DATE_FORMAT(now(), '%d/%m/%Y')")
 
         ListView2.Items.Clear()
+        With ListView2
+            For i As Integer = 0 To inParcelas
 
-        For i As Integer = 0 To inParcelas
 
-            With ListView2
                 If i < inParcelas Then
 
                     .Items.Add(i + 1)
@@ -634,8 +634,14 @@ Public Class FmrCPlancamento
 
                 End If
 
-            End With
-        Next
+            Next
+
+
+
+        End With
+
+
+
 
     End Sub
 
@@ -728,15 +734,35 @@ Public Class FmrCPlancamento
     End Sub
 
     Private Sub ListView2_MouseDown(sender As Object, e As MouseEventArgs) Handles ListView2.MouseDown
+
         '   Leitura de uma celula do ListView
         '=====================================
         Dim columnIndex As Integer = -1
         Dim lineIndex As Integer = -1
         Dim chaveIndex As String
         '======================================
+
         ' Obter informações sobre a posição do clique
         Dim info As ListViewHitTestInfo = ListView2.HitTest(e.Location)
-        Dim cellBounds As Rectangle = info.SubItem.Bounds
+        Dim cellBounds As Rectangle
+
+        If info.SubItem IsNot Nothing Then
+
+            cellBounds = info.SubItem.Bounds
+
+        Else
+
+            Exit Sub
+
+        End If
+
+        'Try
+        '    cellBounds = info.SubItem.Bounds
+        'Catch ex As Exception
+        '    Exit Sub
+        'End Try
+
+        'Dim cellBounds As Rectangle = info.SubItem.Bounds
 
 
         ' Verificar se um item foi clicado
@@ -747,6 +773,13 @@ Public Class FmrCPlancamento
                 columnIndex = info.Item.SubItems.IndexOf(info.SubItem)
                 lineIndex = info.Item.Index
                 chaveIndex = info.SubItem.Text
+
+                If lineIndex >= ListView2.Items.Count - 1 Then
+
+                    Exit Sub
+
+                End If
+
                 'EditTxt.Location = e.Location
 
                 'MessageBox.Show("Célula clicada: " & info.SubItem.Text & " (Coluna: " & columnIndex & ", Linha: " & lineIndex & ")")
@@ -787,7 +820,18 @@ Public Class FmrCPlancamento
                         ListView2.Enabled = False
 
                     Case 4
-                        'TxtOriginal.Text = ListView1.Items(lineIndex).SubItems(columnIndex).Text
+
+                        With CmbComo
+                            .Text = chaveIndex
+                            .Width = ListView2.Columns(columnIndex).Width
+                            .Location = New Point(cellBounds.Left + ListView2.Left, cellBounds.Top + ListView2.Top)
+                            .Visible = True
+                            .Focus()
+                        End With
+                        coor.Coluna = columnIndex
+                        coor.Linha = lineIndex
+                        ListView2.Enabled = False
+
                     Case 5
                         'TxtAlterado.Text = ListView1.Items(lineIndex).SubItems(columnIndex).Text
                     Case 6
@@ -804,36 +848,6 @@ Public Class FmrCPlancamento
             columnIndex = -1
         End If
 
-
-
-
-
-
-        'Dim columnIndex As Integer = 1 ' Coluna que você deseja permitir a edição
-
-        '' Obtenha a linha clicada
-        'Dim clickedItem As ListViewItem = ListView2.GetItemAt(e.X, e.Y)
-
-        'If clickedItem IsNot Nothing AndAlso e.Button = MouseButtons.Left Then
-        '    ' Calcule a coluna com base nas coordenadas do mouse
-        '    Dim clickedSubItem As ListViewItem.ListViewSubItem = Nothing
-        '    Dim x As Integer = e.X
-        '    Dim colWidth As Integer = 0
-
-        '    For Each subItem As ListViewItem.ListViewSubItem In clickedItem.SubItems
-        '        colWidth += subItem.Bounds.Width
-
-        '        If x < colWidth Then
-        '            clickedSubItem = subItem
-        '            Exit For
-        '        End If
-        '    Next
-
-        '    If clickedSubItem IsNot Nothing Then
-        '        ' Inicie a edição
-        '        StartEditing(clickedSubItem)
-        '    End If
-        'End If
     End Sub
 
 
@@ -866,12 +880,16 @@ Public Class FmrCPlancamento
 
             End If
 
-            'If e.KeyChar = Convert.ToChar(27) Then
+            If e.KeyChar = Convert.ToChar(27) Then
 
-            '    TxtValorBase.Text = "0,00"
+                ListView2.Enabled = True
+
+                .Visible = False
+
+                Exit Sub
 
 
-            'End If
+            End If
 
             If e.KeyChar = Convert.ToChar(13) Then
 
@@ -887,7 +905,7 @@ Public Class FmrCPlancamento
                 'MsgBox(ListView2.Items(coor.Linha).SubItems(coor.Coluna).Text)
                 'ListView2.Items(coor.Linha).SubItems(coor.Coluna).Text = .Text
 
-                AcertaListview(Me.ListView2, Me.EditTxtValor, coor.Linha, coor.Coluna, 3)     ' Grava edição e soma a coluna 3
+                AcertaListview(Me.ListView2, Me.EditTxtValor, coor.Linha, coor.Coluna, 3, True, True)     ' Grava edição e soma a coluna 3
 
                 'SendKeys.Send("{TAB}")
 
@@ -967,11 +985,81 @@ Public Class FmrCPlancamento
         End With
     End Sub
 
-    Private Sub EditTxtValor_TextChanged(sender As Object, e As EventArgs) Handles EditTxtValor.TextChanged
+    Private Sub CmbComo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CmbComo.KeyPress
+
+        With CmbComo
+
+
+            If e.KeyChar = Convert.ToChar(27) Then
+
+                ListView2.Enabled = True
+
+                .Visible = False
+
+                Exit Sub
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(13) Then
+
+
+                AcertaListview(Me.ListView2, Me.CmbComo, coor.Linha, coor.Coluna, 4, False, False)     ' Grava edição e soma a coluna 4
+
+                ListView2.Enabled = True
+
+                .Visible = False
+
+                ListView2.Focus()
+
+                Exit Sub
+
+            End If
+        End With
+
+    End Sub
+
+    Private Sub DateTimePickerEdicao_KeyPress(sender As Object, e As KeyPressEventArgs) Handles DateTimePickerEdicao.KeyPress
+
+        With DateTimePickerEdicao
+
+
+            If e.KeyChar = Convert.ToChar(27) Then
+
+                ListView2.Enabled = True
+
+                .Visible = False
+
+                Exit Sub
+
+            End If
+
+            If e.KeyChar = Convert.ToChar(13) Then
+
+
+                AcertaListview(Me.ListView2, Me.DateTimePickerEdicao, coor.Linha, coor.Coluna, 2, False, False)     ' Grava edição e soma a coluna 2
+
+                ListView2.Enabled = True
+
+                .Visible = False
+
+                ListView2.Focus()
+
+                Exit Sub
+
+            End If
+        End With
+
+    End Sub
+
+    Private Sub DateTimePickerEdicao_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerEdicao.ValueChanged
 
     End Sub
 
     Private Sub ListView2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView2.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub EditTxtValor_TextChanged(sender As Object, e As EventArgs) Handles EditTxtValor.TextChanged
 
     End Sub
 End Class

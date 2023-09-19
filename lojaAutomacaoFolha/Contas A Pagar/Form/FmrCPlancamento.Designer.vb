@@ -26,6 +26,8 @@ Partial Class FmrCPlancamento
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BtnCriaEdicaoParcela = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.CmbComo = New System.Windows.Forms.ComboBox()
+        Me.DateTimePickerEdicao = New System.Windows.Forms.DateTimePicker()
         Me.EditTxtValor = New System.Windows.Forms.TextBox()
         Me.ListView2 = New System.Windows.Forms.ListView()
         Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -85,7 +87,12 @@ Partial Class FmrCPlancamento
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.BtnTermina = New System.Windows.Forms.Button()
-        Me.DateTimePickerEdicao = New System.Windows.Forms.DateTimePicker()
+        Me.CmbPeridoEntreParcelas = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -124,6 +131,12 @@ Partial Class FmrCPlancamento
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Label6)
+        Me.GroupBox4.Controls.Add(Me.DateTimePicker3)
+        Me.GroupBox4.Controls.Add(Me.MaskedTextBox1)
+        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Controls.Add(Me.Label4)
+        Me.GroupBox4.Controls.Add(Me.CmbPeridoEntreParcelas)
         Me.GroupBox4.Controls.Add(Me.BtnCriaEdicaoParcela)
         Me.GroupBox4.Controls.Add(Me.GroupBox5)
         Me.GroupBox4.Controls.Add(Me.ComboBox1)
@@ -134,7 +147,7 @@ Partial Class FmrCPlancamento
         Me.GroupBox4.Controls.Add(Me.Label2)
         Me.GroupBox4.Location = New System.Drawing.Point(489, 75)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(545, 193)
+        Me.GroupBox4.Size = New System.Drawing.Size(545, 266)
         Me.GroupBox4.TabIndex = 21
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Estruturação do Pagamento"
@@ -150,24 +163,45 @@ Partial Class FmrCPlancamento
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.CmbComo)
         Me.GroupBox5.Controls.Add(Me.DateTimePickerEdicao)
         Me.GroupBox5.Controls.Add(Me.EditTxtValor)
         Me.GroupBox5.Controls.Add(Me.ListView2)
-        Me.GroupBox5.Location = New System.Drawing.Point(16, 57)
+        Me.GroupBox5.Location = New System.Drawing.Point(15, 98)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(518, 130)
+        Me.GroupBox5.Size = New System.Drawing.Size(518, 154)
         Me.GroupBox5.TabIndex = 22
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Edição dos Pagamentos"
+        '
+        'CmbComo
+        '
+        Me.CmbComo.AutoCompleteCustomSource.AddRange(New String() {"Forecedor", "Colaborador"})
+        Me.CmbComo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbComo.FormattingEnabled = True
+        Me.CmbComo.Items.AddRange(New Object() {"", "Dinheiro", "Cartão Débito", "Cartão Crédito", "Cheque"})
+        Me.CmbComo.Location = New System.Drawing.Point(175, 55)
+        Me.CmbComo.Name = "CmbComo"
+        Me.CmbComo.Size = New System.Drawing.Size(168, 21)
+        Me.CmbComo.TabIndex = 24
+        Me.CmbComo.Visible = False
+        '
+        'DateTimePickerEdicao
+        '
+        Me.DateTimePickerEdicao.Location = New System.Drawing.Point(233, 87)
+        Me.DateTimePickerEdicao.Name = "DateTimePickerEdicao"
+        Me.DateTimePickerEdicao.Size = New System.Drawing.Size(255, 20)
+        Me.DateTimePickerEdicao.TabIndex = 23
+        Me.DateTimePickerEdicao.Visible = False
         '
         'EditTxtValor
         '
         Me.EditTxtValor.BackColor = System.Drawing.Color.Red
         Me.EditTxtValor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditTxtValor.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.EditTxtValor.Location = New System.Drawing.Point(325, 61)
+        Me.EditTxtValor.Location = New System.Drawing.Point(175, 79)
         Me.EditTxtValor.Name = "EditTxtValor"
-        Me.EditTxtValor.Size = New System.Drawing.Size(163, 20)
+        Me.EditTxtValor.Size = New System.Drawing.Size(25, 20)
         Me.EditTxtValor.TabIndex = 22
         Me.EditTxtValor.Text = "0,00"
         Me.EditTxtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -183,7 +217,7 @@ Partial Class FmrCPlancamento
         Me.ListView2.Location = New System.Drawing.Point(6, 19)
         Me.ListView2.MultiSelect = False
         Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(497, 102)
+        Me.ListView2.Size = New System.Drawing.Size(497, 129)
         Me.ListView2.TabIndex = 0
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
@@ -199,13 +233,13 @@ Partial Class FmrCPlancamento
         'ColumnHeader16
         '
         Me.ColumnHeader16.Text = "Vencimento"
-        Me.ColumnHeader16.Width = 80
+        Me.ColumnHeader16.Width = 150
         '
         'ColumnHeader17
         '
         Me.ColumnHeader17.Text = "Valor"
         Me.ColumnHeader17.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.ColumnHeader17.Width = 80
+        Me.ColumnHeader17.Width = 100
         '
         'ColumnHeader18
         '
@@ -291,9 +325,9 @@ Partial Class FmrCPlancamento
         '
         'BtnDeleta
         '
-        Me.BtnDeleta.Location = New System.Drawing.Point(264, 303)
+        Me.BtnDeleta.Location = New System.Drawing.Point(236, 303)
         Me.BtnDeleta.Name = "BtnDeleta"
-        Me.BtnDeleta.Size = New System.Drawing.Size(234, 26)
+        Me.BtnDeleta.Size = New System.Drawing.Size(162, 26)
         Me.BtnDeleta.TabIndex = 18
         Me.BtnDeleta.Text = "R E M O V E R"
         Me.BtnDeleta.UseVisualStyleBackColor = True
@@ -415,7 +449,7 @@ Partial Class FmrCPlancamento
         Me.TxtHistorico.Location = New System.Drawing.Point(71, 274)
         Me.TxtHistorico.MaxLength = 150
         Me.TxtHistorico.Name = "TxtHistorico"
-        Me.TxtHistorico.Size = New System.Drawing.Size(848, 20)
+        Me.TxtHistorico.Size = New System.Drawing.Size(382, 20)
         Me.TxtHistorico.TabIndex = 10
         '
         'TxtValor
@@ -463,7 +497,7 @@ Partial Class FmrCPlancamento
         '
         Me.Button1.Location = New System.Drawing.Point(13, 303)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(234, 26)
+        Me.Button1.Size = New System.Drawing.Size(207, 26)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Incrementa"
         Me.Button1.UseVisualStyleBackColor = True
@@ -646,18 +680,65 @@ Partial Class FmrCPlancamento
         Me.BtnTermina.Text = "Termina"
         Me.BtnTermina.UseVisualStyleBackColor = True
         '
-        'DateTimePickerEdicao
+        'CmbPeridoEntreParcelas
         '
-        Me.DateTimePickerEdicao.Location = New System.Drawing.Point(233, 87)
-        Me.DateTimePickerEdicao.Name = "DateTimePickerEdicao"
-        Me.DateTimePickerEdicao.Size = New System.Drawing.Size(255, 20)
-        Me.DateTimePickerEdicao.TabIndex = 23
+        Me.CmbPeridoEntreParcelas.AutoCompleteCustomSource.AddRange(New String() {"Forecedor", "Colaborador"})
+        Me.CmbPeridoEntreParcelas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbPeridoEntreParcelas.FormattingEnabled = True
+        Me.CmbPeridoEntreParcelas.Items.AddRange(New Object() {"Dia", "Mês", "Bimestre", "Trimestre", "Semestre"})
+        Me.CmbPeridoEntreParcelas.Location = New System.Drawing.Point(21, 71)
+        Me.CmbPeridoEntreParcelas.Name = "CmbPeridoEntreParcelas"
+        Me.CmbPeridoEntreParcelas.Size = New System.Drawing.Size(111, 21)
+        Me.CmbPeridoEntreParcelas.TabIndex = 24
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(18, 55)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(114, 13)
+        Me.Label4.TabIndex = 25
+        Me.Label4.Text = "Periodo entre Parcelas"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(151, 55)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(130, 13)
+        Me.Label5.TabIndex = 26
+        Me.Label5.Text = "N.Periodos entre Parcelas"
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(154, 71)
+        Me.MaskedTextBox1.Mask = "###"
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(62, 20)
+        Me.MaskedTextBox1.TabIndex = 27
+        '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Location = New System.Drawing.Point(290, 72)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(243, 20)
+        Me.DateTimePicker3.TabIndex = 28
+        Me.DateTimePicker3.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(287, 56)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(102, 13)
+        Me.Label6.TabIndex = 29
+        Me.Label6.Text = "Data da 1o. Parcela"
         '
         'FmrCPlancamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1710, 1044)
+        Me.ClientSize = New System.Drawing.Size(1138, 689)
         Me.Controls.Add(Me.BtnTermina)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.GroupBox3)
@@ -746,4 +827,11 @@ Partial Class FmrCPlancamento
     Friend WithEvents BtnCriaEdicaoParcela As Button
     Friend WithEvents EditTxtValor As TextBox
     Friend WithEvents DateTimePickerEdicao As DateTimePicker
+    Friend WithEvents CmbComo As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents CmbPeridoEntreParcelas As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents DateTimePicker3 As DateTimePicker
+    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents Label5 As Label
 End Class

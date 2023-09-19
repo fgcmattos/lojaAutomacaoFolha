@@ -693,18 +693,50 @@ Module Module1
 
     End Function
 
-    Public Sub AcertaListview(objLista As Object, objComando As Object, Xcoor As Integer, Ycoor As Integer, colSoma As Integer)
+    Public Sub AcertaListview(objLista As Object, objComando As Object, Xcoor As Integer, Ycoor As Integer, colSoma As Integer, setSoma As Boolean, setPorcentagem As Boolean)
+
+        Dim tipoComando As Type = objComando.GetType()
 
         With objLista
 
-            .Items(Xcoor).SubItems(Ycoor).Text = objComando.text
+            Select Case tipoComando.FullName
+
+                Case GetType(TextBox).FullName
+
+                    .Items(Xcoor).SubItems(Ycoor).Text = objComando.text
+
+
+                Case GetType(DateTimePicker).FullName
+
+                    .Items(Xcoor).SubItems(Ycoor).Text = objComando.value
+
+                Case GetType(ComboBox).FullName
+
+                    .Items(Xcoor).SubItems(Ycoor).Text = objComando.text
+
+            End Select
+
             .enabled = True
+
             objComando.visible = False
 
-            Dim strValor As String = ListView_SomarColuna(objLista, colSoma)
+            Dim strValor As String = ""
 
-            .Items(objLista.items.count() - 1).SubItems(colSoma).Text = NumeroLatino(ListView_SomarColuna(objLista, colSoma), 10, True)
+            If setSoma Then
 
+                strValor = ListView_SomarColuna(objLista, colSoma)
+
+                .Items(objLista.items.count() - 1).SubItems(colSoma).Text = NumeroLatino(ListView_SomarColuna(objLista, colSoma), 10, True)
+
+            End If
+
+            If setPorcentagem Then
+
+                Dim decPorcentagem As Decimal = (Convert.ToDecimal(objComando.text) / Convert.ToDecimal(strValor)) * 100
+
+                .Items(Xcoor).SubItems(2).Text = decPorcentagem.ToString("N2")
+
+            End If
 
         End With
 
